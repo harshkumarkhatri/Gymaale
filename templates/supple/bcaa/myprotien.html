@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Services</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SportFIT template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
+    <link href="{{ url_for('static', filename='plugins/colorbox/colorbox.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img
+        src="/static/images/WhatsApp%20Image%202019-11-20%20at%209.42.21%20AM.jpeg"></button>
+<div class="super_container">
+
+    <!-- Header -->
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+                        <a href="/main">
+                            <div class="logo d-flex flex-row align-items-center justify-content-start"><img
+                                    src="/static/images/dot.png" alt="">
+                                <div>GYMA<span>ale</span></div>
+                            </div>
+                        </a>
+                        <nav class="main_nav">
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/main">Home</a></li>
+                                <li><a href="/about">About us</a></li>
+                                <li class="active"><a href="/services">Services</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </nav>
+                        <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <div>9999999999</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hamburger -->
+
+    <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
+        <div class="hamburger">
+            <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
+                <span>menu</span>
+                <div class="hamburger_container">
+                    <div class="menu_hamburger">
+                        <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                        <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
+                        <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+
+    <div class="menu trans_800">
+        <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            <ul>
+                <li><a href="/main">Home</a></li>
+                <li><a href="/about">About us</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+        <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <span>9999999999</span>
+        </div>
+    </div>
+
+    <!-- Home -->
+
+    <div class="home">
+        <div class="background_image" style="background-image:url(/static/images/services.jpg)"></div>
+        <div class="overlay"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="home_title">Supplements</div>
+                            <div class="home_subtitle">Gym, Diet, Trainer & many more.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+
+    <!-- Services -->
+
+    <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container">
+
+                        <div class="section_title">MYPROTIEN BCAA 4:1:1 Powder</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row services_row">
+
+                <h2><a href="https://www.instamojo.com/GYMAALE/myprotien-bcaa-411-powder/" rel="im-checkout"
+                       data-text="Buy Now"
+                       data-css-style="color:#ffffff; background:#75c26a; width:300px; border-radius:4px"
+                       data-layout="vertical"></a>
+                    <script src="https://js.instamojo.com/v1/button.js"></script>
+                    <br>
+                    Product Overview
+                    Here’s your essential amino acid supplement, containing an optimal 4:1:1 ratio of leucine,
+                    isoleucine, and valine.
+
+                    These can’t be produced by your body so they must come from your diet, and that’s where we come in.
+
+                    Sourced from plant-based ingredients, using an innovative fermentation process, our Vegan BCAA 4:1:1
+                    is perfect for vegan and vegetarian diets!
+
+                    What are the benefits of Vegan BCAA 4:1:1?
+                    It contains three popular essential amino acids – the building blocks of protein that make up the
+                    structure of new muscle tissue. This is so important for any fitness goal, whatever your aim.
+
+                    Plus, this 4:1:1 blend offers you added leucine for those hoping to reap the benefits of this
+                    specific essential amino acid – proving a popular choice throughout the fitness community.
+
+                    When should you take Vegan BCAA 4:1:1?
+                    We recommend taking 5g 2-4 times a day for best results – enjoying one of our fruity flavours, or
+                    simply adding to your favourite shake.
+
+                    These amino acids can be taken throughout the day, or before, during and after exercise.
+
+                    Important- we have recently changed the name of this product from Fermented BCAA 4:1:1 to Vegan BCAA
+                    4:1:1. Please note that the formulation has not changed, this is the same product with a different
+                    name.
+
+                    Please note that the labelling on this product is provided in English as a minimum. French, Italian,
+                    German, Spanish, Danish, Swedish and Finnish may also be present on a product by product basis.
+                </h2>
+
+
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    <!-- Extra -->
+
+    <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+        <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="extra_title">More BCAA's</div>
+                        <div class="extra_text">
+                            <p>Will be added soon.</p>
+                        </div>
+                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="footer_container">
+                        <div class="footer_content">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <div class="logo d-flex flex-row align-items-center justify-content-center"><img
+                                            src="/static/images/dot.png" alt="">
+                                        <div>GYMA<span>ale</span></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <nav class="footer_nav">
+                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                    <li><a href="/main">Home</a></li>
+                                    <li><a href="/about">About us</a></li>
+                                    <li><a href="/services">Services</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <div class="newsletter_container">
+                                <form action="#" id="newsletter_form" class="newsletter_form">
+                                    <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                                           required="required">
+                                    <button class="newsletter_button">go</button>
+                                </form>
+                            </div>
+                            <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                    aria-hidden="true"></i> by <a
+                                    href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </div>
+                        </div>
+                        <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/TweenMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/TimelineMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/services.js') }}"></script>
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+</html>
