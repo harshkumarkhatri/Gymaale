@@ -531,6 +531,10 @@ def account():
        # print(z.id)
         zz=user_data2.query.filter_by(user_id=z.id).first()
        # print(zz)
+        xyz=image.query.filter_by(user_id=z.id).first()
+        imag=base64.b64encode(xyz.data).decode('ascii')
+        print(imag)
+
         if zz==None:
             value3='NULL'
             value4='NULL'
@@ -548,7 +552,7 @@ def account():
             value8=zz.already_gymming
             value9=zz.time
         return render_template("account.html", value=m, value2=z.email,value3=value3,value4=value4,
-                               value5=value5,value6=value6,value7=value7,value8=value8,value9=value9 )
+                               value5=value5,value6=value6,value7=value7,value8=value8,value9=value9,imag=imag )
     return 'fsarwfwe'
 
 
@@ -821,7 +825,7 @@ def error500(error):
 
 @app.errorhandler(405)
 def error405(error):
-    return '<h1>Sorry</h1>' ,405
+    return '<h1>Sorry methods not allowed</h1>' ,405
 
 @app.route('/account_settings')
 @login_required
@@ -954,6 +958,10 @@ def gym_details():
             desc=request.form['desc']
             ref_id=xyz.id
             zz=gym_detail.query.filter_by(gym_name=fname).first()
+            if add2==None:
+                add='NULL'
+            if desc==None:
+                desc='NULL'
             if zz:
                 flash("A gym with this address is already registered")
             else:
@@ -1042,7 +1050,33 @@ def add_another_gym():
 
 @app.route('/owner_account')
 def owner_account():
-    return render_template("gym_registeration/owner_Account.html")
+    if g.owner:
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        xyz=owner_detail.query.filter_by(owner_reg_id=zz.id).first()
+        mmm=gym_detail.query.filter_by(owner_ref=zz.id).all()
+        for i in mmm:
+            print(i)
+    if zz==None:
+        if xyz==None:
+            if mmm==None:
+                username='NULL'
+                email='NULL'
+                f_name='NULL'
+                l_name='NULL'
+                address='NULL'
+                mobile='NULL'
+
+    else:
+        username=zz.username
+        email=zz.email
+        f_name=xyz.first_name
+        l_name=xyz.last_name
+        address=xyz.address
+        mobile=xyz.mobile_number
+        mnn=mmm
+        print(username,email,f_name,l_name,address,mobile)
+    return render_template("gym_registeration/owner_Account.html",username=username,email=email,
+                           f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn)
 
 @app.route('/about')
 @login_required

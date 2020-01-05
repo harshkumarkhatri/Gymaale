@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="" />
+    <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,14 +56,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.54423594">
+    <splitter split-orientation="horizontal" split-proportion="0.53351206">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="152">
-                  <caret line="511" column="18" selection-start-line="511" selection-start-column="13" selection-end-line="511" selection-end-column="18" />
+                <state relative-caret-position="-1466">
+                  <caret line="963" column="27" selection-start-line="963" selection-start-column="27" selection-end-line="963" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#116#0" expanded="true" />
                   </folding>
@@ -69,7 +74,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="453">
+                <state relative-caret-position="6817">
                   <caret line="401" column="7" selection-start-line="401" selection-start-column="7" selection-end-line="401" selection-end-column="7" />
                 </state>
               </provider>
@@ -83,7 +88,7 @@
             <entry file="file://$PROJECT_DIR$/app.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="187">
-                  <caret line="802" column="19" selection-start-line="802" selection-start-column="13" selection-end-line="802" selection-end-column="19" />
+                  <caret line="534" column="53" selection-start-line="534" selection-start-column="53" selection-end-line="534" selection-end-column="53" />
                   <folding>
                     <element signature="e#0#116#0" expanded="true" />
                   </folding>
@@ -91,11 +96,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/gym_registeration/owner_account.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="154" column="47" selection-start-line="154" selection-start-column="47" selection-end-line="154" selection-end-column="47" />
+                <state relative-caret-position="680">
+                  <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -106,11 +111,18 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_details.html">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/account.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
+                <state relative-caret-position="453">
+                  <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#src#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -128,7 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>flask_login</find>
       <find>load_user</find>
       <find>send_conf</find>
       <find>confirm_email</find>
@@ -158,9 +169,11 @@
       <find>login_required</find>
       <find>upload</find>
       <find>print</find>
+      <find>h1</find>
     </findStrings>
     <replaceStrings>
       <replace>age</replace>
+      <replace>h5</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -191,7 +204,6 @@
         <option value="$PROJECT_DIR$/templates/blog.html" />
         <option value="$PROJECT_DIR$/templates/admin_register.html" />
         <option value="$PROJECT_DIR$/templates/account_settings.html" />
-        <option value="$PROJECT_DIR$/templates/account.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/contact.html" />
         <option value="$PROJECT_DIR$/templates/default.html" />
@@ -214,19 +226,20 @@
         <option value="$PROJECT_DIR$/templates/gym_registeration/details.html" />
         <option value="$PROJECT_DIR$/templates/add_image.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym_images.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" />
         <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/account.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="980" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="978" />
     <option name="height" value="1060" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -241,24 +254,6 @@
             <path>
               <item name="untitled1" type="b2602c69:ProjectViewProjectNode" />
               <item name="untitled1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="untitled1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled1" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="untitled1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled1" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="untitled1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled1" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="profiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="untitled1" type="b2602c69:ProjectViewProjectNode" />
@@ -284,7 +279,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="F:/gymaale safety" />
+    <property name="last_opened_file_path" value="F:/GIT REPOSITARIES/GYMAIL" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -362,12 +357,15 @@
       <workItem from="1577850998188" duration="17259000" />
       <workItem from="1577941747136" duration="12129000" />
       <workItem from="1578027177964" duration="14343000" />
-      <workItem from="1578109301048" duration="8382000" />
+      <workItem from="1578109301048" duration="8982000" />
+      <workItem from="1578120013996" duration="63000" />
+      <workItem from="1578122953683" duration="2154000" />
+      <workItem from="1578199366394" duration="6227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="432987000" />
+    <option name="totallyTimeSpent" value="442031000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -380,9 +378,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.23927614" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.19571045" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="3" show_stripe_button="false" weight="0.3297587" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.49932975" weight="0.32914925" />
@@ -437,19 +436,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/account_settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -760,33 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="45" column="9" selection-end-line="269" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="401" column="7" selection-start-line="401" selection-start-column="7" selection-end-line="401" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_images.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -794,17 +753,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/add_other_gym_images.html">
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/add_other_gym_images.html" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="144" column="34" selection-start-line="144" selection-start-column="34" selection-end-line="144" selection-end-column="34" />
+        <state relative-caret-position="258">
+          <caret line="603" column="22" selection-start-line="603" selection-start-column="22" selection-end-line="603" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6817">
+          <caret line="401" column="7" selection-start-line="401" selection-start-column="7" selection-end-line="401" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="401" column="7" selection-start-line="401" selection-start-column="7" selection-end-line="401" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#14769#14775#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/gym_registeration/owner_account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="154" column="47" selection-start-line="154" selection-start-column="47" selection-end-line="154" selection-end-column="47" />
+        <state relative-caret-position="680">
+          <caret line="214" lean-forward="true" selection-start-line="214" selection-end-line="214" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -816,10 +798,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="511" column="18" selection-start-line="511" selection-start-column="13" selection-end-line="511" selection-end-column="18" />
+        <state relative-caret-position="187">
+          <caret line="534" column="53" selection-start-line="534" selection-start-column="53" selection-end-line="534" selection-end-column="53" />
           <folding>
             <element signature="e#0#116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#src#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -134,24 +134,58 @@
 
 
 </pre>
-    {% if value3=='NULL' and value4=='NULL' %}
+    {% if username=='NULL' %}
     {% else %}
-    <h3><u>Name</u>: {{ value3 }} {{ value4 }}</h3>
+    <h5>Owner Username: {{ username }}</h5>
     {% endif %}
-    <h4><u>@</u>{{ value }}</h4>
-    <h3><u>Email</u>: {{ value2 }}</h3>
-    {% if value5=='NULL' and value6=='NULL' %}
+    {% if emial=='NULL' %}
     {% else %}
-    <h3><u>Address</u>: {{ value5 }}</h3>
-    <h3><u>Age</u>: {{ value6 }}</h3>
-    <h3><u>Interest</u>: {{ value7 }}</h3>
+    <h5>Owner Email: {{ email }}</h5>
     {% endif %}
-    {% if value8=='NULL' %}
+    {% if f_name=='NULL' and l_name=='NULL' %}
+    {% else%}
+    <h5>Name: {{ f_name }} {{ l_name }}</h5>
+    {% endif %}
+    {% if address=='NULL' %}
     {% else %}
-    {% if value8=='Yes' %}
-    <h3>Already Training from {{ value9 }}</h3>
+    <h5>Address: {{ address }}</h5>
     {% endif %}
+    {% if mobile=='NULL' %}
+    {% else %}
+    <h5>Contact Number: {{ mobile }}</h5>
     {% endif %}
+    {% set count=0 %}
+    <h5><u>GYM DETAILS</u></h5>
+    {% for i in mnn %}
+    {% set count=count+1 %}
+    <h5>Gym Name: {{ i.gym_name }}</h5>
+    <h5>Address : {{ i.address_1 }}<br>
+
+        {% if address_2=='NULL' %}
+        {% else %}
+        {{ i.address_2 }}
+        {% endif %}<br>
+    {{ i.city }}-{{ i.postal_code }}<br>{{ i.state }}</h5>
+    <h5>Contact Number: {{ i.contact_number }}</h5>
+    <h5>Monthly fees: {{ i.monthly_fees }}</h5>
+    <h5>Yearly fees: {{ i.yearly_fees }}</h5>
+    <h5>Trainers available: {{ i.trainers_available }}</h5>
+    <h5>Gym Features: {{ i.features }}</h5>
+    <h5>Estabblished in: {{ i.estlb }}</h5>
+    {% if desc=='NULL' %}
+    {% else %}
+    <h5>Description: {{ i.desc }}</h5>
+    {% endif %}
+    <h3>Timings</h3>
+    <h5>Morning: {{ i.m_open }}:00 am - {{ i.m_close }}:00 am</h5>
+    <h5>Eveneing: {{ i.e_open }}:00 pm - {{ i.e_close }}:00 pm</h5>
+    {% if count==0 %}
+    {% else %}
+    <h5><u>Another GYM Details</u></h5>
+    {% endif %}
+    {% endfor %}
+
+
     <a href="/gym_registeration/add_another_gym">* <u>Add Other Gym</u></a><br><br>
 
     {% for message in get_flashed_messages() %}

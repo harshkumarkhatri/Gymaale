@@ -52,6 +52,17 @@
             height: 50px;
             border-radius: 50%;
         }
+
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -153,13 +164,12 @@
     {% endif %}
     {% endif %}
     <a href="/account_settings">* <u>Account Settings</u></a><br><br>
+    <img src="data:;base64,{{ imag }}"/>
 
     {% for message in get_flashed_messages() %}
     {{ message }}
     {% endfor %}
-    {% if do %}
-    <img src="{{ do }}" alt="User Image">
-    {% endif %}
+
     <!-- Extra -->
 
     <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
