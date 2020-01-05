@@ -134,7 +134,12 @@
 
 
 </pre>
-
+    {% if t1 %}<br>
+    <a class="btn btn-outline-dark" href="#">* <u>{{ t1 }}</u></a><br><br>
+    {% if t2 %}
+    <a class="btn btn-outline-dark" href="#">* <u>{{ t2 }}</u></a><br><br>
+    {% endif %}
+    {% endif %}
 
     {% for message in get_flashed_messages() %}
     {{ message }}

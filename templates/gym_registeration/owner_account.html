@@ -155,6 +155,9 @@
     <h5>Contact Number: {{ mobile }}</h5>
     {% endif %}
     {% set count=0 %}
+    {% if u_train=='Yes' %}
+    <h4><a href="#">Add Trainer Profile</a> </h4>
+    {% endif %}
     <h5><u>GYM DETAILS</u></h5>
     {% for i in mnn %}
     {% set count=count+1 %}
@@ -186,7 +189,8 @@
     {% endfor %}
 
 
-    <a href="/gym_registeration/add_another_gym">* <u>Add Other Gym</u></a><br><br>
+    <a href="/gym_registeration/add_another_gym">* <u>Add Other Gym</u></a><br>
+    <a href="/gym_registeration/owner_account/account_settings">* <u>Account Settings</u></a>
 
     {% for message in get_flashed_messages() %}
     {{ message }}

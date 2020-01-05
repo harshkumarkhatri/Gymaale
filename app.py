@@ -1073,10 +1073,17 @@ def owner_account():
         l_name=xyz.last_name
         address=xyz.address
         mobile=xyz.mobile_number
+        u_train=xyz.u_trainer
         mnn=mmm
         print(username,email,f_name,l_name,address,mobile)
     return render_template("gym_registeration/owner_Account.html",username=username,email=email,
-                           f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn)
+                           f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn,u_train=u_train)
+
+@app.route('/gym_registeration/owner_account/account_settings')
+def owner_account_settings():
+    t1="Change Owner Details"
+    t2="Change Gym Details"
+    return render_template("default.html",t1=t1,t2=t2)
 
 @app.route('/about')
 @login_required

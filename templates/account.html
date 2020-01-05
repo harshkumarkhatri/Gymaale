@@ -53,15 +53,147 @@
             border-radius: 50%;
         }
 
-        img {
+        #myImg {
+
+            cursor: pointer;
+            transition: 0.3s;
+            position: absolute;
+            top: 150px;
+            right: 150px;
             border: 1px solid #ddd;
             border-radius: 4px;
             padding: 5px;
             width: 150px;
         }
 
-        img:hover {
-            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content, #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.1)
+            }
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 150px;
+            right: 80px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+
+        #button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #e8be41;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 14px;
+            padding: 10px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        #button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        #button:hover span {
+            padding-right: 25px;
+        }
+
+        #button:hover span:after {
+            opacity: 1;
+            right: 0;
         }
     </style>
 </head>
@@ -145,6 +277,7 @@
 
 
 </pre>
+    <img id="myImg" src="data:;base64,{{ imag }}"/>
     {% if value3=='NULL' and value4=='NULL' %}
     {% else %}
     <h3><u>Name</u>: {{ value3 }} {{ value4 }}</h3>
@@ -164,8 +297,12 @@
     {% endif %}
     {% endif %}
     <a href="/account_settings">* <u>Account Settings</u></a><br><br>
-    <img src="data:;base64,{{ imag }}"/>
 
+    <div id="myModal" class="modal">
+        <span class="close">×</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     {% for message in get_flashed_messages() %}
     {{ message }}
     {% endfor %}
@@ -182,7 +319,7 @@
                         <div class="extra_text">
                             <p>Will be added soon.</p>
                         </div>
-                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                        <div class=" "><a id="button" style="vertical-align:middle" href="#"><span>Comming Soon</span></a></div>
                     </div>
                 </div>
             </div>
@@ -274,6 +411,28 @@
     function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+    }
+</script>
+<script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById('myImg');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
     }
 </script>
 </body>
