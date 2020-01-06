@@ -905,7 +905,7 @@ def owner_details():
         if request.method=="POST":
             fname=request.form["fname"]
             lname=request.form["lname"]
-            add=request.form["lname"]
+            add=request.form["add"]
             mob=request.form["mob"]
             age=request.form["gender"]
             already_training=request.form["ag"]
@@ -1084,6 +1084,100 @@ def owner_account_settings():
     t1="Change Owner Details"
     t2="Change Gym Details"
     return render_template("default.html",t1=t1,t2=t2)
+
+@app.route('/gym_registeration/owner_account/account_settings/change_owner_details',methods=["GET","POST"])
+def change_owner_details():
+    if g.owner:
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+    mm=owner_detail.query.filter_by(owner_reg_id=zz.id).first()
+    if request.method == "POST":
+        fname = request.form["fname"]
+        lname = request.form["lname"]
+        add = request.form["add"]
+        mob = request.form["mob"]
+        age = request.form["gender"]
+        already_training = request.form["ag"]
+        time = request.form["ex"]
+        u_train = request.form["up"]
+        any_other_gym = request.form["any"]
+        mm.first_name=fname
+        mm.last_name=lname
+        mm.address=add
+        mm.mobile_number=mob
+        mm.age=age
+        mm.already_training=already_training
+        mm.time=time
+        mm.u_trainer=u_train
+        mm.any_other_gym=any_other_gym
+        db.session.commit()
+        print("successs")
+        return redirect(url_for('owner_account'))
+    return render_template("gym_registeration/change_owner_details.html",mm=mm)
+
+@app.route('/gym_registeration/owner_account/account_settings/change_gym_details')
+def change_gym_details():
+    if g.owner:
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+    mm=gym_detail.query.filter_by(owner_ref=zz.id).all()
+    count=0
+    for i in mm:
+        count=count+1
+    if count==1:
+        return render_template("gym_registeration/change_gym_details.html",mm=mm)
+    else:
+        return render_template("default.html",change_gym_details=mm)
+    print(mm)
+
+
+@app.route('/gym_registeration/owner_account_account_settings/change_gym_details/<gym_name>/<address>',
+           methods=["GET","POST"])
+def changing_details(gym_name,address):
+    if g.owner:
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+    mm=gym_detail.query.filter_by(gym_name=gym_name,address_1=address).first()
+    if request.method == "POST":
+        fname = request.form["fname"]
+        add = request.form['add']
+        add2 = request.form['add2']
+        mob = request.form['mob']
+        state = request.form['mylist']
+        city = request.form['city']
+        p_code = request.form['p_code']
+        m_fees = request.form['m_fees']
+        y_fees = request.form['y_fees']
+        trainers = request.form['up']
+        feat = request.form['feat']
+        estab = request.form['year']
+        m_open = request.form['m_open']
+        m_close = request.form['m_close']
+        e_open = request.form['e_open']
+        e_close = request.form['e_close']
+        desc = request.form['desc']
+        zz = gym_detail.query.filter_by(gym_name=fname).first()
+        if add2 == None:
+            add = 'NULL'
+        if desc == None:
+            desc = 'NULL'
+        mm.gym_name = fname
+        mm.address_1 = add
+        mm.address_2 = add2
+        mm.contact_number = mob
+        mm.state = state
+        mm.city = city
+        mm.postal_code = p_code
+        mm.monthly_fees = m_fees
+        mm.yearly_fees = y_fees
+        mm.trainers_available = trainers
+        mm.features = feat
+        mm.estlb = estab
+        mm.desc = desc
+        mm.m_open = m_open
+        mm.m_close = m_close
+        mm.e_open = e_open
+        mm.e_close = e_close
+        db.session.commit()
+        return redirect(url_for('owner_account'))
+    return render_template("gym_registeration/change_gym_details.html",mm=mm)
 
 @app.route('/about')
 @login_required

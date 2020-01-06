@@ -134,10 +134,15 @@
 
 
 </pre>
+    {% if change_gym_details %}
+    {% for i in change_gym_details %}
+    <a class="btn btn-outline-dark" href="{{ url_for('changing_details',gym_name=i.gym_name,address=i.address_1) }}">* <u>{{ i.gym_name }}</u></a><br><br>
+    {% endfor %}
+    {% endif %}
     {% if t1 %}<br>
-    <a class="btn btn-outline-dark" href="#">* <u>{{ t1 }}</u></a><br><br>
+    <a class="btn btn-outline-dark" href="/gym_registeration/owner_account/account_settings/change_owner_details">* <u>{{ t1 }}</u></a><br><br>
     {% if t2 %}
-    <a class="btn btn-outline-dark" href="#">* <u>{{ t2 }}</u></a><br><br>
+    <a class="btn btn-outline-dark" href="/gym_registeration/owner_account/account_settings/change_gym_details">* <u>{{ t2 }}</u></a><br><br>
     {% endif %}
     {% endif %}
 
