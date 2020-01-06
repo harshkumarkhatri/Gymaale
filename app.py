@@ -54,6 +54,8 @@ class user(db.Model, UserMixin, AnonymousUserMixin):
     email = db.Column(db.String(120))
     password = db.Column(db.String(80))
     mails = db.relationship('dmail')
+    sec_code=db.Column(db.Integer)
+    verification=db.Column(db.String(20))
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(app.config['SECRET_KEY'], expires_sec)
@@ -276,12 +278,14 @@ def send_confirmation_email(z):
     token = z.get_confirmation_token()
     msg = Message('Email Confirmation', sender='gymaale.buisness@gmail.com', recipients=[z.email])
     msg.body = f'''To confirm your email visit following link :
-    {url_for('confirm_email', token=token, _external=True)}
+    
+Open the link and enter the given code:
 
 This link is valid for 24 hours.
 
 If you did not make this request then ignore this mail.
         '''
+    msg.html=render_template("email_message.html",z=z,token=token,_external=True)
     mail.send(msg)
 
 
@@ -402,12 +406,15 @@ def edit_profile():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    r_no=random.randrange(0000,9999)
     if request.method == "POST":
         uname = request.form['uname']
         mail = request.form['mail']
         passw = request.form['passw']
         hashed_value = generate_password_hash(passw)
         passw2 = request.form['passw2']
+        sec_code=r_no
+        verification="No"
         if passw == passw2:
             m = user.query.filter_by(username=uname).first()
             n = user.query.filter_by(email=mail).first()
@@ -417,7 +424,8 @@ def register():
             if n:
                 flash('Email is already taken')
                 return redirect(url_for('register'))
-            register = user(username=uname, email=mail, password=hashed_value)
+            register = user(username=uname, email=mail, password=hashed_value,
+                            sec_code=sec_code,verification=verification)
 
             # flash(f'Account created successfully.', 'success')
             db.session.add(register)
@@ -514,7 +522,10 @@ def login():
              #   print('check')
                 if login is not None:
                     session['logged_in'] = uname
-                    return redirect(url_for("jj"))
+                    if login.verification=="Yes":
+                        return redirect(url_for("jj"))
+                    else:
+                        return redirect(url_for('login')),flash("you are not verified check gmail for verification link")
         else:
             flash(f'Invalid Username or Password.')
     return render_template("login.html", username=user)
@@ -689,14 +700,24 @@ def my_page():
     return webbrowser.open_new_tab('http://gmail.com')"""
 
 
-@app.route('/registerr/<token>', methods=['GET', 'POST'])
-def confirm_email(token):
+@app.route('/registerr/<token>/<username>', methods=['GET', 'POST'])
+def confirm_email(token,username):
     z = user.verify_reset_token(token)
+    print(username)
     if z is None:
         flash("Invalid or Expired Token")
         return redirect(url_for(''))
     else:
-        return redirect(url_for('login')), flash("Account has been created. Now you can login.")
+        mm=user.query.filter_by(username=username).first()
+        if request.method=="POST":
+            sec=request.form['sec']
+            if mm.sec_code==int(sec):
+                mm.verification = "Yes"
+                db.session.commit()
+            else:
+                return redirect(url_for('confirm_email')),flash("Incorrect Code")
+            return redirect(url_for('login')), flash("Account has been verified. Now you can login.")
+        return render_template("verification.html")
 
 
 @app.route('/mj')

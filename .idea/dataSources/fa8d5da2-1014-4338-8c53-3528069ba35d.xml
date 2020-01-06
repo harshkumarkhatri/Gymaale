@@ -407,52 +407,60 @@
       <Position>5</Position>
       <DataType>string|0s</DataType>
     </column>
-    <key id="111" parent="17">
+    <column id="111" parent="17" name="sec_code">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="112" parent="17" name="verification">
+      <Position>7</Position>
+      <DataType>VARCHAR(20)|0s</DataType>
+    </column>
+    <key id="113" parent="17">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="112" parent="18" name="id">
+    <column id="114" parent="18" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="113" parent="18" name="first_name">
+    <column id="115" parent="18" name="first_name">
       <Position>2</Position>
       <DataType>VARCHAR(40)|0s</DataType>
     </column>
-    <column id="114" parent="18" name="last_name">
+    <column id="116" parent="18" name="last_name">
       <Position>3</Position>
       <DataType>VARCHAR(40)|0s</DataType>
     </column>
-    <column id="115" parent="18" name="address">
+    <column id="117" parent="18" name="address">
       <Position>4</Position>
       <DataType>VARCHAR(200)|0s</DataType>
     </column>
-    <column id="116" parent="18" name="age">
+    <column id="118" parent="18" name="age">
       <Position>5</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="117" parent="18" name="interest">
+    <column id="119" parent="18" name="interest">
       <Position>6</Position>
       <DataType>VARCHAR(70)|0s</DataType>
     </column>
-    <column id="118" parent="18" name="already_gymming">
+    <column id="120" parent="18" name="already_gymming">
       <Position>7</Position>
       <DataType>VARCHAR(20)|0s</DataType>
     </column>
-    <column id="119" parent="18" name="time">
+    <column id="121" parent="18" name="time">
       <Position>8</Position>
       <DataType>VARCHAR(70)|0s</DataType>
     </column>
-    <column id="120" parent="18" name="update">
+    <column id="122" parent="18" name="update">
       <Position>9</Position>
       <DataType>VARCHAR(30)|0s</DataType>
     </column>
-    <column id="121" parent="18" name="user_id">
+    <column id="123" parent="18" name="user_id">
       <Position>10</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <key id="122" parent="18">
+    <key id="124" parent="18">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

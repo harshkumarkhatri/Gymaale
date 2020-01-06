@@ -1,0 +1,14 @@
+<!-- This is the email message which is sent on registeration with the Code and Token. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="{{ url_for('confirm_email', token=token,username=z.username, _external=True) }}">Click me</a>
+{{ z.sec_code }}
+</body>
+</html>
