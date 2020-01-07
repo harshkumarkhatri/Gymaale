@@ -53,108 +53,9 @@
             border-radius: 50%;
         }
 
-        #myImg {
-
-            cursor: pointer;
-            transition: 0.3s;
-            position: absolute;
-            top: 150px;
-            right: 150px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            width: 150px;
-        }
-
-        #myImg:hover {
-            opacity: 0.7;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0); /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-        }
-
-        /* Modal Content (image) */
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        /* Caption of Modal Image */
-        #caption {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            height: 150px;
-        }
-
-        /* Add Animation */
-        .modal-content, #caption {
-            -webkit-animation-name: zoom;
-            -webkit-animation-duration: 0.6s;
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-
-        @-webkit-keyframes zoom {
-            from {
-                -webkit-transform: scale(0)
-            }
-            to {
-                -webkit-transform: scale(1)
-            }
-        }
-
-        @keyframes zoom {
-            from {
-                transform: scale(0.1)
-            }
-            to {
-                transform: scale(1)
-            }
-        }
-
-        /* The Close Button */
-        .close {
-            position: absolute;
-            top: 150px;
-            right: 80px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
 
         /* 100% Image Width on Smaller Screens */
-        @media only screen and (max-width: 700px) {
-            .modal-content {
-                width: 100%;
-            }
-        }
+
 
         #button {
             display: inline-block;
@@ -194,6 +95,314 @@
         #button:hover span:after {
             opacity: 1;
             right: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Mobile Styles */
+        @media only screen and (max-width: 600px) {
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0, 0, 0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+            }
+
+            /* Modal Content (image) */
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+            }
+
+            /* Caption of Modal Image */
+            #caption {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+                text-align: center;
+                color: #ccc;
+                padding: 10px 0;
+                height: 150px;
+            }
+
+            /* Add Animation */
+            .modal-content, #caption {
+                -webkit-animation-name: zoom;
+                -webkit-animation-duration: 0.6s;
+                animation-name: zoom;
+                animation-duration: 0.6s;
+            }
+
+            @-webkit-keyframes zoom {
+                from {
+                    -webkit-transform: scale(0)
+                }
+                to {
+                    -webkit-transform: scale(1)
+                }
+            }
+
+            @keyframes zoom {
+                from {
+                    transform: scale(0.1)
+                }
+                to {
+                    transform: scale(1)
+                }
+            }
+
+            /* The Close Button */
+            .close {
+                position: absolute;
+                margin-left: 0px;
+                margin-right: 0px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            #myImg {
+
+                cursor: pointer;
+                transition: 0.3s;
+                position: absolute;
+                top: -10px;
+                right: 30%;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 150px;
+            }
+
+            #myImg:hover {
+                opacity: 0.7;
+            }
+
+            #demo {
+                margin-top: 130px;
+            }
+        }
+
+        /* Tablet Styles */
+        @media only screen and (min-width: 601px) and (max-width: 1160px) {
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0, 0, 0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+            }
+
+            /* Modal Content (image) */
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+            }
+
+            /* Caption of Modal Image */
+            #caption {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+                text-align: center;
+                color: #ccc;
+                padding: 10px 0;
+                height: 150px;
+            }
+
+            /* Add Animation */
+            .modal-content, #caption {
+                -webkit-animation-name: zoom;
+                -webkit-animation-duration: 0.6s;
+                animation-name: zoom;
+                animation-duration: 0.6s;
+            }
+
+            @-webkit-keyframes zoom {
+                from {
+                    -webkit-transform: scale(0)
+                }
+                to {
+                    -webkit-transform: scale(1)
+                }
+            }
+
+            @keyframes zoom {
+                from {
+                    transform: scale(0.1)
+                }
+                to {
+                    transform: scale(1)
+                }
+            }
+
+            /* The Close Button */
+            .close {
+                position: absolute;
+                margin-left: 0px;
+                margin-right: 0px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            #myImg {
+
+                cursor: pointer;
+                transition: 0.3s;
+                position: absolute;
+                top: 150px;
+                right: 150px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 150px;
+            }
+
+            #myImg:hover {
+                opacity: 0.7;
+            }
+        }
+
+
+        /* Desktop Styles */
+        @media only screen and (min-width: 1161px) {
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0, 0, 0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+            }
+
+            /* Modal Content (image) */
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+            }
+
+            /* Caption of Modal Image */
+            #caption {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 700px;
+                text-align: center;
+                color: #ccc;
+                padding: 10px 0;
+                height: 150px;
+            }
+
+            /* Add Animation */
+            .modal-content, #caption {
+                -webkit-animation-name: zoom;
+                -webkit-animation-duration: 0.6s;
+                animation-name: zoom;
+                animation-duration: 0.6s;
+            }
+
+            @-webkit-keyframes zoom {
+                from {
+                    -webkit-transform: scale(0)
+                }
+                to {
+                    -webkit-transform: scale(1)
+                }
+            }
+
+            @keyframes zoom {
+                from {
+                    transform: scale(0.1)
+                }
+                to {
+                    transform: scale(1)
+                }
+            }
+
+            /* The Close Button */
+            .close {
+                position: absolute;
+                top: 150px;
+                right: 80px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            #myImg {
+
+                cursor: pointer;
+                transition: 0.3s;
+                position: absolute;
+                top: 150px;
+                right: 150px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 150px;
+            }
+
+            #myImg:hover {
+                opacity: 0.7;
+            }
         }
     </style>
 </head>
@@ -277,25 +486,28 @@
 
 
 </pre>
-    <img id="myImg" src="data:;base64,{{ imag }}"/>
-    {% if value3=='NULL' and value4=='NULL' %}
-    {% else %}
-    <h3><u>Name</u>: {{ value3 }} {{ value4 }}</h3>
-    {% endif %}
-    <h4><u>@</u>{{ value }}</h4>
-    <h3><u>Email</u>: {{ value2 }}</h3>
-    {% if value5=='NULL' and value6=='NULL' %}
-    {% else %}
-    <h3><u>Address</u>: {{ value5 }}</h3>
-    <h3><u>Age</u>: {{ value6 }}</h3>
-    <h3><u>Interest</u>: {{ value7 }}</h3>
-    {% endif %}
-    {% if value8=='NULL' %}
-    {% else %}
-    {% if value8=='Yes' %}
-    <h3>Already Training from {{ value9 }}</h3>
-    {% endif %}
-    {% endif %}
+    <div class="page">
+        <img id="myImg" src="data:;base64,{{ imag }}"/></div>
+    <div id="demo">
+        {% if value3=='NULL' and value4=='NULL' %}
+        {% else %}
+        <h4><u>Name</u>: {{ value3 }} {{ value4 }}</h4>
+        {% endif %}
+        <h4><u>@</u>{{ value }}</h4>
+        <h4><u>Email</u>: {{ value2 }}</h4>
+        {% if value5=='NULL' and value6=='NULL' %}
+        {% else %}
+        <h4><u>Address</u>: {{ value5 }}</h4>
+        <h4><u>Age</u>: {{ value6 }}</h4>
+        <h4><u>Interest</u>: {{ value7 }}</h4>
+        {% endif %}
+        {% if value8=='NULL' %}
+        {% else %}
+        {% if value8=='Yes' %}
+        <h4>Already Training from {{ value9 }}</h4>
+        {% endif %}
+        {% endif %}
+    </div>
     <a href="/account_settings">* <u>Account Settings</u></a><br><br>
 
     <div id="myModal" class="modal">
@@ -319,7 +531,8 @@
                         <div class="extra_text">
                             <p>Will be added soon.</p>
                         </div>
-                        <div class=" "><a id="button" style="vertical-align:middle" href="#"><span>Comming Soon</span></a></div>
+                        <div class=" "><a id="button" style="vertical-align:middle"
+                                          href="#"><span>Comming Soon</span></a></div>
                     </div>
                 </div>
             </div>

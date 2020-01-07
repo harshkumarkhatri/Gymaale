@@ -582,13 +582,14 @@ def change_password():
         npassw = request.form["npassw"]
         if z and check_password_hash(z.password, cpass):
             if npass == npassw:
-                user.query.filter_by(username=g.user).delete()
+                hashed_value=generate_password_hash(npass)
+                z.password=hashed_value
                 db.session.commit()
                 # db.session.delete(mm)
-                hashed_value = generate_password_hash(npass)
+                """hashed_value = generate_password_hash(npass)
                 nu = user(username=g.user, password=hashed_value, email=value2)
                 db.session.add(nu)
-                db.session.commit()
+                db.session.commit()"""
                 # m = session.password.data
             else:
                 return redirect(url_for('change_password')), flash("Passwords don not match.")
@@ -612,18 +613,20 @@ def change_username():
             user.username = nuname
             oemail = mm.email
             opassw = mm.password
-            nu = user(username=nuname, password=opassw, email=oemail)
-            db.session.add(nu)
+            mm.username=nuname
+            #nu = user(username=nuname, password=opassw, email=oemail)
+
+            #db.session.add(nu)
             db.session.commit()
-            user.query.filter_by(id=jj.id).delete()
+            #user.query.filter_by(id=jj.id).delete()
             # print(tom)
             # db.session.delete(ss)
-            db.session.commit()
+            #db.session.commit()
             # session.pop('logged_in',None)
             session['logged_in'] = nuname
             # session.clear()
             re = user.query.filter_by(username=nuname).first()
-           # print(re)
+            print(re)
             #print(re.email)
             return redirect(url_for('account_settings', value2=re.email)), flash("Username changed.Please login again.")
         else:
@@ -649,11 +652,14 @@ def change_email():
     if request.method == "POST":
         cmail = request.form["cmail"]
         nmail = request.form["nmail"]
-        user.query.filter_by(email=value3).delete()
-        db.session.commit()
-        new = user(username=value1, email=nmail, password=value2)
+        if z.email==cmail:
+            z.email=nmail
+            db.session.commit()
+        else:
+            return redirect(url_for('change_email')),flash("Current Email incorrect.")
+        """new = user(username=value1, email=nmail, password=value2)
         db.session.add(new)
-        db.session.commit()
+        db.session.commit()"""
         return redirect(url_for('account_settings')), flash("Email Changed Successfully.")
     return render_template("change_email.html")
 
@@ -737,12 +743,13 @@ def change_image():
     if not "." in zz:
         return redirect(url_for('mj')), flash("Please choose an image")
     else:
-        image.query.filter_by(user_id=value1, ibt=value2).delete()
+        qur=image.query.filter_by(user_id=value1, ibt=value2).first()
+        qur.data=file.read()
         db.session.commit()
-        image_string = base64.b64encode(image.read())
+        """image_string = base64.b64encode(image.read())
         newfile = image(file_name=file.filename, ibt=value2, user_id=value1, data=file.read())
         db.session.add(newfile)
-        db.session.commit()
+        db.session.commit()"""
         return redirect(url_for('account_settings')), flash("Profile changed successfully.")
 
 
@@ -872,11 +879,14 @@ def gym_registeration_login():
         sec_code=request.form['sec_code']
         login=ownerregister.query.filter_by(username=uname).first()
         if login:
-            if login.security_code==sec_code:
-                session['owner']=uname
-                return redirect(url_for('owner_details'))
+            if check_password_hash(login.password,passw):
+                if login.security_code==sec_code:
+                    session['owner']=uname
+                    return redirect(url_for('owner_details'))
+                else:
+                    flash('Incorrect Security Code')
             else:
-                flash('Incorrect Security Code')
+                return redirect(url_for('gym_registeration_login')),flash("Password incorrect")
         else:
             flash('Invalid username or password')
     return render_template("gym_registeration/login.html")
@@ -892,6 +902,7 @@ def gym_registeration_register():
         uname=request.form["uname"]
         mail=request.form["mail"]
         passw=request.form["passw"]
+        hashed_value=generate_password_hash(passw)
         passw2=request.form["passw2"]
         sec_code=request.form["sec_code"]
         if passw==passw2:
@@ -903,7 +914,7 @@ def gym_registeration_register():
                 if zzz:
                     return redirect(url_for('gym_registeration_register')),flash("This email is already registered")
                 else:
-                    mn=ownerregister(username=uname,email=mail,password=passw,
+                    mn=ownerregister(username=uname,email=mail,password=hashed_value,
                                         confirm_password=passw2,security_code=sec_code)
                     db.session.add(mn)
                     db.session.commit()
@@ -979,10 +990,6 @@ def gym_details():
             desc=request.form['desc']
             ref_id=xyz.id
             zz=gym_detail.query.filter_by(gym_name=fname).first()
-            if add2==None:
-                add='NULL'
-            if desc==None:
-                desc='NULL'
             if zz:
                 flash("A gym with this address is already registered")
             else:
@@ -1175,10 +1182,6 @@ def changing_details(gym_name,address):
         e_close = request.form['e_close']
         desc = request.form['desc']
         zz = gym_detail.query.filter_by(gym_name=fname).first()
-        if add2 == None:
-            add = 'NULL'
-        if desc == None:
-            desc = 'NULL'
         mm.gym_name = fname
         mm.address_1 = add
         mm.address_2 = add2

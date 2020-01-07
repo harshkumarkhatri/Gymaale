@@ -167,7 +167,7 @@
                     <div class="form-group">
                         <label for="email">Age : </label><br>
                         <input type="radio" name="gender" value="13-18">13-18<br>
-                        <input type="radio" name="gender" value="19-25">19-25<br>
+                        <input type="radio" name="gender" value="19-25" required>19-25<br>
                         <input type="radio" name="gender" value="26-35">26-35<br>
                         <input type="radio" name="gender" value="36-50">36-50<br>
                         <input type="radio" name="gender" value="51-70">51-70<br>
@@ -189,7 +189,7 @@
                     <div class="form-group">
                         <label for="email">Are you already training? </label><br>
                         <input type="radio" name="ag" value="Yes"> Yes<br>
-                        <input type="radio" name="ag" value="No"> No
+                        <input type="radio" name="ag" value="No" required> No
 
                         <div id="textboxes" style="display: none">
                             <label for="email">How experienced you are?</label>
@@ -200,12 +200,12 @@
                     <div class="form-group">
                         <label for="email">Do you train people? </label><br>
                         <input type="radio" name="up" value="Yes"> Yes<br>
-                        <input type="radio" name="up" value="No"> No
+                        <input type="radio" name="up" value="No" required> No
                     </div>
                     <div class="form-group">
                         <label for="email">Do you have any other Gym? </label><br>
                         <input type="radio" name="any" value="Yes"> Yes<br>
-                        <input type="radio" name="any" value="No"> No
+                        <input type="radio" name="any" value="No" required> No
                     </div>
 
                     {% for message in get_flashed_messages() %}

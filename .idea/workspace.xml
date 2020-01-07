@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/email_message.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/verification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa8d5da2-1014-4338-8c53-3528069ba35d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fa8d5da2-1014-4338-8c53-3528069ba35d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/email_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email_message.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,16 +63,44 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5147453">
+    <splitter split-orientation="horizontal" split-proportion="0.5288204">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="426" column="53" selection-start-line="426" selection-start-column="53" selection-end-line="426" selection-end-column="53" />
+                <state relative-caret-position="-6200">
+                  <caret line="331" selection-start-line="331" selection-end-line="331" />
                   <folding>
                     <element signature="e#0#116#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="9417">
+                  <caret line="612" column="69" selection-start-line="612" selection-start-column="69" selection-end-line="612" selection-end-column="69" />
+                  <folding>
+                    <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/account.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="275" column="34" selection-start-line="275" selection-start-column="34" selection-end-line="275" selection-end-column="34" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#src#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -79,11 +110,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
-                  <caret line="287" column="29" selection-start-line="287" selection-start-column="29" selection-end-line="287" selection-end-column="29" />
+                <state relative-caret-position="623">
+                  <caret line="646" column="14" selection-start-line="646" selection-start-column="14" selection-end-line="646" selection-end-column="14" />
                   <folding>
                     <element signature="e#0#116#0" expanded="true" />
                   </folding>
@@ -94,7 +125,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/verification.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="179">
+                <state relative-caret-position="278">
                   <caret line="149" column="44" selection-start-line="149" selection-start-column="44" selection-end-line="149" selection-end-column="44" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -107,11 +138,61 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/email_message.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="86" selection-start-column="86" selection-end-column="86" />
+                <state relative-caret-position="97">
+                  <caret line="98" column="553" selection-start-line="98" selection-start-column="553" selection-end-line="98" selection-end-column="553" />
+                  <folding>
+                    <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#span#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#center#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#1;n#center#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#p#1;n#center#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="e#4#10#1" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#center#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="e#4#10#1" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="e#7607#7613#1" expanded="true" />
+                    <element signature="e#7636#7642#1" expanded="true" />
+                    <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="e#0#6#0" expanded="true" />
+                    <element signature="e#6#12#0" expanded="true" />
+                    <element signature="e#12#18#0" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="e#0#6#0" expanded="true" />
+                    <element signature="e#6#12#0" expanded="true" />
+                    <element signature="e#12#18#0" expanded="true" />
+                    <element signature="e#18#24#0" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#a#0;n#span#2;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#td#0;n#tr#4;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="e#10738#10744#1" expanded="true" />
+                    <element signature="e#10767#10773#1" expanded="true" />
+                    <element signature="n#style#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#nobr#0;n#p#0;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#a#0;n#nobr#0;n#p#0;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#1;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#a#0;n#p#1;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#1;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#2;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#3;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+                    <element signature="e#12348#12354#1" expanded="true" />
+                    <element signature="e#12377#12383#1" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -129,17 +210,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>title</find>
-      <find>random.</find>
-      <find>menu</find>
-      <find>user_</find>
-      <find>user_data2</find>
-      <find>gender</find>
-      <find>g.user</find>
-      <find>session</find>
-      <find>logged_in</find>
-      <find>name=&quot;mylist&quot;</find>
-      <find>logged_in_2</find>
       <find>before</find>
       <find>add_image</find>
       <find>mjj</find>
@@ -156,14 +226,26 @@
       <find>placeholder</find>
       <find>addres</find>
       <find>blog</find>
-      <find>send_con</find>
       <find>confirm_em</find>
       <find>demo_page.html</find>
+      <find>send_con</find>
+      <find>get_con</find>
+      <find>Invalid or Expired Token</find>
+      <find>verify_reset_token(</find>
+      <find>regi</find>
+      <find>.delete</find>
+      <find>.delete()</find>
+      <find>h3</find>
+      <find>token</find>
+      <find>reset you</find>
+      <find>forg</find>
+      <find>reset</find>
     </findStrings>
     <replaceStrings>
       <replace>age</replace>
       <replace>h5</replace>
       <replace>value</replace>
+      <replace>h4</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -172,7 +254,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wsgi.py" />
         <option value="$PROJECT_DIR$/templates/delete_account.html" />
         <option value="$PROJECT_DIR$/templates/faltu2.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
@@ -208,27 +289,28 @@
         <option value="$PROJECT_DIR$/templates/gym_registeration/register.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/details.html" />
         <option value="$PROJECT_DIR$/templates/add_image.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym_images.html" />
-        <option value="$PROJECT_DIR$/templates/account.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" />
         <option value="$PROJECT_DIR$/templates/default.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/templates/verification.html" />
         <option value="$PROJECT_DIR$/templates/demo_page.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/account.html" />
+        <option value="$PROJECT_DIR$/templates/email_message.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
+    <option name="x" value="-10" />
+    <option name="width" value="979" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -239,6 +321,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,7 +344,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,7 +435,9 @@
       <workItem from="1578122953683" duration="2154000" />
       <workItem from="1578199366394" duration="11052000" />
       <workItem from="1578234475869" duration="1696000" />
-      <workItem from="1578284004642" duration="14336000" />
+      <workItem from="1578284004642" duration="14680000" />
+      <workItem from="1578325393192" duration="2514000" />
+      <workItem from="1578368280081" duration="12897000" />
     </task>
     <task id="LOCAL-00001" summary="user image is displayed in block yet to edit and owner account displays owner info and gym info">
       <created>1578205801055</created>
@@ -376,11 +460,18 @@
       <option name="project" value="LOCAL" />
       <updated>1578301891758</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Verification of email after registeration is working.">
+      <created>1578313732542</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578313732542</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="462888000" />
+    <option name="totallyTimeSpent" value="478643000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -400,7 +491,7 @@
       <window_info id="DB Browser" order="3" show_stripe_button="false" weight="0.3297587" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.49932975" weight="0.32914925" />
       <window_info anchor="bottom" id="Database Changes" order="1" sideWeight="0.49865952" weight="0.32914925" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.7064343" weight="0.19525802" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.7064343" weight="0.28451884" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.2935657" side_tool="true" weight="0.23291492" />
       <window_info active="true" anchor="bottom" id="Version Control" order="4" visible="true" weight="0.32914925" />
       <window_info anchor="bottom" id="Python Console" order="5" weight="0.32775453" />
@@ -453,7 +544,8 @@
     <MESSAGE value="user image is displayed in block yet to edit and owner account displays owner info and gym info" />
     <MESSAGE value="Worked on few more features of the owner section like account settings and more." />
     <MESSAGE value="Form to update the owner and gym details working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Form to update the owner and gym details working" />
+    <MESSAGE value="Verification of email after registeration is working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Verification of email after registeration is working." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/gym_accessories.html">
@@ -643,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://fa8d5da2-1014-4338-8c53-3528069ba35d/schema/main/table/owner_detail">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="a35c6e5e-e6e8-4818-abda-4e25d55d3c0b">
@@ -667,44 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="612" column="69" selection-start-line="612" selection-start-column="69" selection-end-line="612" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="278" column="6" selection-start-line="278" selection-start-column="6" selection-end-line="278" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#src#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/account_settings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="137" column="7" selection-start-line="137" selection-start-column="7" selection-end-line="137" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/owner_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="216" column="24" selection-start-line="216" selection-start-column="24" selection-end-line="216" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -733,93 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/owner_account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="192" column="56" selection-start-line="192" selection-start-column="56" selection-end-line="192" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/landingpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="162" column="64" selection-start-line="162" selection-start-column="64" selection-end-line="162" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="163" column="64" selection-start-line="163" selection-start-column="64" selection-end-line="163" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/faltu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="157" column="54" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="54" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_images.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="140" column="41" lean-forward="true" selection-start-line="140" selection-start-column="41" selection-end-line="140" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="148" column="16" selection-start-line="148" selection-start-column="16" selection-end-line="249" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -832,9 +800,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/landingpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/owner_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="196" column="62" selection-start-line="196" selection-start-column="62" selection-end-line="196" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="252" column="74" selection-start-line="252" selection-start-column="74" selection-end-line="252" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_images.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="150" column="61" selection-start-line="150" selection-start-column="61" selection-end-line="150" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="252" column="74" selection-start-line="252" selection-start-column="74" selection-end-line="252" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/owner_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="192" column="56" selection-start-line="192" selection-start-column="56" selection-end-line="192" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="207" column="74" selection-start-line="207" selection-start-column="74" selection-end-line="207" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="252" column="50" selection-start-line="252" selection-start-column="50" selection-end-line="252" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9417">
+          <caret line="612" column="69" selection-start-line="612" selection-start-column="69" selection-end-line="612" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="275" column="34" selection-start-line="275" selection-start-column="34" selection-end-line="275" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#src#0;n#img#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/verification.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="278">
           <caret line="149" column="44" selection-start-line="149" selection-start-column="44" selection-end-line="149" selection-end-column="44" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -846,19 +938,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/email_message.html">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="86" selection-start-column="86" selection-end-column="86" />
+        <state relative-caret-position="623">
+          <caret line="646" column="14" selection-start-line="646" selection-start-column="14" selection-end-line="646" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#116#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
+    <entry file="file://$PROJECT_DIR$/templates/email_message.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="287" column="29" selection-start-line="287" selection-start-column="29" selection-end-line="287" selection-end-column="29" />
+        <state relative-caret-position="97">
+          <caret line="98" column="553" selection-start-line="98" selection-start-column="553" selection-end-line="98" selection-end-column="553" />
           <folding>
-            <element signature="e#0#116#0" expanded="true" />
+            <element signature="n#style#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#span#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#center#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#center#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#1;n#center#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#center#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#7607#7613#1" expanded="true" />
+            <element signature="e#7636#7642#1" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#1;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#18#24#0" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#span#2;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#4;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#10738#10744#1" expanded="true" />
+            <element signature="e#10767#10773#1" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#nobr#0;n#p#0;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#nobr#0;n#p#0;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#p#1;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#3;n#p#2;n#center#0;n#td#0;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#div#0;n#center#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="e#12348#12354#1" expanded="true" />
+            <element signature="e#12377#12383#1" expanded="true" />
           </folding>
         </state>
       </provider>
