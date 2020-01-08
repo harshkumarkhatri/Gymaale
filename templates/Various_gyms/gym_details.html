@@ -10,8 +10,15 @@
           href="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.css') }}">
     <link href="{{ url_for('static', filename='plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}"
           rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/blog.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/blog_responsive.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
+    <link href="{{ url_for('static', filename='plugins/colorbox/colorbox.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -21,8 +28,8 @@
         #myBtn {
             display: none;
             position: fixed;
-            bottom: 15px;
-            left: 20px;
+            bottom: 20px;
+            right: 30px;
             z-index: 99;
             font-size: 18px;
             border: none;
@@ -30,22 +37,13 @@
             background-color: red;
             color: white;
             cursor: pointer;
-            padding: 2px;
+            padding: 15px;
             border-radius: 4px;
         }
 
         #myBtn:hover {
             background-color: #555;
         }
-    </style>
-    <style>
-        .avatar {
-            vertical-align: middle;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
     </style>
 </head>
 <body>
@@ -60,7 +58,7 @@
             <div class="row">
                 <div class="col">
                     <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
-                        <a href="#">
+                        <a href="/main">
                             <div class="logo d-flex flex-row align-items-center justify-content-start"><img
                                     src="/static/images/dot.png" alt="">
                                 <div>GYMA<span>ale</span></div>
@@ -77,11 +75,8 @@
                         </nav>
                         <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                            <div>99999999999</div>
+                            <div>9999999999</div>
                         </div>
-                        <pre>    </pre>
-                        <a href="/account">
-                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile"></a>
                     </div>
                 </div>
             </div>
@@ -126,56 +121,114 @@
     <!-- Home -->
 
     <div class="home">
-        <div class="background_image" style="background-image:url(/static/images/blog_page.jpg)"></div>
+        <div class="background_image" style="background-image:url(/static/images/services.jpg)"></div>
         <div class="overlay"></div>
         <div class="home_container">
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div class="home_content">
-                            <div class="home_title">Blog</div>
-                            <div class="home_subtitle">Gym, Trainer, Diet & many more</div>
+                            <div class="home_title">Gyms</div>
+                            <div class="home_subtitle">Gym, Diet, Trainer & many more.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% block content %}
 
-    <!-- Blog -->
+    <!-- Services -->
 
-    <div class="blog">
+    <div class="services">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="section_title_container">
-                        <div class="section_subtitle">welcome to GYMAale Blog</div>
+                        <div class="section_subtitle"></div>
+                        <div class="section_title">{{ g_names.gym_name }}</div>
                     </div>
                 </div>
             </div>
-            <div class="row blog_row">
+            <div class="services_row">
+                <h3>Established in {{ g_names.estlb }}</h3>
+                <h3><u>A:</u> {{ g_names.address_1 }} <br>{{ g_names.address_2 }}<br></h3>
+                <h4>   {{ g_names.city }}-{{ g_names.postal_code }}</h4>
+                <h4>{{ g_names.state }}</h4>
+                <br>
+                <h3><u>M:</u> {{ g_names.contact_number }}</h3>
+                <h3><u>Fees:</u></h3>
+                <h4>{{ g_names.monthly_fees }}/- pre month</h4>
+                <h4>{{ g_names.yearly_fees }}/- per year</h4>
+                {% if g_names.trainers_available=="Yes" %}
+                <h4>Trainers are available!!</h4>
+                {% endif %}
+                {% if g_names.trainers_available!="Yes" %}
+                <h4>Trainers are not available!!</h4>
+                {% endif %}
+                <h4><u>Features:</u></h4>
+                <h4>{{ g_names.features }}</h4>
+                <h4><u>Description:</u> <p>{{ g_names.desc }}</p></h4>
+                <h3><u>Timings:</u></h3>
+                <h4>Morning: {{ g_names.m_open }}:00 am to {{ g_names.m_close }}:00 am</h4>
+                <h4>Evening: {{ g_names.e_open }}:00 pm to {{ g_names.e_close }}:00 pm</h4>
+
+                <h4><br><u>Owned by:</u></h4>
+                <h4>{{ o_names.first_name.upper() }} {{ o_names.last_name.upper() }}</h4>
+                <br>
+                <h4><u>Images:</u></h4>
+                <img src="data:;base64,{{ img_1 }}"><br>
+                <img src="data:;base64,{{ img_2 }}"><br>
+                <img src="data:;base64,{{ img_3 }}"><br>
+                <img src="data:;base64,{{ img_4 }}"><br>
+                <img src="data:;base64,{{ img_5 }}">
 
 
-                <!-- Blog Post -->
-                <div class="col-xl-4 col-md-6 blog_col">
-                    <div class="blog_post">
-                        <div class="section_title_container">
-                            <div class="section_title">{{ b_post.title }}</div>
-                        </div>
+                <!--Razor pay api--><pre>
 
-                        <div class="blog_post_date"><h4>{{ b_post.date }}</h4></div>
 
-                        <p>{{ b_post.b_txt }}</p>
-
-                        <div class="blog_post_link"><a href="#">Read More</a></div>
-                    </div>
+            </pre>
+                <div class="razorpay-embed-btn" data-url="https://rzp.io/l/eKpsqUv" data-text="Pay Now"
+                     data-color="#528FF0" data-size="large">
+                    <script>
+                        (function () {
+                            var d = document;
+                            var x = !d.getElementById('razorpay-embed-btn-js')
+                            if (x) {
+                                var s = d.createElement('script');
+                                s.defer = !0;
+                                s.id = 'razorpay-embed-btn-js';
+                                s.src = 'https://cdn.razorpay.com/static/embed_btn/bundle.js';
+                                d.body.appendChild(s);
+                            } else {
+                                var rzp = window['__rzp__'];
+                                rzp && rzp.init && rzp.init()
+                            }
+                        })();
+                    </script>
                 </div>
 
 
             </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+    <!-- Extra -->
+
+    <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+        <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+        <div class="container">
             <div class="row">
-                <div class="col">
-                    <div class="button blog_button ml-auto mr-auto"><a href="#">Load More</a></div>
+                <div class="col-md-6 offset-md-3">
+                    <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="extra_title">More Gyms</div>
+                        <div class="extra_text">
+                            <p>Will be added.</p>
+                        </div>
+                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -238,10 +291,13 @@
 <script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
 <script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
 <script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
 <script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
 <script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/blog.js') }}"></script>
-
+<script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/services.js') }}"></script>
 <script>
     //Get the button
     var mybutton = document.getElementById("myBtn");

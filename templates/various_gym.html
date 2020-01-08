@@ -161,24 +161,44 @@
                 </div>
             </div>
             <div class="row services_row">
-
+                {% for g_name in g_names.items %}
                 <!-- Service -->
                 <div class="col-xl-4 col-md-6 service_col">
-                    <a href="/gold">
                         <div class="service">
                             <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
                                 <div>
                                     <div class="service_icon"><img src="/static/images/icon_4.png" alt=""></div>
                                 </div>
-                                <div class="service_title">Gold's Gym</div>
+                                <div class="service_title"><a
+                                        href="{{ url_for('gym_detailss',gym_id=g_name.gym_name) }}"> {{ g_name.gym_name
+                                    }}</a></div>
                             </div>
                             <div class="service_text">
                             </div>
                         </div>
-                    </a>
-                </div>
+                </div>{% endfor %}
 
-                <!-- Service -->
+                <div class="row">
+                    <div class="col">
+                        {% for page_num in g_names.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2)
+                        %}
+                        {% if page_num %}
+                        {% if g_names.page==page_num %}
+                        <a class="btn btn-outline-dark mb-4 shadow" href="{{ url_for('various_gym',page=page_num) }}">{{
+                            page_num
+                            }}</a>
+                        {% else %}
+                        <a class="btn btn-dark mb-4 shadow" href="{{ url_for('various_gym',page=page_num) }}">{{
+                            page_num }}</a>
+
+                        {% endif %}
+                        {% else %}
+                        ...
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <!--
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="/fitness_square">
                         <div class="service">
@@ -194,7 +214,7 @@
                     </a>
                 </div>
 
-                <!-- Service -->
+
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="/reboot_fitness">
                         <div class="service">
@@ -210,7 +230,7 @@
                     </a>
                 </div>
 
-                <!-- Service -->
+
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="/joggers_park">
                         <div class="service">
@@ -226,7 +246,7 @@
                     </a>
                 </div>
 
-                <!-- Service -->
+
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="/fitness_care">
                         <div class="service">
@@ -242,7 +262,7 @@
                     </a>
                 </div>
 
-                <!-- Service -->
+
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="d3_fitness">
                         <div class="service">
@@ -257,7 +277,7 @@
                         </div>
                     </a>
                 </div>
-                <!-- Service -->
+
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="/fitness_club">
                         <div class="service">
@@ -272,7 +292,7 @@
                         </div>
                     </a>
                 </div>
-                <!-- Service -->
+
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="/world_fitness">
                         <div class="service">
@@ -289,7 +309,7 @@
                 </div>
 
 
-                <!-- Service -->
+
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="/champion_gym">
                         <div class="service">
@@ -303,7 +323,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div>-->
 
             </div>
         </div>

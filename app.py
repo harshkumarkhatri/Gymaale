@@ -1252,8 +1252,24 @@ def healthy():
 @app.route('/various_gym')
 @login_required
 def various_gym():
-    return render_template("various_gym.html")
+    page=request.args.get('page',1,type=int)
+    g_names=gym_detail.query.order_by(gym_detail.monthly_fees.asc()).paginate(per_page=3,page=page)
+    return render_template("various_gym.html",g_names=g_names)
 
+@app.route('/various_gyms/<gym_id>')
+@login_required
+def gym_detailss(gym_id):
+    gym_details=gym_detail.query.filter_by(gym_name=gym_id).first()
+    owner_detail_now=owner_detail.query.filter_by(id=gym_details.id).first()
+    image_details_now=gym_image.query.filter_by(ref_id=gym_details.owner_ref).first()
+    img_1=base64.b64encode(image_details_now.image1).decode('ascii')
+    img_2=base64.b64encode(image_details_now.image2).decode('ascii')
+    img_3=base64.b64encode(image_details_now.image3).decode('ascii')
+    img_4=base64.b64encode(image_details_now.image4).decode('ascii')
+    img_5=base64.b64encode(image_details_now.image5).decode('ascii')
+    return render_template("Various_gyms/gym_details.html",title=gym_details.gym_name,g_names=gym_details,
+                           o_names=owner_detail_now,img_1=img_1,img_2=img_2,img_3=img_3,
+                           img_4=img_4,img_5=img_5)
 
 @app.before_request
 def before_request():
