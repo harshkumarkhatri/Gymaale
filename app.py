@@ -194,6 +194,11 @@ class image(db.Model):
     file_name = db.Column(db.String(500))
     data = db.Column(db.LargeBinary)
 
+class trainerregister(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    username=db.Column(db.String(40))
+    email = db.Column(db.String(140))
+    password = db.Column(db.String(40))
 
 """class know(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -1203,6 +1208,58 @@ def changing_details(gym_name,address):
         return redirect(url_for('owner_account'))
     return render_template("gym_registeration/change_gym_details.html",mm=mm)
 
+@app.route('/various_gym')
+@login_required
+def various_gym():
+    page=request.args.get('page',1,type=int)
+    g_names=gym_detail.query.order_by(gym_detail.monthly_fees.asc()).paginate(per_page=3,page=page)
+    return render_template("various_gym.html",g_names=g_names)
+
+@app.route('/various_gyms/<gym_id>')
+@login_required
+def gym_detailss(gym_id):
+    gym_details=gym_detail.query.filter_by(gym_name=gym_id).first()
+    owner_detail_now=owner_detail.query.filter_by(id=gym_details.id).first()
+    image_details_now=gym_image.query.filter_by(ref_id=gym_details.owner_ref).first()
+    img_1=base64.b64encode(image_details_now.image1).decode('ascii')
+    img_2=base64.b64encode(image_details_now.image2).decode('ascii')
+    img_3=base64.b64encode(image_details_now.image3).decode('ascii')
+    img_4=base64.b64encode(image_details_now.image4).decode('ascii')
+    img_5=base64.b64encode(image_details_now.image5).decode('ascii')
+    return render_template("Various_gyms/gym_details.html",title=gym_details.gym_name,g_names=gym_details,
+                           o_names=owner_detail_now,img_1=img_1,img_2=img_2,img_3=img_3,
+                           img_4=img_4,img_5=img_5)
+
+@app.route('/trainer_register',methods=["GET","POST"])
+def trainer_register():
+    if request.method=="POST":
+        uname=request.form['uname']
+        mail=request.form['mail']
+        passw=request.form['passw']
+        hashed_value=generate_password_hash(passw)
+        cpassw=request.form['passw2']
+        if passw==cpassw:
+            mm=trainerregister.query.filter_by(username=uname).first()
+            zz=trainerregister.query.filter_by(email=mail).first()
+            if mm:
+                return redirect(url_for('trainer_register')),flash("This username is already taken.")
+            else:
+                if zz:
+                    return redirect(url_for('trainer_register')),flash("This email is already registered.\nTry logging in.")
+                else:
+                    new=trainerregister(username=uname,email=mail,password=hashed_value)
+                    db.session.add(new)
+                    db.session.commit()
+                    return redirect(url_for('trainer_details'))
+        else:
+            return redirect(url_for('trainer_register')),flash("Password do not match!!")
+    return render_template("trainer_registeration/trainer_register.html")
+
+@app.route('/trainer_register/trainer_details',methods=["GET","POST"])
+def trainer_details():
+    return render_template("trainer_registeration/trainer_details.html")
+
+
 @app.route('/about')
 @login_required
 def about():
@@ -1249,27 +1306,6 @@ def healthy():
     return render_template("healthy.html")
 
 
-@app.route('/various_gym')
-@login_required
-def various_gym():
-    page=request.args.get('page',1,type=int)
-    g_names=gym_detail.query.order_by(gym_detail.monthly_fees.asc()).paginate(per_page=3,page=page)
-    return render_template("various_gym.html",g_names=g_names)
-
-@app.route('/various_gyms/<gym_id>')
-@login_required
-def gym_detailss(gym_id):
-    gym_details=gym_detail.query.filter_by(gym_name=gym_id).first()
-    owner_detail_now=owner_detail.query.filter_by(id=gym_details.id).first()
-    image_details_now=gym_image.query.filter_by(ref_id=gym_details.owner_ref).first()
-    img_1=base64.b64encode(image_details_now.image1).decode('ascii')
-    img_2=base64.b64encode(image_details_now.image2).decode('ascii')
-    img_3=base64.b64encode(image_details_now.image3).decode('ascii')
-    img_4=base64.b64encode(image_details_now.image4).decode('ascii')
-    img_5=base64.b64encode(image_details_now.image5).decode('ascii')
-    return render_template("Various_gyms/gym_details.html",title=gym_details.gym_name,g_names=gym_details,
-                           o_names=owner_detail_now,img_1=img_1,img_2=img_2,img_3=img_3,
-                           img_4=img_4,img_5=img_5)
 
 @app.before_request
 def before_request():
@@ -1370,7 +1406,7 @@ def akshat_mathur():
 
 """These routes are for the various gyms which are available in our app."""
 
-
+"""
 @app.route('/d3_fitness')
 @login_required
 def d3_fitness():
@@ -1422,7 +1458,7 @@ def reboot_fitness():
 @app.route('/world_fitness')
 @login_required
 def world_fitness():
-    return render_template("various_gyms/world_fitness.html")
+    return render_template("various_gyms/world_fitness.html")"""
 
 
 """These routes are for different supplements in bcaa which are provided with us."""
