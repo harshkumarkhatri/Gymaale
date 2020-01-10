@@ -156,7 +156,11 @@
     {% endif %}
     {% set count=0 %}
     {% if u_train=='Yes' %}
-    <h4><a href="#">Add Trainer Profile</a> </h4>
+    {% if xy %}
+    <h4><a href="/owner_account/trainer_account">Trainer Account</a> </h4>
+    {% else %}
+    <h4><a href="/trainer_register/trainer_details">Add Trainer Profile</a> </h4>
+    {% endif %}
     {% endif %}
     <h5><u>GYM DETAILS</u></h5>
     {% for i in mnn %}
@@ -190,7 +194,7 @@
 
 
     <a href="/gym_registeration/add_another_gym">* <u>Add Other Gym</u></a><br>
-    <a href="/gym_registeration/owner_account/account_settings">* <u>Account Settings</u></a>
+    <a href="/gym_registeration/owner_account/account_settings">* <u>Account Settings</u></a><br>
 
     {% for message in get_flashed_messages() %}
     {{ message }}

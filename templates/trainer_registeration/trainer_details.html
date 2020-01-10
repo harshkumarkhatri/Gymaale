@@ -1,10 +1,394 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SportFIT template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
+    <link href="{{ url_for('static', filename='plugins/colorbox/colorbox.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
+</head>
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Services</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SportFIT template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
+    <link href="{{ url_for('static', filename='plugins/colorbox/colorbox.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 15px;
+            left: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 2px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+    </style>
+    <style>
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img
+        src="/static/images/WhatsApp%20Image%202019-11-20%20at%209.42.21%20AM.jpeg"></button>
+<div class="super_container">
 
+    <!-- Header -->
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+                        <a href="/main">
+                            <div class="logo d-flex flex-row align-items-center justify-content-start"><img
+                                    src="/static/images/dot.png" alt="">
+                                <div>GYMA<span>ale</span></div>
+                            </div>
+                        </a>
+
+
+                        <pre>    </pre>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hamburger -->
+
+    <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
+        <div class="hamburger">
+            <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
+
+                <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
+                <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Menu -->
+
+<div class="menu trans_800">
+
+    <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+        <span>9999999999</span>
+    </div>
+</div>
+<pre>
+
+
+
+
+</pre>
+<h1 align="center">Enter your details.</h1><br>
+<h3 align="center"><u>TRAINER DETAILS</u></h3>
+<div class="container">
+    <div class="row" style="margin-top: 40px">
+        <div class="col-sm-6">
+            <form method="POST" autocomplete="on">
+                <div class="form-group">
+                    <label for="email">First Name : </label>
+                    <input type="text" placeholder="Enter your first name" name="fname" class="form-control"
+                           id="fname"
+                           required autocomplete="on">
+                </div>
+                <div class="form-group">
+                    <label for="email">Last Name : </label>
+                    <input type="text" placeholder="Enter your last name" name="lname" class="form-control"
+                           id="lname" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Complete address : </label>
+                    <input type="text" placeholder="Enter your address" name="add" class="form-control"
+                           id="add" autocomplete="off" required>
+                    <p>Users will see only state and city.</p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Customer contact email : </label>
+                    <input type="email" name="mail" class="form-control" placeholder="Enter E-mail" id="mail"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                           title="Must contain an '@','.' & a valid extension for mail" required>
+                    <p>It will displayed to users under your profile.</p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Personal Mobile Number : </label>
+                    <input type="text" placeholder="Enter your mobile number" name="mob" class="form-control"
+                           id="mob" autocomplete="off" required>
+                    <p>It will be used by us to communicate with you.</p>
+
+                </div>
+                <div class="form-group">
+                    <label for="email">Customer Mobile Number : </label>
+                    <input type="text" placeholder="Enter your mobile number" name="mob2" class="form-control"
+                           id="mob2" autocomplete="off">
+                    <p>It will be displayed to users under your profile.</p>
+
+                </div>
+                <div class="form-group">
+                    <label for="email">Age : </label><br>
+                    <input type="text" placeholder="Enter your age" name="age" class="form-control" id="age"
+                           autocomplete="off" required>
+                    <!--
+                    <input type="radio" name="gender" id="one">
+                    <label for="m">13-18</label><br>
+                    <input type="radio" name="gender" id="two">
+                    <label for="m">19-25</label><br>
+                    <input type="radio" name="gender" id="three">
+                    <label for="m">26-35</label><br>
+                    <input type="radio" name="gender" id="four">
+                    <label for="m">36-50</label><br>
+                    <input type="radio" name="gender" id="five">
+                    <label for="m">51-70</label><br>
+                    <input type="radio" name="gender" id="six">
+                    <label for="m">70+</label>-->
+                </div>
+                <div class="form-group">
+                    <label for="email">How much time you are training from? </label><br>
+                    <input type="text" placeholder="Enter time" name="ttime" class="form-control" id="ttime"
+                           autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Certifications :</label><br>
+                    <input type="text" placeholder="Enter your certifications" name="certifications"
+                           class="form-control" id="certifiactions" autocomplete="off">
+                    <p>Enter ongoing certifications also. Certificates can be uploaded from account section.</p>
+                </div>
+                <div class="form-group">
+                    <label for="email">Mode of training you provide :</label><br>
+                    <input type="radio" name="mode" value="online">Online<br>
+                    <input type="radio" name="mode" value="offline" required>Offline<br>
+                    <input type="radio" name="mode" value="both">Both
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Do you provide diet support? </label><br>
+                    <input type="radio" name="diet" value="Yes"> Yes<br>
+                    <input type="radio" name="diet" value="No" required> No
+                </div>
+                <div class="form-group">
+                    <label for="email">Do you provide training support? </label><br>
+                    <input type="radio" name="any" value="Yes"> Yes<br>
+                    <input type="radio" name="any" value="No" required> No
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Instagram link :</label>
+                    <input type="url" placeholder="Enter your link" name="i_link"
+                           class="form-control" id="i_link" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Youtube link :</label>
+                    <input type="url" placeholder="Enter your link" name="y_link"
+                           class="form-control" id="y_link" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="email">Description :</label>
+                    <input type="text" placeholder="Enter brief description about yourself." name="desc"
+                           class="form-control" id="desc" autocomplete="off" required>
+                </div>
+
+                {% for message in get_flashed_messages() %}
+                <div class=flash>
+                    {{ message }}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn form-control btn-default"><u>Submit</u></button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+
+<!-- Extra -->
+
+<div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+    <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                    <div class="extra_title">More Offers</div>
+                    <div class="extra_text">
+                        <p>Will be added soon.</p>
+                    </div>
+                    <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="footer_container">
+                    <div class="footer_content">
+                        <div class="footer_logo">
+                            <a href="#">
+                                <div class="logo d-flex flex-row align-items-center justify-content-center"><img
+                                        src="/static/images/dot.png" alt="">
+                                    <div>GYMA<span>ale</span></div>
+                                </div>
+                            </a>
+                        </div>
+                        <nav class="footer_nav">
+                            <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                <li><a href="/main">Home</a></li>
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="newsletter_container">
+                            <form action="#" id="newsletter_form" class="newsletter_form">
+                                <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                                       required="required">
+                                <button class="newsletter_button">go</button>
+                            </form>
+                        </div>
+                        <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                    </div>
+                    <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/TweenMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/TimelineMax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
+<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/services.js') }}"></script>
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<script>
+    function myFunction() {
+        var x = document.getElementById("passw");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+<script>
+    var fields = document.querySelectorAll('input[type="password"]');
+    for (var i = 0; i < fields.length; i++) {
+        fields[i].autocomplete = "on";
+    }
+</script>
+<script>$(function () {
+    $('input[name="ag"]').on('click', function () {
+        if ($(this).val() == 'Yes') {
+            $('#textboxes').show();
+        } else {
+            $('#textboxes').hide();
+        }
+    });
+});</script>
 </body>
 </html>

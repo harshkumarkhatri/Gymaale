@@ -170,6 +170,16 @@ class gym_image(db.Model):
     image4 = db.Column(db.LargeBinary)
     image5 = db.Column(db.LargeBinary)
 
+class trainer_image(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    ref_id = db.Column(db.Integer)
+    owner_ref_id = db.Column(db.Integer)
+    image1 = db.Column(db.LargeBinary)
+    image2 = db.Column(db.LargeBinary)
+    image3 = db.Column(db.LargeBinary)
+    image4 = db.Column(db.LargeBinary)
+    image5 = db.Column(db.LargeBinary)
+
 class hours(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     m_open=db.Column(db.Integer)
@@ -200,24 +210,60 @@ class trainerregister(db.Model):
     email = db.Column(db.String(140))
     password = db.Column(db.String(40))
 
-"""class know(db.Model):
-    id=db.Column(db.Integer,primary_key=True)
-    first_name=db.Column(db.String(40))
-    last_name=db.Column(db.String(40))
-    address=db.Column(db.String(200))
-    age=db.Column(db.Integer)
-    interest=db.Column(db.String(70))
-    already_gymming=db.Column(db.String(20))
-    time=db.Column(db.String(70))
-    update=db.Column(db.String(30))
-    owner_id=db.Column(db.Integer,db.ForeignKey('user.id'))"""
-
-
 class EditProfileForm(user):
     username = StringField('Username', validators=[DataRequired()])
     about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
     submit = SubmitField('Submit')
 
+class trainer_detail(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    first_name=db.Column(db.String(30))
+    last_name=db.Column(db.String(30))
+    address=db.Column(db.String(200))
+    c_mail=db.Column(db.String(70)) #mail for customers
+    p_mob=db.Column(db.Integer)     #personal mobile number
+    c_mob=db.Column(db.Integer,nullable=False)      #phone number for customers
+    age=db.Column(db.Integer)
+    t_time=db.Column(db.String(40))
+    certifications=db.Column(db.String(50),nullable=False)
+    training_mode=db.Column(db.String(30))    #mode in which training will be provided to the users.
+    diet_support=db.Column(db.String(30))
+    training_support=db.Column(db.String(30))
+    insta_link=db.Column(db.String(300))
+    youtube_link=db.Column(db.String(300),nullable=False)
+    desc=db.Column(db.Text)
+    ref_id=db.Column(db.Integer)
+    owner_ref_id=db.Column(db.Integer)
+
+
+    def __init__(self,first_name,last_name,address,c_mail,p_mob,c_mob,age,t_time,certifications,training_mode
+                 ,diet_support,training_support,insta_link,youtube_link,desc,ref_id,owner_ref_id):
+        self.first_name=first_name
+        self.last_name=last_name
+        self.address=address
+        self.c_mail=c_mail
+        self.p_mob=p_mob
+        if c_mob:
+            self.c_mob=c_mob
+        else:
+            self.c_mob=None
+        self.age=age
+        self.t_time=t_time
+        if certifications:
+            self.certifications=certifications
+        else:
+            self.certifications=None
+        self.training_mode=training_mode
+        self.diet_support=diet_support
+        self.training_support=training_support
+        self.insta_link=insta_link
+        if youtube_link:
+            self.youtube_link=youtube_link
+        else:
+            self.youtube_link=None
+        self.desc=desc
+        self.ref_id=ref_id
+        self.owner_ref_id=owner_ref_id
 
 """class blog(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -256,6 +302,16 @@ def owner_login_required(f):
         else:
             flash("Owner needs to login first to log in first")
             return redirect(url_for('gym_registeration_login'))
+    return wrap
+
+def trainer_login_requires(m):
+    @wraps(m)
+    def wrap(*args,**kwargs):
+        if 'trainer' in session:
+            return m(*args,**kwargs)
+        else:
+            flash("Trainer must login first to access this page")
+            return redirect(url_for())
     return wrap
 
 @login_manager.user_loader
@@ -1083,10 +1139,13 @@ def add_another_gym():
 
 @app.route('/owner_account')
 def owner_account():
+    session.pop('trainer',None)
     if g.owner:
         zz=ownerregister.query.filter_by(username=g.owner).first()
         xyz=owner_detail.query.filter_by(owner_reg_id=zz.id).first()
         mmm=gym_detail.query.filter_by(owner_ref=zz.id).all()
+        xy=trainer_detail.query.filter_by(owner_ref_id=zz.id).first()
+        print(xy)
         for i in mmm:
             print(i)
     if zz==None:
@@ -1110,7 +1169,26 @@ def owner_account():
         mnn=mmm
         print(username,email,f_name,l_name,address,mobile)
     return render_template("gym_registeration/owner_Account.html",username=username,email=email,
-                           f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn,u_train=u_train)
+                           f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn,u_train=u_train,xy=xy)
+
+@app.route('/owner_account/trainer_account')
+def trainer_account_2():
+    if g.owner:
+        print(g.owner)
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        mm=trainer_detail.query.filter_by(owner_ref_id=zz.id).first()
+        dd=trainer_image.query.filter_by(owner_ref_id=zz.id).first()
+        print(zz)
+        print(mm)
+        print(dd)
+        image_1=base64.b64encode(dd.image1).decode('ascii')
+        image_2=base64.b64encode(dd.image2).decode('ascii')
+        image_3=base64.b64encode(dd.image3).decode('ascii')
+        image_4=base64.b64encode(dd.image4).decode('ascii')
+        image_5=base64.b64encode(dd.image5).decode('ascii')
+    return render_template("trainer_registeration/trainer_account.html",zz=zz,
+                           image_1=image_1,image_2=image_2,image_3=image_3,
+                            image_4=image_4,image_5=image_5,mm=mm)
 
 @app.route('/gym_registeration/owner_account/account_settings')
 def owner_account_settings():
@@ -1152,6 +1230,8 @@ def change_gym_details():
     if g.owner:
         zz=ownerregister.query.filter_by(username=g.owner).first()
     mm=gym_detail.query.filter_by(owner_ref=zz.id).all()
+    print(zz.id)
+    print(mm)
     count=0
     for i in mm:
         count=count+1
@@ -1159,7 +1239,7 @@ def change_gym_details():
         return render_template("gym_registeration/change_gym_details.html",mm=mm)
     else:
         return render_template("default.html",change_gym_details=mm)
-    print(mm)
+
 
 
 @app.route('/gym_registeration/owner_account_account_settings/change_gym_details/<gym_name>/<address>',
@@ -1230,14 +1310,32 @@ def gym_detailss(gym_id):
                            o_names=owner_detail_now,img_1=img_1,img_2=img_2,img_3=img_3,
                            img_4=img_4,img_5=img_5)
 
-@app.route('/trainer_register',methods=["GET","POST"])
+@app.route('/trainer_register/login',methods=["GET","POST"])
+def trainer_login():
+    if request.method=="POST":
+        uname=request.form['uname']
+        passw=request.form['passw']
+        login=trainerregister.query.filter_by(username=uname).first()
+        if login:
+            if check_password_hash(login.password,passw):
+                session['trainer']=uname
+                return redirect(url_for('trainer_details'))
+            else:
+                return redirect(url_for('trainer_login')),flash("Password Incorrect.")
+        else:
+            return redirect(url_for('trainer_login')),flash("Invalid username or password")
+    return render_template("trainer_registeration/login.html")
+
+@app.route('/trainer_register/register',methods=["GET","POST"])
 def trainer_register():
+    session.pop('trainer',None)
     if request.method=="POST":
         uname=request.form['uname']
         mail=request.form['mail']
         passw=request.form['passw']
         hashed_value=generate_password_hash(passw)
         cpassw=request.form['passw2']
+        session['trainer']=uname
         if passw==cpassw:
             mm=trainerregister.query.filter_by(username=uname).first()
             zz=trainerregister.query.filter_by(email=mail).first()
@@ -1257,8 +1355,110 @@ def trainer_register():
 
 @app.route('/trainer_register/trainer_details',methods=["GET","POST"])
 def trainer_details():
+    if g.trainer:
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        print(g.trainer)
+        mm=trainer_detail.query.filter_by(ref_id=zz.id).first()
+        if zz:
+            ref_id = zz.id
+            owner_ref_id = 'NULL'
+        else:
+            ref_id='NULL'
+    elif g.owner:
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        mm=trainer_detail.query.filter_by(ref_id=zz.id).first()
+        if zz:
+            owner_ref_id=zz.id
+            ref_id='NULL'
+        else:
+            owner_ref_id='NULL'
+    if mm:
+        return redirect(url_for('trainer_account'))
+    else:
+        if request.method=="POST":
+            fname=request.form['fname']
+            lname=request.form['lname']
+            add=request.form['add']
+            c_mail=request.form['mail']
+            p_mob=request.form['mob']
+            c_mob=request.form['mob2']
+            age=request.form['age']
+            t_time=request.form['ttime']
+            certi=request.form['certifications']
+            mode=request.form['mode']
+            d_support=request.form['diet']
+            t_support=request.form['any']
+            i_link=request.form['i_link']
+            y_link=request.form['y_link']
+            desc=request.form['desc']
+
+            zz=trainer_detail.query.filter_by(p_mob=p_mob).first()
+            print(g.trainer)
+            print(zz)
+            new = trainer_detail(first_name=fname, last_name=lname, address=add,
+                                    c_mail=c_mail, p_mob=p_mob, c_mob=c_mob,
+                                    age=age, t_time=t_time, certifications=certi,
+                                    training_mode=mode, diet_support=d_support, training_support=t_support,
+                                    insta_link=i_link, youtube_link=y_link, desc=desc,ref_id=ref_id,owner_ref_id=owner_ref_id)
+            db.session.add(new)
+            db.session.commit()
+            return redirect(url_for('trainer_images'))
     return render_template("trainer_registeration/trainer_details.html")
 
+@app.route('/trainer_register/trainer_details/trainer_images',methods=["GET","POST"])
+def trainer_images():
+    return render_template("trainer_registeration/trainer_images.html")
+
+@app.route('/uploadt',methods=["POST"])
+def uploadt():
+    if g.trainer:
+        zz = trainerregister.query.filter_by(username=g.trainer).first()
+        print(g.trainer)
+        mm = trainer_detail.query.filter_by(ref_id=zz.id).first()
+        ref_id = zz.id
+        owner_ref_id = 'NULL'
+    elif g.owner:
+        print(g.owner+'g.owner')
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        owner_ref_id = zz.id
+        print(owner_ref_id)
+        ref_id = 'NULL'
+    file1 = request.files['inputfile1']
+    file2 = request.files['inputfile2']
+    file3 = request.files['inputfile3']
+    file4 = request.files['inputfile4']
+    file5 = request.files['inputfile5']
+
+    print(file1.filename)
+    print(file2.filename)
+    print(file3.filename)
+    print(file4.filename)
+    print(file5.filename)
+    print(ref_id)
+    new=trainer_image(ref_id=ref_id,image1=file1.read(),image2=file2.read(),image3=file3.read(),
+                      image4=file4.read(),image5=file5.read(),owner_ref_id=owner_ref_id)
+    db.session.add(new)
+    db.session.commit()
+    if g.owner:
+        return redirect(url_for('trainer_account_2'))
+    else:
+        return redirect(url_for('trainer_account'))
+
+@app.route('/trainer_registeration/trainer_account')
+def trainer_account():
+    if g.trainer:
+        print(g.trainer)
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        mm=trainer_detail.query.filter_by(ref_id=zz.id).first()
+        nn=trainer_image.query.filter_by(ref_id=zz.id).first()
+        image_1=base64.b64encode(nn.image1).decode('ascii')
+        image_2=base64.b64encode(nn.image2).decode('ascii')
+        image_3=base64.b64encode(nn.image3).decode('ascii')
+        image_4=base64.b64encode(nn.image4).decode('ascii')
+        image_5=base64.b64encode(nn.image5).decode('ascii')
+        print(mm.first_name)
+    return render_template("trainer_registeration/trainer_Account.html",zz=zz,mm=mm,image_1=image_1,
+                           image_2=image_2,image_3=image_3,image_4=image_4,image_5=image_5)
 
 @app.route('/about')
 @login_required
@@ -1311,6 +1511,7 @@ def healthy():
 def before_request():
     g.user = None
     g.owner=None
+    g.trainer=None
    # g.ownerregisterr=None
     #if g.ownerregisterr==None:
      #   if 'logged_in_2' in session:
@@ -1324,6 +1525,8 @@ def before_request():
         pass
     if 'owner' in session:
         g.owner=session['owner']
+    if 'trainer' in session:
+        g.trainer=session['trainer']
 
 
 """These routes are there for supplememt categories"""
@@ -1618,6 +1821,9 @@ admin.add_view(MyModelView(ownerregister, db.session))
 admin.add_view(MyModelView(owner_detail, db.session))
 admin.add_view(MyModelView(gym_detail, db.session))
 admin.add_view(MyModelView(gym_image, db.session))
+admin.add_view(MyModelView(trainerregister, db.session))
+admin.add_view(MyModelView(trainer_detail, db.session))
+admin.add_view(MyModelView(trainer_image, db.session))
 
 
 if __name__ == "__main__":
