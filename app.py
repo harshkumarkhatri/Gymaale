@@ -1145,6 +1145,12 @@ def owner_account():
         xyz=owner_detail.query.filter_by(owner_reg_id=zz.id).first()
         mmm=gym_detail.query.filter_by(owner_ref=zz.id).all()
         xy=trainer_detail.query.filter_by(owner_ref_id=zz.id).first()
+        qur=gym_image.query.filter_by(ref_id=zz.id).first()
+        image_1=base64.b64encode(qur.image1).decode('ascii')
+        image_2=base64.b64encode(qur.image2).decode('ascii')
+        image_3=base64.b64encode(qur.image3).decode('ascii')
+        image_4=base64.b64encode(qur.image4).decode('ascii')
+        image_5=base64.b64encode(qur.image5).decode('ascii')
         print(xy)
         for i in mmm:
             print(i)
@@ -1169,7 +1175,9 @@ def owner_account():
         mnn=mmm
         print(username,email,f_name,l_name,address,mobile)
     return render_template("gym_registeration/owner_Account.html",username=username,email=email,
-                           f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn,u_train=u_train,xy=xy)
+                           f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn,
+                           u_train=u_train,xy=xy,image_1=image_1,image_2=image_2,image_3=image_3,
+                           image4=image_4,image_5=image_5)
 
 @app.route('/owner_account/trainer_account')
 def trainer_account_2():
