@@ -158,6 +158,16 @@
                     <label for="email">Complete address : </label>
                     <input type="text" placeholder="Enter your address" name="add" class="form-control"
                            id="add" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">State : </label>
+                    <input type="text" placeholder="Enter your state" name="state" class="form-control"
+                           id="state" autocomplete="off" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">City : </label>
+                    <input type="text" placeholder="Enter your city" name="city" class="form-control"
+                           id="city" autocomplete="off" required>
                     <p>Users will see only state and city.</p>
                 </div>
                 <div class="form-group">
@@ -203,6 +213,7 @@
                     <label for="email">How much time you are training from? </label><br>
                     <input type="text" placeholder="Enter time" name="ttime" class="form-control" id="ttime"
                            autocomplete="off" required>
+                    <p>Eg. 5 months or 5 years</p>
                 </div>
                 <div class="form-group">
                     <label for="email">Certifications :</label><br>
@@ -241,6 +252,9 @@
                     <label for="email">Description :</label>
                     <input type="text" placeholder="Enter brief description about yourself." name="desc"
                            class="form-control" id="desc" autocomplete="off" required>
+                </div><br>
+                <div class="form-group">
+                    <input type="checkbox" value="checked" name="cb" required>The details entered by you are correct.
                 </div>
 
                 {% for message in get_flashed_messages() %}
@@ -249,6 +263,7 @@
                 </div>
                 {% endfor %}
                 <button type="submit" class="btn form-control btn-default"><u>Submit</u></button>
+                <p>The details you are providing cannot be changed after submitted once.</p>
                 <br>
                 <br>
             </form>

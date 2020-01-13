@@ -220,6 +220,8 @@ class trainer_detail(db.Model):
     first_name=db.Column(db.String(30))
     last_name=db.Column(db.String(30))
     address=db.Column(db.String(200))
+    state=db.Column(db.String(40))
+    city=db.Column(db.String(40))
     c_mail=db.Column(db.String(70)) #mail for customers
     p_mob=db.Column(db.Integer)     #personal mobile number
     c_mob=db.Column(db.Integer,nullable=False)      #phone number for customers
@@ -234,13 +236,16 @@ class trainer_detail(db.Model):
     desc=db.Column(db.Text)
     ref_id=db.Column(db.Integer)
     owner_ref_id=db.Column(db.Integer)
+    cb=db.Column(db.String(40))
 
 
-    def __init__(self,first_name,last_name,address,c_mail,p_mob,c_mob,age,t_time,certifications,training_mode
-                 ,diet_support,training_support,insta_link,youtube_link,desc,ref_id,owner_ref_id):
+    def __init__(self,first_name,last_name,address,state,city,c_mail,p_mob,c_mob,age,t_time,certifications,training_mode
+                 ,diet_support,training_support,insta_link,youtube_link,desc,ref_id,owner_ref_id,cb):
         self.first_name=first_name
         self.last_name=last_name
         self.address=address
+        self.state=state
+        self.city=city
         self.c_mail=c_mail
         self.p_mob=p_mob
         if c_mob:
@@ -264,6 +269,7 @@ class trainer_detail(db.Model):
         self.desc=desc
         self.ref_id=ref_id
         self.owner_ref_id=owner_ref_id
+        self.cb=cb
 
 """class blog(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -1244,6 +1250,7 @@ def change_gym_details():
     for i in mm:
         count=count+1
     if count==1:
+        print(count)
         return render_template("gym_registeration/change_gym_details.html",mm=mm)
     else:
         return render_template("default.html",change_gym_details=mm)
@@ -1387,6 +1394,8 @@ def trainer_details():
             fname=request.form['fname']
             lname=request.form['lname']
             add=request.form['add']
+            state=request.form['state']
+            city=request.form['city']
             c_mail=request.form['mail']
             p_mob=request.form['mob']
             c_mob=request.form['mob2']
@@ -1399,15 +1408,17 @@ def trainer_details():
             i_link=request.form['i_link']
             y_link=request.form['y_link']
             desc=request.form['desc']
+            cb=request.form['cb']
 
             zz=trainer_detail.query.filter_by(p_mob=p_mob).first()
             print(g.trainer)
             print(zz)
             new = trainer_detail(first_name=fname, last_name=lname, address=add,
+                                    state=state,city=city,
                                     c_mail=c_mail, p_mob=p_mob, c_mob=c_mob,
                                     age=age, t_time=t_time, certifications=certi,
                                     training_mode=mode, diet_support=d_support, training_support=t_support,
-                                    insta_link=i_link, youtube_link=y_link, desc=desc,ref_id=ref_id,owner_ref_id=owner_ref_id)
+                                    insta_link=i_link, youtube_link=y_link, desc=desc,ref_id=ref_id,owner_ref_id=owner_ref_id,cb=cb)
             db.session.add(new)
             db.session.commit()
             return redirect(url_for('trainer_images'))
@@ -1487,8 +1498,31 @@ def una():
 @app.route('/certified_trainers')
 @login_required
 def certified_trainers():
-    return render_template("certified_trainers.html")
+    page=request.args.get('page',1,type=int)
+    t_names=trainer_detail.query.order_by(trainer_detail.id.asc()).paginate(per_page=9,page=page)
+    return render_template("certified_trainers.html",t_names=t_names)
 
+@app.route('/certified_trainers/<trainer_id>')
+@login_required
+def trainer_detailss(trainer_id):
+    trainer_qur=trainer_detail.query.filter_by(id=trainer_id).first()
+    trainer_img=trainer_image.query.filter_by(ref_id=trainer_qur.id).first() or trainer_image.query.filter_by(owner_ref_id=trainer_qur.owner_ref_id).first()
+    print(trainer_img)
+    if trainer_img:
+        imag_1=base64.b64encode(trainer_img.image1).decode('ascii')
+        imag_2=base64.b64encode(trainer_img.image2).decode('ascii')
+        imag_3=base64.b64encode(trainer_img.image3).decode('ascii')
+        imag_4=base64.b64encode(trainer_img.image4).decode('ascii')
+        imag_5=base64.b64encode(trainer_img.image5).decode('ascii')
+    else:
+        imag_1=None
+        imag_2=None
+        imag_3=None
+        imag_4=None
+        imag_5=None
+    return render_template("gym_registeration/trainer_details.html",t_names=trainer_qur,
+                           trainer_img=trainer_img,imag_1=imag_1,imag_2=imag_2,
+                           imag_3=imag_3,imag_4=imag_4,imag_5=imag_5)
 
 @app.route('/schedules')
 @login_required

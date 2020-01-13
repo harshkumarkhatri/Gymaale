@@ -164,19 +164,20 @@
                 {% for g_name in g_names.items %}
                 <!-- Service -->
                 <div class="col-xl-4 col-md-6 service_col">
-                        <div class="service">
-                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-                                <div>
-                                    <div class="service_icon"><img src="/static/images/icon_4.png" alt=""></div>
-                                </div>
-                                <div class="service_title"><a
-                                        href="{{ url_for('gym_detailss',gym_id=g_name.gym_name) }}"> {{ g_name.gym_name
-                                    }}</a></div>
+                    <div class="service">
+                        <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
+                            <div>
+                                <div class="service_icon"><img src="/static/images/icon_4.png" alt=""></div>
                             </div>
-                            <div class="service_text">
-                            </div>
+                            <div class="service_title"><a
+                                    href="{{ url_for('gym_detailss',gym_id=g_name.gym_name) }}"> {{ g_name.gym_name
+                                }}</a></div>
                         </div>
-                </div>{% endfor %}
+                        <div class="service_text">
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
 
                 <div class="row">
                     <div class="col">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Services</title>
+    <title>{{ title }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="SportFIT template project">
@@ -14,6 +14,7 @@
           href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
     <link rel="stylesheet" type="text/css"
           href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css"
           href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
     <link href="{{ url_for('static', filename='plugins/colorbox/colorbox.css') }}" rel="stylesheet" type="text/css">
@@ -28,8 +29,8 @@
         #myBtn {
             display: none;
             position: fixed;
-            bottom: 15px;
-            left: 20px;
+            bottom: 20px;
+            right: 30px;
             z-index: 99;
             font-size: 18px;
             border: none;
@@ -37,20 +38,12 @@
             background-color: red;
             color: white;
             cursor: pointer;
-            padding: 2px;
+            padding: 15px;
             border-radius: 4px;
         }
 
         #myBtn:hover {
             background-color: #555;
-        }
-    </style>
-    <style>
-        .avatar {
-            vertical-align: middle;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
         }
     </style>
 </head>
@@ -76,7 +69,7 @@
                             <ul class="d-flex flex-row align-items-center justify-content-start">
                                 <li><a href="/main">Home</a></li>
                                 <li><a href="/about">About us</a></li>
-                                <li class="active"><a href="/services">Services</a></li>
+                                <li><a href="/services">Services</a></li>
                                 <li><a href="/contact">Contact</a></li>
                                 <li><a href="/logout">Logout</a></li>
                             </ul>
@@ -85,9 +78,6 @@
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <div>9999999999</div>
                         </div>
-                        <pre>    </pre>
-                        <a href="/account">
-                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile"></a>
                     </div>
                 </div>
             </div>
@@ -139,7 +129,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="home_content">
-                            <div class="home_title">Trainers</div>
+                            <div class="home_title">Gyms</div>
                             <div class="home_subtitle">Gym, Diet, Trainer & many more.</div>
                         </div>
                     </div>
@@ -156,47 +146,67 @@
             <div class="row">
                 <div class="col">
                     <div class="section_title_container">
-                        <div class="section_subtitle">welcome to GYMAale</div>
-                        <div class="section_title">Our Trainers</div>
+                        <div class="section_subtitle"></div>
+                        <div class="section_title">{{ t_names.first_name }}</div>
                     </div>
                 </div>
             </div>
-            <div class="row services_row">
-                {% for t_name in t_names.items %}
-                <div class="col-xl-4 col-md-6 service_col">
-                    <div class="service">
-                        <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-                            <div>
-                                <div class="service_icon"><img src="/static/images/icon_4.png" alt=""></div>
-                            </div>
-                            <div class="service_title"><a
-                                    href="{{ url_for('trainer_detailss',trainer_id=t_name.id) }}"> {{ t_name.first_name
-                                }} {{ t_name.last_name }}</a></div>
-                        </div>
-                        <div class="service_text">
-                        </div>
-                    </div>
+            <div class="services_row">
+                <h3><i class="fa fa-user-circle-o"></i> {{ t_names.first_name }} {{ t_names.last_name }}</h3>
+                <h3 ><i class="fa fa-home"></i> <h4>{{ t_names.city }},{{ t_names.state }}</h4></h3>
+                <h3><i class="fa fa-envelope-o"></i> <a href="mailto:{{ t_names.c_mail }}">{{ t_names.c_mail }}</a> </h3>
+                <h3><i class="fa fa-phone"></i><a href="tel:{{ t_names.c_mob }}">{{ t_names.c_mob }}</a> </h3>
+                <h3 title="Experience"><i class="fa fa-clock-o"></i>Training from {{ t_names.t_time }} </h3>
+                <h3 title="Certifications"><i class="fa fa-certificate"> {{ t_names.certifications }}</i> </h3>
+                {% if t_names.diet_support=='Yes' and t_names.training_support=='Yes' %}
+                <h3><i class="fa fa-circle"> I provide Training as well as diet support.</i></h3>
+                {% elif t_names.diet_support=='Yes' %}
+                <h3><i class="fa fa-circle"></i>  I provide diet support.</h3>
+                {% elif t_names.training_support=='Yes' %}
+                <h3><i class="fa fa-circle"></i>  I provide training support.</h3>
+                {% endif %}
+                <h3><i class="fa fa-instagram"></i> <a href="{{ t_names.insta_link }}">Follow Me!!</a> </h3>
+                {% if youttube_link %}
+                <h3><i class="fa fa-youtube"></i> <a href="{{ t_names.youtube_link }}">Watch my Youtube!!</a>
+                </h3>
+                {% endif %}
+                <h3><i class="fa fa-book"></i> {{ t_names.desc }}</h3>
+                {% if trainer_img %}
+                <h4><u>Images:</u></h4>
+                <img src="data:;base64,{{ imag_1 }}"><br>
+                <img src="data:;base64,{{ imag_2 }}"><br>
+                <img src="data:;base64,{{ imag_3 }}"><br>
+                <img src="data:;base64,{{ imag_4 }}"><br>
+                <img src="data:;base64,{{ imag_5 }}">
+                {% endif %}
+
+
+
+                <!--Razor pay api--><pre>
+
+
+            </pre>
+                <div class="razorpay-embed-btn" data-url="https://rzp.io/l/eKpsqUv" data-text="Pay Now"
+                     data-color="#528FF0" data-size="large">
+                    <script>
+                        (function () {
+                            var d = document;
+                            var x = !d.getElementById('razorpay-embed-btn-js')
+                            if (x) {
+                                var s = d.createElement('script');
+                                s.defer = !0;
+                                s.id = 'razorpay-embed-btn-js';
+                                s.src = 'https://cdn.razorpay.com/static/embed_btn/bundle.js';
+                                d.body.appendChild(s);
+                            } else {
+                                var rzp = window['__rzp__'];
+                                rzp && rzp.init && rzp.init()
+                            }
+                        })();
+                    </script>
                 </div>
-                {% endfor %}
-                <div class="row">
-                    <div class="col">
-                        {% for page_num in t_names.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2)
-                        %}
-                        {% if page_num %}
-                        {% if t_names.page==page_num %}
-                        <a class="btn btn-outline-dark mb-4 shadow" href="{{ url_for('certified_trainers',page=page_num) }}">{{
-                            page_num
-                            }}</a>
-                        {% else %}
-                        <a class="btn btn-dark mb-4 shadow" href="{{ url_for('certified_trainers',page=page_num) }}">{{
-                            page_num }}</a>
-                        {% endif %}
-                        {% else %}
-                        ...
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </div>
@@ -211,9 +221,9 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="extra_title">More Trainers</div>
+                        <div class="extra_title">More Gyms</div>
                         <div class="extra_text">
-                            <p>More trainers on the way for you people.</p>
+                            <p>Will be added.</p>
                         </div>
                         <div class="button extra_button"><a href="#">Comming Soon</a></div>
                     </div>
@@ -286,7 +296,6 @@
 <script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
 <script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/services.js') }}"></script>
-
 <script>
     //Get the button
     var mybutton = document.getElementById("myBtn");
