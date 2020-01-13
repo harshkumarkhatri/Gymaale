@@ -158,6 +158,14 @@
                     <div class="section_title_container">
                         <div class="section_subtitle">welcome to GYMAale</div>
                         <div class="section_title">Our Trainers</div>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="email">Sort By:</label><br>
+                                <input type="radio" name="sort" value="idas">ID: Ascending<br>
+                                <input type="radio" name="sort" value="idds">ID: Descending<br>
+                                <button type="submit" class="btn form-control btn-default"><u>Sort</u></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -184,7 +192,8 @@
                         %}
                         {% if page_num %}
                         {% if t_names.page==page_num %}
-                        <a class="btn btn-outline-dark mb-4 shadow" href="{{ url_for('certified_trainers',page=page_num) }}">{{
+                        <a class="btn btn-outline-dark mb-4 shadow"
+                           href="{{ url_for('certified_trainers',page=page_num) }}">{{
                             page_num
                             }}</a>
                         {% else %}

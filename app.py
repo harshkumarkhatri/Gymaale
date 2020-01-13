@@ -1495,11 +1495,20 @@ def una():
     return render_template("una.html")
 
 
-@app.route('/certified_trainers')
+@app.route('/certified_trainers',methods=["GET","POST"])
 @login_required
 def certified_trainers():
     page=request.args.get('page',1,type=int)
-    t_names=trainer_detail.query.order_by(trainer_detail.id.asc()).paginate(per_page=9,page=page)
+    t_names = trainer_detail.query.order_by(trainer_detail.id.asc()).paginate(per_page=9, page=page)
+    if request.method=="POST":
+        dd=request.form['sort']
+        print(dd)
+        if dd=='idas':
+            t_names=trainer_detail.query.order_by(trainer_detail.id.asc()).paginate(per_page=9,page=page)
+            return render_template("certified_trainers.html",t_names=t_names)
+        elif dd=='idds':
+            t_names=trainer_detail.query.order_by(trainer_detail.id.desc()).paginate(per_page=9,page=page)
+            return render_template("certified_trainers.html",t_names=t_names)
     return render_template("certified_trainers.html",t_names=t_names)
 
 @app.route('/certified_trainers/<trainer_id>')
