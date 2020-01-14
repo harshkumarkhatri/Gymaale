@@ -45,6 +45,19 @@
         #myBtn:hover {
             background-color: #555;
         }
+    </style><style>
+        .flex-box-containeer-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .flex-box-containeer-2 img {
+            margin: 10px;
+            max-width: 10%;
+            max-height: 10%;
+            box-shadow: 0px 10px 20px black;
+        }
     </style>
 </head>
 <body>
@@ -173,11 +186,13 @@
                 <h3><i class="fa fa-book"></i> {{ t_names.desc }}</h3>
                 {% if trainer_img %}
                 <h4><u>Images:</u></h4>
+                <div class="flex-box-containeer-2">
                 <img src="data:;base64,{{ imag_1 }}"><br>
                 <img src="data:;base64,{{ imag_2 }}"><br>
                 <img src="data:;base64,{{ imag_3 }}"><br>
                 <img src="data:;base64,{{ imag_4 }}"><br>
                 <img src="data:;base64,{{ imag_5 }}">
+                </div>
                 {% endif %}
 
 

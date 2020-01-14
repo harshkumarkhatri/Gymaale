@@ -179,26 +179,7 @@
                 </div>
                 {% endfor %}
 
-                <div class="row">
-                    <div class="col">
-                        {% for page_num in g_names.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2)
-                        %}
-                        {% if page_num %}
-                        {% if g_names.page==page_num %}
-                        <a class="btn btn-outline-dark mb-4 shadow" href="{{ url_for('various_gym',page=page_num) }}">{{
-                            page_num
-                            }}</a>
-                        {% else %}
-                        <a class="btn btn-dark mb-4 shadow" href="{{ url_for('various_gym',page=page_num) }}">{{
-                            page_num }}</a>
 
-                        {% endif %}
-                        {% else %}
-                        ...
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
                 <!--
                 <div class="col-xl-4 col-md-6 service_col">
                     <a href="/fitness_square">
@@ -327,7 +308,29 @@
                 </div>-->
 
             </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    {% for page_num in g_names.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2)
+                    %}
+                    {% if page_num %}
+                    {% if g_names.page==page_num %}
+                    <a class="btn btn-outline-dark mb-4 shadow" href="{{ url_for('various_gym',page=page_num) }}">{{
+                        page_num
+                        }}</a>
+                    {% else %}
+                    <a class="btn btn-dark mb-4 shadow" href="{{ url_for('various_gym',page=page_num) }}">{{
+                        page_num }}</a>
+
+                    {% endif %}
+                    {% else %}
+                    ...
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
+
     </div>
 
 

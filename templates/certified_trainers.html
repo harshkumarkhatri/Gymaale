@@ -186,9 +186,13 @@
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+            <br>
+            <div>
                 <div class="row">
                     <div class="col">
-                        {% for page_num in t_names.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2)
+                        {% for page_num in
+                        t_names.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2)
                         %}
                         {% if page_num %}
                         {% if t_names.page==page_num %}
@@ -197,7 +201,8 @@
                             page_num
                             }}</a>
                         {% else %}
-                        <a class="btn btn-dark mb-4 shadow" href="{{ url_for('certified_trainers',page=page_num) }}">{{
+                        <a class="btn btn-dark mb-4 shadow"
+                           href="{{ url_for('certified_trainers',page=page_num) }}">{{
                             page_num }}</a>
                         {% endif %}
                         {% else %}
@@ -208,116 +213,119 @@
                 </div>
             </div>
         </div>
-    </div>
-    {% endblock %}
+
+        {% endblock %}
 
 
-    <!-- Extra -->
+        <!-- Extra -->
 
-    <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
-        <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="extra_title">More Trainers</div>
-                        <div class="extra_text">
-                            <p>More trainers on the way for you people.</p>
+        <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                            <div class="extra_title">More Trainers</div>
+                            <div class="extra_text">
+                                <p>More trainers on the way for you people.</p>
+                            </div>
+                            <div class="button extra_button"><a href="#">Comming Soon</a></div>
                         </div>
-                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
+        <!-- Footer -->
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="footer_container">
-                        <div class="footer_content">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <div class="logo d-flex flex-row align-items-center justify-content-center"><img
-                                            src="/static/images/dot.png" alt="">
-                                        <div>GYMA<span>ale</span></div>
-                                    </div>
-                                </a>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="footer_container">
+                            <div class="footer_content">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <div class="logo d-flex flex-row align-items-center justify-content-center">
+                                            <img
+                                                    src="/static/images/dot.png" alt="">
+                                            <div>GYMA<span>ale</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <nav class="footer_nav">
+                                    <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                        <li><a href="/main">Home</a></li>
+                                        <li><a href="/about">About us</a></li>
+                                        <li><a href="/services">Services</a></li>
+                                        <li><a href="/blog">Blog</a></li>
+                                        <li><a href="/contact">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="newsletter_container">
+                                    <form action="#" id="newsletter_form" class="newsletter_form">
+                                        <input type="text" class="newsletter_input"
+                                               placeholder="Enter your email here"
+                                               required="required">
+                                        <button class="newsletter_button">go</button>
+                                    </form>
+                                </div>
+                                <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                    All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                        aria-hidden="true"></i> by
+                                    <a
+                                            href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </div>
                             </div>
-                            <nav class="footer_nav">
-                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
-                                    <li><a href="/main">Home</a></li>
-                                    <li><a href="/about">About us</a></li>
-                                    <li><a href="/services">Services</a></li>
-                                    <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contact">Contact</a></li>
-                                </ul>
-                            </nav>
-                            <div class="newsletter_container">
-                                <form action="#" id="newsletter_form" class="newsletter_form">
-                                    <input type="text" class="newsletter_input" placeholder="Enter your email here"
-                                           required="required">
-                                    <button class="newsletter_button">go</button>
-                                </form>
-                            </div>
-                            <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                                All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                    aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </div>
+                            <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
                         </div>
-                        <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+    </div>
 
-<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
-<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/popper.js') }}"></script>
-<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/greensock/TweenMax.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/greensock/TimelineMax.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/services.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/TimelineMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/services.js') }}"></script>
 
-<script>
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-        scrollFunction()
-    };
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
-    }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </body>
 </html>

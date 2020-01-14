@@ -334,10 +334,10 @@ def send_reset_email(z):
     token = z.get_reset_token()
     msg = Message('Password Reset Request', sender='gymaale.buisness@gmail.com', recipients=[z.email])
     msg.body = f'''To reset your password visit following link :
-{url_for('reset_password', token=token, _external=True)}
     
 If you did not make this request then ignore this mail.
     '''
+    msg.html=render_template("email_message_for_reset.html",z=z,token=token,_external=True)
     mail.send(msg)
 
 
@@ -384,7 +384,8 @@ def reset_password(token):
     if request.method == "POST":
         npass = request.form['npass']
         npassw = request.form['npassw']
-        z.password = npass
+        hashed_value=generate_password_hash(npass)
+        z.password = hashed_value
         db.session.commit()
         flash("Password updated")
         """user.query.filter_by(username=value1).delete()
@@ -1307,7 +1308,7 @@ def changing_details(gym_name,address):
 @login_required
 def various_gym():
     page=request.args.get('page',1,type=int)
-    g_names=gym_detail.query.order_by(gym_detail.monthly_fees.asc()).paginate(per_page=3,page=page)
+    g_names=gym_detail.query.order_by(gym_detail.monthly_fees.asc()).paginate(per_page=2,page=page)
     return render_template("various_gym.html",g_names=g_names)
 
 @app.route('/various_gyms/<gym_id>')
@@ -1470,14 +1471,19 @@ def trainer_account():
         zz=trainerregister.query.filter_by(username=g.trainer).first()
         mm=trainer_detail.query.filter_by(ref_id=zz.id).first()
         nn=trainer_image.query.filter_by(ref_id=zz.id).first()
-        image_1=base64.b64encode(nn.image1).decode('ascii')
-        image_2=base64.b64encode(nn.image2).decode('ascii')
-        image_3=base64.b64encode(nn.image3).decode('ascii')
-        image_4=base64.b64encode(nn.image4).decode('ascii')
-        image_5=base64.b64encode(nn.image5).decode('ascii')
-        print(mm.first_name)
-    return render_template("trainer_registeration/trainer_Account.html",zz=zz,mm=mm,image_1=image_1,
-                           image_2=image_2,image_3=image_3,image_4=image_4,image_5=image_5)
+        if nn==None:
+            return redirect(url_for('trainer_images'))
+        else:
+            image_1=base64.b64encode(nn.image1).decode('ascii')
+            image_2=base64.b64encode(nn.image2).decode('ascii')
+            image_3=base64.b64encode(nn.image3).decode('ascii')
+            image_4=base64.b64encode(nn.image4).decode('ascii')
+            image_5=base64.b64encode(nn.image5).decode('ascii')
+            print(mm.first_name)
+
+
+            return render_template("trainer_registeration/trainer_Account.html",zz=zz,mm=mm,image_1=image_1,
+                               image_2=image_2,image_3=image_3,image_4=image_4,image_5=image_5)
 
 @app.route('/about')
 @login_required

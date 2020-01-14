@@ -118,17 +118,17 @@
                                 <center>
                                     <p class="h1 center"
                                        style="Margin:0;text-align:center;font-family:'flama-condensed','Arial Narrow',Arial;font-weight:100;font-size:30px;Margin-bottom:26px;">
-                                        Account Verification</p>
+                                        Password Reset</p>
                                     <!--[if (gte mso 9)|(IE)]><![endif]-->
 
                                     <p class="description center"
                                        style="font-family:'Muli','Arial Narrow',Arial;Margin:0;text-align:center;max-width:320px;color:#a1a8ad;line-height:24px;font-size:15px;Margin-bottom:10px;margin-left: auto; margin-right: auto;">
-                                        <span style="color: rgb(161, 168, 173); font-family: Muli, &quot;Arial Narrow&quot;, Arial; font-size: 15px; text-align: center; background-color: rgb(255, 255, 255);">Thank You for registering to GYMAale.<br>To statt using our services enter the below code by click below<br>Your security code: {{ z.sec_code }}</span>
+                                        <span style="color: rgb(161, 168, 173); font-family: Muli, &quot;Arial Narrow&quot;, Arial; font-size: 15px; text-align: center; background-color: rgb(255, 255, 255);">Looks like you have forgotten your password.<br>To reset it click the button below.</span>
                                     </p>
                                     <!--[if (gte mso 9)|(IE)]><br>&nbsp;<![endif]-->
                                     <button class="button button4"><a style="color: coral;"
-                                            href="{{ url_for('confirm_email', token=token,username=z.username, _external=True) }}"
-                                            target="_blank">Click me</a></button>
+                                            href="{{ url_for('reset_password', token=token, _external=True) }}"
+                                            target="_blank">RESET YOUR PASSWORD</a></button>
                                     <!--[if (gte mso 9)|(IE)]><br>&nbsp;<![endif]--></center>
                             </td>
                         </tr>

@@ -45,6 +45,20 @@
             background-color: #555;
         }
     </style>
+    <style>
+        .flex-box-containeer-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .flex-box-containeer-2 img {
+            margin: 10px;
+            max-width: 10%;
+            max-height: 10%;
+            box-shadow: 0px 10px 20px black;
+        }
+    </style>
 </head>
 <body>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img
@@ -153,7 +167,7 @@
             <div class="services_row">
                 <h3>Established in {{ g_names.estlb }}</h3>
                 <h3><u>A:</u> {{ g_names.address_1 }} <br>{{ g_names.address_2 }}<br></h3>
-                <h4>   {{ g_names.city }}-{{ g_names.postal_code }}</h4>
+                <h4> {{ g_names.city }}-{{ g_names.postal_code }}</h4>
                 <h4>{{ g_names.state }}</h4>
                 <br>
                 <h3><u>M:</u> {{ g_names.contact_number }}</h3>
@@ -168,7 +182,8 @@
                 {% endif %}
                 <h4><u>Features:</u></h4>
                 <h4>{{ g_names.features }}</h4>
-                <h4><u>Description:</u> <p>{{ g_names.desc }}</p></h4>
+                <h4><u>Description:</u>
+                    <p>{{ g_names.desc }}</p></h4>
                 <h3><u>Timings:</u></h3>
                 <h4>Morning: {{ g_names.m_open }}:00 am to {{ g_names.m_close }}:00 am</h4>
                 <h4>Evening: {{ g_names.e_open }}:00 pm to {{ g_names.e_close }}:00 pm</h4>
@@ -177,14 +192,17 @@
                 <h4>{{ o_names.first_name.upper() }} {{ o_names.last_name.upper() }}</h4>
                 <br>
                 <h4><u>Images:</u></h4>
-                <img src="data:;base64,{{ img_1 }}"><br>
-                <img src="data:;base64,{{ img_2 }}"><br>
-                <img src="data:;base64,{{ img_3 }}"><br>
-                <img src="data:;base64,{{ img_4 }}"><br>
-                <img src="data:;base64,{{ img_5 }}">
+                <div class="flex-box-containeer-2">
+                    <img src="data:;base64,{{ img_1 }}"><br>
+                    <img src="data:;base64,{{ img_2 }}"><br>
+                    <img src="data:;base64,{{ img_3 }}"><br>
+                    <img src="data:;base64,{{ img_4 }}"><br>
+                    <img src="data:;base64,{{ img_5 }}">
+                </div>
 
 
-                <!--Razor pay api--><pre>
+                <!--Razor pay api-->
+                <pre>
 
 
             </pre>
@@ -244,8 +262,9 @@
                         <div class="footer_content">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <div class="logo d-flex flex-row align-items-center justify-content-center"><img
-                                            src="/static/images/dot.png" alt="">
+                                    <div class="logo d-flex flex-row align-items-center justify-content-center">
+                                        <img
+                                                src="/static/images/dot.png" alt="">
                                         <div>GYMA<span>ale</span></div>
                                     </div>
                                 </a>
@@ -261,7 +280,8 @@
                             </nav>
                             <div class="newsletter_container">
                                 <form action="#" id="newsletter_form" class="newsletter_form">
-                                    <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                                    <input type="text" class="newsletter_input"
+                                           placeholder="Enter your email here"
                                            required="required">
                                     <button class="newsletter_button">go</button>
                                 </form>
@@ -270,8 +290,9 @@
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
                                 All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                    aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
+                                                                                    aria-hidden="true"></i> by
+                                <a
+                                        href="https://colorlib.com" target="_blank">Colorlib</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </div>
                         </div>

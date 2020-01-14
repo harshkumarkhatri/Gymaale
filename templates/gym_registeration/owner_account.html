@@ -53,6 +53,20 @@
             border-radius: 50%;
         }
     </style>
+    <style>
+        .flex-box-containeer-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .flex-box-containeer-2 img {
+            margin: 10px;
+            max-width: 10%;
+            max-height: 10%;
+            box-shadow: 0px 10px 20px black;
+        }
+    </style>
 </head>
 <body>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img
@@ -186,11 +200,13 @@
     <h3>Timings</h3>
     <h5>Morning: {{ i.m_open }}:00 am - {{ i.m_close }}:00 am</h5>
     <h5>Eveneing: {{ i.e_open }}:00 pm - {{ i.e_close }}:00 pm</h5>
+    <div class="flex-box-containeer-2">
     <img src="data:;base64, {{ image_1 }}"/>
     <img src="data:;base64, {{ image_2 }}"/>
     <img src="data:;base64, {{ image_3 }}"/>
     <img src="data:;base64, {{ image_4 }}"/>
     <img src="data:;base64, {{ image_5 }}"/>
+    </div>
     {% if count==0 %}
     {% else %}
     <h5><u>Another GYM Details</u></h5>
