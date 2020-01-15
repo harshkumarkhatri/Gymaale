@@ -225,15 +225,15 @@ class trainer_detail(db.Model):
     city=db.Column(db.String(40))
     c_mail=db.Column(db.String(70)) #mail for customers
     p_mob=db.Column(db.Integer)     #personal mobile number
-    c_mob=db.Column(db.Integer,nullable=False)      #phone number for customers
+    c_mob=db.Column(db.Integer)      #phone number for customers
     age=db.Column(db.Integer)
     t_time=db.Column(db.String(40))
-    certifications=db.Column(db.String(50),nullable=False)
+    certifications=db.Column(db.String(50))
     training_mode=db.Column(db.String(30))    #mode in which training will be provided to the users.
     diet_support=db.Column(db.String(30))
     training_support=db.Column(db.String(30))
     insta_link=db.Column(db.String(300))
-    youtube_link=db.Column(db.String(300),nullable=False)
+    youtube_link=db.Column(db.String(300))
     desc=db.Column(db.Text)
     ref_id=db.Column(db.Integer)
     owner_ref_id=db.Column(db.Integer)
@@ -1192,7 +1192,7 @@ def owner_account():
     return render_template("gym_registeration/owner_Account.html",username=username,email=email,
                            f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn,
                            u_train=u_train,xy=xy,image_1=image_1,image_2=image_2,image_3=image_3,
-                           image4=image_4,image_5=image_5)
+                           image_4=image_4,image_5=image_5)
 
 @app.route('/owner_account/trainer_account')
 def trainer_account_2():
@@ -1389,14 +1389,15 @@ def trainer_details():
         else:
             ref_id='NULL'
     elif g.owner:
+        print(g.owner)
         zz=ownerregister.query.filter_by(username=g.owner).first()
-        mm=trainer_detail.query.filter_by(ref_id=zz.id).first()
+        mm='NULL'
         if zz:
             owner_ref_id=zz.id
             ref_id='NULL'
         else:
             owner_ref_id='NULL'
-    if mm:
+    if mm != 'NULL':
         return redirect(url_for('trainer_account'))
     else:
         if request.method=="POST":
@@ -1448,13 +1449,24 @@ def send_trainer_details_email(qur):
 def confirming_trainer_details():
     if request.method=="POST":
         ref_id=request.form['ref_id']
-        zz=trainer_detail.query.filter_by(ref_id=ref_id).first()
-        print(zz)
-        zz.verified='verified'
-        db.session.commit()
-        xyz=trainerregister.query.filter_by(id=ref_id).first()
-        print(xyz)
-        send_trainer_confirmation_mail(xyz)
+        id_belongs_to=request.form['id_bel']
+        print(id_belongs_to)
+        if id_belongs_to=='ref':
+            zz=trainer_detail.query.filter_by(ref_id=ref_id).first()
+            print(zz)
+            zz.verified='verified'
+            db.session.commit()
+            xyz=trainerregister.query.filter_by(id=ref_id).first()
+            print(xyz)
+            send_trainer_confirmation_mail(xyz)
+        elif id_belongs_to=='owner_ref':
+            zz=trainer_detail.query.filter_by(owner_ref_id=ref_id).first()
+            print(zz)
+            zz.verified='verified'
+            db.session.commit()
+            xyz=ownerregister.query.filter_by(id=ref_id).first()
+            print(xyz)
+            send_trainer_confirmation_mail(xyz)
     return render_template("confirm_trainer_details.html")
 
 def send_trainer_confirmation_mail(xyz):

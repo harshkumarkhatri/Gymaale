@@ -169,7 +169,10 @@
     <h4>Username: {{ zz.username }}</h4>
     <h4>Registered Email: {{ zz.email }}</h4>
     <h4>Personal Mobile Number: {{ mm.p_mob }}</h4>
-    <h4>Age: {{ mm.age }}</h4><br>
+    <h4>Age: {{ mm.age }}</h4>
+    {% if g.owner %}
+    <h3 style="color: coral;">Goto: <a href="{{ url_for('owner_account') }}">Owner Account</a></h3>
+    {% endif %}
     <h4>Full name: {{ mm.first_name }} {{ mm.last_name }}</h4>
     <h4>Customer Email Address: {{ mm.c_mail }}</h4>
     {% if mm.c_mob=='NULL' %}

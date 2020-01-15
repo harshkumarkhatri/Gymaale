@@ -171,6 +171,7 @@
             </div>
             <div class="row services_row">
                 {% for t_name in t_names.items %}
+                {% if t_name.verified=='verified' %}
                 <div class="col-xl-4 col-md-6 service_col">
                     <div class="service">
                         <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
@@ -185,6 +186,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
                 {% endfor %}
             </div>
             <br>

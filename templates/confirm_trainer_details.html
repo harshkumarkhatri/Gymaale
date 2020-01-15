@@ -6,13 +6,18 @@
 </head>
 <body>
 <h1>
-    Enter the trainer ref id which is provided to you in email so that the account can be verified. and on entering the id click enter
+    Enter the trainer ref id which is provided to you in email so that the account can be verified. and on entering the
+    id click enter
 </h1>
 <form method="post">
     <div class="form-group">
         <label for="email">Enter the REF ID below.</label>
         <input type="text" placeholder="Enter the ref id" name="ref_id" id="ref_id" class="form-control">
-
+    </div>
+    <div class="form-group">
+        <label for="email">Choose the id for?</label>
+        <input type="radio" name="id_bel" value="owner_ref"> Owner_ref_id<br>
+        <input type="radio" name="id_bel" value="ref" required> ref_id
     </div>
 </form>
 </body>
