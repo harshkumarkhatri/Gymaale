@@ -160,6 +160,7 @@ class gym_detail(db.Model):
     m_close=db.Column(db.Integer)
     e_open=db.Column(db.Integer)
     e_close=db.Column(db.Integer)
+    cb=db.Column(db.String(40))
 
 class gym_image(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -237,10 +238,11 @@ class trainer_detail(db.Model):
     ref_id=db.Column(db.Integer)
     owner_ref_id=db.Column(db.Integer)
     cb=db.Column(db.String(40))
+    verified=db.Column(db.String(40))
 
 
     def __init__(self,first_name,last_name,address,state,city,c_mail,p_mob,c_mob,age,t_time,certifications,training_mode
-                 ,diet_support,training_support,insta_link,youtube_link,desc,ref_id,owner_ref_id,cb):
+                 ,diet_support,training_support,insta_link,youtube_link,desc,ref_id,owner_ref_id,cb,verified):
         self.first_name=first_name
         self.last_name=last_name
         self.address=address
@@ -270,6 +272,10 @@ class trainer_detail(db.Model):
         self.ref_id=ref_id
         self.owner_ref_id=owner_ref_id
         self.cb=cb
+        if verified:
+            self.verified=verified
+        else:
+            self.verified=None
 
 """class blog(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -339,6 +345,7 @@ If you did not make this request then ignore this mail.
     '''
     msg.html=render_template("email_message_for_reset.html",z=z,token=token,_external=True)
     mail.send(msg)
+
 
 
 def send_confirmation_email(z):
@@ -1057,6 +1064,7 @@ def gym_details():
             e_close=request.form['e_close']
             desc=request.form['desc']
             ref_id=xyz.id
+            cb=request.form['cb']
             zz=gym_detail.query.filter_by(gym_name=fname).first()
             if zz:
                 flash("A gym with this address is already registered")
@@ -1064,7 +1072,7 @@ def gym_details():
                 xxx=gym_detail(gym_name=fname,address_1=add,address_2=add2,contact_number=mob,
                                state=state,city=city,postal_code=p_code,monthly_fees=m_fees,yearly_fees=y_fees,
                                trainers_available=trainers,features=feat,estlb=estab,desc=desc,owner_ref=ref_id,
-                               m_open=m_open,m_close=m_close,e_open=e_open,e_close=e_close)
+                               m_open=m_open,m_close=m_close,e_open=e_open,e_close=e_close,cb=cb)
                 db.session.add(xxx)
                 db.session.commit()
             return redirect(url_for('gym_images'))
@@ -1410,6 +1418,7 @@ def trainer_details():
             y_link=request.form['y_link']
             desc=request.form['desc']
             cb=request.form['cb']
+            verified='NULL'
 
             zz=trainer_detail.query.filter_by(p_mob=p_mob).first()
             print(g.trainer)
@@ -1419,11 +1428,39 @@ def trainer_details():
                                     c_mail=c_mail, p_mob=p_mob, c_mob=c_mob,
                                     age=age, t_time=t_time, certifications=certi,
                                     training_mode=mode, diet_support=d_support, training_support=t_support,
-                                    insta_link=i_link, youtube_link=y_link, desc=desc,ref_id=ref_id,owner_ref_id=owner_ref_id,cb=cb)
+                                    insta_link=i_link, youtube_link=y_link, desc=desc,ref_id=ref_id,owner_ref_id=owner_ref_id,cb=cb,verified=verified)
             db.session.add(new)
             db.session.commit()
-            return redirect(url_for('trainer_images'))
+            qur=trainer_detail.query.filter_by(first_name=fname,last_name=lname,p_mob=p_mob).first()
+            print(qur)
+            send_trainer_details_email(qur)
+            return redirect(url_for('trainer_images')),flash('Your details have been submitted and will be visible to users once verified. Genenrally the verification may take upto 24 hours.')
     return render_template("trainer_registeration/trainer_details.html")
+
+def send_trainer_details_email(qur):
+    recp='gymaale.buisness@gmail.com'
+    msg=Message('CONFIRM THE TRAINER',sender='gymaale.buisness@gmail.com',recipients=[recp])
+    msg.body=f'''Confirm the trainer account so that it can be displayed to the users.'''
+    msg.html=render_template("email_trainer_details_confirmation.html",qur=qur,_externaml=True)
+    mail.send(msg)
+
+@app.route('/confirming_trainer_details/harsh',methods=["GET","POST"])
+def confirming_trainer_details():
+    if request.method=="POST":
+        ref_id=request.form['ref_id']
+        zz=trainer_detail.query.filter_by(ref_id=ref_id).first()
+        print(zz)
+        zz.verified='verified'
+        db.session.commit()
+        xyz=trainerregister.query.filter_by(id=ref_id).first()
+        print(xyz)
+        send_trainer_confirmation_mail(xyz)
+    return render_template("confirm_trainer_details.html")
+
+def send_trainer_confirmation_mail(xyz):
+    msg=Message('Account Verified',sender='gymaale.buisness@gmail.com',recipients=[xyz.email])
+    msg.html=render_template("email_trainer_account_verified.html",_external=True)
+    mail.send(msg)
 
 @app.route('/trainer_register/trainer_details/trainer_images',methods=["GET","POST"])
 def trainer_images():

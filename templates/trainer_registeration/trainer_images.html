@@ -140,6 +140,9 @@
 <h1 align="center">Choose Images.</h1><br>
 <h3 align="center"><u>Trainer Images</u></h3>
 <div class="container">
+    {% for message in get_flashed_messages() %}
+    {{ message }}
+    {% endfor %}
     <div class="row" style="margin-top: 40px">
         <div class="col-sm-6">
             <form action="/uploadt" method="POST"
