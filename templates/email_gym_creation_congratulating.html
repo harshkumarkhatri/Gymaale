@@ -1,4 +1,4 @@
-<!-- This is the email message which is sent on registeration with the Code and Token. -->
+<!-- This is the email message which is sent on to the gym owner on creation/registering their gym with ggymaale. -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!--[if !mso]><!-->
@@ -118,17 +118,16 @@
                                 <center>
                                     <p class="h1 center"
                                        style="Margin:0;text-align:center;font-family:'flama-condensed','Arial Narrow',Arial;font-weight:100;font-size:30px;Margin-bottom:26px;">
-                                        Password Reset</p>
+                                        New Gym Added</p>
                                     <!--[if (gte mso 9)|(IE)]><![endif]-->
 
                                     <p class="description center"
                                        style="font-family:'Muli','Arial Narrow',Arial;Margin:0;text-align:center;max-width:320px;color:#a1a8ad;line-height:24px;font-size:15px;Margin-bottom:10px;margin-left: auto; margin-right: auto;">
-                                        <span style="color: rgb(161, 168, 173); font-family: Muli, &quot;Arial Narrow&quot;, Arial; font-size: 15px; text-align: center; background-color: rgb(255, 255, 255);">Looks like you have forgotten your password.<br>To reset it click the button below.</span>
-                                    </p>
+                                        <span style="color: rgb(161, 168, 173); font-family: Muli, &quot;Arial Narrow&quot;, Arial; font-size: 15px; text-align: center; background-color: rgb(255, 255, 255);">Congratulations, on getting your {{ mmm }} gym registered with us.<br>Now users can go through your gym and can contact you with the details you have provided.<br>
+                                        </span><br><br>Hope,you enjoy your journey at GYMAale.</p>
+
                                     <!--[if (gte mso 9)|(IE)]><br>&nbsp;<![endif]-->
-                                    <button class="button button4"><a style="color: coral;"
-                                            href="{{ url_for('reset_password', token=token, _external=True) }}"
-                                            target="_blank">RESET YOUR PASSWORD</a></button>
+
                                     <!--[if (gte mso 9)|(IE)]><br>&nbsp;<![endif]--></center>
                             </td>
                         </tr>
@@ -153,8 +152,7 @@
                 <td align="center" style="padding-bottom:0;padding-right:0;padding-left:0;padding-top:0px;"
                     valign="middle">Connect with us through the handles given below.</td>
             </tr>
-            <br>
-            <!-- Social Media -->
+            <!-- Social Media --><br>
             <tr>
                 <td align="center" style="padding-bottom:0;padding-right:0;padding-left:0;padding-top:0px;"
                     valign="middle"><span class="sg-image"

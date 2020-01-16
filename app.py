@@ -1075,8 +1075,14 @@ def gym_details():
                                m_open=m_open,m_close=m_close,e_open=e_open,e_close=e_close,cb=cb)
                 db.session.add(xxx)
                 db.session.commit()
+                send_gym_creation_congratulating(xyz,'first')
             return redirect(url_for('gym_images'))
     return render_template("gym_registeration/gym_details.html")
+
+def send_gym_creation_congratulating(xyz,mmm):
+    msg=Message('Gym Registeration',sender='gymaale.buisness@gmail.com',recipients=[xyz.email])
+    msg.html=render_template("email_gym_creation_congratulating.html",_external=True,mmm=mmm)
+    mail.send(msg)
 
 @app.route('/gym_images')
 @owner_login_required
@@ -1146,6 +1152,23 @@ def add_another_gym():
                                m_open=m_open,m_close=m_close,e_open=e_open,e_close=e_close)
                 db.session.add(xxx)
                 db.session.commit()
+                mmm=gym_detail.query.filter_by(owner_ref=ref_id).all()
+                print(len(mmm))
+                if len(mmm)==2:
+                    tex='second'
+                elif len(mmm)==3:
+                    tex='third'
+                elif len(mmm)==4:
+                    tex='fourth'
+                elif len(mmm)==5:
+                    tex='fifth'
+                elif len(mmm)==6:
+                    tex='sixth'
+                elif len(mmm)==7:
+                    tex='seventh'
+                else:
+                    tex='another'
+                send_gym_creation_congratulating(xyz,tex)
             return redirect(url_for('gym_images'))
     else:
         return redirect(url_for('owner_account')),flash("You  have selected 'NO' to any other "
