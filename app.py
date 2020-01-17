@@ -895,23 +895,28 @@ def upload_file():
 @app.route('/blog')
 def blog():
     if g.owner:
-        mm=g.owner
+        decide='owner'
+    elif g.trainer:
+        decide='trainer'
     else:
-        mm='NULL'
+        decide='NULL'
+    print(decide)
     page = request.args.get('page', 1, type=int)
     b_posts = blog2.query.order_by(blog2.date.desc()).paginate(per_page=9, page=page)
-    return render_template("blog.html", b_posts=b_posts,mm=mm)
+    return render_template("blog.html", b_posts=b_posts,decide=decide)
 
 
 @app.route('/blog/int:<post_id>')
-
 def post(post_id):
     if g.owner:
-        mm=g.owner
+        decide='owner'
+    elif g.trainer:
+        decide='trainer'
     else:
-        mm='NULL'
+        decide='NULL'
+    print(decide)
     post = blog2.query.get_or_404(post_id)
-    return render_template("blog_page.html", title=post.title, b_post=post,mm=mm)
+    return render_template("blog_page.html", title=post.title, b_post=post,decide=decide)
 
 
 @app.route('/logout')
@@ -1241,19 +1246,18 @@ def trainer_account_2():
         image_3=base64.b64encode(dd.image3).decode('ascii')
         image_4=base64.b64encode(dd.image4).decode('ascii')
         image_5=base64.b64encode(dd.image5).decode('ascii')
-    return render_template("trainer_registeration/trainer_account.html",zz=zz,
+        decide='owner'
+        print('executing this')
+        print(decide)
+    return render_template("trainer_registeration/trainer_account2.html",zz=zz,
                            image_1=image_1,image_2=image_2,image_3=image_3,
-                            image_4=image_4,image_5=image_5,mm=mm)
+                            image_4=image_4,image_5=image_5,mm=mm,decide=decide)
 
 @app.route('/gym_registeration/owner_account/account_settings')
 def owner_account_settings():
-    if g.owner:
-        mm=g.owner
-    else:
-        mm='NULL'
     t1="Change Owner Details"
     t2="Change Gym Details"
-    return render_template("default.html",t1=t1,t2=t2,mm=mm)
+    return render_template("default.html",t1=t1,t2=t2)
 
 @app.route('/gym_registeration/owner_account/account_settings/change_owner_details',methods=["GET","POST"])
 def change_owner_details():
@@ -1371,8 +1375,8 @@ def gym_detailss(gym_id):
                            img_4=img_4,img_5=img_5)
 
 @app.route('/trainer_register')
-def trainer_register_landing():
-    return render_template("trainer_registeration/landingpage.html")
+def trainer_register_landingpage():
+    return render_template('trainer_registeration/landingpage.html')
 
 @app.route('/trainer_register/login',methods=["GET","POST"])
 def trainer_login():
@@ -1569,19 +1573,22 @@ def trainer_account():
             image_4=base64.b64encode(nn.image4).decode('ascii')
             image_5=base64.b64encode(nn.image5).decode('ascii')
             print(mm.first_name)
+            decide='trainer'
+            print(decide)
 
-
-            return render_template("trainer_registeration/trainer_Account.html",zz=zz,mm=mm,image_1=image_1,
-                               image_2=image_2,image_3=image_3,image_4=image_4,image_5=image_5)
+            return render_template("trainer_registeration/trainer_account.html",zz=zz,mm=mm,image_1=image_1,
+                               image_2=image_2,image_3=image_3,image_4=image_4,image_5=image_5,decide=decide)
 
 @app.route('/about')
 def about():
     if g.owner:
-        mm=g.owner
+        decide='owner'
+    elif g.trainer:
+        decide='trainer'
     else:
-        mm='NULL'
-    print(mm)
-    return render_template("about.html",mm=mm)
+        decide='NULL'
+    print(decide)
+    return render_template("about.html",decide=decide)
 
 
 @app.route('/waiting')
@@ -1947,11 +1954,13 @@ def services():
 @app.route('/contact')
 def contact():
     if g.owner:
-        mm=g.owner
+        decide='owner'
+    elif g.trainer:
+        decide='trainer'
     else:
-        mm='NULL'
-    print(mm)
-    return render_template("contact.html",mm=mm)
+        decide='NULL'
+    print(decide)
+    return render_template("contact.html",decide=decide)
 
 
 @app.route('/gym_accessories')

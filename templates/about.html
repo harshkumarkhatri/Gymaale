@@ -73,21 +73,29 @@
                             </div>
                         </a>
                         <nav class="main_nav">
-                            {% if mm=='NULL' %}
-                            <ul class="d-flex flex-row align-items-center justify-content-start">
-                                <li><a href="/main">Home</a></li>
-                                <li><a href="/about">About us</a></li>
-                                <li><a href="/services">Services</a></li>
-                                <li><a href="/contact">Contact</a></li>
-                                <li><a href="/logout">Logout</a></li>
-                            </ul>
-                            {% else %}
+                            {% if decide=='owner' %}
                             <ul class="d-flex flex-row align-items-center justify-content-start">
                                 <li><a href="/about">About us</a></li>
                                 <li><a href="/contact">Contact Us</a></li>
                                 <li><a href="/blog">Blog</a></li>
                                 <li><a href="/owner_account/logout">Logout</a></li>
                                 <li><a href="/logout"></a></li>
+                            </ul>
+                            {% elif decide=='trainer' %}
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/trainer_registeration/logout">Logout</a></li>
+                                <li><a href="/logout"></a></li>
+                            </ul>
+                            {% else %}
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/main">Home</a></li>
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/logout">Logout</a></li>
                             </ul>
                             {% endif %}
                         </nav>
@@ -96,10 +104,14 @@
                             <div>9999999999</div>
                         </div>
                         <pre>    </pre>
-                        {% if mm=='NULL' %}
+                        {% if decide=='NULL' %}
                         <a href="/account">
                             <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile"></a>
-                        {% else %}
+                        {% elif decide=='trainer' %}
+                        <a href="/trainer_registeration/trainer_account">
+                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile">
+                        </a>
+                        {% elif decide=='owner' %}
                         <a href="/owner_account">
                             <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile">
                         </a>
@@ -131,7 +143,7 @@
 
     <div class="menu trans_800">
         <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-            {% if mm=='NULL' %}
+            {% if decide=='NULL' %}
             <ul>
                 <li><a href="/main">Home</a></li>
                 <li><a href="/about">About us</a></li>
@@ -139,7 +151,15 @@
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
-            {% else %}
+            {% elif decide=='trainer' %}
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/trainer_registeration/logout">Logout</a></li>
+                <li><a href="/logout"></a></li>
+            </ul>
+            {% elif decide=='owner' %}
             <ul>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="/contact">Contact Us</a></li>
@@ -338,7 +358,7 @@
                                 </a>
                             </div>
                             <nav class="footer_nav">
-                                {% if mm=='NULL' %}
+                                {% if decide=='NULL' %}
                                 <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
                                     <li><a href="/main">Home</a></li>
                                     <li><a href="/about">About us</a></li>
