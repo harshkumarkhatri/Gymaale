@@ -73,6 +73,7 @@
                             </div>
                         </a>
                         <nav class="main_nav">
+                            {% if mm=='NULL' %}
                             <ul class="d-flex flex-row align-items-center justify-content-start">
                                 <li><a href="/main">Home</a></li>
                                 <li><a href="/about">About us</a></li>
@@ -80,14 +81,29 @@
                                 <li><a href="/contact">Contact</a></li>
                                 <li><a href="/logout">Logout</a></li>
                             </ul>
+                            {% else %}
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/owner_account/logout">Logout</a></li>
+                                <li><a href="/logout"></a></li>
+                            </ul>
+                            {% endif %}
                         </nav>
                         <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <div>9999999999</div>
                         </div>
                         <pre>    </pre>
-                        <a href="#">
+                        {% if mm=='NULL' %}
+                        <a href="/account">
                             <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile"></a>
+                        {% else %}
+                        <a href="/owner_account">
+                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile">
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -115,6 +131,7 @@
 
     <div class="menu trans_800">
         <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            {% if mm=='NULL' %}
             <ul>
                 <li><a href="/main">Home</a></li>
                 <li><a href="/about">About us</a></li>
@@ -122,6 +139,15 @@
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
+            {% else %}
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/owner_account/logout">Logout</a></li>
+                <li><a href="/logout"></a></li>
+            </ul>
+            {% endif %}
         </div>
         <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
             <i class="fa fa-phone" aria-hidden="true"></i>
@@ -136,13 +162,16 @@
 </pre>
     {% if change_gym_details %}
     {% for i in change_gym_details %}
-    <a class="btn btn-outline-dark" href="{{ url_for('changing_details',gym_name=i.gym_name,address=i.address_1) }}">* <u>{{ i.gym_name }}</u></a><br><br>
+    <a class="btn btn-outline-dark" href="{{ url_for('changing_details',gym_name=i.gym_name,address=i.address_1) }}">*
+        <u>{{ i.gym_name }}</u></a><br><br>
     {% endfor %}
     {% endif %}
     {% if t1 %}<br>
-    <a class="btn btn-outline-dark" href="/gym_registeration/owner_account/account_settings/change_owner_details">* <u>{{ t1 }}</u></a><br><br>
+    <a class="btn btn-outline-dark" href="/gym_registeration/owner_account/account_settings/change_owner_details">* <u>{{
+        t1 }}</u></a><br><br>
     {% if t2 %}
-    <a class="btn btn-outline-dark" href="/gym_registeration/owner_account/account_settings/change_gym_details">* <u>{{ t2 }}</u></a><br><br>
+    <a class="btn btn-outline-dark" href="/gym_registeration/owner_account/account_settings/change_gym_details">* <u>{{
+        t2 }}</u></a><br><br>
     {% endif %}
     {% endif %}
 
@@ -186,6 +215,7 @@
                                 </a>
                             </div>
                             <nav class="footer_nav">
+                                {% if mm=='NULL' %}
                                 <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
                                     <li><a href="/main">Home</a></li>
                                     <li><a href="/about">About us</a></li>
@@ -193,6 +223,15 @@
                                     <li><a href="/blog">Blog</a></li>
                                     <li><a href="/contact">Contact</a></li>
                                 </ul>
+                                {% else %}
+                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/blog"></a></li>
+                                    <li><a href="/contact"></a></li>
+                                </ul>
+                                {% endif %}
                             </nav>
                             <div class="newsletter_container">
                                 <form action="#" id="newsletter_form" class="newsletter_form">

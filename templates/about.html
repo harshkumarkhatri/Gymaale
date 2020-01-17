@@ -73,21 +73,37 @@
                             </div>
                         </a>
                         <nav class="main_nav">
+                            {% if mm=='NULL' %}
                             <ul class="d-flex flex-row align-items-center justify-content-start">
                                 <li><a href="/main">Home</a></li>
-                                <li class="active"><a href="/about">About us</a></li>
+                                <li><a href="/about">About us</a></li>
                                 <li><a href="/services">Services</a></li>
                                 <li><a href="/contact">Contact</a></li>
                                 <li><a href="/logout">Logout</a></li>
                             </ul>
+                            {% else %}
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/owner_account/logout">Logout</a></li>
+                                <li><a href="/logout"></a></li>
+                            </ul>
+                            {% endif %}
                         </nav>
                         <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <div>9999999999</div>
                         </div>
                         <pre>    </pre>
+                        {% if mm=='NULL' %}
                         <a href="/account">
                             <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile"></a>
+                        {% else %}
+                        <a href="/owner_account">
+                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile">
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -115,6 +131,7 @@
 
     <div class="menu trans_800">
         <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            {% if mm=='NULL' %}
             <ul>
                 <li><a href="/main">Home</a></li>
                 <li><a href="/about">About us</a></li>
@@ -122,6 +139,15 @@
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
+            {% else %}
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/owner_account/logout">Logout</a></li>
+                <li><a href="/logout"></a></li>
+            </ul>
+            {% endif %}
         </div>
         <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
             <i class="fa fa-phone" aria-hidden="true"></i>
@@ -205,16 +231,7 @@
             </div>
             <div class="row team_row">
 
-                <!-- Team Member -->
-                <div class="col-lg-4 team_col">
-                    <div class="team_item">
-                        <div class="team_image"><img src="/static/images/pp3.jpg" alt=""></div>
-                        <div class="team_panel d-flex flex-column align-items-center justify-content-center text-center">
-                            <div class="team_name"><a href="#">Punit Sharma</a></div>
-                            <div class="team_title">hhhhhhhhhhhhhhhhhhhhh</div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Team Member -->
                 <div class="col-lg-4 team_col">
@@ -321,6 +338,7 @@
                                 </a>
                             </div>
                             <nav class="footer_nav">
+                                {% if mm=='NULL' %}
                                 <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
                                     <li><a href="/main">Home</a></li>
                                     <li><a href="/about">About us</a></li>
@@ -328,6 +346,15 @@
                                     <li><a href="/blog">Blog</a></li>
                                     <li><a href="/contact">Contact</a></li>
                                 </ul>
+                                {% else %}
+                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/blog"></a></li>
+                                    <li><a href="/contact"></a></li>
+                                </ul>
+                                {% endif %}
                             </nav>
                             <div class="newsletter_container">
                                 <form action="#" id="newsletter_form" class="newsletter_form">

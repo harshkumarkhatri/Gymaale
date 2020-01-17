@@ -97,10 +97,38 @@
                                 <div>GYMA<span>ale</span></div>
                             </div>
                         </a>
-
-
+                        <nav class="main_nav">
+                            {% if mm=='NULL' %}
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/main">Home</a></li>
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                            {% else %}
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/owner_account/logout">Logout</a></li>
+                                <li><a href="/logout"></a></li>
+                            </ul>
+                            {% endif %}
+                        </nav>
+                        <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <div>9999999999</div>
+                        </div>
                         <pre>    </pre>
-
+                        {% if mm=='NULL' %}
+                        <a href="/account">
+                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile"></a>
+                        {% else %}
+                        <a href="/owner_account">
+                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile">
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -112,228 +140,253 @@
     <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
         <div class="hamburger">
             <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
-
-                <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-                <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
-                <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<!-- Menu -->
-
-<div class="menu trans_800">
-
-    <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-        <i class="fa fa-phone" aria-hidden="true"></i>
-        <span>9999999999</span>
-    </div>
-</div>
-<pre>
-
-
-
-
-</pre>
-<h1 align="center">Enter your details.</h1><br>
-<h3 align="center"><u>GYM DETAILS</u></h3>
-<div class="container">
-    {% for message in get_flashed_messages() %}
-    {{ message }}
-    {% endfor %}
-    <div class="row" style="margin-top: 40px">
-        <div class="col-sm-6">
-            <form method="POST" autocomplete="on">
-                <div class="form-group">
-                    <label for="email">Gym Name : </label>
-                    <input type="text" value={{ mm.gym_name }} name="fname" class="form-control"
-                           id="fname"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Address line 1 : </label>
-                    <input type="text" value="{{ mm.address_1 }}" name="add" class="form-control"
-                           id="add" autocomplete="off" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Address line 2 : </label>
-                    <input type="text" value={{ mm.address_2 }} name="add2" class="form-control"
-                           id="add2" autocomplete="off" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Gym Contact Number : </label>
-                    <input type="text" value={{ mm.contact_number }} name="mob" class="form-control"
-                           id="mob" autocomplete="off" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">State : </label>
-                    <input type="text" value="{{ mm.state }}" name="mylist" class="form-control"
-                           id="mylist"
-                           required autocomplete="on">
-                </div>
-                <!--<div class="form-group">
-                    <label for="email">State :</label><br>
-                    <select id="mylist" name="mylist1">
-                        <option  value="Rajasthan">Rajasthan</option>
-                        <option  value="Maharashtra">Maharashtra</option>
-                        <option  value="Kerela">Kerela</option>
-                        <option  value="Tamil Nadu">Tamil Nadu</option>
-                        <option  value="Gujarat">Gujarat</option>
-                        <option  value="Delhi">Delhi</option>
-                    </select>
-                </div>-->
-                <div class="form-group">
-                    <label for="email">City : </label>
-                    <input type="text" value={{ mm.city }} name="city" class="form-control"
-                           id="city"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Postal Code : </label>
-                    <input type="text" value="{{ mm.postal_code }}" name="p_code" class="form-control"
-                           id="p_code"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Monthly Fees : </label>
-                    <input type="text" value="{{ mm.monthly_fees }}" name="m_fees" class="form-control"
-                           id="m_fees"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Yearly Fees : </label>
-                    <input type="text" value="{{ mm.yearly_fees }}" name="y_fees" class="form-control"
-                           id="y_fees"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Are Trainers Available? </label><br>
-                    <input type="radio" name="up" value="Yes"> Yes<br>
-                    <input type="radio" name="up" value="No" required> No
-                </div>
-                <div class="form-group">
-                    <label for="email">Features : </label>
-                    <p>(Weights,Aerobics,Zumba,Yoga,Cardio)</p>
-                    <input type="text" value="{{ mm.features }}" name="feat" class="form-control"
-                           id="feat"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Established in year : </label>
-                    <input type="text" value="{{ mm.estlb }}" name="year" class="form-control"
-                           id="year"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Morning Hours : </label>
-                    <h4>Opening:</h4>
-                    <input type="text" value="{{ mm.m_open }}" name="m_open" class="form-control"
-                           id="m_open"
-                           required autocomplete="on">
-                    <h4>Closing:</h4>
-                    <input type="text" value="{{ mm.m_close }}" name="m_close" class="form-control"
-                           id="m_close"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Evening Hours : </label>
-                    <h4>Opening:</h4>
-                    <input type="text" value="{{ mm.e_open }}" name="e_open" class="form-control"
-                           id="e_open"
-                           required autocomplete="on">
-                    <h4>Closing:</h4>
-                    <input type="text" value="{{ mm.e_close }}" name="e_close" class="form-control"
-                           id="e_close"
-                           required autocomplete="on">
-                </div>
-                <div class="form-group">
-                    <label for="email">Description : </label>
-                    <input type="text" value="{{ mm.desc }}" name="desc" class="form-control"
-                           id="desc"
-                           autocomplete="on" required>
-                </div>
-
-
-                <button type="submit" class="btn form-control btn-default"><u>Submit</u></button>
-                <br>
-                <a class="form-control btn-default btn" href="/main"> <u>Skip for now</u></a>
-                <br>
-                <br>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<!-- Extra -->
-
-<div class="extra d-flex flex-column align-items-center justify-content-center text-center">
-    <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
-                    <div class="extra_title">More Offers</div>
-                    <div class="extra_text">
-                        <p>Will be added soon.</p>
+                <span>menu</span>
+                <div class="hamburger_container">
+                    <div class="menu_hamburger">
+                        <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                        <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
+                        <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                     </div>
-                    <div class="button extra_button"><a href="#">Comming Soon</a></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Footer -->
+    <!-- Menu -->
 
-<footer class="footer">
+    <div class="menu trans_800">
+        <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            {% if mm=='NULL' %}
+            <ul>
+                <li><a href="/main">Home</a></li>
+                <li><a href="/about">About us</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+            {% else %}
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/owner_account/logout">Logout</a></li>
+                <li><a href="/logout"></a></li>
+            </ul>
+            {% endif %}
+        </div>
+        <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <span>9999999999</span>
+        </div>
+    </div>
+
+
+    </pre>
+    <h1 align="center">Enter your details.</h1><br>
+    <h3 align="center"><u>GYM DETAILS</u></h3>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div class="footer_container">
-                    <div class="footer_content">
-                        <div class="footer_logo">
-                            <a href="#">
-                                <div class="logo d-flex flex-row align-items-center justify-content-center"><img
-                                        src="/static/images/dot.png" alt="">
-                                    <div>GYMA<span>ale</span></div>
-                                </div>
-                            </a>
-                        </div>
-                        <nav class="footer_nav">
-                            <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
-                                <li><a href="/main">Home</a></li>
-                                <li><a href="/about">About us</a></li>
-                                <li><a href="/services">Services</a></li>
-                                <li><a href="/blog">Blog</a></li>
-                                <li><a href="/contact">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <div class="newsletter_container">
-                            <form action="#" id="newsletter_form" class="newsletter_form">
-                                <input type="text" class="newsletter_input" placeholder="Enter your email here"
-                                       required="required">
-                                <button class="newsletter_button">go</button>
-                            </form>
-                        </div>
-                        <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
+        {% for message in get_flashed_messages() %}
+        {{ message }}
+        {% endfor %}
+        <div class="row" style="margin-top: 40px">
+            <div class="col-sm-6">
+                <form method="POST" autocomplete="on">
+                    <div class="form-group">
+                        <label for="email">Gym Name : </label>
+                        <input type="text" value={{ mm.gym_name }} name="fname" class="form-control"
+                               id="fname"
+                               required autocomplete="on">
                     </div>
-                    <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
+                    <div class="form-group">
+                        <label for="email">Address line 1 : </label>
+                        <input type="text" value="{{ mm.address_1 }}" name="add" class="form-control"
+                               id="add" autocomplete="off" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Address line 2 : </label>
+                        <input type="text" value={{ mm.address_2 }} name="add2" class="form-control"
+                               id="add2" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Gym Contact Number : </label>
+                        <input type="text" value={{ mm.contact_number }} name="mob" class="form-control"
+                               id="mob" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">State : </label>
+                        <input type="text" value="{{ mm.state }}" name="mylist" class="form-control"
+                               id="mylist"
+                               required autocomplete="on">
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="email">State :</label><br>
+                        <select id="mylist" name="mylist1">
+                            <option  value="Rajasthan">Rajasthan</option>
+                            <option  value="Maharashtra">Maharashtra</option>
+                            <option  value="Kerela">Kerela</option>
+                            <option  value="Tamil Nadu">Tamil Nadu</option>
+                            <option  value="Gujarat">Gujarat</option>
+                            <option  value="Delhi">Delhi</option>
+                        </select>
+                    </div>-->
+                    <div class="form-group">
+                        <label for="email">City : </label>
+                        <input type="text" value={{ mm.city }} name="city" class="form-control"
+                               id="city"
+                               required autocomplete="on">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Postal Code : </label>
+                        <input type="text" value="{{ mm.postal_code }}" name="p_code" class="form-control"
+                               id="p_code"
+                               required autocomplete="on">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Monthly Fees : </label>
+                        <input type="text" value="{{ mm.monthly_fees }}" name="m_fees" class="form-control"
+                               id="m_fees"
+                               required autocomplete="on">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Yearly Fees : </label>
+                        <input type="text" value="{{ mm.yearly_fees }}" name="y_fees" class="form-control"
+                               id="y_fees"
+                               required autocomplete="on">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Are Trainers Available? </label><br>
+                        <input type="radio" name="up" value="Yes"> Yes<br>
+                        <input type="radio" name="up" value="No" required> No
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Features : </label>
+                        <p>(Weights,Aerobics,Zumba,Yoga,Cardio)</p>
+                        <input type="text" value="{{ mm.features }}" name="feat" class="form-control"
+                               id="feat"
+                               required autocomplete="on">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Established in year : </label>
+                        <input type="text" value="{{ mm.estlb }}" name="year" class="form-control"
+                               id="year"
+                               required autocomplete="on">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Morning Hours : </label>
+                        <h4>Opening:</h4>
+                        <input type="text" value="{{ mm.m_open }}" name="m_open" class="form-control"
+                               id="m_open"
+                               required autocomplete="on">
+                        <h4>Closing:</h4>
+                        <input type="text" value="{{ mm.m_close }}" name="m_close" class="form-control"
+                               id="m_close"
+                               required autocomplete="on">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Evening Hours : </label>
+                        <h4>Opening:</h4>
+                        <input type="text" value="{{ mm.e_open }}" name="e_open" class="form-control"
+                               id="e_open"
+                               required autocomplete="on">
+                        <h4>Closing:</h4>
+                        <input type="text" value="{{ mm.e_close }}" name="e_close" class="form-control"
+                               id="e_close"
+                               required autocomplete="on">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Description : </label>
+                        <input type="text" value="{{ mm.desc }}" name="desc" class="form-control"
+                               id="desc"
+                               autocomplete="on" required>
+                    </div>
+
+
+                    <button type="submit" class="btn form-control btn-default"><u>Submit</u></button>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Extra -->
+
+    <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+        <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="extra_title">More Offers</div>
+                        <div class="extra_text">
+                            <p>Will be added soon.</p>
+                        </div>
+                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</footer>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="footer_container">
+                        <div class="footer_content">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <div class="logo d-flex flex-row align-items-center justify-content-center"><img
+                                            src="/static/images/dot.png" alt="">
+                                        <div>GYMA<span>ale</span></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <nav class="footer_nav">
+                                {% if mm=='NULL' %}
+                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                    <li><a href="/main">Home</a></li>
+                                    <li><a href="/about">About us</a></li>
+                                    <li><a href="/services">Services</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                </ul>
+                                {% else %}
+                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/blog"></a></li>
+                                    <li><a href="/contact"></a></li>
+                                </ul>
+                                {% endif %}
+                            </nav>
+                            <div class="newsletter_container">
+                                <form action="#" id="newsletter_form" class="newsletter_form">
+                                    <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                                           required="required">
+                                    <button class="newsletter_button">go</button>
+                                </form>
+                            </div>
+                            <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                    aria-hidden="true"></i> by <a
+                                    href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </div>
+                        </div>
+                        <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 
 <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>

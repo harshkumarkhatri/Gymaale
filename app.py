@@ -893,18 +893,25 @@ def upload_file():
 
 
 @app.route('/blog')
-@login_required
 def blog():
+    if g.owner:
+        mm=g.owner
+    else:
+        mm='NULL'
     page = request.args.get('page', 1, type=int)
     b_posts = blog2.query.order_by(blog2.date.desc()).paginate(per_page=9, page=page)
-    return render_template("blog.html", b_posts=b_posts)
+    return render_template("blog.html", b_posts=b_posts,mm=mm)
 
 
 @app.route('/blog/int:<post_id>')
-@login_required
+
 def post(post_id):
+    if g.owner:
+        mm=g.owner
+    else:
+        mm='NULL'
     post = blog2.query.get_or_404(post_id)
-    return render_template("blog_page.html", title=post.title, b_post=post)
+    return render_template("blog_page.html", title=post.title, b_post=post,mm=mm)
 
 
 @app.route('/logout')
@@ -1110,11 +1117,7 @@ def upload():
     db.session.commit()
     return redirect(url_for('owner_account'))
 
-@app.route('/gym_registeration/logout')
-def owner_logout():
-    session.pop('owner',None)
-    flash('Owner has been successfully logged out')
-    return redirect(url_for('gym_registeration_login'))
+
 
 @app.route('/gym_registeration/add_another_gym',methods=["GET","POST"])
 def add_another_gym():
@@ -1217,6 +1220,12 @@ def owner_account():
                            u_train=u_train,xy=xy,image_1=image_1,image_2=image_2,image_3=image_3,
                            image_4=image_4,image_5=image_5)
 
+@app.route('/owner_account/logout')
+def owner_logout():
+    session.pop('owner',None)
+    flash('You have been logged out successfully.')
+    return redirect(url_for("gym_registeration_login"))
+
 @app.route('/owner_account/trainer_account')
 def trainer_account_2():
     if g.owner:
@@ -1238,9 +1247,13 @@ def trainer_account_2():
 
 @app.route('/gym_registeration/owner_account/account_settings')
 def owner_account_settings():
+    if g.owner:
+        mm=g.owner
+    else:
+        mm='NULL'
     t1="Change Owner Details"
     t2="Change Gym Details"
-    return render_template("default.html",t1=t1,t2=t2)
+    return render_template("default.html",t1=t1,t2=t2,mm=mm)
 
 @app.route('/gym_registeration/owner_account/account_settings/change_owner_details',methods=["GET","POST"])
 def change_owner_details():
@@ -1356,6 +1369,10 @@ def gym_detailss(gym_id):
     return render_template("Various_gyms/gym_details.html",title=gym_details.gym_name,g_names=gym_details,
                            o_names=owner_detail_now,img_1=img_1,img_2=img_2,img_3=img_3,
                            img_4=img_4,img_5=img_5)
+
+@app.route('/trainer_register')
+def trainer_register_landing():
+    return render_template("trainer_registeration/landingpage.html")
 
 @app.route('/trainer_register/login',methods=["GET","POST"])
 def trainer_login():
@@ -1558,9 +1575,13 @@ def trainer_account():
                                image_2=image_2,image_3=image_3,image_4=image_4,image_5=image_5)
 
 @app.route('/about')
-@login_required
 def about():
-    return render_template("about.html")
+    if g.owner:
+        mm=g.owner
+    else:
+        mm='NULL'
+    print(mm)
+    return render_template("about.html",mm=mm)
 
 
 @app.route('/waiting')
@@ -1924,9 +1945,13 @@ def services():
 
 
 @app.route('/contact')
-@login_required
 def contact():
-    return render_template("contact.html")
+    if g.owner:
+        mm=g.owner
+    else:
+        mm='NULL'
+    print(mm)
+    return render_template("contact.html",mm=mm)
 
 
 @app.route('/gym_accessories')
