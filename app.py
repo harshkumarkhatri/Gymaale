@@ -1231,6 +1231,12 @@ def owner_logout():
     flash('You have been logged out successfully.')
     return redirect(url_for("gym_registeration_login"))
 
+@app.route('/trainer_registeration/trainer_account/logout')
+def trainer_logout():
+    session.pop('trainer',None)
+    flash('You have been logged out successfully.')
+    return redirect(url_for('trainer_register_landingpage'))
+
 @app.route('/owner_account/trainer_account')
 def trainer_account_2():
     if g.owner:
@@ -1638,6 +1644,16 @@ def trainer_detailss(trainer_id):
     return render_template("gym_registeration/trainer_details.html",t_names=trainer_qur,
                            trainer_img=trainer_img,imag_1=imag_1,imag_2=imag_2,
                            imag_3=imag_3,imag_4=imag_4,imag_5=imag_5)
+
+@app.route('/terms_and_conditions')
+def terms_and_conditions():
+    if g.owner:
+        factor='owner'
+    elif g.trainer:
+        factor='trainer'
+    else:
+        factor='user'
+    return render_template('terms_and_conditions.html',factor=factor)
 
 @app.route('/schedules')
 @login_required
