@@ -780,6 +780,11 @@ def delete_account():
 def my_page():
     return webbrowser.open_new_tab('http://gmail.com')"""
 
+def send_user_account_creation_email(mm):
+    msg=Message('Account Created',sender='gymaale.business@gmail.com',recipients=[mm.email])
+    msg.html=render_template("email_user_account_creation_congratulating.html",mm=mm)
+    mail.send(msg)
+
 
 @app.route('/registerr/<token>/<username>', methods=['GET', 'POST'])
 def confirm_email(token,username):
@@ -795,6 +800,7 @@ def confirm_email(token,username):
             if mm.sec_code==int(sec):
                 mm.verification = "Yes"
                 db.session.commit()
+                send_user_account_creation_email(mm)
             else:
                 return redirect(url_for('confirm_email')),flash("Incorrect Code")
             return redirect(url_for('login')), flash("Account has been verified. Now you can login.")
