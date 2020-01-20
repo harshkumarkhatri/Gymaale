@@ -509,7 +509,7 @@ def register():
             if z is not None:
                 send_confirmation_email(z)
             # flash("email sent")
-            return redirect(url_for('login')), flash('Email Sent')
+            return redirect(url_for('waiting')), flash('Email Sent')
         else:
             flash('Passwords do not match.')
     return render_template("register.html")
@@ -1600,6 +1600,20 @@ def about():
 @app.route('/waiting')
 def waiting():
     return render_template("waiting.html")
+
+@app.route('/apply_again',methods=['GET','POST'])
+def apply_again():
+    if request.method=="POST":
+        email=request.form['mail']
+        z=user.query.filter_by(email=email).first()
+        if z.verification=='No':
+            if z is not None:
+                send_confirmation_email(z)
+                return redirect(url_for('waiting'))
+        else:
+            verification_text='Your account has already been verified'
+            return render_template('default.html',verification_text=verification_text)
+    return render_template("apply_again.html")
 
 
 @app.route('/una')

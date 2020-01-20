@@ -81,6 +81,8 @@
                                 <li><a href="/contact">Contact</a></li>
                                 <li><a href="/logout">Logout</a></li>
                             </ul>
+                            {% elif verification_text %}
+
                             {% else %}
                             <ul class="d-flex flex-row align-items-center justify-content-start">
                                 <li><a href="/about">About us</a></li>
@@ -91,18 +93,23 @@
                             </ul>
                             {% endif %}
                         </nav>
+                        {% if verification_text %}
+                        {% else %}
                         <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <div>9999999999</div>
                         </div>
+                        {% endif %}
                         <pre>    </pre>
                         {% if mm=='NULL' %}
                         <a href="/account">
                             <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile"></a>
+                        {% elif verification_text %}
                         {% else %}
                         <a href="/owner_account">
                             <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile">
                         </a>
+                        {}
                         {% endif %}
                     </div>
                 </div>
@@ -111,7 +118,8 @@
     </header>
 
     <!-- Hamburger -->
-
+    {% if verification_text %}
+    {% else %}
     <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
         <div class="hamburger">
             <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
@@ -126,6 +134,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
 
     <!-- Menu -->
 
@@ -139,6 +148,8 @@
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
+            {% elif verification_text %}
+
             {% else %}
             <ul>
                 <li><a href="/about">About Us</a></li>
@@ -160,6 +171,9 @@
 
 
 </pre>
+    {% if verification_text %}
+    {{ verification_text  }}
+    {% endif %}
     {% if change_gym_details %}
     {% for i in change_gym_details %}
     <a class="btn btn-outline-dark" href="{{ url_for('changing_details',gym_name=i.gym_name,address=i.address_1) }}">*
@@ -223,6 +237,7 @@
                                     <li><a href="/blog">Blog</a></li>
                                     <li><a href="/contact">Contact</a></li>
                                 </ul>
+                                {% elif verification_text %}
                                 {% else %}
                                 <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
                                     <li><a href="/about">About Us</a></li>

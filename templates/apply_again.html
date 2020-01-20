@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Register</title>
+    <title>Requesting email</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="SportFIT template project">
@@ -20,29 +20,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        #proceed {
-            display: none;
-            color: black;
-        }
-        .button {
-  background-color: coral; /* Green */
-  border: none;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
-        .button2:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-    </style>
 </head>
 <body>
 <pre>
@@ -54,31 +31,30 @@
 
 
 </pre>
-<h2 align="center"><u>Email sent with a security code.<br>
-    If you haven't recieved your mail do check the spam folder.</u></h2><br><br>
-<h2 align="center"><u>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-    <h3 style="color:coral;">You need to wait <span id="time">60</span> seconds before you can apply again.</h3>
-    <a href="/apply_again"><button class="button button2" type="button" id="proceed">Apply again</button></a>
-</u></h2>
-<br><br>
+<h2 align="center"><u>REQUESTING EMAIL</u></h2>
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
+            <form method="POST" enctype="multipart/form-data">
+                <br>
+                <pre>
+            </pre>
+                <div class="form-group">
+                    <label for="email">Email : </label>
+                    <input type="email" name="mail" class="form-control" placeholder="Enter E-mail" id="mail"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                           title="Must contain an '@','.' & a valid extension for mail" required>
 
-            <br>
-            <pre>
-
-
-        </pre>
-
-
-            <pre>
-
-
-
-</pre>
+                </div>
+                <!--
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="image" id="image">
+                    <label class="custom-file-label" for="image">Select image...</label>
+                </div>-->
+                <br>
+                <button type="submit" class="btn form-control btn-default"><u>Request email</u></button>
+                <br>
+            </form>
         </div>
     </div>
 </div>
@@ -110,9 +86,7 @@
     <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
         <div class="hamburger">
             <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
-                <span>menu</span>
-                <div class="hamburger_container">
-                    <div class="menu_hamburger">
+
                         <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                         <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
                         <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
@@ -173,18 +147,5 @@
 <script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
 <script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/services.js') }}"></script>
-<script>
-    var i = 60;
-    var time = $("#time")
-    var timer = setInterval(function () {
-        time.html(i);
-        if (i == 0) {
-            $("#proceed").show();
-            clearInterval(timer);
-
-        }
-        i--;
-    }, 1000)
-</script>
 </body>
 </html>
