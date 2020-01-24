@@ -682,7 +682,6 @@ If you did not make this request then ignore this mail.
 
 @app.route('/forgot_request', methods=["GET", "POST"])
 def forgot_request():
-    form = user()
     if request.method == "POST":
         cmail = request.form['cmail']
         z = user.query.filter_by(email=cmail).first()
@@ -725,8 +724,6 @@ def reset_password(token):
 @app.route('/main', methods=["GET", "POST"])
 @login_required
 def main():
-    form = dmail()
-    form2 = user()
     b_posts = blog2.query.all()
     # for b_post in b_posts:
     # for b_post in b_posts:
@@ -752,7 +749,6 @@ def main():
 @app.route('/user_data', methods=["GET", "POST"])
 @login_required
 def user_data():
-    form = user_data2()
     if g.user:
         zz = user.query.filter_by(username=g.user).first()
         value1 = zz.id
@@ -926,7 +922,6 @@ def login():
 @app.route('/account')
 @login_required
 def account():
-    form = user()
     if g.user:
         m = g.user
     if m == g.user:
@@ -962,7 +957,6 @@ def account():
 @app.route('/change_password', methods=["GET", "POST"])
 @login_required
 def change_password():
-    form = user()
     if g.user:
         z = user.query.filter_by(username=g.user).first()
         # value1=z.username
@@ -1035,7 +1029,6 @@ def make_session_permanent():
 @app.route('/change_email', methods=["GET", "POST"])
 @login_required
 def change_email():
-    form = user()
     if g.user:
         z = user.query.filter_by(username=g.user).first()
         value3 = z.email
@@ -1072,7 +1065,6 @@ def confirm_email():
 @app.route('/delete_account', methods=['GET', 'POSt'])
 @login_required
 def delete_account():
-    form = user()
     if g.user:
         z = user.query.filter_by(username=g.user).first()
         value1 = z.email
@@ -1175,6 +1167,7 @@ def add_image():
     #    return redirect(url_for('user_data'))
     # else:
     file = request.files['inputfile']
+    print(file)
     newfile = image(file_name=file.filename, ibt=value2, user_id=value1, data=file.read())
     db.session.add(newfile)
     db.session.commit()
