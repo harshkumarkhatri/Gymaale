@@ -100,12 +100,40 @@ class dmail(db.Model):
     email = db.Column(db.String(120))
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
+    def __init__(self,email,owner_id):
+        if email:
+            self.email=email
+        else:
+            self.email=None
+        if owner_id:
+            self.owner_id=owner_id
+        else:
+            self.owner_id=None
+
 class admindata(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username = db.Column(db.String(80))
     password = db.Column(db.String(80))
     email = db.Column(db.String(120))
     security_code=db.Column(db.Integer)
+
+    def __init__(self,username,password,email,security_code):
+        if username:
+            self.username=username
+        else:
+            self.username=None
+        if password:
+            self.password=password
+        else:
+            self.password=None
+        if email:
+            self.email=email
+        else:
+            self.email=None
+        if security_code:
+            self.security_code=security_code
+        else:
+            self.security_code=None
 
 class user_data2(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -119,6 +147,44 @@ class user_data2(db.Model):
     update = db.Column(db.String(30))
     user_id = db.Column(db.Integer)
 
+    def __init__(self,first_name,last_name,address,age,interest,already_gymming,time,update,user_id):
+        if first_name:
+            self.first_name=first_name
+        else:
+            self.first_name=None
+        if last_name:
+            self.last_name=last_name
+        else:
+            self.last_name=None
+        if address:
+            self.address=address
+        else:
+            self.address=None
+        if age:
+            self.age=age
+        else:
+            self.age=None
+        if interest:
+            self.interest=interest
+        else:
+            self.interest=None
+        if already_gymming:
+            self.already_gymming=already_gymming
+        else:
+            self.already_gymming=None
+        if update:
+            self.update=update
+        else:
+            self.update=None
+        if user_id:
+            self.user_id=user_id
+        else:
+            self.user_id=None
+        if time:
+            self.time=time
+        else:
+            self.time=None
+
 class ownerregister(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username=db.Column(db.String(40))
@@ -126,6 +192,29 @@ class ownerregister(db.Model):
     password=db.Column(db.String(40))
     confirm_password=db.Column(db.String(40))
     security_code=db.Column(db.String(10))
+
+    def __init__(self,username,password,confirm_password,email,security_code):
+        if username:
+            self.username=username
+        else:
+            self.username=None
+        if password:
+            self.password=password
+        else:
+            self.password=None
+        if email:
+            self.email=email
+        else:
+            self.email=None
+        if security_code:
+            self.security_code=security_code
+        else:
+            self.security_code=None
+        if confirm_password:
+            self.confirm_password=confirm_password
+        else:
+            self.confirm_password=None
+
 
 class owner_detail(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -139,6 +228,51 @@ class owner_detail(db.Model):
     u_trainer=db.Column(db.String(20))
     owner_reg_id=db.Column(db.Integer)
     any_other_gym=db.Column(db.String(40))
+
+    def __init__(self,first_name,last_name,address,mobile_number,age,
+                 already_training,time,u_trainer,owner_reg_id,any_other_gym):
+        if first_name:
+            self.first_name=first_name
+        else:
+            self.first_name=None
+        if last_name:
+            self.last_name=self.last_name
+        else:
+            self.last_name=None
+        if address:
+            self.address=address
+        else:
+            self.address=None
+        if mobile_number:
+            self.mobile_number=mobile_number
+        else:
+            self.mobile_number=None
+        if age:
+            self.age=age
+        else:
+            self.age=None
+        if already_training:
+            self.already_training=already_training
+        else:
+            self.already_training=None
+        if time:
+            self.time=time
+        else:
+            self.time=None
+        if u_trainer:
+            self.u_trainer=u_trainer
+        else:
+            self.u_trainer=None
+        if owner_reg_id:
+            self.owner_reg_id=owner_reg_id
+        else:
+            self.owner_reg_id=None
+        if any_other_gym:
+            self.any_other_gym=any_other_gym
+        else:
+            self.any_other_gym=None
+
+
 
 class gym_detail(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -162,6 +296,86 @@ class gym_detail(db.Model):
     e_close=db.Column(db.Integer)
     cb=db.Column(db.String(40))
 
+    def __init__(self,gym_name,address_1,address_2,contact_number,state,city,postal_code,monthly_fees,yearly_fees
+                 ,trainers_available,features,estlb,desc,owner_ref,m_open,m_close,e_open,e_close,cb):
+        if gym_name:
+            self.gym_name=gym_name
+        else:
+            self.gym_name=None
+        if address_1:
+            self.address_1=address_1
+        else:
+            self.address_1=None
+        if address_2:
+            self.address_2=address_2
+        else:
+            self.address_2=None
+        if contact_number:
+            self.contact_number=contact_number
+        else:
+            self.contact_number=None
+        if state:
+            self.state=state
+        else:
+            self.state=None
+        if city:
+            self.city=city
+        else:
+            self.city=None
+        if postal_code:
+            self.postal_code=postal_code
+        else:
+            self.postal_code=None
+        if monthly_fees:
+            self.monthly_fees=monthly_fees
+        else:
+            self.monthly_fees=None
+        if yearly_fees:
+            self.yearly_fees=yearly_fees
+        else:
+            self.yearly_fees=None
+        if trainers_available:
+            self.trainers_available=trainers_available
+        else:
+            self.trainers_available=None
+        if features:
+            self.features=features
+        else:
+            self.features=None
+        if estlb:
+            self.estlb=estlb
+        else:
+            self.estlb=None
+        if desc:
+            self.desc=desc
+        else:
+            self.desc=None
+        if m_open:
+            self.m_open=m_open
+        else:
+            self.m_open=None
+        if m_close:
+            self.m_close=m_close
+        else:
+            self.m_close=None
+        if e_open:
+            self.e_open=e_open
+        else:
+            self.e_open=None
+        if e_close:
+            self.e_close=e_close
+        else:
+            self.e_close=None
+        if owner_ref:
+            self.owner_ref=owner_ref
+        else:
+            self.owner_ref=None
+        if cb:
+            self.cb=cb
+        else:
+            self.cb=None
+
+
 class gym_image(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     ref_id=db.Column(db.Integer)
@@ -170,6 +384,32 @@ class gym_image(db.Model):
     image3 = db.Column(db.LargeBinary)
     image4 = db.Column(db.LargeBinary)
     image5 = db.Column(db.LargeBinary)
+
+    def __init__(self,ref_id,image1,image2,image3,image4,image5):
+        if ref_id:
+            self.ref_id=ref_id
+        else:
+            self.ref_id=None
+        if image1:
+            self.image1=image1
+        else:
+            self.image1=None
+        if image2:
+            self.image2=image2
+        else:
+            self.image2=None
+        if image3:
+            self.image3=image3
+        else:
+            self.image3=None
+        if image4:
+            self.image4=image4
+        else:
+            self.image4=None
+        if image5:
+            self.image5=image5
+        else:
+            self.image5=None
 
 class trainer_image(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -181,6 +421,37 @@ class trainer_image(db.Model):
     image4 = db.Column(db.LargeBinary)
     image5 = db.Column(db.LargeBinary)
 
+    def __init__(self,ref_id,owner_ref_id,image1,image2,image3,image4,image5):
+        if ref_id:
+            self.ref_id=ref_id
+        else:
+            self.ref_id=None
+        if owner_ref_id:
+            self.owner_ref_id=owner_ref_id
+        else:
+            self.owner_ref_id=None
+        if image1:
+            self.image1=image1
+        else:
+            self.image1=None
+        if image2:
+            self.image2=image2
+        else:
+            self.image2=None
+        if image3:
+            self.image3=image3
+        else:
+            self.image3=None
+        if image4:
+            self.image4=image4
+        else:
+            self.image4=None
+        if image5:
+            self.image5=image5
+        else:
+            self.image5=None
+
+
 class hours(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     m_open=db.Column(db.Integer)
@@ -190,12 +461,25 @@ class hours(db.Model):
     m_hours=db.Column(db.Integer)
     e_hours=db.Column(db.Integer)
 
-
 class blog2(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200))
     date = db.Column(db.DATETIME)
     b_txt = db.Column(db.Text)
+
+    def __init__(self,title,date,b_txt):
+        if title:
+            self.title=title
+        else:
+            self.title=None
+        if date:
+            self.date=date
+        else:
+            self.date=None
+        if b_txt:
+            self.b_txt=b_txt
+        else:
+            self.b_txt=None
 
 
 class image(db.Model):
@@ -205,12 +489,45 @@ class image(db.Model):
     file_name = db.Column(db.String(500))
     data = db.Column(db.LargeBinary)
 
+    def __init__(self,user_id,ibt,file_name,data):
+        if user_id:
+            self.user_id=user_id
+        else:
+            self.user_id=None
+        if ibt:
+            self.ibt=ibt
+        else:
+            self.ibt=None
+        if file_name:
+            self.file_name=file_name
+        else:
+            self.file_name=None
+        if data:
+            self.data=data
+        else:
+            self.data=None
+
 class trainerregister(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username=db.Column(db.String(40))
     email = db.Column(db.String(140))
     password = db.Column(db.String(40))
 
+    def __init__(self,username,email,password):
+        if username:
+            self.username=username
+        else:
+            self.username=None
+        if email:
+            self.email=email
+        else:
+            self.email=None
+        if password:
+            self.password=password
+        else:
+            self.password=None
+
+#this class doesnt has any table in our database.
 class EditProfileForm(user):
     username = StringField('Username', validators=[DataRequired()])
     about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
@@ -287,7 +604,7 @@ class trainer_detail(db.Model):
         return user('{self.title}','{sel.date_posted}','{self.content}')
 """
 
-
+#this class doesnt has any tables in our database.
 class RequestResetForm(FlaskForm):
     email = db.Column(db.String(120))
     submit = SubmitField('Request Password Reset')
