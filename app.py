@@ -110,6 +110,7 @@ class dmail(db.Model):
         else:
             self.owner_id=None
 
+
 class admindata(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username = db.Column(db.String(80))
@@ -919,39 +920,46 @@ def login():
     return render_template("login.html", username=user)
 
 
-@app.route('/account')
+@app.route('/account',methods=["GET","POST"])
 @login_required
 def account():
     if g.user:
         m = g.user
     if m == g.user:
         z = user.query.filter_by(username=g.user).first()
+        value1=z.id
        # print(z.id)
         zz=user_data2.query.filter_by(user_id=z.id).first()
        # print(zz)
         xyz=image.query.filter_by(user_id=z.id).first()
         imag=base64.b64encode(xyz.data).decode('ascii')
-        print(imag)
-
-        if zz==None:
-            value3='NULL'
-            value4='NULL'
-            value5='NULL'
-            value6='NULL'
-            value7='NULL'
-            value8='NULL'
-            value9='NULL'
-        else:
-            value3=zz.first_name.upper()
-            value4=zz.last_name.upper()
-            value5=zz.address
-            value6=zz.age
-            value7=zz.interest
-            value8=zz.already_gymming
-            value9=zz.time
-        return render_template("account.html", value=m, value2=z.email,value3=value3,value4=value4,
+    if zz==None:
+        value3='NULL'
+        value4='NULL'
+        value5='NULL'
+        value6='NULL'
+        value7='NULL'
+        value8='NULL'
+        value9='NULL'
+    else:
+        value3=zz.first_name.upper()
+        value4=zz.last_name.upper()
+        value5=zz.address
+        value6=zz.age
+        value7=zz.interest
+        value8=zz.already_gymming
+        value9=zz.time
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
+    return render_template("account.html", value=m, value2=z.email,value3=value3,value4=value4,
                                value5=value5,value6=value6,value7=value7,value8=value8,value9=value9,imag=imag )
-    return 'fsarwfwe'
+
 
 
 @app.route('/change_password', methods=["GET", "POST"])
@@ -1143,13 +1151,21 @@ def change_image():
         return redirect(url_for('account_settings')), flash("Profile changed successfully.")
 
 
-@app.route('/jj')
+@app.route('/jj',methods=["GET","POST"])
 def jj():
     if g.user:
         zz = user.query.filter_by(username=g.user).first()
         value1 = zz.id
         value2 = zz.username
     va = image.query.filter_by(user_id=value1).first()
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     if va:
         return redirect(url_for('user_data'))
     else:
@@ -1208,30 +1224,58 @@ def upload_file():
         return 'file uploaded successfully'
 
 
-@app.route('/blog')
+@app.route('/blog',methods=["GET","POST"])
 def blog():
     if g.owner:
         decide='owner'
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        value1=zz.id
     elif g.trainer:
         decide='trainer'
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        value1=zz.id
     else:
         decide='NULL'
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
     print(decide)
     page = request.args.get('page', 1, type=int)
     b_posts = blog2.query.order_by(blog2.date.desc()).paginate(per_page=9, page=page)
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("blog.html", b_posts=b_posts,decide=decide)
 
 
-@app.route('/blog/int:<post_id>')
+@app.route('/blog/int:<post_id>',methods=["GET","POST"])
 def post(post_id):
     if g.owner:
         decide='owner'
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        value1=zz.id
     elif g.trainer:
         decide='trainer'
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        value1=zz.id
     else:
         decide='NULL'
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
     print(decide)
     post = blog2.query.get_or_404(post_id)
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("blog_page.html", title=post.title, b_post=post,decide=decide)
 
 
@@ -1258,9 +1302,22 @@ def error500(error):
 def error405(error):
     return '<h1>Sorry methods not allowed</h1>' ,405
 
-@app.route('/account_settings')
+@app.route('/account_settings',methods=["GET","POST"])
 @login_required
 def account_settings():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    else:
+        value1=None
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("account_settings.html")
 
 @app.route('/default')
@@ -1497,13 +1554,23 @@ def add_another_gym():
     else:
         return redirect(url_for('owner_account')),flash("You  have selected 'NO' to any other "
                                                         "gym in owner_details.")
+    value1=xyz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("gym_registeration/add_other_gym.html")
 
-@app.route('/owner_account')
+@app.route('/owner_account',methods=["GET","POST"])
 def owner_account():
     session.pop('trainer',None)
     if g.owner:
         zz=ownerregister.query.filter_by(username=g.owner).first()
+        value1=zz.id
         xyz=owner_detail.query.filter_by(owner_reg_id=zz.id).first()
         mmm=gym_detail.query.filter_by(owner_ref=zz.id).all()
         xy=trainer_detail.query.filter_by(owner_ref_id=zz.id).first()
@@ -1536,6 +1603,14 @@ def owner_account():
         u_train=xyz.u_trainer
         mnn=mmm
         print(username,email,f_name,l_name,address,mobile)
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("gym_registeration/owner_Account.html",username=username,email=email,
                            f_name=f_name,l_name=l_name,address=address,mobile=mobile,mnn=mnn,
                            u_train=u_train,xy=xy,image_1=image_1,image_2=image_2,image_3=image_3,
@@ -1553,11 +1628,12 @@ def trainer_logout():
     flash('You have been logged out successfully.')
     return redirect(url_for('trainer_register_landingpage'))
 
-@app.route('/owner_account/trainer_account')
+@app.route('/owner_account/trainer_account',methods=["GET","POST"])
 def trainer_account_2():
     if g.owner:
         print(g.owner)
         zz=ownerregister.query.filter_by(username=g.owner).first()
+        value1=zz.id
         mm=trainer_detail.query.filter_by(owner_ref_id=zz.id).first()
         dd=trainer_image.query.filter_by(owner_ref_id=zz.id).first()
         print(zz)
@@ -1571,6 +1647,14 @@ def trainer_account_2():
         decide='owner'
         print('executing this')
         print(decide)
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("trainer_registeration/trainer_account2.html",zz=zz,
                            image_1=image_1,image_2=image_2,image_3=image_3,
                             image_4=image_4,image_5=image_5,mm=mm,decide=decide)
@@ -1674,11 +1758,22 @@ def changing_details(gym_name,address):
         return redirect(url_for('owner_account'))
     return render_template("gym_registeration/change_gym_details.html",mm=mm)
 
-@app.route('/various_gym')
+@app.route('/various_gym',methods=["GET","POST"])
 @login_required
 def various_gym():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
     page=request.args.get('page',1,type=int)
     g_names=gym_detail.query.order_by(gym_detail.monthly_fees.asc()).paginate(per_page=2,page=page)
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("various_gym.html",g_names=g_names)
 
 @app.route('/various_gyms/<gym_id>')
@@ -1879,37 +1974,58 @@ def uploadt():
     else:
         return redirect(url_for('trainer_account'))
 
-@app.route('/trainer_registeration/trainer_account')
+@app.route('/trainer_registeration/trainer_account',methods=["GET","POST"])
 def trainer_account():
     if g.trainer:
         print(g.trainer)
         zz=trainerregister.query.filter_by(username=g.trainer).first()
+        value1=zz.id
         mm=trainer_detail.query.filter_by(ref_id=zz.id).first()
         nn=trainer_image.query.filter_by(ref_id=zz.id).first()
-        if nn==None:
-            return redirect(url_for('trainer_images'))
-        else:
-            image_1=base64.b64encode(nn.image1).decode('ascii')
-            image_2=base64.b64encode(nn.image2).decode('ascii')
-            image_3=base64.b64encode(nn.image3).decode('ascii')
-            image_4=base64.b64encode(nn.image4).decode('ascii')
-            image_5=base64.b64encode(nn.image5).decode('ascii')
-            print(mm.first_name)
-            decide='trainer'
-            print(decide)
-
-            return render_template("trainer_registeration/trainer_account.html",zz=zz,mm=mm,image_1=image_1,
+    if nn==None:
+        return redirect(url_for('trainer_images'))
+    else:
+        image_1=base64.b64encode(nn.image1).decode('ascii')
+        image_2=base64.b64encode(nn.image2).decode('ascii')
+        image_3=base64.b64encode(nn.image3).decode('ascii')
+        image_4=base64.b64encode(nn.image4).decode('ascii')
+        image_5=base64.b64encode(nn.image5).decode('ascii')
+        print(mm.first_name)
+        decide='trainer'
+        print(decide)
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
+    return render_template("trainer_registeration/trainer_account.html",zz=zz,mm=mm,image_1=image_1,
                                image_2=image_2,image_3=image_3,image_4=image_4,image_5=image_5,decide=decide)
 
-@app.route('/about')
+@app.route('/about',methods=["GET","POST"])
 def about():
     if g.owner:
         decide='owner'
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        value1=zz.id
     elif g.trainer:
         decide='trainer'
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        value1=zz.id
     else:
         decide='NULL'
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
     print(decide)
+    if request.method=="POST":
+        imail=request.form["imail"]
+        iid=value1
+        adding=dmail(email=imail,owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
+        return redirect(url_for('about'))
     return render_template("about.html",decide=decide)
 
 
@@ -1975,25 +2091,61 @@ def trainer_detailss(trainer_id):
                            trainer_img=trainer_img,imag_1=imag_1,imag_2=imag_2,
                            imag_3=imag_3,imag_4=imag_4,imag_5=imag_5)
 
-@app.route('/terms_and_conditions')
+@app.route('/terms_and_conditions',methods=["GET","POST"])
 def terms_and_conditions():
     if g.owner:
         factor='owner'
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        value1=zz.id
     elif g.trainer:
         factor='trainer'
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        value1=zz.id
     else:
         factor='user'
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template('terms_and_conditions.html',factor=factor)
 
-@app.route('/schedules')
+@app.route('/schedules',methods=["GET","POST"])
 @login_required
 def schedules():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("schedules.html")
 
 
-@app.route('/bmi')
+@app.route('/bmi',methods=["GET","POST"])
 @login_required
 def bmi():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("bmi.html")
 
 
@@ -2003,9 +2155,20 @@ def fat():
     return render_template("fat.html")
 
 
-@app.route('/healthy')
+@app.route('/healthy',methods=["GET","POST"])
 @login_required
 def healthy():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("healthy.html")
 
 
@@ -2035,9 +2198,20 @@ def before_request():
 """These routes are there for supplememt categories"""
 
 
-@app.route('/supplements')
+@app.route('/supplements',methods=["GET","POST"])
 @login_required
 def supplements():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("supple.html")
 
 
@@ -2291,33 +2465,80 @@ def forgot_password():
 """
 
 
-@app.route('/services')
+@app.route('/services',methods=["GET","POST"])
 @login_required
 def services():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("services.html")
 
 
-@app.route('/contact')
+@app.route('/contact',methods=["GET","POST"])
 def contact():
     if g.owner:
         decide='owner'
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        value1=zz.id
     elif g.trainer:
         decide='trainer'
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        value1=zz.id
     else:
         decide='NULL'
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
     print(decide)
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("contact.html",decide=decide)
 
 
-@app.route('/gym_accessories')
+@app.route('/gym_accessories',methods=["GET","POST"])
 @login_required
 def gym_accessories():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("gym_accessories.html")
 
 
-@app.route('/offers')
+@app.route('/offers',methods=["GET","POST"])
 @login_required
 def offers():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    if request.method == "POST":
+        imail = request.form["imail"]
+        iid = value1
+        # print(imail)
+        # print(iid)
+        adding = dmail(email=imail, owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
     return render_template("offers.html")
 
 

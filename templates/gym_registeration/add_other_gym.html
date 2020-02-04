@@ -46,7 +46,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
-          type="image/x-icon"><style>
+          type="image/x-icon">
+    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
@@ -257,7 +258,8 @@
                            autocomplete="on" required>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" value="checked" name="cb" required>I accept the <a href="/terms_and_conditions">terms and conditions</a> of GYMAale.
+                    <input type="checkbox" value="checked" name="cb" required>I accept the <a
+                        href="/terms_and_conditions">terms and conditions</a> of GYMAale.
                 </div>
 
 
@@ -315,10 +317,13 @@
                             </ul>
                         </nav>
                         <div class="newsletter_container">
-                            <form action="#" id="newsletter_form" class="newsletter_form">
-                                <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                            <form method="POST" id="newsletter_form"
+                                  class="newsletter_form">
+                                <input type="text" class="newsletter_input" name="imail" id="imail"
+                                       placeholder="Enter your email here"
                                        required="required">
                                 <button class="newsletter_button">go</button>
+
                             </form>
                         </div>
                         <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">

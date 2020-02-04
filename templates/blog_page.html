@@ -258,10 +258,13 @@
                                 {% endif %}
                             </nav>
                             <div class="newsletter_container">
-                                <form action="#" id="newsletter_form" class="newsletter_form">
-                                    <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                                <form method="POST" id="newsletter_form"
+                                      class="newsletter_form">
+                                    <input type="text" class="newsletter_input" name="imail" id="imail"
+                                           placeholder="Enter your email here"
                                            required="required">
                                     <button class="newsletter_button">go</button>
+
                                 </form>
                             </div>
                             <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
