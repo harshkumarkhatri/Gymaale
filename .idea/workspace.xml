@@ -2,10 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/email_password_reset_successful.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/FAQs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/account_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account_settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blog_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bmi.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bmi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/certified_trainers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/certified_trainers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/change_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/change_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/change_uname.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_uname.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/confirm_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/confirm_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/elements.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/elements.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_accessories.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_accessories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/healthy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/healthy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/know.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/know.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/offers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/schedules.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/schedules.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supple.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/various_gym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/various_gym.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/verification.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,72 +99,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5395242">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="335">
-                  <caret line="728" column="66" selection-start-line="728" selection-start-column="66" selection-end-line="728" selection-end-column="66" />
-                  <folding>
-                    <element signature="e#0#116#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/email_password_reset_successful.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="302">
-                  <caret line="130" column="70" selection-start-line="130" selection-start-column="70" selection-end-line="130" selection-end-column="70" />
-                  <folding>
-                    <element signature="e#4#10#1" expanded="true" />
-                    <element signature="e#4#10#1" expanded="true" />
-                    <element signature="e#0#6#0" expanded="true" />
-                    <element signature="e#6#12#0" expanded="true" />
-                    <element signature="e#12#18#0" expanded="true" />
-                    <element signature="e#0#6#0" expanded="true" />
-                    <element signature="e#6#12#0" expanded="true" />
-                    <element signature="e#12#18#0" expanded="true" />
-                    <element signature="e#18#24#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="12070">
-                  <caret line="716" column="46" selection-start-line="716" selection-start-column="46" selection-end-line="716" selection-end-column="46" />
-                  <folding>
-                    <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3421">
-                  <caret line="852" column="16" selection-start-line="852" selection-start-column="12" selection-end-line="852" selection-end-column="16" />
-                  <folding>
-                    <element signature="e#0#116#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -139,14 +110,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jj</find>
       <find>form=</find>
       <find>form =</find>
       <find>file=</find>
       <find>logo2</find>
       <find>logo</find>
       <find>index</find>
-      <find>about</find>
       <find>about.html</find>
       <find>certified_trainers.html</find>
       <find>change_email.html</find>
@@ -166,9 +135,11 @@
       <find>verification.html</find>
       <find>index.htm</find>
       <find>bcrypt</find>
-      <find>reset_password</find>
       <find>main</find>
       <find>send</find>
+      <find>{{</find>
+      <find>about</find>
+      <find>reset_password</find>
     </findStrings>
     <replaceStrings>
       <replace>age</replace>
@@ -184,8 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/forgot_request.html" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/major.html" />
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/templates/registerr.html" />
@@ -193,48 +162,50 @@
         <option value="$PROJECT_DIR$/templates/waiting.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/landingpage.html" />
         <option value="$PROJECT_DIR$/templates/apply_again.html" />
+        <option value="$PROJECT_DIR$/templates/terms_and_conditions.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" />
+        <option value="$PROJECT_DIR$/templates/email_password_reset_successful.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/FAQs.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
+        <option value="$PROJECT_DIR$/templates/blog_page.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" />
+        <option value="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" />
+        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" />
+        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" />
+        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" />
+        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" />
+        <option value="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" />
+        <option value="$PROJECT_DIR$/templates/account.html" />
         <option value="$PROJECT_DIR$/templates/account_settings.html" />
         <option value="$PROJECT_DIR$/templates/add_image.html" />
         <option value="$PROJECT_DIR$/templates/blog.html" />
-        <option value="$PROJECT_DIR$/templates/blog_page.html" />
-        <option value="$PROJECT_DIR$/templates/account.html" />
+        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/templates/bmi.html" />
-        <option value="$PROJECT_DIR$/templates/contact.html" />
-        <option value="$PROJECT_DIR$/templates/elements.html" />
-        <option value="$PROJECT_DIR$/templates/gym_accessories.html" />
-        <option value="$PROJECT_DIR$/templates/healthy.html" />
-        <option value="$PROJECT_DIR$/templates/offers.html" />
-        <option value="$PROJECT_DIR$/templates/schedules.html" />
-        <option value="$PROJECT_DIR$/templates/services.html" />
-        <option value="$PROJECT_DIR$/templates/supple.html" />
-        <option value="$PROJECT_DIR$/templates/terms_and_conditions.html" />
-        <option value="$PROJECT_DIR$/templates/various_gym.html" />
         <option value="$PROJECT_DIR$/templates/certified_trainers.html" />
         <option value="$PROJECT_DIR$/templates/change_email.html" />
         <option value="$PROJECT_DIR$/templates/change_image.html" />
         <option value="$PROJECT_DIR$/templates/change_password.html" />
         <option value="$PROJECT_DIR$/templates/change_uname.html" />
         <option value="$PROJECT_DIR$/templates/confirm_email.html" />
+        <option value="$PROJECT_DIR$/templates/contact.html" />
         <option value="$PROJECT_DIR$/templates/default.html" />
-        <option value="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" />
-        <option value="$PROJECT_DIR$/templates/know.html" />
+        <option value="$PROJECT_DIR$/templates/elements.html" />
+        <option value="$PROJECT_DIR$/templates/healthy.html" />
+        <option value="$PROJECT_DIR$/templates/gym_accessories.html" />
+        <option value="$PROJECT_DIR$/templates/schedules.html" />
+        <option value="$PROJECT_DIR$/templates/services.html" />
         <option value="$PROJECT_DIR$/templates/reset_password.html" />
+        <option value="$PROJECT_DIR$/templates/offers.html" />
+        <option value="$PROJECT_DIR$/templates/know.html" />
+        <option value="$PROJECT_DIR$/templates/supple.html" />
+        <option value="$PROJECT_DIR$/templates/various_gym.html" />
         <option value="$PROJECT_DIR$/templates/verification.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" />
-        <option value="$PROJECT_DIR$/templates/email_password_reset_successful.html" />
-        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -385,7 +356,7 @@
       <workItem from="1580796679527" duration="9825000" />
       <workItem from="1580830817812" duration="625000" />
       <workItem from="1580832413916" duration="36000" />
-      <workItem from="1580875304300" duration="3027000" />
+      <workItem from="1580875304300" duration="5758000" />
     </task>
     <task id="LOCAL-00001" summary="user image is displayed in block yet to edit and owner account displays owner info and gym info">
       <created>1578205801055</created>
@@ -611,11 +582,18 @@
       <option name="project" value="LOCAL" />
       <updated>1580817336607</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="congratulating email on password reset">
+      <created>1580881516717</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1580881516718</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="622047000" />
+    <option name="totallyTimeSpent" value="624778000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -628,17 +606,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1266756" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1266756" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="3" show_stripe_button="false" weight="0.3297587" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.49932975" weight="0.32914925" />
       <window_info anchor="bottom" id="Database Changes" order="1" sideWeight="0.49865952" weight="0.32914925" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.35723862" side_tool="true" weight="0.32914925" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.64343166" visible="true" weight="0.30264995" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.6427614" weight="0.32914925" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.35790884" side_tool="true" weight="0.32914925" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.64343166" weight="0.30264995" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="4" sideWeight="0.64209116" visible="true" weight="0.32914925" />
       <window_info anchor="bottom" id="Python Console" order="5" weight="0.32775453" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" weight="0.32775453" />
       <window_info anchor="bottom" id="Message" order="7" />
@@ -700,7 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Trainer register table added" />
     <MESSAGE value="Trianer account and owner-trainer account displaying correctly and some more issues corrected." />
     <MESSAGE value="images uploaded by owner can be viewed in owner account" />
     <MESSAGE value="Gymaale got its logo" />
@@ -725,7 +701,8 @@
     <MESSAGE value="changed the icon in top near the name" />
     <MESSAGE value="Connected all newsletter with table" />
     <MESSAGE value="removed a tag from the gymaale on top from trainer and owner pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed a tag from the gymaale on top from trainer and owner pages" />
+    <MESSAGE value="congratulating email on password reset" />
+    <option name="LAST_COMMIT_MESSAGE" value="congratulating email on password reset" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,347 +716,199 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/major.html">
+    <entry file="file://$PROJECT_DIR$/templates/account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="101" column="14" lean-forward="true" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
+        <state relative-caret-position="221">
+          <caret line="565" column="108" selection-start-line="565" selection-start-column="108" selection-end-line="565" selection-end-column="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/offers.html">
+    <entry file="file://$PROJECT_DIR$/templates/account_settings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="227" column="34" selection-start-line="227" selection-start-column="34" selection-end-line="227" selection-end-column="34" />
+        <state relative-caret-position="238">
+          <caret line="191" column="108" selection-start-line="191" selection-start-column="108" selection-end-line="191" selection-end-column="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register.html">
+    <entry file="file://$PROJECT_DIR$/templates/admin_register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2244" />
+        <state relative-caret-position="-1785" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registerr.html">
+    <entry file="file://$PROJECT_DIR$/templates/add_image.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2091" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/schedules.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="329" column="34" selection-start-line="329" selection-start-column="34" selection-end-line="329" selection-end-column="34" />
+        <state relative-caret-position="646">
+          <caret line="203" column="108" selection-start-line="203" selection-start-column="108" selection-end-line="203" selection-end-column="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/services.html">
+    <entry file="file://$PROJECT_DIR$/templates/apply_again.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="381" column="34" selection-start-line="381" selection-start-column="34" selection-end-line="381" selection-end-column="34" />
+        <state relative-caret-position="-2142" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/blog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="283" column="101" selection-start-line="283" selection-start-column="101" selection-end-line="283" selection-end-column="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/terms_and_conditions.html">
+    <entry file="file://$PROJECT_DIR$/templates/bmi.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="208" column="34" selection-start-line="208" selection-start-column="34" selection-end-line="208" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/una.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_as_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1989" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/waiting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2173" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fa8d5da2-1014-4338-8c53-3528069ba35d/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://fa8d5da2-1014-4338-8c53-3528069ba35d/schema/main/table/gym_detail">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="3cc4184b-d15b-4d4d-9b67-a1128df6885a">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://fa8d5da2-1014-4338-8c53-3528069ba35d/schema/main/table/dmail">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="3cc4184b-d15b-4d4d-9b67-a1128df6885a">
-          <filtering>
-            <filter text="" />
-          </filtering>
+        <state relative-caret-position="-1088">
+          <caret line="266" column="108" selection-start-line="266" selection-start-column="108" selection-end-line="266" selection-end-column="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/certified_trainers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="268" column="32" selection-start-line="268" selection-start-column="32" selection-end-line="268" selection-end-column="32" />
+        <state relative-caret-position="-704">
+          <caret line="265" column="112" selection-start-line="265" selection-start-column="112" selection-end-line="265" selection-end-column="112" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/change_email.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="192" column="28" selection-start-line="192" selection-start-column="28" selection-end-line="192" selection-end-column="28" />
+        <state relative-caret-position="102">
+          <caret line="189" column="108" selection-start-line="189" selection-start-column="108" selection-end-line="189" selection-end-column="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/change_image.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="210" column="28" selection-start-line="210" selection-start-column="28" selection-end-line="210" selection-end-column="28" />
+        <state relative-caret-position="153">
+          <caret line="207" column="108" selection-start-line="207" selection-start-column="108" selection-end-line="207" selection-end-column="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/change_password.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="203" column="28" selection-start-line="203" selection-start-column="28" selection-end-line="203" selection-end-column="28" />
+        <state relative-caret-position="221">
+          <caret line="200" column="108" selection-start-line="200" selection-start-column="108" selection-end-line="200" selection-end-column="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/change_uname.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="190" column="34" selection-start-line="190" selection-start-column="34" selection-end-line="190" selection-end-column="34" />
+        <state relative-caret-position="167">
+          <caret line="188" column="108" selection-start-line="188" selection-start-column="108" selection-end-line="188" selection-end-column="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/confirm_email.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="187" column="28" selection-start-line="187" selection-start-column="28" selection-end-line="187" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="184" column="108" selection-start-line="184" selection-start-column="108" selection-end-line="184" selection-end-column="108" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/confirm_admin.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/confirm_trainer_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="314" column="34" selection-start-line="314" selection-start-column="34" selection-end-line="314" selection-end-column="34" />
+        <state relative-caret-position="-34">
+          <caret line="301" column="101" selection-start-line="301" selection-start-column="101" selection-end-line="301" selection-end-column="101" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="252" column="28" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
+        <state relative-caret-position="129">
+          <caret line="248" column="101" selection-start-line="248" selection-start-column="101" selection-end-line="248" selection-end-column="101" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Various_gyms/gym_details.html">
+    <entry file="file://$PROJECT_DIR$/templates/email_gym_creation_congratulating.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="281" column="34" selection-start-line="281" selection-start-column="34" selection-end-line="281" selection-end-column="34" />
+        <state relative-caret-position="-1836">
+          <folding>
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#18#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/healthy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="319" column="34" selection-start-line="319" selection-start-column="34" selection-end-line="319" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/know.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="273" column="34" selection-start-line="273" selection-start-column="34" selection-end-line="273" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reset_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="196" column="34" selection-start-line="196" selection-start-column="34" selection-end-line="196" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/supple.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="232" column="34" selection-start-line="232" selection-start-column="34" selection-end-line="232" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/various_gym.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1544">
-          <caret line="391" column="34" selection-start-line="391" selection-start-column="34" selection-end-line="391" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/verification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="187" column="30" selection-start-line="187" selection-start-column="30" selection-end-line="187" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/trainer_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="76" column="34" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2091" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/owner_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2223">
-          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/owner_account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2652">
-          <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1785" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/landingpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3366">
-          <caret line="96" column="34" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3944">
-          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3230">
-          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3094">
-          <caret line="96" column="34" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_registeration/gym_images.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1445">
-          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2091" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html">
+    <entry file="file://$PROJECT_DIR$/templates/elements.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+          <caret line="455" column="112" selection-start-line="455" selection-start-column="112" selection-end-line="455" selection-end-column="112" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html">
+    <entry file="file://$PROJECT_DIR$/templates/delete_account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3043">
-          <caret line="100" column="34" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
-        </state>
+        <state relative-caret-position="-2761" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html">
+    <entry file="file://$PROJECT_DIR$/templates/email_message.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2635">
-          <caret line="100" column="34" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1938" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/landingpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2448" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12070">
-          <caret line="716" column="46" selection-start-line="716" selection-start-column="46" selection-end-line="716" selection-end-column="46" />
+        <state>
           <folding>
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#18#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/email_user_account_creation_congratulating.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#18#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/email_trainer_details_confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#18#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/email_trainer_account_verified.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="239" />
-          <folding>
-            <element signature="e#4#10#1" expanded="true" />
-            <element signature="e#4#10#1" expanded="true" />
-            <element signature="e#0#6#0" expanded="true" />
-            <element signature="e#6#12#0" expanded="true" />
-            <element signature="e#12#18#0" expanded="true" />
-            <element signature="e#0#6#0" expanded="true" />
-            <element signature="e#6#12#0" expanded="true" />
-            <element signature="e#12#18#0" expanded="true" />
-            <element signature="e#18#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/email_message_for_reset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="111" column="108" lean-forward="true" selection-end-line="239" />
-          <folding>
-            <element signature="e#4#10#1" expanded="true" />
-            <element signature="e#4#10#1" expanded="true" />
-            <element signature="e#0#6#0" expanded="true" />
-            <element signature="e#6#12#0" expanded="true" />
-            <element signature="e#12#18#0" expanded="true" />
-            <element signature="e#0#6#0" expanded="true" />
-            <element signature="e#6#12#0" expanded="true" />
-            <element signature="e#12#18#0" expanded="true" />
-            <element signature="e#18#24#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="71" lean-forward="true" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -1101,13 +930,152 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/email_message_for_reset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="107" column="14" selection-start-line="107" selection-start-column="14" selection-end-line="107" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/faltu.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/faltu2.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/healthy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="307" column="108" selection-start-line="307" selection-start-column="108" selection-end-line="307" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/gym_accessories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="246" column="108" selection-start-line="246" selection-start-column="108" selection-end-line="246" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forgot_request.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1367" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fat.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/FAQs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="269" column="69" selection-start-line="269" selection-start-column="69" selection-end-line="269" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="728" column="66" selection-start-line="728" selection-start-column="66" selection-end-line="728" selection-end-column="66" />
+        <state relative-caret-position="-14">
+          <caret line="2223" column="17" selection-start-line="2223" selection-start-column="17" selection-end-line="2223" selection-end-column="17" />
           <folding>
             <element signature="e#0#116#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/schedules.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="317" column="108" selection-start-line="317" selection-start-column="108" selection-end-line="317" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="369" column="108" selection-start-line="369" selection-start-column="108" selection-end-line="369" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reset_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="194" column="108" selection-start-line="194" selection-start-column="108" selection-end-line="194" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registerr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2499" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2295" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/offers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="215" column="108" selection-start-line="215" selection-start-column="108" selection-end-line="215" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/major.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1588" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/logout.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1479" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/know.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="271" column="108" selection-start-line="271" selection-start-column="108" selection-end-line="271" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/supple.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="220" column="108" selection-start-line="220" selection-start-column="108" selection-end-line="220" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/terms_and_conditions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4155" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/una.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user_as_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2931" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/waiting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2897" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/verification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="185" column="104" selection-start-line="185" selection-start-column="104" selection-end-line="185" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/various_gym.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-823">
+          <caret line="379" column="108" selection-start-line="379" selection-start-column="108" selection-end-line="379" selection-end-column="108" />
         </state>
       </provider>
     </entry>

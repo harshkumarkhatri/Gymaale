@@ -2221,6 +2221,29 @@ def supplements():
         db.session.commit()
     return render_template("supple.html")
 
+@app.route('/faqs',methods=["GET","POST"])
+def faqs():
+    if g.owner:
+        decide='owner'
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        value1=zz.id
+    elif g.trainer:
+        decide='trainer'
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        value1=zz.id
+    else:
+        decide='NULL'
+        zz=user.query.filter_by(username=g.user).first()
+        value1=zz.id
+    print(decide)
+    if request.method=="POST":
+        imail=request.form["imail"]
+        iid=value1
+        adding=dmail(email=imail,owner_id=iid)
+        db.session.add(adding)
+        db.session.commit()
+        return redirect(url_for('faqs'))
+    return render_template("FAQs.html",decide=decide)
 
 @app.route('/bcaa')
 @login_required

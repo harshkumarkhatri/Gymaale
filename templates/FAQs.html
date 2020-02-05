@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Services</title>
+    <title>About us</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="SportFIT template project">
@@ -17,10 +17,11 @@
     <link rel="stylesheet" type="text/css"
           href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
     <link href="{{ url_for('static', filename='plugins/colorbox/colorbox.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/about.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/about_responsive.css') }}">
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
-          type="image/x-icon"><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
+          type="image/x-icon">
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -70,26 +71,54 @@
                     <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
                         <a href="/main">
                             <div class="logo d-flex flex-row align-items-center justify-content-start"><img
-                                    src="/static/images/dot.png" alt="">
+                                    src="/static/images/logo2.jpeg" alt="">
                                 <div>GYMA<span>ale</span></div>
                             </div>
                         </a>
                         <nav class="main_nav">
+                            {% if decide=='owner' %}
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/owner_account/logout">Logout</a></li>
+                                <li><a href="/logout"></a></li>
+                            </ul>
+                            {% elif decide=='trainer' %}
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/trainer_registeration/logout">Logout</a></li>
+                                <li><a href="/logout"></a></li>
+                            </ul>
+                            {% else %}
                             <ul class="d-flex flex-row align-items-center justify-content-start">
                                 <li><a href="/main">Home</a></li>
                                 <li><a href="/about">About us</a></li>
-                                <li class="active"><a href="/services">Services</a></li>
+                                <li><a href="/services">Services</a></li>
                                 <li><a href="/contact">Contact</a></li>
                                 <li><a href="/logout">Logout</a></li>
                             </ul>
+                            {% endif %}
                         </nav>
                         <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <div>9999999999</div>
                         </div>
                         <pre>    </pre>
+                        {% if decide=='NULL' %}
                         <a href="/account">
                             <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile"></a>
+                        {% elif decide=='trainer' %}
+                        <a href="/trainer_registeration/trainer_account">
+                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile">
+                        </a>
+                        {% elif decide=='owner' %}
+                        <a href="/owner_account">
+                            <img src="/static/images/img_avatar.png" alt="Avatar" class="avatar" title="Profile">
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -117,6 +146,7 @@
 
     <div class="menu trans_800">
         <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            {% if decide=='NULL' %}
             <ul>
                 <li><a href="/main">Home</a></li>
                 <li><a href="/about">About us</a></li>
@@ -124,6 +154,23 @@
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
+            {% elif decide=='trainer' %}
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/trainer_registeration/logout">Logout</a></li>
+                <li><a href="/logout"></a></li>
+            </ul>
+            {% elif decide=='owner' %}
+            <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/owner_account/logout">Logout</a></li>
+                <li><a href="/logout"></a></li>
+            </ul>
+            {% endif %}
         </div>
         <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
             <i class="fa fa-phone" aria-hidden="true"></i>
@@ -134,15 +181,15 @@
     <!-- Home -->
 
     <div class="home">
-        <div class="background_image" style="background-image:url(/static/images/services.jpg)"></div>
+        <div class="background_image" style="background-image:url(/static/images/about_page.jpg)"></div>
         <div class="overlay"></div>
         <div class="home_container">
             <div class="container">
                 <div class="row">
                     <div class="col">
                         <div class="home_content">
-                            <div class="home_title">Diet</div>
-                            <div class="home_subtitle">Gym, Diet, Trainer & many more.</div>
+                            <div class="home_title">About us</div>
+                            <div class="home_subtitle">Gym, Trainer, Diet & many more</div>
                         </div>
                     </div>
                 </div>
@@ -150,136 +197,40 @@
         </div>
     </div>
 
-    <!-- Services -->
+    <!-- FAQS -->
 
-    <div class="services">
+    <div class="blog">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="section_title_container">
-                        <div class="section_subtitle">welcome to GYMAale</div>
-                        <div class="section_title">Our Diet Plans</div>
+                        <div class="section_subtitle">Below are some of the frequently asked questions.</div>
                     </div>
                 </div>
             </div>
-            <div class="row services_row">
-                <h2>Fat Loss</h2><br>
-                <h3>A diet which is low in calories, high protien and low fat to help you achieve your goal.</h3>
+            <div class="row blog_row">
 
-                <!-- Service -->
-                <div class="col-xl-4 col-md-6 service_col">
-                    <a href="https://drive.google.com/file/d/1_rljtkPsTBZ6sUOMgKCUog2O-qcsQeh3/view?usp=sharing">
-                        <div class="service">
-                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
 
-                                <div class="service_title">Vegetarian</div>
-                            </div>
-                            <div class="service_text">
-                                <p>A pure vegan diet plan to help you reduce fat.</p>
-                            </div>
+                <!-- Blog Post -->
+                <div class="col-xl-4 col-md-6 blog_col">
+                    <div class="blog_post">
+                        <div class="section_title_container">
+                            <div class="section_title"></div>
                         </div>
-                    </a>
-                </div>
+                        <br>
 
-                <!-- Service -->
-                <div class="col-xl-4 col-md-6 service_col">
-                    <a href="https://drive.google.com/file/d/1H54KjpLB90nyAqX5N1NB1uMc2cvrqJM_/view?usp=sharing">
-                        <div class="service">
-                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-
-                                <div class="service_title">Eggetarian</div>
-                            </div>
-                            <div class="service_text">
-                                <p>Diet plan form eggetarian people to achieve fat loss goals.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Service -->
-                <div class="col-xl-4 col-md-6 service_col">
-                    <a href="https://drive.google.com/file/d/19LuB0H5zMGzGfEPf3Usc1FPMUdYaXbMh/view?usp=sharing">
-                        <div class="service">
-                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-
-                                <div class="service_title">Non Vegetarian</div>
-                            </div>
-                            <div class="service_text">
-                                <p>High in protien and rich in fibre fat loss diet.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <h2>Muscle Gain</h2><br>
-                <h3>A diet which is high in calories, high protien and med. fat to help you achieve your goal.</h3>
-
-                <!-- Service -->
-                <div class="col-xl-4 col-md-6 service_col">
-                    <a href="https://drive.google.com/file/d/15js0CaRjYuQa_n9UfaywsDvvoz-kzEHR/view?usp=sharing">
-                        <div class="service">
-                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-
-                                <div class="service_title">Vegetarian</div>
-                            </div>
-                            <div class="service_text">
-                                <p>Calorie excess diet to achive muscle building in vegan form.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Service -->
-                <div class="col-xl-4 col-md-6 service_col">
-                    <a href="https://drive.google.com/file/d/1H54KjpLB90nyAqX5N1NB1uMc2cvrqJM_/view?usp=sharing">
-                        <div class="service">
-                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-
-                                <div class="service_title">Eggetarian</div>
-                            </div>
-                            <div class="service_text">
-                                <p>Diet plan form eggetarian people to achieve muscle building goals.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Service -->
-                <div class="col-xl-4 col-md-6 service_col">
-                    <a href="https://drive.google.com/file/d/15js0CaRjYuQa_n9UfaywsDvvoz-kzEHR/view?usp=sharing">
-                        <div class="service">
-                            <div class="service_title_container d-flex flex-row align-items-center justify-content-start">
-
-                                <div class="service_title">Non Vegetarian</div>
-                            </div>
-                            <div class="service_text">
-                                <p>Non veg diet plan for achieving lean muscle mass efficiently.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Extra -->
-
-    <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
-        <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="extra_title">More Diet Plans</div>
-                        <div class="extra_text">
-                            <p>More diet plans on the way for you people.</p>
-                        </div>
-                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                        <div class="blog_post_date"><h4>Q1. What is GYMAale?</h4></div>
                     </div>
                 </div>
+                <br/>
             </div>
+            <div class="blog_post_text">
+                <p>Ans. A place where you will get stuff related to gym all at a single place varying from different
+                    categories.</p>
+            </div>
+            <br>
+            <div class="blog_post_date">** Can't find solution to your question?<br>Write us about your problem by <a
+                    href="/contact"> <u>clicking here</u></a></div>
         </div>
     </div>
 
@@ -300,13 +251,25 @@
                                 </a>
                             </div>
                             <nav class="footer_nav">
+                                {% if decide=='NULL' %}
                                 <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
                                     <li><a href="/main">Home</a></li>
                                     <li><a href="/about">About us</a></li>
                                     <li><a href="/services">Services</a></li>
                                     <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contact">Contact</a></li><li><a href="/faqs">FAQs</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
                                 </ul>
+                                {% else %}
+                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/blog"></a></li>
+                                    <li><a href="/contact"></a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
+                                </ul>
+                                {% endif %}
                             </nav>
                             <div class="newsletter_container">
                                 <form method="POST" id="newsletter_form"
@@ -348,8 +311,7 @@
 <script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
 <script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
 <script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/services.js') }}"></script>
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
 
 <script>
     //Get the button
