@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/email_password_reset_successful.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,32 +63,72 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="1069" column="51" lean-forward="true" selection-start-line="1069" selection-start-column="51" selection-end-line="1069" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#116#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="716" column="46" selection-start-line="716" selection-start-column="46" selection-end-line="716" selection-end-column="46" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5395242">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="335">
+                  <caret line="728" column="66" selection-start-line="728" selection-start-column="66" selection-end-line="728" selection-end-column="66" />
+                  <folding>
+                    <element signature="e#0#116#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/email_password_reset_successful.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="302">
+                  <caret line="130" column="70" selection-start-line="130" selection-start-column="70" selection-end-line="130" selection-end-column="70" />
+                  <folding>
+                    <element signature="e#4#10#1" expanded="true" />
+                    <element signature="e#4#10#1" expanded="true" />
+                    <element signature="e#0#6#0" expanded="true" />
+                    <element signature="e#6#12#0" expanded="true" />
+                    <element signature="e#12#18#0" expanded="true" />
+                    <element signature="e#0#6#0" expanded="true" />
+                    <element signature="e#6#12#0" expanded="true" />
+                    <element signature="e#12#18#0" expanded="true" />
+                    <element signature="e#18#24#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="12070">
+                  <caret line="716" column="46" selection-start-line="716" selection-start-column="46" selection-end-line="716" selection-end-column="46" />
+                  <folding>
+                    <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3421">
+                  <caret line="852" column="16" selection-start-line="852" selection-start-column="12" selection-end-line="852" selection-end-column="16" />
+                  <folding>
+                    <element signature="e#0#116#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,10 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>change_image</find>
-      <find>registerr</find>
-      <find>/blog/int</find>
-      <find>register</find>
       <find>jj</find>
       <find>form=</find>
       <find>form =</find>
@@ -134,6 +165,10 @@
       <find>various_gym.html</find>
       <find>verification.html</find>
       <find>index.htm</find>
+      <find>bcrypt</find>
+      <find>reset_password</find>
+      <find>main</find>
+      <find>send</find>
     </findStrings>
     <replaceStrings>
       <replace>age</replace>
@@ -149,7 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/faltu2.html" />
         <option value="$PROJECT_DIR$/templates/forgot_request.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/major.html" />
@@ -159,8 +193,6 @@
         <option value="$PROJECT_DIR$/templates/waiting.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/landingpage.html" />
         <option value="$PROJECT_DIR$/templates/apply_again.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/account_settings.html" />
         <option value="$PROJECT_DIR$/templates/add_image.html" />
@@ -188,9 +220,6 @@
         <option value="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" />
         <option value="$PROJECT_DIR$/templates/know.html" />
         <option value="$PROJECT_DIR$/templates/reset_password.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/templates/verification.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" />
@@ -200,6 +229,12 @@
         <option value="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" />
         <option value="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" />
+        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" />
+        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" />
+        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" />
+        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" />
+        <option value="$PROJECT_DIR$/templates/email_password_reset_successful.html" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -347,7 +382,10 @@
       <workItem from="1579695693375" duration="2868000" />
       <workItem from="1579855758795" duration="7926000" />
       <workItem from="1579937580193" duration="1521000" />
-      <workItem from="1580796679527" duration="9406000" />
+      <workItem from="1580796679527" duration="9825000" />
+      <workItem from="1580830817812" duration="625000" />
+      <workItem from="1580832413916" duration="36000" />
+      <workItem from="1580875304300" duration="3027000" />
     </task>
     <task id="LOCAL-00001" summary="user image is displayed in block yet to edit and owner account displays owner info and gym info">
       <created>1578205801055</created>
@@ -566,11 +604,18 @@
       <option name="project" value="LOCAL" />
       <updated>1580816641317</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="removed a tag from the gymaale on top from trainer and owner pages">
+      <created>1580817336607</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1580817336607</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="617940000" />
+    <option name="totallyTimeSpent" value="622047000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -583,16 +628,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.122654155" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1266756" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="DB Browser" order="3" show_stripe_button="false" weight="0.3297587" />
       <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.49932975" weight="0.32914925" />
       <window_info anchor="bottom" id="Database Changes" order="1" sideWeight="0.49865952" weight="0.32914925" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.35656837" side_tool="true" visible="true" weight="0.14644352" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.64343166" visible="true" weight="0.14644352" />
-      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.64343166" weight="0.32914925" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.35723862" side_tool="true" weight="0.32914925" />
+      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.64343166" visible="true" weight="0.30264995" />
+      <window_info anchor="bottom" id="Version Control" order="4" sideWeight="0.6427614" weight="0.32914925" />
       <window_info anchor="bottom" id="Python Console" order="5" weight="0.32775453" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" weight="0.32775453" />
       <window_info anchor="bottom" id="Message" order="7" />
@@ -613,8 +659,47 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Various gyms,gym details with images and pagination." />
     <MESSAGE value="Trainer register table added" />
     <MESSAGE value="Trianer account and owner-trainer account displaying correctly and some more issues corrected." />
     <MESSAGE value="images uploaded by owner can be viewed in owner account" />
@@ -639,68 +724,21 @@
     <MESSAGE value="added gymaale icon in the title bar" />
     <MESSAGE value="changed the icon in top near the name" />
     <MESSAGE value="Connected all newsletter with table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connected all newsletter with table" />
+    <MESSAGE value="removed a tag from the gymaale on top from trainer and owner pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed a tag from the gymaale on top from trainer and owner pages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>852</line>
+          <line>859</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/email_user_account_creation_congratulating.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#4#10#1" expanded="true" />
-            <element signature="e#4#10#1" expanded="true" />
-            <element signature="e#0#6#0" expanded="true" />
-            <element signature="e#6#12#0" expanded="true" />
-            <element signature="e#12#18#0" expanded="true" />
-            <element signature="e#0#6#0" expanded="true" />
-            <element signature="e#6#12#0" expanded="true" />
-            <element signature="e#12#18#0" expanded="true" />
-            <element signature="e#18#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/faltu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-592" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/faltu2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fat.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/forgot_request.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_accessories.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="258" column="34" selection-start-line="258" selection-start-column="34" selection-end-line="258" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1836" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/logout.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/major.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-14">
@@ -757,16 +795,6 @@
     <entry file="file://$PROJECT_DIR$/templates/waiting.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2173" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="716" column="46" selection-start-line="716" selection-start-column="46" selection-end-line="716" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fa8d5da2-1014-4338-8c53-3528069ba35d/console.sql">
@@ -881,20 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="321" column="30" selection-start-line="321" selection-start-column="30" selection-end-line="321" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="186" column="30" selection-start-line="186" selection-start-column="30" selection-end-line="186" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/various_gym.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1544">
@@ -980,10 +994,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2091" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="95" column="34" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3043">
+          <caret line="100" column="34" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2635">
+          <caret line="100" column="34" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1938" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/landingpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2448" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12070">
+          <caret line="716" column="46" selection-start-line="716" selection-start-column="46" selection-end-line="716" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#2;n#div#9;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/email_trainer_account_verified.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="239" />
+          <folding>
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#18#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/email_message_for_reset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="111" column="108" lean-forward="true" selection-end-line="239" />
+          <folding>
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#18#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/email_password_reset_successful.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="130" column="70" selection-start-line="130" selection-start-column="70" selection-end-line="130" selection-end-column="70" />
+          <folding>
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#4#10#1" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+            <element signature="e#12#18#0" expanded="true" />
+            <element signature="e#18#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1069" column="51" lean-forward="true" selection-start-line="1069" selection-start-column="51" selection-end-line="1069" selection-end-column="51" />
+        <state relative-caret-position="335">
+          <caret line="728" column="66" selection-start-line="728" selection-start-column="66" selection-end-line="728" selection-end-column="66" />
           <folding>
             <element signature="e#0#116#0" expanded="true" />
           </folding>

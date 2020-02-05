@@ -5,7 +5,7 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, log
     AnonymousUserMixin
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_bcrypt import Bcrypt
+#from flask_bcrypt import Bcrypt
 from datetime import timedelta, datetime
 from werkzeug.utils import secure_filename
 import random
@@ -37,7 +37,7 @@ mail = Mail(app)
 
 db = SQLAlchemy(app)
 app.secret_key = '1234'
-bcrypt = Bcrypt(app)
+#bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
@@ -705,6 +705,8 @@ def reset_password(token):
     else:
         value1 = z.username
         value2 = z.email
+        print(z)
+        print(value1,value2)
     if request.method == "POST":
         npass = request.form['npass']
         npassw = request.form['npassw']
@@ -718,9 +720,14 @@ def reset_password(token):
         db.session.add(nu)
         db.session.commit()
 """
+        send_password_reset_successful(value2)
         return redirect(url_for('login'))
     return render_template("reset_password.html")
 
+def send_password_reset_successful(value2):
+    msg=Message('Password reset successful', sender='gymaale.business@gmail.com',recipients=[value2])
+    msg.html=render_template("email_password_reset_successful.html",_external=True)
+    mail.send(msg)
 
 @app.route('/main', methods=["GET", "POST"])
 @login_required
