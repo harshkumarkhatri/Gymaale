@@ -26,6 +26,8 @@ import webbrowser
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 
+from dateutil import parser
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
@@ -830,7 +832,7 @@ def register():
             if z is not None:
                 send_confirmation_email(z)
             # flash("email sent")
-            return redirect(url_for('waiting')), flash('Email Sent')
+            return redirect(url_for('waiting'))
         else:
             flash('Passwords do not match.')
     return render_template("register.html")
@@ -1772,7 +1774,7 @@ def various_gym():
         zz=user.query.filter_by(username=g.user).first()
         value1=zz.id
     page=request.args.get('page',1,type=int)
-    g_names=gym_detail.query.order_by(gym_detail.monthly_fees.asc()).paginate(per_page=2,page=page)
+    g_names=gym_detail.query.order_by(gym_detail.monthly_fees.asc()).paginate(per_page=6,page=page)
     if request.method == "POST":
         imail = request.form["imail"]
         iid = value1
@@ -2244,6 +2246,44 @@ def faqs():
         db.session.commit()
         return redirect(url_for('faqs'))
     return render_template("FAQs.html",decide=decide)
+
+@app.route('/admin/publishing_blog_post',methods=["GET","POST"])
+def publishing_blog_post():
+    if g.user:
+        if g.user=='harsh':
+            if request.method=="POST":
+                title=request.form["title"]
+                date=request.form["date"]
+                fulltext=request.form["fulltext"]
+                dat=''
+                rem='T'
+                for char in date:
+                    if char not in rem:
+                        if char=='-':
+                            char='/'
+                            dat=dat+char
+                        else:
+                            dat=dat+char
+                    else:
+                        dat=dat+' '
+                print(dat+':00')
+                z=parser.parse(date)
+                adding=blog2(title=title,date=z,b_txt=fulltext)
+                db.session.add(adding)
+                db.session.commit()
+                email_qur=dmail.query.all()
+                for e_mail in email_qur:
+                    zz=e_mail.email
+                    send_blog_added(zz,title)
+            else:
+                print('not submitted')
+            return render_template('publishing_blog_post.html')
+
+def send_blog_added(zz,title):
+    msg=Message('New Blog Added',sender='gymaale.business@gmail.com',recipients=[zz])
+    msg.html=render_template("email_blog_added.html",title=title,_external=True)
+    mail.send(msg)
+
 
 @app.route('/bcaa')
 @login_required
