@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
-          type="image/x-icon"><style>
+          type="image/x-icon">
+    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
@@ -174,7 +175,7 @@
 
 </pre>
     {% if verification_text %}
-    {{ verification_text  }}
+    {{ verification_text }}
     {% endif %}
     {% if change_gym_details %}
     {% for i in change_gym_details %}
@@ -191,9 +192,16 @@
     {% endif %}
     {% endif %}
 
-    {% for message in get_flashed_messages() %}
-    {{ message }}
-    {% endfor %}
+    {% if get_flashed_messages() %}
+    <div class="alert alert-dark alert-dismissible fade show" role="alert">
+        {% for message in get_flashed_messages() %}
+        {{ message }}
+        {% endfor %}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
 
     <!-- Extra -->
 
@@ -237,7 +245,8 @@
                                     <li><a href="/about">About us</a></li>
                                     <li><a href="/services">Services</a></li>
                                     <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contact">Contact</a></li><li><a href="/faqs">FAQs</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
                                 </ul>
                                 {% elif verification_text %}
                                 {% else %}
@@ -246,7 +255,8 @@
                                     <li><a href="/contact">Contact Us</a></li>
                                     <li><a href="/blog">Blog</a></li>
                                     <li><a href="/blog"></a></li>
-                                    <li><a href="/contact"></a></li><li><a href="/faqs">FAQs</a></li>
+                                    <li><a href="/contact"></a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
                                 </ul>
                                 {% endif %}
                             </nav>

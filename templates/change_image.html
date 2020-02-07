@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
-          type="image/x-icon"><style>
+          type="image/x-icon">
+    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
@@ -142,9 +143,16 @@
         <div class="row">
             <div class="col">
                 <hr>
-                {% for message in get_flashed_messages() %}
-                {{ message }}
-                {% endfor %}
+                {% if get_flashed_messages() %}
+                <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                    {% for message in get_flashed_messages() %}
+                    {{ message }}
+                    {% endfor %}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
                 <h1>You are one step away
                     from uploading your photo.</h1><br>
                 <h1>Upload an image</h1>
@@ -205,7 +213,8 @@
                                     <li><a href="/about">About us</a></li>
                                     <li><a href="/services">Services</a></li>
                                     <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contact">Contact</a></li><li><a href="/faqs">FAQs</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
                                 </ul>
                             </nav>
 

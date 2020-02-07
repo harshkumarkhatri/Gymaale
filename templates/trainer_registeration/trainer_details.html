@@ -259,11 +259,16 @@
                     <input type="checkbox" value="checked" name="cb" required>The details entered by me are correct and i accept the <a href="/terms_and_conditions">terms and conditions</a> of GYMAale.
                 </div>
 
-                {% for message in get_flashed_messages() %}
-                <div class=flash>
-                    {{ message }}
-                </div>
-                {% endfor %}
+                {% if get_flashed_messages() %}
+                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                            {% for message in get_flashed_messages() %}
+                            {{ message }}
+                            {% endfor %}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
                 <button type="submit" class="btn form-control btn-default"><u>Submit</u></button>
                 <p>The details you are providing cannot be changed after submitted once.</p>
                 <br>

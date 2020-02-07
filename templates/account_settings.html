@@ -142,9 +142,16 @@
     <a class="btn btn-outline-dark" href="/mj">* Change User Image</a>
     <br><br>
     <a class="btn btn-outline-dark" href="/delete_account">* Delete Account</a><br><br>
-    {% for message in get_flashed_messages() %}
-    {{ message }}
-    {% endfor %}
+    {% if get_flashed_messages() %}
+                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                            {% for message in get_flashed_messages() %}
+                            {{ message }}
+                            {% endfor %}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
     {% if do %}
     <img src="{{ do }}" alt="User Image">
     {% endif %}

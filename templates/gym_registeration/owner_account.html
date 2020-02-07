@@ -219,9 +219,16 @@
     <a href="/gym_registeration/add_another_gym">* <u>Add Other Gym</u></a><br>
     <a href="/gym_registeration/owner_account/account_settings">* <u>Account Settings</u></a><br>
 
-    {% for message in get_flashed_messages() %}
-    {{ message }}
-    {% endfor %}
+    {% if get_flashed_messages() %}
+                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                            {% for message in get_flashed_messages() %}
+                            {{ message }}
+                            {% endfor %}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
     {% if do %}
     <img src="{{ do }}" alt="User Image">
     {% endif %}

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
-          type="image/x-icon"><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
+          type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -210,11 +210,16 @@
 
                     </div>
 
-                    {% for message in get_flashed_messages() %}
-                    <div class=flash>
+                    {% if get_flashed_messages() %}
+                    <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                        {% for message in get_flashed_messages() %}
                         {{ message }}
+                        {% endfor %}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    {% endfor %}
+                    {% endif %}
                     <button type="submit" class="btn form-control btn-default"><u>Submit</u></button>
                     <br>
                     <a class="form-control btn-default btn" href="/main"> <u>Skip for now</u></a>
@@ -224,9 +229,6 @@
             </div>
         </div>
     </div>
-    {% for message in get_flashed_messages() %}
-    {{ message }}
-    {% endfor %}
 
     <!-- Extra -->
 
@@ -269,7 +271,8 @@
                                     <li><a href="/about">About us</a></li>
                                     <li><a href="/services">Services</a></li>
                                     <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contact">Contact</a></li><li><a href="/faqs">FAQs</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
                                 </ul>
                             </nav>
                             <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">

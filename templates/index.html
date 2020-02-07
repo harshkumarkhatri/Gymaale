@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  var OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "4c081dd9-c427-46e7-8a66-95eab1b63f0d",
-    });
-  });
-</script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "4c081dd9-c427-46e7-8a66-95eab1b63f0d",
+            });
+        });
+    </script>
     <title>GYMaale</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -172,15 +172,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="home_content text-center">
+                        {% if get_flashed_messages() %}
+                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
                             {% for message in get_flashed_messages() %}
-                            <div class=flash>
-                                {{ message }}
-                            </div>
+                            {{ message }}
                             {% endfor %}
-
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
+                        <div class="home_content text-center">
                             <div class="video_link">
-
                                 <a class="vimeo video_button d-flex flex-column align-items-center justify-content-center"
                                    href="{{ url_for('static', filename='images/dd.mp4') }}">
                                     <div class="video_link_content d-flex flex-row align-items-center justify-content-start">
@@ -786,15 +789,15 @@
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5e1ff0047e39ea1242a4d90e/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5e1ff0047e39ea1242a4d90e/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
 </script>
 <!--End of Tawk.to Script-->
 

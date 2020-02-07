@@ -798,7 +798,8 @@ def user_data():
             return redirect(url_for('main')), flash("Data submitted successfully")
     return render_template("know.html")
 
-
+#currently not in use
+"""
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
@@ -814,7 +815,7 @@ def edit_profile():
         form.about_me.data = current_user.about_me
     return render_template('change_uname.html', title='Edit Profile',
                            form=form)
-
+"""
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -845,7 +846,6 @@ def register():
             z = user.query.filter_by(email=mail).first()
             if z is not None:
                 send_confirmation_email(z)
-            # flash("email sent")
             return redirect(url_for('waiting'))
         else:
             flash('Passwords do not match.')
@@ -1020,7 +1020,8 @@ def change_password():
         return redirect(url_for('account_settings')), flash("Password Changed Successfully")
     return render_template("change_password.html")
 
-
+#currently not working
+"""
 @app.route('/change_username', methods=["GET", "POST"])
 @login_required
 def change_username():
@@ -1054,6 +1055,7 @@ def change_username():
         else:
             flash("Current username incorrect.")
     return render_template("change_uname.html")
+    """
 
 
 @app.before_request

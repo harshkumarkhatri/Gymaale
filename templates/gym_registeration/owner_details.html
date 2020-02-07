@@ -210,11 +210,16 @@
                         <input type="radio" name="any" value="No" required> No
                     </div>
 
-                    {% for message in get_flashed_messages() %}
-                    <div class=flash>
-                        {{ message }}
-                    </div>
-                    {% endfor %}
+                    {% if get_flashed_messages() %}
+                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                            {% for message in get_flashed_messages() %}
+                            {{ message }}
+                            {% endfor %}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
                     <button type="submit" class="btn form-control btn-default"><u>Submit</u></button>
                     <br>
                     <br>

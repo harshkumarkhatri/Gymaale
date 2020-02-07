@@ -46,7 +46,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
-          type="image/x-icon"><style>
+          type="image/x-icon">
+    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
@@ -258,11 +259,16 @@
                         <input type="radio" name="any" value="No" required> No
                     </div>
 
-                    {% for message in get_flashed_messages() %}
-                    <div class=flash>
+                    {% if get_flashed_messages() %}
+                    <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                        {% for message in get_flashed_messages() %}
                         {{ message }}
+                        {% endfor %}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    {% endfor %}
+                    {% endif %}
                     <button type="submit" class="btn form-control btn-default"><u>Submit</u></button>
                     <br>
                     <br>
@@ -316,7 +322,8 @@
                                     <li><a href="/about">About us</a></li>
                                     <li><a href="/services">Services</a></li>
                                     <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contact">Contact</a></li><li><a href="/faqs">FAQs</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
                                 </ul>
                                 {% else %}
                                 <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
@@ -324,7 +331,8 @@
                                     <li><a href="/contact">Contact Us</a></li>
                                     <li><a href="/blog">Blog</a></li>
                                     <li><a href="/blog"></a></li>
-                                    <li><a href="/contact"></a></li><li><a href="/faqs">FAQs</a></li>
+                                    <li><a href="/contact"></a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
                                 </ul>
                                 {% endif %}
                             </nav>

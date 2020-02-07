@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
-          type="image/x-icon"><style>
+          type="image/x-icon">
+    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
@@ -294,8 +295,8 @@
                 cursor: pointer;
                 transition: 0.3s;
                 position: absolute;
-                top: 150px;
-                right: 150px;
+                top: -10px;
+                right: 50px;
                 border: 1px solid #ddd;
                 border-radius: 4px;
                 padding: 5px;
@@ -394,7 +395,7 @@
                 cursor: pointer;
                 transition: 0.3s;
                 position: absolute;
-                top: 150px;
+                top: 50px;
                 right: 150px;
                 border: 1px solid #ddd;
                 border-radius: 4px;
@@ -453,7 +454,7 @@
     <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
         <div class="hamburger">
             <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
-                <span>menu</span>
+                <span></span>
                 <div class="hamburger_container">
                     <div class="menu_hamburger">
                         <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
@@ -491,35 +492,53 @@
     <div class="page">
         <img id="myImg" src="data:;base64,{{ imag }}"/></div>
     <div id="demo">
-        {% if value3=='NULL' and value4=='NULL' %}
-        {% else %}
-        <h4><u>Name</u>: {{ value3 }} {{ value4 }}</h4>
-        {% endif %}
-        <h4><u>@</u>{{ value }}</h4>
-        <h4><u>Email</u>: {{ value2 }}</h4>
-        {% if value5=='NULL' and value6=='NULL' %}
-        {% else %}
-        <h4><u>Address</u>: {{ value5 }}</h4>
-        <h4><u>Age</u>: {{ value6 }}</h4>
-        <h4><u>Interest</u>: {{ value7 }}</h4>
-        {% endif %}
-        {% if value8=='NULL' %}
-        {% else %}
-        {% if value8=='Yes' %}
-        <h4>Already Training from {{ value9 }}</h4>
-        {% endif %}
-        {% endif %}
+        <div class="container">
+            {% if value3=='NULL' and value4=='NULL' %}
+            {% else %}
+            <h4><u>Name</u>: {{ value3 }} {{ value4 }}</h4>
+            {% endif %}
+            <h4><u>@</u>{{ value }}</h4>
+            <h4><u>Email</u>: {{ value2 }}</h4>
+            {% if value5=='NULL' and value6=='NULL' %}
+            {% else %}
+            <h4><u>Address</u>: {{ value5 }}</h4>
+            <h4><u>Age</u>: {{ value6 }}</h4>
+            <h4><u>Interest</u>: {{ value7 }}</h4>
+            {% endif %}
+            {% if value8=='NULL' %}
+            {% else %}
+            {% if value8=='Yes' %}
+            <h4>Already Training from {{ value9 }}</h4>
+            {% endif %}
+            {% endif %}
+
+
+            <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                <strong>Any suggestions?</strong> Drop them by <a href="{{ url_for('contact') }}">clicking here!!</a>
+                <p>You would be given credits in the blog.</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="mt-3"></div>
+        </div>
     </div>
-    <a href="/account_settings">* <u>Account Settings</u></a><br><br>
 
     <div id="myModal" class="modal">
         <span class="close">×</span>
         <img class="modal-content" id="img01">
         <div id="caption"></div>
     </div>
-    {% for message in get_flashed_messages() %}
-    {{ message }}
-    {% endfor %}
+    {% if get_flashed_messages() %}
+    <div class="alert alert-dark alert-dismissible fade show" role="alert">
+        {% for message in get_flashed_messages() %}
+        {{ message }}
+        {% endfor %}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
 
     <!-- Extra -->
 
@@ -563,7 +582,8 @@
                                     <li><a href="/about">About us</a></li>
                                     <li><a href="/services">Services</a></li>
                                     <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contact">Contact</a></li><li><a href="/faqs">FAQs</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/faqs">FAQs</a></li>
                                 </ul>
                             </nav>
                             <div class="newsletter_container">
