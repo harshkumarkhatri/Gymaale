@@ -1057,7 +1057,7 @@ def change_username():
     return render_template("change_uname.html")
     """
 
-
+#making session sustain for 5 days
 @app.before_request
 def make_session_permanent():
     session.permanent = True
