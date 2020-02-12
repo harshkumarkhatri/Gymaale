@@ -5,7 +5,7 @@ from flask_login import LoginManager, UserMixin, login_required, login_user, log
     AnonymousUserMixin
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
-# from flask_bcrypt import Bcrypt
+from flask_bcrypt import Bcrypt
 from datetime import timedelta, datetime
 from werkzeug.utils import secure_filename
 import random
@@ -39,7 +39,7 @@ mail = Mail(app)
 
 db = SQLAlchemy(app)
 app.secret_key = '1234'
-# bcrypt = Bcrypt(app)
+bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"

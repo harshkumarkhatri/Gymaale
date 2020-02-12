@@ -2,45 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa8d5da2-1014-4338-8c53-3528069ba35d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fa8d5da2-1014-4338-8c53-3528069ba35d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account_settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_uname.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_uname.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/confirm_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/confirm_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/delete_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/delete_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forgot_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forgot_request.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/know.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/know.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registerr.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registerr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_as_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_as_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/verification.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,37 +62,6 @@
     </expand>
     <select />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="67" selection-start-column="62" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="170" column="36" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/verification.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="130" column="15" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -133,139 +69,17 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>healthy.html</find>
-      <find>know.html</find>
-      <find>owner_details.html</find>
-      <find>reset_password.html</find>
-      <find>supple.html</find>
-      <find>trainer_details.html</find>
-      <find>trainer_images.html</find>
-      <find>various_gym.html</find>
-      <find>verification.html</find>
-      <find>index.htm</find>
-      <find>bcrypt</find>
-      <find>main</find>
-      <find>send</find>
-      <find>{{</find>
-      <find>about</find>
-      <find>reset_password</find>
-      <find>mail.send(msg)</find>
-      <find>join now</find>
-      <find>various_</find>
-      <find>join</find>
-      <find>registeration</find>
-      <find>email sent</find>
-      <find>contact</find>
-      <find>myimg</find>
-      <find>get in</find>
-      <find>get_fl</find>
-      <find>offers</find>
-      <find>for</find>
-      <find>flash</find>
-      <find>get_flas</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>age</replace>
-      <replace>h5</replace>
-      <replace>value</replace>
-      <replace>h4</replace>
-      <replace>i</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/templates/gym_accessories.html" />
-        <option value="$PROJECT_DIR$/templates/schedules.html" />
-        <option value="$PROJECT_DIR$/templates/services.html" />
-        <option value="$PROJECT_DIR$/templates/offers.html" />
-        <option value="$PROJECT_DIR$/templates/supple.html" />
-        <option value="$PROJECT_DIR$/templates/various_gym.html" />
-        <option value="$PROJECT_DIR$/templates/email_password_reset_successful.html" />
-        <option value="$PROJECT_DIR$/templates/email_message_for_reset.html" />
-        <option value="$PROJECT_DIR$/templates/email_message.html" />
-        <option value="$PROJECT_DIR$/templates/email_trainer_account_verified.html" />
-        <option value="$PROJECT_DIR$/templates/email_gym_creation_congratulating.html" />
-        <option value="$PROJECT_DIR$/templates/email_user_account_creation_congratulating.html" />
-        <option value="$PROJECT_DIR$/templates/email_trainer_details_confirmation.html" />
-        <option value="$PROJECT_DIR$/templates/about.html" />
-        <option value="$PROJECT_DIR$/templates/publishing_blog_post.html" />
-        <option value="$PROJECT_DIR$/templates/email_blog_added.html" />
-        <option value="$PROJECT_DIR$/templates/contact.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/templates/account.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/login.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/register.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" />
-        <option value="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_register.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" />
-        <option value="$PROJECT_DIR$/templates/trainer_registeration/login.html" />
-        <option value="$PROJECT_DIR$/templates/account_settings.html" />
-        <option value="$PROJECT_DIR$/templates/admin_register.html" />
-        <option value="$PROJECT_DIR$/templates/confirm_email.html" />
-        <option value="$PROJECT_DIR$/templates/change_uname.html" />
-        <option value="$PROJECT_DIR$/templates/change_password.html" />
-        <option value="$PROJECT_DIR$/templates/change_image.html" />
-        <option value="$PROJECT_DIR$/templates/change_email.html" />
-        <option value="$PROJECT_DIR$/templates/default.html" />
-        <option value="$PROJECT_DIR$/templates/delete_account.html" />
-        <option value="$PROJECT_DIR$/templates/forgot_request.html" />
-        <option value="$PROJECT_DIR$/templates/know.html" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/templates/register.html" />
-        <option value="$PROJECT_DIR$/templates/registerr.html" />
-        <option value="$PROJECT_DIR$/templates/reset_password.html" />
-        <option value="$PROJECT_DIR$/templates/user_as_admin.html" />
-        <option value="$PROJECT_DIR$/templates/verification.html" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="979" />
-    <option name="height" value="1060" />
-  </component>
+  <component name="ProjectId" id="1XguT3kmC06jZazOxrEJffZ6PUB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="untitled1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="untitled1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled1" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
@@ -294,15 +108,15 @@
       <recent name="C:\Users\dell\PycharmProjects\untitled1\templates" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -387,6 +201,7 @@
       <workItem from="1580894147769" duration="320000" />
       <workItem from="1580964117396" duration="12090000" />
       <workItem from="1581052285532" duration="5337000" />
+      <workItem from="1581480098899" duration="3295000" />
     </task>
     <task id="LOCAL-00001" summary="user image is displayed in block yet to edit and owner account displays owner info and gym info">
       <created>1578205801055</created>
@@ -664,9 +479,6 @@
     <option name="localTasksCounter" value="40" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="647041000" />
-  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -675,35 +487,6 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.12868632" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info id="DB Browser" order="3" show_stripe_button="false" weight="0.3297587" />
-      <window_info anchor="bottom" id="Database Console" order="0" sideWeight="0.49932975" weight="0.32914925" />
-      <window_info anchor="bottom" id="Database Changes" order="1" sideWeight="0.49865952" weight="0.32914925" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.3585791" side_tool="true" weight="0.32914925" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.64343166" weight="0.30264995" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="4" sideWeight="0.6414209" visible="true" weight="0.32914925" />
-      <window_info anchor="bottom" id="Python Console" order="5" weight="0.32775453" />
-      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" weight="0.32775453" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" sideWeight="0.49932975" weight="0.32914925" />
-      <window_info anchor="bottom" id="Run" order="9" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" weight="0.32914925" />
-      <window_info anchor="bottom" id="DB Execution Console" order="14" />
-      <window_info anchor="right" id="Database" order="0" weight="0.32841823" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="SciView" order="2" weight="0.32841823" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -714,20 +497,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -776,6 +546,12 @@
     <MESSAGE value="added some comments to make code look good." />
     <option name="LAST_COMMIT_MESSAGE" value="added some comments to make code look good." />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="620" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1581480302902">
+      <screen x="0" y="26" width="1920" height="1029" />
+    </state>
+    <state x="620" y="368" key="com.intellij.ide.util.TipDialog/0.26.1920.1029@0.26.1920.1029" timestamp="1581480302902" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -786,309 +562,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="265" column="35" selection-start-line="265" selection-start-column="35" selection-end-line="265" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/trainer_registeration/landingpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Various_gyms/gym_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="392" column="85" selection-start-line="392" selection-start-column="82" selection-end-line="392" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/blog_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/blog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/apply_again.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/add_image.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin_register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account_settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="153" column="35" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/confirm_admin.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/confirm_email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="160" column="35" selection-start-line="160" selection-start-column="35" selection-end-line="160" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/change_uname.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="164" column="35" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/change_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="177" column="31" selection-start-line="177" selection-start-column="31" selection-end-line="177" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/change_image.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="154" column="27" selection-start-line="154" selection-start-column="27" selection-end-line="154" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/change_email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="165" column="35" selection-start-line="165" selection-start-column="35" selection-end-line="165" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/certified_trainers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bmi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/confirm_trainer_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="237" column="79" selection-start-line="237" selection-start-column="79" selection-end-line="237" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/default.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="203" column="15" selection-start-line="203" selection-start-column="15" selection-end-line="203" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/elements.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/delete_account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/email_blog_added.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="122" column="48" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="48" />
-          <folding>
-            <element signature="e#4#10#1" expanded="true" />
-            <element signature="e#4#10#1" expanded="true" />
-            <element signature="e#0#6#0" expanded="true" />
-            <element signature="e#6#12#0" expanded="true" />
-            <element signature="e#12#18#0" expanded="true" />
-            <element signature="e#0#6#0" expanded="true" />
-            <element signature="e#6#12#0" expanded="true" />
-            <element signature="e#12#18#0" expanded="true" />
-            <element signature="e#18#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/faltu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/faltu2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/FAQs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/forgot_request.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="58" column="35" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/gym_accessories.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/healthy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/know.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="221" column="31" selection-start-line="221" selection-start-column="31" selection-end-line="221" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/logout.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/publishing_blog_post.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/offers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/major.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registerr.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reset_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="170" column="35" selection-start-line="170" selection-start-column="35" selection-end-line="170" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/schedules.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/various_gym.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user_as_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/una.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/terms_and_conditions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/supple.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/services.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="170" column="36" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/waiting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-31" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/verification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="130" column="15" selection-start-line="130" selection-start-column="15" selection-end-line="130" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
