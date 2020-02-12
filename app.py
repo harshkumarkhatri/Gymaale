@@ -605,6 +605,14 @@ class trainer_detail(db.Model):
         else:
             self.verified = None
 
+class wallet_all(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    ref_id=db.Column(db.Integer)
+    ref_type=db.Column(db.String(40))
+    ammount=db.Column(db.Integer)
+
+
+
 
 """class blog(db.Model):
     id=db.Column(db.Integer,primary_key=True)
@@ -2343,6 +2351,40 @@ def send_blog_added(zz, title):
     msg.html = render_template("email_blog_added.html", title=title, _external=True)
     mail.send(msg)
 
+@app.route('/account/wallet')
+def wallet():
+    return render_template('wallet.html')
+
+@app.route('/account/wallet/add',methods=["GET","POST"])
+def wallet_add():
+    if g.user:
+        zz=user.query.filter_by(username=g.user).first()
+        ref_id=zz.id
+        ref_type='user'
+    elif g.owner:
+        zz=ownerregister.query.filter_by(username=g.owner).first()
+        ref_id=zz.id
+        ref_type='owner'
+    elif g.trainer:
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        ref_type='trainer'
+    if request.method=="POST":
+        loop=wallet_all.query.filter_by(ref_id=ref_id).first()
+        ammount=loop.ammount
+        print(ammount)
+        startAmmount = request.form['startAmmount']
+        if loop:
+            ammount=int(ammount+int(startAmmount))
+            loop.ammount=ammount
+            db.session.commit()
+            print(ammount)
+        else:
+            ref_id_from_above=ref_id
+            adding=wallet_all(ref_id=ref_id_from_above,ref_type=ref_type,ammount=startAmmount)
+            db.session.add(adding)
+            db.session.commit()
+        return render_template('default.html',ammountInAccount=loop.ammount)
+    return render_template('walletAdd.html')
 
 @app.route('/bcaa')
 @login_required
