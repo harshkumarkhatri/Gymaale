@@ -186,6 +186,7 @@
                 </h3>
                 {% endif %}
                 <h3><i class="fa fa-book"></i> {{ t_names.desc }}</h3>
+                <h3>Charges: {{ t_names.charges }}</h3>
                 {% if trainer_img %}
                 <h4><u>Images:</u></h4>
                 <div class="flex-box-containeer-2">
@@ -195,6 +196,7 @@
                 <img src="data:;base64,{{ imag_4 }}"><br>
                 <img src="data:;base64,{{ imag_5 }}">
                 </div>
+                <a href="{{ url_for('transaction',trans=t_names.charges,ref_id=t_names.ref_id) }}">Book Trainer</a>
                 {% endif %}
 
 
@@ -203,6 +205,7 @@
 
 
             </pre>
+                <!--
                 <div class="razorpay-embed-btn" data-url="https://rzp.io/l/eKpsqUv" data-text="Pay Now"
                      data-color="#528FF0" data-size="large">
                     <script>
@@ -222,6 +225,7 @@
                         })();
                     </script>
                 </div>
+                -->
 
 
             </div>

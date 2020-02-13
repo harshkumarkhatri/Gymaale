@@ -551,6 +551,7 @@ class trainer_detail(db.Model):
     address = db.Column(db.String(200))
     state = db.Column(db.String(40))
     city = db.Column(db.String(40))
+    charges=db.Column(db.Integer)
     c_mail = db.Column(db.String(70))  # mail for customers
     p_mob = db.Column(db.Integer)  # personal mobile number
     c_mob = db.Column(db.Integer)  # phone number for customers
@@ -568,7 +569,7 @@ class trainer_detail(db.Model):
     cb = db.Column(db.String(40))
     verified = db.Column(db.String(40))
 
-    def __init__(self, first_name, last_name, address, state, city, c_mail, p_mob, c_mob, age, t_time, certifications,
+    def __init__(self, first_name, last_name, address, state, city,charges, c_mail, p_mob, c_mob, age, t_time, certifications,
                  training_mode
                  , diet_support, training_support, insta_link, youtube_link, desc, ref_id, owner_ref_id, cb, verified):
         self.first_name = first_name
@@ -576,6 +577,7 @@ class trainer_detail(db.Model):
         self.address = address
         self.state = state
         self.city = city
+        self.charges=charges
         self.c_mail = c_mail
         self.p_mob = p_mob
         if c_mob:
@@ -970,6 +972,8 @@ def account():
         # print(zz)
         xyz = image.query.filter_by(user_id=z.id).first()
         imag = base64.b64encode(xyz.data).decode('ascii')
+    wallet_qur = wallet_all.query.filter_by(ref_id=z.id).first()
+    print(wallet_qur.ammount)
     if zz == None:
         value3 = 'NULL'
         value4 = 'NULL'
@@ -995,7 +999,7 @@ def account():
         db.session.add(adding)
         db.session.commit()
     return render_template("account.html", value=m, value2=z.email, value3=value3, value4=value4,
-                           value5=value5, value6=value6, value7=value7, value8=value8, value9=value9, imag=imag)
+                           value5=value5, value6=value6, value7=value7, value8=value8,wallet_ammount=wallet_qur.ammount, value9=value9, imag=imag)
 
 
 @app.route('/change_password', methods=["GET", "POST"])
@@ -1691,7 +1695,7 @@ def trainer_account_2():
         mm = trainer_detail.query.filter_by(owner_ref_id=zz.id).first()
         dd = trainer_image.query.filter_by(owner_ref_id=zz.id).first()
         print(zz)
-        print(mm)
+        print(mm.charges)
         print(dd)
         image_1 = base64.b64encode(dd.image1).decode('ascii')
         image_2 = base64.b64encode(dd.image2).decode('ascii')
@@ -1864,7 +1868,12 @@ def trainer_login():
         if login:
             if check_password_hash(login.password, passw):
                 session['trainer'] = uname
-                return redirect(url_for('trainer_details'))
+                xyz=trainerregister.query.filter_by(username=uname).first()
+                zz=trainer_detail.query.filter_by(ref_id=xyz.id).first()
+                if zz:
+                    return redirect(url_for('trainer_account'))
+                else:
+                    return redirect(url_for('trainer_details'))
             else:
                 return redirect(url_for('trainer_login')), flash("Password Incorrect.")
         else:
@@ -1906,7 +1915,6 @@ def trainer_details():
     if g.trainer:
         zz = trainerregister.query.filter_by(username=g.trainer).first()
         print(g.trainer)
-        mm = trainer_detail.query.filter_by(ref_id=zz.id).first()
         if zz:
             ref_id = zz.id
             owner_ref_id = 'NULL'
@@ -1915,60 +1923,57 @@ def trainer_details():
     elif g.owner:
         print(g.owner)
         zz = ownerregister.query.filter_by(username=g.owner).first()
-        mm = 'NULL'
         if zz:
             owner_ref_id = zz.id
             ref_id = 'NULL'
         else:
             owner_ref_id = 'NULL'
-    if mm != 'NULL':
-        return redirect(url_for('trainer_account'))
-    else:
-        if request.method == "POST":
-            fname = request.form['fname']
-            lname = request.form['lname']
-            add = request.form['add']
-            state = request.form['state']
-            city = request.form['city']
-            c_mail = request.form['mail']
-            p_mob = request.form['mob']
-            c_mob = request.form['mob2']
-            age = request.form['age']
-            t_time = request.form['ttime']
-            certi = request.form['certifications']
-            mode = request.form['mode']
-            d_support = request.form['diet']
-            t_support = request.form['any']
-            i_link = request.form['i_link']
-            y_link = request.form['y_link']
-            desc = request.form['desc']
-            cb = request.form['cb']
-            verified = 'NULL'
 
-            zz = trainer_detail.query.filter_by(p_mob=p_mob).first()
-            print(g.trainer)
-            print(zz)
-            new = trainer_detail(first_name=fname, last_name=lname, address=add,
-                                 state=state, city=city,
+    if request.method == "POST":
+        fname = request.form['fname']
+        lname = request.form['lname']
+        add = request.form['add']
+        state = request.form['state']
+        city = request.form['city']
+        charges=int(request.form['charges'])
+        c_mail = request.form['mail']
+        p_mob = request.form['mob']
+        c_mob = request.form['mob2']
+        age = request.form['age']
+        t_time = request.form['ttime']
+        certi = request.form['certifications']
+        mode = request.form['mode']
+        d_support = request.form['diet']
+        t_support = request.form['any']
+        i_link = request.form['i_link']
+        y_link = request.form['y_link']
+        desc = request.form['desc']
+        cb = request.form['cb']
+        verified = 'NULL'
+        zz = trainer_detail.query.filter_by(p_mob=p_mob).first()
+        print(g.trainer)
+        print(zz)
+        new = trainer_detail(first_name=fname, last_name=lname, address=add,
+                                 state=state, city=city,charges=charges,
                                  c_mail=c_mail, p_mob=p_mob, c_mob=c_mob,
                                  age=age, t_time=t_time, certifications=certi,
                                  training_mode=mode, diet_support=d_support, training_support=t_support,
                                  insta_link=i_link, youtube_link=y_link, desc=desc, ref_id=ref_id,
                                  owner_ref_id=owner_ref_id, cb=cb, verified=verified)
-            db.session.add(new)
-            db.session.commit()
-            qur = trainer_detail.query.filter_by(first_name=fname, last_name=lname, p_mob=p_mob).first()
-            print(qur)
-            send_trainer_details_email(qur)
-            return redirect(url_for('trainer_images')), flash(
+        db.session.add(new)
+        db.session.commit()
+        qur = trainer_detail.query.filter_by(first_name=fname, last_name=lname, p_mob=p_mob).first()
+        print(qur)
+        send_trainer_details_email(qur)
+        return redirect(url_for('trainer_images')), flash(
                 'Your details have been submitted and will be visible to users once verified. Genenrally the verification may take upto 24 hours.')
     return render_template("trainer_registeration/trainer_details.html")
 
 #sending email to admin to confirm the details of the trainer.
 def send_trainer_details_email(qur):
+    print(qur.first_name)
     recp = 'gymaale.buisness@gmail.com'
     msg = Message('CONFIRM THE TRAINER', sender='gymaale.buisness@gmail.com', recipients=[recp])
-    msg.body = f'''Confirm the trainer account so that it can be displayed to the users.'''
     msg.html = render_template("email_trainer_details_confirmation.html", qur=qur, _externaml=True)
     mail.send(msg)
 
@@ -2367,13 +2372,13 @@ def wallet_add():
         ref_type='owner'
     elif g.trainer:
         zz=trainerregister.query.filter_by(username=g.trainer).first()
+        ref_id=zz.id
         ref_type='trainer'
     if request.method=="POST":
         loop=wallet_all.query.filter_by(ref_id=ref_id).first()
-        ammount=loop.ammount
-        print(ammount)
         startAmmount = request.form['startAmmount']
         if loop:
+            ammount=loop.ammount
             ammount=int(ammount+int(startAmmount))
             loop.ammount=ammount
             db.session.commit()
@@ -2386,6 +2391,43 @@ def wallet_add():
         return render_template('default.html',ammountInAccount=loop.ammount)
     return render_template('walletAdd.html')
 
+@app.route('/transaction/<trans>/<ref_id>',methods=["GET","POST"])
+def transaction(trans,ref_id):
+    print(ref_id)
+    if request.method=="POST":
+        trainer_qur=trainerregister.query.filter_by(id=ref_id).first()
+        if trainer_qur:
+            ref_type='trainer'
+        trainer_wallet_qur=wallet_all.query.filter_by(ref_id=ref_id).first()
+        print("trainer_wallet_qur")
+        print(trainer_wallet_qur)
+        trainer_wallet_qur.ammount=trainer_wallet_qur.ammount+int(trans)
+        print(trainer_wallet_qur)
+        db.session.commit()
+        if g.user:
+            zz=user.query.filter_by(username=g.user).first()
+            wall=wallet_all.query.filter_by(ref_id=zz.id).first()
+            if wall.ammount>0:
+                wall.ammount=wall.ammount-int(trans)
+                print(wall.ammount)
+                db.session.commit()
+                return redirect(url_for('account')),flash("Your ammount has been submitted to the trainer. You will recieve a mail from the trainer with in 8 hours")
+            else:
+                flash("You dont have funds in your wallet")
+
+    return render_template('transaction.html',trans=trans)
+'''
+@app.route('/trainer_registeration/trainer_account/wallet')
+def wallet():
+    return render_template('trainer_wallet.html')
+
+@app.route('/trainer_registeration/trainer_account/wallet/add')
+def trainer_wallet_add():
+    if g.owner:
+        zz=trainerregister.query.filter_by(username=g.trainer).first()
+        ref_type='trainer'
+    return redirect(url_for(''))
+'''
 @app.route('/bcaa')
 @login_required
 def bcaa():
@@ -2724,6 +2766,7 @@ admin.add_view(MyModelView(gym_image, db.session))
 admin.add_view(MyModelView(trainerregister, db.session))
 admin.add_view(MyModelView(trainer_detail, db.session))
 admin.add_view(MyModelView(trainer_image, db.session))
+admin.add_view(MyModelView(wallet_all,db.session))
 
 if __name__ == "__main__":
     db.create_all()
