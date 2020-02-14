@@ -25,6 +25,9 @@ from base64 import b64encode
 import webbrowser
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
+#import socket
+#socket.getaddrinfo('170.16.4.100', 3128)
+
 
 from dateutil import parser
 
@@ -1518,6 +1521,8 @@ def gym_details():
 
 
 def send_gym_creation_congratulating(xyz, mmm):
+    print(xyz)
+    print(mmm)
     msg = Message('Gym Registeration', sender='gymaale.buisness@gmail.com', recipients=[xyz.email])
     msg.html = render_template("email_gym_creation_congratulating.html", _external=True, mmm=mmm)
     mail.send(msg)
@@ -1638,6 +1643,10 @@ def owner_account():
         print(xy)
         for i in mmm:
             print(i)
+
+    wallet_qur=wallet_all.query.filter_by(ref_id=zz.id,ref_type='owner').first()
+    print(zz.id)
+    print(wallet_qur)
     if zz == None:
         if xyz == None:
             if mmm == None:
@@ -1669,7 +1678,7 @@ def owner_account():
     return render_template("gym_registeration/owner_Account.html", username=username, email=email,
                            f_name=f_name, l_name=l_name, address=address, mobile=mobile, mnn=mnn,
                            u_train=u_train, xy=xy, image_1=image_1, image_2=image_2, image_3=image_3,
-                           image_4=image_4, image_5=image_5)
+                           image_4=image_4, image_5=image_5,wallet_ammount=wallet_qur.ammount)
 
 
 @app.route('/owner_account/logout')
@@ -1844,11 +1853,15 @@ def gym_detailss(gym_id):
     gym_details = gym_detail.query.filter_by(gym_name=gym_id).first()
     owner_detail_now = owner_detail.query.filter_by(id=gym_details.id).first()
     image_details_now = gym_image.query.filter_by(ref_id=gym_details.owner_ref).first()
+    owner_qur=ownerregister.query.filter_by(id=gym_details.owner_ref).first()
+    print(owner_qur)
     img_1 = base64.b64encode(image_details_now.image1).decode('ascii')
     img_2 = base64.b64encode(image_details_now.image2).decode('ascii')
     img_3 = base64.b64encode(image_details_now.image3).decode('ascii')
     img_4 = base64.b64encode(image_details_now.image4).decode('ascii')
     img_5 = base64.b64encode(image_details_now.image5).decode('ascii')
+    owner_name='demo'
+
     return render_template("Various_gyms/gym_details.html", title=gym_details.gym_name, g_names=gym_details,
                            o_names=owner_detail_now, img_1=img_1, img_2=img_2, img_3=img_3,
                            img_4=img_4, img_5=img_5)
@@ -2375,8 +2388,10 @@ def wallet_add():
         ref_id=zz.id
         ref_type='trainer'
     if request.method=="POST":
-        loop=wallet_all.query.filter_by(ref_id=ref_id).first()
+        loop=wallet_all.query.filter_by(ref_id=ref_id,ref_type=ref_type).first()
         startAmmount = request.form['startAmmount']
+        print(ref_type)
+        print(ref_id)
         if loop:
             ammount=loop.ammount
             ammount=int(ammount+int(startAmmount))
@@ -2388,34 +2403,81 @@ def wallet_add():
             adding=wallet_all(ref_id=ref_id_from_above,ref_type=ref_type,ammount=startAmmount)
             db.session.add(adding)
             db.session.commit()
-        return render_template('default.html',ammountInAccount=loop.ammount)
+        return render_template('default.html'),flash("Ammount added")
     return render_template('walletAdd.html')
 
-@app.route('/transaction/<trans>/<ref_id>',methods=["GET","POST"])
-def transaction(trans,ref_id):
+@app.route('/transaction/<trans>/<ref_type>/<ref_id>',methods=["GET","POST"])
+def transaction(trans,ref_id,ref_type):
     print(ref_id)
+    print(ref_type)
+    print(trans)
     if request.method=="POST":
-        trainer_qur=trainerregister.query.filter_by(id=ref_id).first()
-        if trainer_qur:
-            ref_type='trainer'
-        trainer_wallet_qur=wallet_all.query.filter_by(ref_id=ref_id).first()
-        print("trainer_wallet_qur")
-        print(trainer_wallet_qur)
-        trainer_wallet_qur.ammount=trainer_wallet_qur.ammount+int(trans)
-        print(trainer_wallet_qur)
-        db.session.commit()
-        if g.user:
-            zz=user.query.filter_by(username=g.user).first()
-            wall=wallet_all.query.filter_by(ref_id=zz.id).first()
-            if wall.ammount>0:
-                wall.ammount=wall.ammount-int(trans)
-                print(wall.ammount)
-                db.session.commit()
-                return redirect(url_for('account')),flash("Your ammount has been submitted to the trainer. You will recieve a mail from the trainer with in 8 hours")
-            else:
-                flash("You dont have funds in your wallet")
-
+        if ref_type=='trainer':
+            trainer_qur=trainerregister.query.filter_by(id=ref_id).first()
+            if trainer_qur:
+                ref_type='trainer'
+            trainer_wallet_qur=wallet_all.query.filter_by(ref_id=ref_id,ref_type=ref_type).first()
+            print("trainer_wallet_qur")
+            print(trainer_wallet_qur)
+            trainer_wallet_qur.ammount=trainer_wallet_qur.ammount+int(trans)
+            print(trainer_wallet_qur)
+            db.session.commit()
+            if g.user:
+                zz=user.query.filter_by(username=g.user).first()
+                wall=wallet_all.query.filter_by(ref_id=zz.id).first()
+                if wall.ammount>trans:
+                    wall.ammount=wall.ammount-int(trans)
+                    print(wall.ammount)
+                    db.session.commit()
+                    return redirect(url_for('account')),flash("Your ammount has been submitted to the trainer. You will recieve a mail from the trainer with in 8 hours")
+                else:
+                    flash("You dont have funds in your wallet")
+        '''elif ref_type=='owner':
+            owner_qur=ownerregister.query.filter_by(id=ref_id).first()
+            if owner_qur:
+                ref_type='owner'
+            owner_wallet_qur=wallet_all.query.filter_by(ref_id=ref_id,ref_type=ref_type).first()
+            print("owner_wallet_qur")
+            print(owner_wallet_qur)'''
     return render_template('transaction.html',trans=trans)
+
+@app.route('/transaction/select_time/<owner_name>',methods=["GET","POST"])
+def transaction_select_time(owner_name):
+    print(owner_name)
+    zz=ownerregister.query.filter_by(id=owner_name).first()
+    print(zz.username)
+    if request.method=="POST":
+        day_or_month=request.form['any']
+        time_period=request.form['city']
+        if day_or_month=="month":
+            convert_to_day=int(int(time_period)*30)
+            time_period=convert_to_day
+        gym_qur=gym_detail.query.filter_by(owner_ref=owner_name).first()
+        monthly_cost=int(gym_qur.monthly_fees)
+        per_day_cost=int(monthly_cost/30)
+        cost_1=int(int(per_day_cost)*int(time_period))
+        rounding=int(cost_1%10)
+        to_be_added=10-rounding
+        total_cost=int(cost_1)+int(to_be_added)
+        print(g.user)
+        user_qur=user.query.filter_by(username=g.user).first()
+        user_wallet_qur=wallet_all.query.filter_by(ref_id=user_qur.id,ref_type='user').first()
+        owner_wallet_qur=wallet_all.query.filter_by(ref_id=owner_name,ref_type='owner').first()
+        print(owner_wallet_qur.ammount )
+        print(user_wallet_qur.ammount)
+        if user_wallet_qur.ammount>total_cost:
+            user_wallet_qur.ammount=user_wallet_qur.ammount-total_cost
+            owner_wallet_qur.ammount=owner_wallet_qur.ammount+total_cost
+            db.session.commit()
+            print("success")
+            print(user_wallet_qur.ammount)
+            print(owner_wallet_qur.ammount)
+
+        else:
+            flash("You don't have enough funds in your account.")
+    return render_template("gym_time_selection.html")
+
+
 '''
 @app.route('/trainer_registeration/trainer_account/wallet')
 def wallet():

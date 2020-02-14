@@ -46,9 +46,7 @@
         #myBtn:hover {
             background-color: #555;
         }
-    </style>
-    <style>
-        .flex-box-containeer-2 {
+    .flex-box-containeer-2 {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -60,7 +58,9 @@
             max-height: 10%;
             box-shadow: 0px 10px 20px black;
         }
+
     </style>
+
 </head>
 <body>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img
@@ -191,7 +191,7 @@
                 <h4>Evening: {{ g_names.e_open }}:00 pm to {{ g_names.e_close }}:00 pm</h4>
 
                 <h4><br><u>Owned by:</u></h4>
-                <h4>{{ o_names.first_name.upper() }} {{ o_names.last_name.upper() }}</h4>
+                <h4>{{ o_names.first_name }} {{ o_names.last_name }}</h4>
                 <br>
                 <h4><u>Images:</u></h4>
                 <div class="flex-box-containeer-2">
@@ -201,6 +201,10 @@
                     <img src="data:;base64,{{ img_4 }}"><br>
                     <img src="data:;base64,{{ img_5 }}">
                 </div>
+                <br>
+                {{ owner_name }}
+                <h3><a href="{{ url_for('transaction_select_time',owner_name=g_names.owner_ref) }}">Choose time duration.</a> </h3>
+                <h3><a href="{{ url_for('transaction',trans=  200,ref_type='owner',ref_id=g_names.owner_ref) }}">Book Gym</a></h3>
 
 
                 <!--Razor pay api-->

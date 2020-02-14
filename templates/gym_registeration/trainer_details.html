@@ -196,7 +196,7 @@
                 <img src="data:;base64,{{ imag_4 }}"><br>
                 <img src="data:;base64,{{ imag_5 }}">
                 </div>
-                <a href="{{ url_for('transaction',trans=t_names.charges,ref_id=t_names.ref_id) }}">Book Trainer</a>
+                <a href="{{ url_for('transaction',trans=t_names.charges,ref_type='trainer',ref_id=t_names.ref_id) }}">Book Trainer</a>
                 {% endif %}
 
 
