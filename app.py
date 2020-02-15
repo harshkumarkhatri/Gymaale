@@ -2526,15 +2526,27 @@ def transaction_select_time(owner_name):
             user_wallet_qur.ammount=user_wallet_qur.ammount-total_cost
             owner_wallet_qur.ammount=owner_wallet_qur.ammount+total_cost
             db.session.commit()
+            mm=random.randrange(000000,999999)
+            s_code=mm
+            send_user_mail_gym_booked(s_code,total_cost,gym_qur,zz,time_period)
+            send_gym_owner_mail_user_booked_gym(s_code,total_cost,user_qur,time_period)
             print("success")
             print(user_wallet_qur.ammount)
             print(owner_wallet_qur.ammount)
             return redirect(url_for('account'))
-
         else:
             flash("You don't have enough funds in your account.")
     return render_template("gym_time_selection.html")
 
+def send_user_mail_gym_booked(s_code,total_cost,gym_qur,zz,time_period):
+    msg=Message('Gym Booked',sender='gymaale.business@gmail.com',recipients=[zz.email])
+    msg.html=render_template("email_user_gym_booked.html",time_period=time_period,s_code=s_code,total_cost=total_cost,gym_qur=gym_qur,_external=True)
+    mail.send(msg)
+
+def send_gym_owner_mail_user_booked_gym(s_code,total_cost,user_qur,time_period):
+    msg=Message('User Booked Gym',sender='gymaale.business@gmail.com',recipients=[user_qur.email])
+    msg.html=render_template("email_gym_owner_mail_user_booked_gym.html",time_period=time_period,user_qur=user_qur,s_code=s_code,total_cost=total_cost,_external=True)
+    mail.send(msg)
 
 '''
 @app.route('/trainer_registeration/trainer_account/wallet')
