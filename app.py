@@ -856,6 +856,10 @@ def register():
             # flash(f'Account created successfully.', 'success')
             db.session.add(register)
             db.session.commit()
+            getting_above_user_id=user.query.filter_by(username=uname).first()
+            addingToWallet=wallet_all(ref_id=getting_above_user_id.id,ref_type='user',ammount=0)
+            db.session.add(addingToWallet)
+            db.session.commit()
             z = user.query.filter_by(email=mail).first()
             if z is not None:
                 send_confirmation_email(z)
@@ -1431,6 +1435,10 @@ def gym_registeration_register():
                                        confirm_password=passw2, security_code=sec_code)
                     db.session.add(mn)
                     db.session.commit()
+                    getting_above_entry_id=ownerregister.query.filter_by(username=uname).first()
+                    addingToWallet=wallet_all(ref_id=getting_above_entry_id.id,ref_type='owner',ammount=0)
+                    db.session.add(addingToWallet)
+                    db.session.commit()
                     return redirect(url_for('gym_registeration_login'))
         else:
             flash('Passwords do not match')
@@ -1897,6 +1905,12 @@ def trainer_login():
             return redirect(url_for('trainer_login')), flash("Invalid username or password")
     return render_template("trainer_registeration/login.html")
 
+@app.route('/trainer_registeration/logout')
+def trainerLogout():
+    session.pop('trainer',None)
+    flash("You have been logged out successfully")
+    return redirect(url_for('trainer_login'))
+
 #registering the trainer.
 @app.route('/trainer_register/register', methods=["GET", "POST"])
 def trainer_register():
@@ -1920,6 +1934,10 @@ def trainer_register():
                 else:
                     new = trainerregister(username=uname, email=mail, password=hashed_value)
                     db.session.add(new)
+                    db.session.commit()
+                    getting_above_trainer_id=trainerregister.query.filter_by(username=uname).first()
+                    addingToWallet=wallet_all(ref_id=getting_above_trainer_id.id,ref_type='trainer',ammount=0)
+                    db.session.add(addingToWallet)
                     db.session.commit()
                     return redirect(url_for('trainer_details'))
         else:
@@ -2398,19 +2416,30 @@ def wallet_add():
         startAmmount = request.form['startAmmount']
         print(ref_type)
         print(ref_id)
+        userEmail = zz.email
         if loop:
             ammount=loop.ammount
             ammount=int(ammount+int(startAmmount))
             loop.ammount=ammount
             db.session.commit()
             print(ammount)
+            send_ammount_added_to_wallet_email(startAmmount,userEmail)
         else:
             ref_id_from_above=ref_id
             adding=wallet_all(ref_id=ref_id_from_above,ref_type=ref_type,ammount=startAmmount)
             db.session.add(adding)
             db.session.commit()
-        return render_template('default.html'),flash("Ammount added")
+
+            send_ammount_added_to_wallet_email(startAmmount,userEmail)
+        return redirect(url_for('account')),flash("Ammount added")
     return render_template('walletAdd.html')
+
+def send_ammount_added_to_wallet_email(startAmmount,userEmail):
+    print(startAmmount)
+    print(userEmail)
+    msg=Message('Ammount added',sender='gymaale.business@gmail.com',recipients=[userEmail])
+    msg.html=render_template('email_conformation_ammount_added_to_wallet.html',ammount=startAmmount,_external=True)
+    mail.send(msg)
 
 @app.route('/transaction/<trans>/<ref_type>/<ref_id>',methods=["GET","POST"])
 def transaction(trans,ref_id,ref_type):
@@ -2425,15 +2454,20 @@ def transaction(trans,ref_id,ref_type):
             trainer_wallet_qur=wallet_all.query.filter_by(ref_id=ref_id,ref_type=ref_type).first()
             print("trainer_wallet_qur")
             print(trainer_wallet_qur)
-            trainer_wallet_qur.ammount=trainer_wallet_qur.ammount+int(trans)
-            print(trainer_wallet_qur)
-            db.session.commit()
+
             if g.user:
                 zz=user.query.filter_by(username=g.user).first()
+                xyz=user_data2.query.filter_by(user_id=zz.id).first()
                 wall=wallet_all.query.filter_by(ref_id=zz.id).first()
                 if int(wall.ammount)>int(trans):
                     wall.ammount=wall.ammount-int(trans)
                     print(wall.ammount)
+                    db.session.commit()
+                    trainer_email=trainer_qur.email
+                    #Sending a mail to user about ammount being deducted from the account and going to trainer
+                    send_trainer_ammount(zz,xyz,trans,trainer_email)
+                    trainer_wallet_qur.ammount = trainer_wallet_qur.ammount + int(trans)
+                    print(trainer_wallet_qur)
                     db.session.commit()
                     return redirect(url_for('account')),flash("Your ammount has been submitted to the trainer. You will recieve a mail from the trainer with in 8 hours")
                 else:
@@ -2446,6 +2480,11 @@ def transaction(trans,ref_id,ref_type):
             print("owner_wallet_qur")
             print(owner_wallet_qur)'''
     return render_template('transaction.html',trans=trans)
+
+def send_trainer_ammount(zz,xyz,trans,trainer_email):
+    msg=Message('User Booking Confirmed',sender='gymaale.business@gmail.com',recipients=[trainer_email])
+    msg.html=render_template("email_send_trainer_ammount_and_user_details.html",zz=zz,xyz=xyz,trans=trans,_external=True)
+    mail.send(msg)
 
 @app.route('/transaction/select_time/<owner_name>',methods=["GET","POST"])
 def transaction_select_time(owner_name):
