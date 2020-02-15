@@ -222,6 +222,9 @@
     <h3 style="color: coral;">Goto: <a href="{{ url_for('owner_account') }}">Owner Account</a></h3>
     {% endif %}
     <h4>Full name: {{ mm.first_name }} {{ mm.last_name }}</h4>
+    {% if trainer_account_balance %}
+    <h3><u>Your account balance</u>: {{ trainer_account_balance }}</h3>
+    {% endif %}
     <h4>Customer Email Address: {{ mm.c_mail }}</h4>
     {% if mm.c_mob=='NULL' %}
     {% else %}

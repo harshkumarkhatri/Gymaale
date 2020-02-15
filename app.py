@@ -1647,6 +1647,10 @@ def owner_account():
     wallet_qur=wallet_all.query.filter_by(ref_id=zz.id,ref_type='owner').first()
     print(zz.id)
     print(wallet_qur)
+    if wallet_qur==None:
+        ammount_to_be_displayed=0
+    else:
+        ammount_to_be_displayed=wallet_qur.ammount
     if zz == None:
         if xyz == None:
             if mmm == None:
@@ -1678,7 +1682,7 @@ def owner_account():
     return render_template("gym_registeration/owner_Account.html", username=username, email=email,
                            f_name=f_name, l_name=l_name, address=address, mobile=mobile, mnn=mnn,
                            u_train=u_train, xy=xy, image_1=image_1, image_2=image_2, image_3=image_3,
-                           image_4=image_4, image_5=image_5,wallet_ammount=wallet_qur.ammount)
+                           image_4=image_4, image_5=image_5,wallet_ammount=ammount_to_be_displayed)
 
 
 @app.route('/owner_account/logout')
@@ -2064,6 +2068,8 @@ def trainer_account():
         value1 = zz.id
         mm = trainer_detail.query.filter_by(ref_id=zz.id).first()
         nn = trainer_image.query.filter_by(ref_id=zz.id).first()
+    trainer_wallet_qur=wallet_all.query.filter_by(ref_id=value1,ref_type='trainer').first()
+    print(trainer_wallet_qur.ammount)
     if nn == None:
         return redirect(url_for('trainer_images'))
     else:
@@ -2084,7 +2090,7 @@ def trainer_account():
         db.session.add(adding)
         db.session.commit()
     return render_template("trainer_registeration/trainer_account.html", zz=zz, mm=mm, image_1=image_1,
-                           image_2=image_2, image_3=image_3, image_4=image_4, image_5=image_5, decide=decide)
+                           image_2=image_2, image_3=image_3, image_4=image_4, image_5=image_5, decide=decide,trainer_account_balance=trainer_wallet_qur.ammount)
 
 #comtains the about page.
 @app.route('/about', methods=["GET", "POST"])
@@ -2425,7 +2431,7 @@ def transaction(trans,ref_id,ref_type):
             if g.user:
                 zz=user.query.filter_by(username=g.user).first()
                 wall=wallet_all.query.filter_by(ref_id=zz.id).first()
-                if wall.ammount>trans:
+                if int(wall.ammount)>int(trans):
                     wall.ammount=wall.ammount-int(trans)
                     print(wall.ammount)
                     db.session.commit()
@@ -2472,6 +2478,7 @@ def transaction_select_time(owner_name):
             print("success")
             print(user_wallet_qur.ammount)
             print(owner_wallet_qur.ammount)
+            return redirect(url_for('account'))
 
         else:
             flash("You don't have enough funds in your account.")
