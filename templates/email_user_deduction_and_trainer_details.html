@@ -120,12 +120,19 @@
                                 <center>
                                     <p class="h1 center"
                                        style="Margin:0;text-align:center;font-family:'flama-condensed','Arial Narrow',Arial;font-weight:100;font-size:30px;Margin-bottom:26px;">
-                                        Ammount Added</p>
+                                        Trainer Booked</p>
                                     <!--[if (gte mso 9)|(IE)]><![endif]-->
 
                                     <p class="description center"
                                        style="font-family:'Muli','Arial Narrow',Arial;Margin:0;text-align:center;max-width:320px;color:#a1a8ad;line-height:24px;font-size:15px;Margin-bottom:10px;margin-left: auto; margin-right: auto;">
-                                        <span style="color: rgb(161, 168, 173); font-family: Muli, &quot;Arial Narrow&quot;, Arial; font-size: 15px; text-align: center; background-color: rgb(255, 255, 255);">Hey, an ammount of Rs. {{ ammount }} has been added to your wallet.<br>
+                                        <span style="color: rgb(161, 168, 173); font-family: Muli, &quot;Arial Narrow&quot;, Arial; font-size: 15px; text-align: center; background-color: rgb(255, 255, 255);">Congratulations. You have booked {{t_details.first_name}} {{t_details.last_name}} as trainer.<br>
+                                            Ammount deducted from your account is {{ trans }}.<br>
+                                            <u>Trainer details:</u><br>
+                                            Full name: {{t_details.first_name}} {{t_details.last_name}}<br>
+                                            E-mail: {{t_details.c_mail}}<br>
+                                            Contact no.: {{t_details.c_mob}}<br>
+                                            From: {{t_details.state}}<br><br>
+                                            Trainer will contact you with in 24 hours.
                                         </span></p>
                                     <p class="description center"
                                        style="font-family:'Muli','Arial Narrow',Arial;Margin:0;text-align:center;max-width:320px;color:#a1a8ad;line-height:24px;font-size:15px;Margin-bottom:10px;margin-left: auto; margin-right: auto;">

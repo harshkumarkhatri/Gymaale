@@ -2463,12 +2463,17 @@ def transaction(trans,ref_id,ref_type):
                     wall.ammount=wall.ammount-int(trans)
                     print(wall.ammount)
                     db.session.commit()
+                    user_Email=zz.email
+                    getting_trainer_details=trainer_detail.query.filter_by(ref_id=trainer_qur.id).first()
+                    print(getting_trainer_details.first_name)
+                    #sending a mail to user about trainer booking.
+                    send_user_email_about_trainer_booking(user_Email,getting_trainer_details,trans)
                     trainer_email=trainer_qur.email
-                    #Sending a mail to user about ammount being deducted from the account and going to trainer
-                    send_trainer_ammount(zz,xyz,trans,trainer_email)
                     trainer_wallet_qur.ammount = trainer_wallet_qur.ammount + int(trans)
                     print(trainer_wallet_qur)
                     db.session.commit()
+                    # Sending a mail to trainer about ammount being added and user details
+                    send_trainer_ammount(zz, xyz, trans, trainer_email)
                     return redirect(url_for('account')),flash("Your ammount has been submitted to the trainer. You will recieve a mail from the trainer with in 8 hours")
                 else:
                     flash("You dont have funds in your wallet")
@@ -2481,6 +2486,13 @@ def transaction(trans,ref_id,ref_type):
             print(owner_wallet_qur)'''
     return render_template('transaction.html',trans=trans)
 
+#this function is used to send a mail to the user about the trainer being booked by the user along with trainer details
+def send_user_email_about_trainer_booking(user_Email,getting_trainer_details,trans):
+    msg=Message('Trainer Booked',sender='gymaale.business@gmail.com',recipients=[user_Email])
+    msg.html=render_template("email_user_deduction_and_trainer_details.html",trans=trans,t_details=getting_trainer_details,_external=True)
+    mail.send(msg)
+
+#this function is used t send a mail to the trainer about the user who has booked along with the details.
 def send_trainer_ammount(zz,xyz,trans,trainer_email):
     msg=Message('User Booking Confirmed',sender='gymaale.business@gmail.com',recipients=[trainer_email])
     msg.html=render_template("email_send_trainer_ammount_and_user_details.html",zz=zz,xyz=xyz,trans=trans,_external=True)
