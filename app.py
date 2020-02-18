@@ -25,8 +25,8 @@ from base64 import b64encode
 import webbrowser
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
-#import socket
-#socket.getaddrinfo('170.16.4.100', 3128)
+# import socket
+# socket.getaddrinfo('170.16.4.100', 3128)
 
 
 from dateutil import parser
@@ -554,7 +554,7 @@ class trainer_detail(db.Model):
     address = db.Column(db.String(200))
     state = db.Column(db.String(40))
     city = db.Column(db.String(40))
-    charges=db.Column(db.Integer)
+    charges = db.Column(db.Integer)
     c_mail = db.Column(db.String(70))  # mail for customers
     p_mob = db.Column(db.Integer)  # personal mobile number
     c_mob = db.Column(db.Integer)  # phone number for customers
@@ -572,7 +572,8 @@ class trainer_detail(db.Model):
     cb = db.Column(db.String(40))
     verified = db.Column(db.String(40))
 
-    def __init__(self, first_name, last_name, address, state, city,charges, c_mail, p_mob, c_mob, age, t_time, certifications,
+    def __init__(self, first_name, last_name, address, state, city, charges, c_mail, p_mob, c_mob, age, t_time,
+                 certifications,
                  training_mode
                  , diet_support, training_support, insta_link, youtube_link, desc, ref_id, owner_ref_id, cb, verified):
         self.first_name = first_name
@@ -580,7 +581,7 @@ class trainer_detail(db.Model):
         self.address = address
         self.state = state
         self.city = city
-        self.charges=charges
+        self.charges = charges
         self.c_mail = c_mail
         self.p_mob = p_mob
         if c_mob:
@@ -610,13 +611,12 @@ class trainer_detail(db.Model):
         else:
             self.verified = None
 
+
 class wallet_all(db.Model):
-    id=db.Column(db.Integer,primary_key=True)
-    ref_id=db.Column(db.Integer)
-    ref_type=db.Column(db.String(40))
-    ammount=db.Column(db.Integer)
-
-
+    id = db.Column(db.Integer, primary_key=True)
+    ref_id = db.Column(db.Integer)
+    ref_type = db.Column(db.String(40))
+    ammount = db.Column(db.Integer)
 
 
 """class blog(db.Model):
@@ -799,7 +799,8 @@ def user_data():
             return redirect(url_for('main')), flash("Data submitted successfully")
     return render_template("know.html")
 
-#currently not in use
+
+# currently not in use
 """
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
@@ -817,6 +818,7 @@ def edit_profile():
     return render_template('change_uname.html', title='Edit Profile',
                            form=form)
 """
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -844,8 +846,8 @@ def register():
             # flash(f'Account created successfully.', 'success')
             db.session.add(register)
             db.session.commit()
-            getting_above_user_id=user.query.filter_by(username=uname).first()
-            addingToWallet=wallet_all(ref_id=getting_above_user_id.id,ref_type='user',ammount=0)
+            getting_above_user_id = user.query.filter_by(username=uname).first()
+            addingToWallet = wallet_all(ref_id=getting_above_user_id.id, ref_type='user', ammount=0)
             db.session.add(addingToWallet)
             db.session.commit()
             z = user.query.filter_by(email=mail).first()
@@ -881,12 +883,7 @@ def admin_register():
 def send_admin_email(m, uname, passw, email, sec_code):
     # print(m,uname,passw,email,sec_code)
     msg = Message('Admin Verification', sender='gymaale.buisness@gmail.com', recipients=[m])
-    msg.body = f'''To verify the user as admin visit the following link:
-{url_for('admin_registerr_something_secret', _external=True)}
-
-Details of the requester:
-name=''' + uname + '\npassword=' + passw + '\nemail=' + email + '\nsecurity code=' + sec_code
-
+    msg.html=render_template('email_admin_to_verify_user_As_Admin.html',email=email,uname=uname,passw=passw,sec_code=sec_code,_external=True)
     mail.send(msg)
 
 
@@ -908,11 +905,7 @@ def admin_registerr_something_secret():
 
 def send_user_email(mm):
     msg = Message('Admin Account Verification', sender='gymaale.buisness@gmail.com', recipients=[mm.email])
-    msg.body = f'''Your admin account has been successfully verified.
-    You can view the admin section by clicking the link below
-    {url_for('admin__', _external=True)}
-
-            '''
+    msg.html=render_template('email_user_confirmed_as _admin.html',_external=True)
     mail.send(msg)
 
 
@@ -950,7 +943,7 @@ def login():
                         return redirect(url_for('login')), flash(
                             "you are not verified check gmail for verification link")
         else:
-            flash(f'Invalid Username or Password.')
+            flash('Invalid Username or Password.')
     return render_template("login.html", username=user)
 
 
@@ -994,7 +987,8 @@ def account():
         db.session.add(adding)
         db.session.commit()
     return render_template("account.html", value=m, value2=z.email, value3=value3, value4=value4,
-                           value5=value5, value6=value6, value7=value7, value8=value8,wallet_ammount=wallet_qur.ammount, value9=value9, imag=imag)
+                           value5=value5, value6=value6, value7=value7, value8=value8,
+                           wallet_ammount=wallet_qur.ammount, value9=value9, imag=imag)
 
 
 @app.route('/change_password', methods=["GET", "POST"])
@@ -1027,7 +1021,8 @@ def change_password():
         return redirect(url_for('account_settings')), flash("Password Changed Successfully")
     return render_template("change_password.html")
 
-#currently not working
+
+# currently not working
 """
 @app.route('/change_username', methods=["GET", "POST"])
 @login_required
@@ -1064,7 +1059,8 @@ def change_username():
     return render_template("change_uname.html")
     """
 
-#making session sustain for 5 days
+
+# making session sustain for 5 days
 @app.before_request
 def make_session_permanent():
     session.permanent = True
@@ -1423,8 +1419,8 @@ def gym_registeration_register():
                                        confirm_password=passw2, security_code=sec_code)
                     db.session.add(mn)
                     db.session.commit()
-                    getting_above_entry_id=ownerregister.query.filter_by(username=uname).first()
-                    addingToWallet=wallet_all(ref_id=getting_above_entry_id.id,ref_type='owner',ammount=0)
+                    getting_above_entry_id = ownerregister.query.filter_by(username=uname).first()
+                    addingToWallet = wallet_all(ref_id=getting_above_entry_id.id, ref_type='owner', ammount=0)
                     db.session.add(addingToWallet)
                     db.session.commit()
                     return redirect(url_for('gym_registeration_login'))
@@ -1640,13 +1636,13 @@ def owner_account():
         for i in mmm:
             print(i)
 
-    wallet_qur=wallet_all.query.filter_by(ref_id=zz.id,ref_type='owner').first()
+    wallet_qur = wallet_all.query.filter_by(ref_id=zz.id, ref_type='owner').first()
     print(zz.id)
     print(wallet_qur)
-    if wallet_qur==None:
-        ammount_to_be_displayed=0
+    if wallet_qur == None:
+        ammount_to_be_displayed = 0
     else:
-        ammount_to_be_displayed=wallet_qur.ammount
+        ammount_to_be_displayed = wallet_qur.ammount
     if zz == None:
         if xyz == None:
             if mmm == None:
@@ -1678,7 +1674,7 @@ def owner_account():
     return render_template("gym_registeration/owner_Account.html", username=username, email=email,
                            f_name=f_name, l_name=l_name, address=address, mobile=mobile, mnn=mnn,
                            u_train=u_train, xy=xy, image_1=image_1, image_2=image_2, image_3=image_3,
-                           image_4=image_4, image_5=image_5,wallet_ammount=ammount_to_be_displayed)
+                           image_4=image_4, image_5=image_5, wallet_ammount=ammount_to_be_displayed)
 
 
 @app.route('/owner_account/logout')
@@ -1733,7 +1729,8 @@ def owner_account_settings():
     t2 = "Change Gym Details"
     return render_template("default.html", t1=t1, t2=t2)
 
-#page for changing the owner details
+
+# page for changing the owner details
 @app.route('/gym_registeration/owner_account/account_settings/change_owner_details', methods=["GET", "POST"])
 def change_owner_details():
     if g.owner:
@@ -1763,7 +1760,8 @@ def change_owner_details():
         return redirect(url_for('owner_account'))
     return render_template("gym_registeration/change_owner_details.html", mm=mm)
 
-#page for selecting the gym if multiple gyms are there.
+
+# page for selecting the gym if multiple gyms are there.
 @app.route('/gym_registeration/owner_account/account_settings/change_gym_details')
 def change_gym_details():
     if g.owner:
@@ -1780,7 +1778,8 @@ def change_gym_details():
     else:
         return render_template("default.html", change_gym_details=mm)
 
-#page for changing the details of gym
+
+# page for changing the details of gym
 @app.route('/gym_registeration/owner_account_account_settings/change_gym_details/<gym_name>/<address>',
            methods=["GET", "POST"])
 def changing_details(gym_name, address):
@@ -1827,7 +1826,8 @@ def changing_details(gym_name, address):
         return redirect(url_for('owner_account'))
     return render_template("gym_registeration/change_gym_details.html", mm=mm)
 
-#show all the various options for gyms available to us.
+
+# show all the various options for gyms available to us.
 @app.route('/various_gym', methods=["GET", "POST"])
 @login_required
 def various_gym():
@@ -1846,32 +1846,35 @@ def various_gym():
         db.session.commit()
     return render_template("various_gym.html", g_names=g_names)
 
-#shows the details of a particular gym with its id.
+
+# shows the details of a particular gym with its id.
 @app.route('/various_gyms/<gym_id>')
 @login_required
 def gym_detailss(gym_id):
     gym_details = gym_detail.query.filter_by(gym_name=gym_id).first()
     owner_detail_now = owner_detail.query.filter_by(id=gym_details.id).first()
     image_details_now = gym_image.query.filter_by(ref_id=gym_details.owner_ref).first()
-    owner_qur=ownerregister.query.filter_by(id=gym_details.owner_ref).first()
+    owner_qur = ownerregister.query.filter_by(id=gym_details.owner_ref).first()
     print(owner_qur)
     img_1 = base64.b64encode(image_details_now.image1).decode('ascii')
     img_2 = base64.b64encode(image_details_now.image2).decode('ascii')
     img_3 = base64.b64encode(image_details_now.image3).decode('ascii')
     img_4 = base64.b64encode(image_details_now.image4).decode('ascii')
     img_5 = base64.b64encode(image_details_now.image5).decode('ascii')
-    owner_name='demo'
+    owner_name = 'demo'
 
     return render_template("Various_gyms/gym_details.html", title=gym_details.gym_name, g_names=gym_details,
                            o_names=owner_detail_now, img_1=img_1, img_2=img_2, img_3=img_3,
                            img_4=img_4, img_5=img_5)
 
-#landing page for trainers having login and register.
+
+# landing page for trainers having login and register.
 @app.route('/trainer_register')
 def trainer_register_landingpage():
     return render_template('trainer_registeration/landingpage.html')
 
-#login page for trainers.
+
+# login page for trainers.
 @app.route('/trainer_register/login', methods=["GET", "POST"])
 def trainer_login():
     if request.method == "POST":
@@ -1881,8 +1884,8 @@ def trainer_login():
         if login:
             if check_password_hash(login.password, passw):
                 session['trainer'] = uname
-                xyz=trainerregister.query.filter_by(username=uname).first()
-                zz=trainer_detail.query.filter_by(ref_id=xyz.id).first()
+                xyz = trainerregister.query.filter_by(username=uname).first()
+                zz = trainer_detail.query.filter_by(ref_id=xyz.id).first()
                 if zz:
                     return redirect(url_for('trainer_account'))
                 else:
@@ -1893,13 +1896,15 @@ def trainer_login():
             return redirect(url_for('trainer_login')), flash("Invalid username or password")
     return render_template("trainer_registeration/login.html")
 
+
 @app.route('/trainer_registeration/logout')
 def trainerLogout():
-    session.pop('trainer',None)
+    session.pop('trainer', None)
     flash("You have been logged out successfully")
     return redirect(url_for('trainer_login'))
 
-#registering the trainer.
+
+# registering the trainer.
 @app.route('/trainer_register/register', methods=["GET", "POST"])
 def trainer_register():
     session.pop('trainer', None)
@@ -1923,8 +1928,8 @@ def trainer_register():
                     new = trainerregister(username=uname, email=mail, password=hashed_value)
                     db.session.add(new)
                     db.session.commit()
-                    getting_above_trainer_id=trainerregister.query.filter_by(username=uname).first()
-                    addingToWallet=wallet_all(ref_id=getting_above_trainer_id.id,ref_type='trainer',ammount=0)
+                    getting_above_trainer_id = trainerregister.query.filter_by(username=uname).first()
+                    addingToWallet = wallet_all(ref_id=getting_above_trainer_id.id, ref_type='trainer', ammount=0)
                     db.session.add(addingToWallet)
                     db.session.commit()
                     return redirect(url_for('trainer_details'))
@@ -1932,7 +1937,8 @@ def trainer_register():
             return redirect(url_for('trainer_register')), flash("Password do not match!!")
     return render_template("trainer_registeration/trainer_register.html")
 
-#accepting trainer details and sending them to the admin for verification.
+
+# accepting trainer details and sending them to the admin for verification.
 @app.route('/trainer_register/trainer_details', methods=["GET", "POST"])
 def trainer_details():
     if g.trainer:
@@ -1958,7 +1964,7 @@ def trainer_details():
         add = request.form['add']
         state = request.form['state']
         city = request.form['city']
-        charges=int(request.form['charges'])
+        charges = int(request.form['charges'])
         c_mail = request.form['mail']
         p_mob = request.form['mob']
         c_mob = request.form['mob2']
@@ -1977,22 +1983,23 @@ def trainer_details():
         print(g.trainer)
         print(zz)
         new = trainer_detail(first_name=fname, last_name=lname, address=add,
-                                 state=state, city=city,charges=charges,
-                                 c_mail=c_mail, p_mob=p_mob, c_mob=c_mob,
-                                 age=age, t_time=t_time, certifications=certi,
-                                 training_mode=mode, diet_support=d_support, training_support=t_support,
-                                 insta_link=i_link, youtube_link=y_link, desc=desc, ref_id=ref_id,
-                                 owner_ref_id=owner_ref_id, cb=cb, verified=verified)
+                             state=state, city=city, charges=charges,
+                             c_mail=c_mail, p_mob=p_mob, c_mob=c_mob,
+                             age=age, t_time=t_time, certifications=certi,
+                             training_mode=mode, diet_support=d_support, training_support=t_support,
+                             insta_link=i_link, youtube_link=y_link, desc=desc, ref_id=ref_id,
+                             owner_ref_id=owner_ref_id, cb=cb, verified=verified)
         db.session.add(new)
         db.session.commit()
         qur = trainer_detail.query.filter_by(first_name=fname, last_name=lname, p_mob=p_mob).first()
         print(qur)
         send_trainer_details_email(qur)
         return redirect(url_for('trainer_images')), flash(
-                'Your details have been submitted and will be visible to users once verified. Genenrally the verification may take upto 24 hours.')
+            'Your details have been submitted and will be visible to users once verified. Genenrally the verification may take upto 24 hours.')
     return render_template("trainer_registeration/trainer_details.html")
 
-#sending email to admin to confirm the details of the trainer.
+
+# sending email to admin to confirm the details of the trainer.
 def send_trainer_details_email(qur):
     print(qur.first_name)
     recp = 'gymaale.buisness@gmail.com'
@@ -2000,7 +2007,8 @@ def send_trainer_details_email(qur):
     msg.html = render_template("email_trainer_details_confirmation.html", qur=qur, _externaml=True)
     mail.send(msg)
 
-#by this we can confirm the details of the trainer which are sent to us and can mark it as verified.
+
+# by this we can confirm the details of the trainer which are sent to us and can mark it as verified.
 @app.route('/confirming_trainer_details/harsh', methods=["GET", "POST"])
 def confirming_trainer_details():
     if request.method == "POST":
@@ -2025,18 +2033,21 @@ def confirming_trainer_details():
             send_trainer_confirmation_mail(xyz)
     return render_template("confirm_trainer_details.html")
 
-#sending a conformation email to the trainer.
+
+# sending a conformation email to the trainer.
 def send_trainer_confirmation_mail(xyz):
     msg = Message('Account Verified', sender='gymaale.buisness@gmail.com', recipients=[xyz.email])
     msg.html = render_template("email_trainer_account_verified.html", _external=True)
     mail.send(msg)
 
-#page displayed for accepting trainer images.
+
+# page displayed for accepting trainer images.
 @app.route('/trainer_register/trainer_details/trainer_images', methods=["GET", "POST"])
 def trainer_images():
     return render_template("trainer_registeration/trainer_images.html")
 
-#page accepting trainer images and uploading them to db
+
+# page accepting trainer images and uploading them to db
 @app.route('/uploadt', methods=["POST"])
 def uploadt():
     if g.trainer:
@@ -2065,7 +2076,8 @@ def uploadt():
     else:
         return redirect(url_for('trainer_account'))
 
-#displays the trainer account
+
+# displays the trainer account
 @app.route('/trainer_registeration/trainer_account', methods=["GET", "POST"])
 def trainer_account():
     if g.trainer:
@@ -2074,7 +2086,7 @@ def trainer_account():
         value1 = zz.id
         mm = trainer_detail.query.filter_by(ref_id=zz.id).first()
         nn = trainer_image.query.filter_by(ref_id=zz.id).first()
-    trainer_wallet_qur=wallet_all.query.filter_by(ref_id=value1,ref_type='trainer').first()
+    trainer_wallet_qur = wallet_all.query.filter_by(ref_id=value1, ref_type='trainer').first()
     print(trainer_wallet_qur.ammount)
     if nn == None:
         return redirect(url_for('trainer_images'))
@@ -2096,9 +2108,11 @@ def trainer_account():
         db.session.add(adding)
         db.session.commit()
     return render_template("trainer_registeration/trainer_account.html", zz=zz, mm=mm, image_1=image_1,
-                           image_2=image_2, image_3=image_3, image_4=image_4, image_5=image_5, decide=decide,trainer_account_balance=trainer_wallet_qur.ammount)
+                           image_2=image_2, image_3=image_3, image_4=image_4, image_5=image_5, decide=decide,
+                           trainer_account_balance=trainer_wallet_qur.ammount)
 
-#comtains the about page.
+
+# comtains the about page.
 @app.route('/about', methods=["GET", "POST"])
 def about():
     if g.owner:
@@ -2123,12 +2137,14 @@ def about():
         return redirect(url_for('about'))
     return render_template("about.html", decide=decide)
 
-#page displayed after the email send after registeration(60 sec timer is in it)
+
+# page displayed after the email send after registeration(60 sec timer is in it)
 @app.route('/waiting')
 def waiting():
     return render_template("waiting.html")
 
-#page for applying again for email sent to user after registeration.
+
+# page for applying again for email sent to user after registeration.
 @app.route('/apply_again', methods=['GET', 'POST'])
 def apply_again():
     if request.method == "POST":
@@ -2143,12 +2159,14 @@ def apply_again():
             return render_template('default.html', verification_text=verification_text)
     return render_template("apply_again.html")
 
-#waste page
+
+# waste page
 @app.route('/una')
 def una():
     return render_template("una.html")
 
-#contains the list of trainers with sorting function.
+
+# contains the list of trainers with sorting function.
 @app.route('/certified_trainers', methods=["GET", "POST"])
 @login_required
 def certified_trainers():
@@ -2156,7 +2174,7 @@ def certified_trainers():
     t_names = trainer_detail.query.order_by(trainer_detail.id.asc()).paginate(per_page=9, page=page)
     if request.method == "POST":
         dd = request.form['sort']
-        #idas=id ascending and idds=id desending
+        # idas=id ascending and idds=id desending
         if dd == 'idas':
             t_names = trainer_detail.query.order_by(trainer_detail.id.asc()).paginate(per_page=9, page=page)
             return render_template("certified_trainers.html", t_names=t_names)
@@ -2165,7 +2183,8 @@ def certified_trainers():
             return render_template("certified_trainers.html", t_names=t_names)
     return render_template("certified_trainers.html", t_names=t_names)
 
-#displays the details of trainer with images.
+
+# displays the details of trainer with images.
 @app.route('/certified_trainers/<trainer_id>')
 @login_required
 def trainer_detailss(trainer_id):
@@ -2189,7 +2208,8 @@ def trainer_detailss(trainer_id):
                            trainer_img=trainer_img, imag_1=imag_1, imag_2=imag_2,
                            imag_3=imag_3, imag_4=imag_4, imag_5=imag_5)
 
-#Contains the terms and conditions which will be followed
+
+# Contains the terms and conditions which will be followed
 @app.route('/terms_and_conditions', methods=["GET", "POST"])
 def terms_and_conditions():
     if g.owner:
@@ -2214,7 +2234,8 @@ def terms_and_conditions():
         db.session.commit()
     return render_template('terms_and_conditions.html', factor=factor)
 
-#contains the schedules page(workout)
+
+# contains the schedules page(workout)
 @app.route('/schedules', methods=["GET", "POST"])
 @login_required
 def schedules():
@@ -2231,7 +2252,8 @@ def schedules():
         db.session.commit()
     return render_template("schedules.html")
 
-#contains the bmi calculator page.
+
+# contains the bmi calculator page.
 @app.route('/bmi', methods=["GET", "POST"])
 @login_required
 def bmi():
@@ -2248,13 +2270,15 @@ def bmi():
         db.session.commit()
     return render_template("bmi.html")
 
-#contains the fat percentage calculator page
+
+# contains the fat percentage calculator page
 @app.route('/fat')
 @login_required
 def fat():
     return render_template("fat.html")
 
-#containd the diet pdf page
+
+# containd the diet pdf page
 @app.route('/healthy', methods=["GET", "POST"])
 @login_required
 def healthy():
@@ -2271,8 +2295,9 @@ def healthy():
         db.session.commit()
     return render_template("healthy.html")
 
-#it is the function running before any request made
-#Helpful in managing the sessions.
+
+# it is the function running before any request made
+# Helpful in managing the sessions.
 @app.before_request
 def before_request():
     g.user = None
@@ -2381,88 +2406,93 @@ def send_blog_added(zz, title):
     msg.html = render_template("email_blog_added.html", title=title, _external=True)
     mail.send(msg)
 
+
 @app.route('/account/wallet')
 def wallet():
     return render_template('wallet.html')
 
-@app.route('/account/wallet/add',methods=["GET","POST"])
+
+@app.route('/account/wallet/add', methods=["GET", "POST"])
 def wallet_add():
     if g.user:
-        zz=user.query.filter_by(username=g.user).first()
-        ref_id=zz.id
-        ref_type='user'
+        zz = user.query.filter_by(username=g.user).first()
+        ref_id = zz.id
+        ref_type = 'user'
     elif g.owner:
-        zz=ownerregister.query.filter_by(username=g.owner).first()
-        ref_id=zz.id
-        ref_type='owner'
+        zz = ownerregister.query.filter_by(username=g.owner).first()
+        ref_id = zz.id
+        ref_type = 'owner'
     elif g.trainer:
-        zz=trainerregister.query.filter_by(username=g.trainer).first()
-        ref_id=zz.id
-        ref_type='trainer'
-    if request.method=="POST":
-        loop=wallet_all.query.filter_by(ref_id=ref_id,ref_type=ref_type).first()
+        zz = trainerregister.query.filter_by(username=g.trainer).first()
+        ref_id = zz.id
+        ref_type = 'trainer'
+    if request.method == "POST":
+        loop = wallet_all.query.filter_by(ref_id=ref_id, ref_type=ref_type).first()
         startAmmount = request.form['startAmmount']
         print(ref_type)
         print(ref_id)
         userEmail = zz.email
         if loop:
-            ammount=loop.ammount
-            ammount=int(ammount+int(startAmmount))
-            loop.ammount=ammount
+            ammount = loop.ammount
+            ammount = int(ammount + int(startAmmount))
+            loop.ammount = ammount
             db.session.commit()
             print(ammount)
-            send_ammount_added_to_wallet_email(startAmmount,userEmail)
+            send_ammount_added_to_wallet_email(startAmmount, userEmail)
         else:
-            ref_id_from_above=ref_id
-            adding=wallet_all(ref_id=ref_id_from_above,ref_type=ref_type,ammount=startAmmount)
+            ref_id_from_above = ref_id
+            adding = wallet_all(ref_id=ref_id_from_above, ref_type=ref_type, ammount=startAmmount)
             db.session.add(adding)
             db.session.commit()
 
-            send_ammount_added_to_wallet_email(startAmmount,userEmail)
-        return redirect(url_for('account')),flash("Ammount added")
+            send_ammount_added_to_wallet_email(startAmmount, userEmail)
+        return redirect(url_for('account')), flash("Ammount added")
     return render_template('walletAdd.html')
 
-def send_ammount_added_to_wallet_email(startAmmount,userEmail):
+
+def send_ammount_added_to_wallet_email(startAmmount, userEmail):
     print(startAmmount)
     print(userEmail)
-    msg=Message('Ammount added',sender='gymaale.business@gmail.com',recipients=[userEmail])
-    msg.html=render_template('email_conformation_ammount_added_to_wallet.html',ammount=startAmmount,_external=True)
+    msg = Message('Ammount added', sender='gymaale.business@gmail.com', recipients=[userEmail])
+    msg.html = render_template('email_conformation_ammount_added_to_wallet.html', ammount=startAmmount, _external=True)
     mail.send(msg)
 
-@app.route('/transaction/<trans>/<ref_type>/<ref_id>',methods=["GET","POST"])
-def transaction(trans,ref_id,ref_type):
+
+@app.route('/transaction/<trans>/<ref_type>/<ref_id>', methods=["GET", "POST"])
+def transaction(trans, ref_id, ref_type):
     print(ref_id)
     print(ref_type)
     print(trans)
-    if request.method=="POST":
-        if ref_type=='trainer':
-            trainer_qur=trainerregister.query.filter_by(id=ref_id).first()
+    if request.method == "POST":
+        if ref_type == 'trainer':
+            trainer_qur = trainerregister.query.filter_by(id=ref_id).first()
             if trainer_qur:
-                ref_type='trainer'
-            trainer_wallet_qur=wallet_all.query.filter_by(ref_id=ref_id,ref_type=ref_type).first()
+                ref_type = 'trainer'
+            trainer_wallet_qur = wallet_all.query.filter_by(ref_id=ref_id, ref_type=ref_type).first()
             print("trainer_wallet_qur")
             print(trainer_wallet_qur)
 
             if g.user:
-                zz=user.query.filter_by(username=g.user).first()
-                xyz=user_data2.query.filter_by(user_id=zz.id).first()
-                wall=wallet_all.query.filter_by(ref_id=zz.id).first()
-                if int(wall.ammount)>int(trans):
-                    wall.ammount=wall.ammount-int(trans)
+                zz = user.query.filter_by(username=g.user).first()
+                xyz = user_data2.query.filter_by(user_id=zz.id).first()
+                wall = wallet_all.query.filter_by(ref_id=zz.id).first()
+                if int(wall.ammount) > int(trans):
+                    wall.ammount = wall.ammount - int(trans)
                     print(wall.ammount)
                     db.session.commit()
-                    user_Email=zz.email
-                    getting_trainer_details=trainer_detail.query.filter_by(ref_id=trainer_qur.id).first()
+                    user_Email = zz.email
+                    getting_trainer_details = trainer_detail.query.filter_by(ref_id=trainer_qur.id).first()
                     print(getting_trainer_details.first_name)
-                    #sending a mail to user about trainer booking.
-                    send_user_email_about_trainer_booking(user_Email,getting_trainer_details,trans)
-                    trainer_email=trainer_qur.email
+                    # sending a mail to user about trainer booking.
+                    send_user_email_about_trainer_booking(user_Email, getting_trainer_details, trans)
+                    trainer_email = trainer_qur.email
                     trainer_wallet_qur.ammount = trainer_wallet_qur.ammount + int(trans)
                     print(trainer_wallet_qur)
                     db.session.commit()
                     # Sending a mail to trainer about ammount being added and user details
                     send_trainer_ammount(zz, xyz, trans, trainer_email)
-                    return redirect(url_for('account')),flash("Your ammount has been submitted to the trainer. You will recieve a mail from the trainer with in 8 hours")
+                    return redirect(url_for('account')), flash(
+                        "Your ammount has been submitted to the trainer. You will recieve a mail from the trainer with in 8 hours")
                 else:
                     flash("You dont have funds in your wallet")
         '''elif ref_type=='owner':
@@ -2472,52 +2502,57 @@ def transaction(trans,ref_id,ref_type):
             owner_wallet_qur=wallet_all.query.filter_by(ref_id=ref_id,ref_type=ref_type).first()
             print("owner_wallet_qur")
             print(owner_wallet_qur)'''
-    return render_template('transaction.html',trans=trans)
+    return render_template('transaction.html', trans=trans)
 
-#this function is used to send a mail to the user about the trainer being booked by the user along with trainer details
-def send_user_email_about_trainer_booking(user_Email,getting_trainer_details,trans):
-    msg=Message('Trainer Booked',sender='gymaale.business@gmail.com',recipients=[user_Email])
-    msg.html=render_template("email_user_deduction_and_trainer_details.html",trans=trans,t_details=getting_trainer_details,_external=True)
+
+# this function is used to send a mail to the user about the trainer being booked by the user along with trainer details
+def send_user_email_about_trainer_booking(user_Email, getting_trainer_details, trans):
+    msg = Message('Trainer Booked', sender='gymaale.business@gmail.com', recipients=[user_Email])
+    msg.html = render_template("email_user_deduction_and_trainer_details.html", trans=trans,
+                               t_details=getting_trainer_details, _external=True)
     mail.send(msg)
 
-#this function is used t send a mail to the trainer about the user who has booked along with the details.
-def send_trainer_ammount(zz,xyz,trans,trainer_email):
-    msg=Message('User Booking Confirmed',sender='gymaale.business@gmail.com',recipients=[trainer_email])
-    msg.html=render_template("email_send_trainer_ammount_and_user_details.html",zz=zz,xyz=xyz,trans=trans,_external=True)
+
+# this function is used t send a mail to the trainer about the user who has booked along with the details.
+def send_trainer_ammount(zz, xyz, trans, trainer_email):
+    msg = Message('User Booking Confirmed', sender='gymaale.business@gmail.com', recipients=[trainer_email])
+    msg.html = render_template("email_send_trainer_ammount_and_user_details.html", zz=zz, xyz=xyz, trans=trans,
+                               _external=True)
     mail.send(msg)
 
-@app.route('/transaction/select_time/<owner_name>',methods=["GET","POST"])
+
+@app.route('/transaction/select_time/<owner_name>', methods=["GET", "POST"])
 def transaction_select_time(owner_name):
     print(owner_name)
-    zz=ownerregister.query.filter_by(id=owner_name).first()
+    zz = ownerregister.query.filter_by(id=owner_name).first()
     print(zz.username)
-    if request.method=="POST":
-        day_or_month=request.form['any']
-        time_period=request.form['city']
-        if day_or_month=="month":
-            convert_to_day=int(int(time_period)*30)
-            time_period=convert_to_day
-        gym_qur=gym_detail.query.filter_by(owner_ref=owner_name).first()
-        monthly_cost=int(gym_qur.monthly_fees)
-        per_day_cost=int(monthly_cost/30)
-        cost_1=int(int(per_day_cost)*int(time_period))
-        rounding=int(cost_1%10)
-        to_be_added=10-rounding
-        total_cost=int(cost_1)+int(to_be_added)
+    if request.method == "POST":
+        day_or_month = request.form['any']
+        time_period = request.form['city']
+        if day_or_month == "month":
+            convert_to_day = int(int(time_period) * 30)
+            time_period = convert_to_day
+        gym_qur = gym_detail.query.filter_by(owner_ref=owner_name).first()
+        monthly_cost = int(gym_qur.monthly_fees)
+        per_day_cost = int(monthly_cost / 30)
+        cost_1 = int(int(per_day_cost) * int(time_period))
+        rounding = int(cost_1 % 10)
+        to_be_added = 10 - rounding
+        total_cost = int(cost_1) + int(to_be_added)
         print(g.user)
-        user_qur=user.query.filter_by(username=g.user).first()
-        user_wallet_qur=wallet_all.query.filter_by(ref_id=user_qur.id,ref_type='user').first()
-        owner_wallet_qur=wallet_all.query.filter_by(ref_id=owner_name,ref_type='owner').first()
-        print(owner_wallet_qur.ammount )
+        user_qur = user.query.filter_by(username=g.user).first()
+        user_wallet_qur = wallet_all.query.filter_by(ref_id=user_qur.id, ref_type='user').first()
+        owner_wallet_qur = wallet_all.query.filter_by(ref_id=owner_name, ref_type='owner').first()
+        print(owner_wallet_qur.ammount)
         print(user_wallet_qur.ammount)
-        if user_wallet_qur.ammount>total_cost:
-            user_wallet_qur.ammount=user_wallet_qur.ammount-total_cost
-            owner_wallet_qur.ammount=owner_wallet_qur.ammount+total_cost
+        if user_wallet_qur.ammount > total_cost:
+            user_wallet_qur.ammount = user_wallet_qur.ammount - total_cost
+            owner_wallet_qur.ammount = owner_wallet_qur.ammount + total_cost
             db.session.commit()
-            mm=random.randrange(000000,999999)
-            s_code=mm
-            send_user_mail_gym_booked(s_code,total_cost,gym_qur,zz,time_period)
-            send_gym_owner_mail_user_booked_gym(s_code,total_cost,user_qur,time_period)
+            mm = random.randrange(000000, 999999)
+            s_code = mm
+            send_user_mail_gym_booked(s_code, total_cost, gym_qur, zz, time_period)
+            send_gym_owner_mail_user_booked_gym(s_code, total_cost, user_qur, time_period)
             print("success")
             print(user_wallet_qur.ammount)
             print(owner_wallet_qur.ammount)
@@ -2526,15 +2561,20 @@ def transaction_select_time(owner_name):
             flash("You don't have enough funds in your account.")
     return render_template("gym_time_selection.html")
 
-def send_user_mail_gym_booked(s_code,total_cost,gym_qur,zz,time_period):
-    msg=Message('Gym Booked',sender='gymaale.business@gmail.com',recipients=[zz.email])
-    msg.html=render_template("email_user_gym_booked.html",time_period=time_period,s_code=s_code,total_cost=total_cost,gym_qur=gym_qur,_external=True)
+
+def send_user_mail_gym_booked(s_code, total_cost, gym_qur, zz, time_period):
+    msg = Message('Gym Booked', sender='gymaale.business@gmail.com', recipients=[zz.email])
+    msg.html = render_template("email_user_gym_booked.html", time_period=time_period, s_code=s_code,
+                               total_cost=total_cost, gym_qur=gym_qur, _external=True)
     mail.send(msg)
 
-def send_gym_owner_mail_user_booked_gym(s_code,total_cost,user_qur,time_period):
-    msg=Message('User Booked Gym',sender='gymaale.business@gmail.com',recipients=[user_qur.email])
-    msg.html=render_template("email_gym_owner_mail_user_booked_gym.html",time_period=time_period,user_qur=user_qur,s_code=s_code,total_cost=total_cost,_external=True)
+
+def send_gym_owner_mail_user_booked_gym(s_code, total_cost, user_qur, time_period):
+    msg = Message('User Booked Gym', sender='gymaale.business@gmail.com', recipients=[user_qur.email])
+    msg.html = render_template("email_gym_owner_mail_user_booked_gym.html", time_period=time_period, user_qur=user_qur,
+                               s_code=s_code, total_cost=total_cost, _external=True)
     mail.send(msg)
+
 
 '''
 @app.route('/trainer_registeration/trainer_account/wallet')
@@ -2548,6 +2588,8 @@ def trainer_wallet_add():
         ref_type='trainer'
     return redirect(url_for(''))
 '''
+
+
 @app.route('/bcaa')
 @login_required
 def bcaa():
@@ -2886,7 +2928,7 @@ admin.add_view(MyModelView(gym_image, db.session))
 admin.add_view(MyModelView(trainerregister, db.session))
 admin.add_view(MyModelView(trainer_detail, db.session))
 admin.add_view(MyModelView(trainer_image, db.session))
-admin.add_view(MyModelView(wallet_all,db.session))
+admin.add_view(MyModelView(wallet_all, db.session))
 
 if __name__ == "__main__":
     db.create_all()
