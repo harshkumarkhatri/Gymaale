@@ -685,10 +685,6 @@ def index():
 def send_reset_email(z):
     token = z.get_reset_token()
     msg = Message('Password Reset Request', sender='gymaale.buisness@gmail.com', recipients=[z.email])
-    msg.body = f'''To reset your password visit following link :
-    
-If you did not make this request then ignore this mail.
-    '''
     msg.html = render_template("email_message_for_reset.html", z=z, token=token, _external=True)
     mail.send(msg)
 
@@ -696,14 +692,6 @@ If you did not make this request then ignore this mail.
 def send_confirmation_email(z):
     token = z.get_confirmation_token()
     msg = Message('Email Confirmation', sender='gymaale.buisness@gmail.com', recipients=[z.email])
-    msg.body = f'''To confirm your email visit following link :
-    
-Open the link and enter the given code:
-
-This link is valid for 24 hours.
-
-If you did not make this request then ignore this mail.
-        '''
     msg.html = render_template("email_message.html", z=z, token=token, _external=True)
     mail.send(msg)
 
