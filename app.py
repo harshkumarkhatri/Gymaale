@@ -1671,7 +1671,7 @@ def owner_account():
         adding = dmail(email=imail, owner_id=iid)
         db.session.add(adding)
         db.session.commit()
-    return render_template("gym_registeration/owner_Account.html", username=username, email=email,
+    return render_template("gym_registeration/owner_account.html", username=username, email=email,
                            f_name=f_name, l_name=l_name, address=address, mobile=mobile, mnn=mnn,
                            u_train=u_train, xy=xy, image_1=image_1, image_2=image_2, image_3=image_3,
                            image_4=image_4, image_5=image_5, wallet_ammount=ammount_to_be_displayed)
