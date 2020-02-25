@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/untitled1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/untitled1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,13 +179,9 @@
       <workItem from="1582027321407" duration="6753000" />
       <workItem from="1582169314007" duration="3357000" />
       <workItem from="1582180292873" duration="6242000" />
-    </task>
-    <task id="LOCAL-00002" summary="Worked on few more features of the owner section like account settings and more.">
-      <created>1578217165376</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1578217165376</updated>
+      <workItem from="1582207485907" duration="2136000" />
+      <workItem from="1582517266439" duration="1938000" />
+      <workItem from="1582636201191" duration="45000" />
     </task>
     <task id="LOCAL-00003" summary="Form to update the owner and gym details working">
       <created>1578301891757</created>
@@ -527,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582039518858</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="project ready for dst">
+      <created>1582209467428</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1582209467429</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView">
@@ -570,7 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="demo commit" />
     <MESSAGE value="Worked on resending verification mail and timer to display resend button" />
     <MESSAGE value="Email after verification of user account working" />
     <MESSAGE value="blog post layout(full screen) corrected" />
@@ -595,14 +593,15 @@
     <MESSAGE value="Email working user-&gt;user &amp; trainer-&gt;user" />
     <MESSAGE value="updated a small part of the project" />
     <MESSAGE value="some error occuring on linux fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="some error occuring on linux fixed" />
+    <MESSAGE value="project ready for dst" />
+    <option name="LAST_COMMIT_MESSAGE" value="project ready for dst" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2" timestamp="1582190711311">
+    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2" timestamp="1582209465575">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1582190711311" />
+    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1582209465575" />
     <state x="738" y="251" width="433" height="577" key="RollbackChangesDialog" timestamp="1582190691464">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -611,13 +610,13 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="176" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1582030087516" />
-    <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1582030661749">
+    <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1582209473358">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1582030661749" />
-    <state x="620" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1582169314961">
+    <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1582209473358" />
+    <state x="620" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1582636203180">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="620" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1582169314961" />
+    <state x="620" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1582636203180" />
   </component>
 </project>
