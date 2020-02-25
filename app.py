@@ -853,7 +853,7 @@ def register():
             z = user.query.filter_by(email=mail).first()
             if z is not None:
                 send_confirmation_email(z)
-            return redirect(url_for('waiting'))
+            return redirect(url_for('login'))
         else:
             flash('Passwords do not match.')
     return render_template("register.html")

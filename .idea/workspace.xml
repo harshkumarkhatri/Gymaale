@@ -181,14 +181,7 @@
       <workItem from="1582180292873" duration="6242000" />
       <workItem from="1582207485907" duration="2136000" />
       <workItem from="1582517266439" duration="1938000" />
-      <workItem from="1582636201191" duration="45000" />
-    </task>
-    <task id="LOCAL-00003" summary="Form to update the owner and gym details working">
-      <created>1578301891757</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1578301891758</updated>
+      <workItem from="1582636201191" duration="723000" />
     </task>
     <task id="LOCAL-00004" summary="Verification of email after registeration is working.">
       <created>1578313732542</created>
@@ -526,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582209467429</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="updated password for mail">
+      <created>1582636273487</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1582636273492</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView">
@@ -569,7 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Worked on resending verification mail and timer to display resend button" />
     <MESSAGE value="Email after verification of user account working" />
     <MESSAGE value="blog post layout(full screen) corrected" />
     <MESSAGE value="__init__ method set for all the classes" />
@@ -594,14 +593,15 @@
     <MESSAGE value="updated a small part of the project" />
     <MESSAGE value="some error occuring on linux fixed" />
     <MESSAGE value="project ready for dst" />
-    <option name="LAST_COMMIT_MESSAGE" value="project ready for dst" />
+    <MESSAGE value="updated password for mail" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated password for mail" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2" timestamp="1582209465575">
+    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2" timestamp="1582636271625">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1582209465575" />
+    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1582636271625" />
     <state x="738" y="251" width="433" height="577" key="RollbackChangesDialog" timestamp="1582190691464">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -610,10 +610,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="176" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1582030087516" />
-    <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1582209473358">
+    <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1582636282948">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1582209473358" />
+    <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1582636282948" />
     <state x="620" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1582636203180">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
