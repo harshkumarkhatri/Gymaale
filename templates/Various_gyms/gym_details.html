@@ -30,8 +30,8 @@
         #myBtn {
             display: none;
             position: fixed;
-            bottom: 20px;
-            right: 30px;
+            bottom: 15px;
+            right: 20px;
             z-index: 99;
             font-size: 18px;
             border: none;
@@ -39,7 +39,7 @@
             background-color: red;
             color: white;
             cursor: pointer;
-            padding: 15px;
+            padding: 2px;
             border-radius: 4px;
         }
 
@@ -204,7 +204,6 @@
                 <br>
                 {{ owner_name }}
                 <h3><a href="{{ url_for('transaction_select_time',owner_name=g_names.owner_ref) }}">Choose time duration.</a> </h3>
-                <h3><a href="{{ url_for('transaction',trans=  200,ref_type='owner',ref_id=g_names.owner_ref) }}">Book Gym</a></h3>
 
 
                 <!--Razor pay api-->

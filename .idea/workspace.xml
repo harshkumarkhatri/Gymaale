@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_time_selection.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_time_selection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/transaction.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +54,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1XyngTWDLOjeVr68gnEfQJPL5KO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -65,7 +76,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/files from windows./git repositaries/learning-django" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -181,14 +192,10 @@
       <workItem from="1582207485907" duration="2136000" />
       <workItem from="1582517266439" duration="1938000" />
       <workItem from="1582636201191" duration="1590000" />
-      <workItem from="1582908795217" duration="1842000" />
-    </task>
-    <task id="LOCAL-00006" summary="Various gyms,gym details with images and pagination.">
-      <created>1578464770038</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1578464770038</updated>
+      <workItem from="1582908795217" duration="2839000" />
+      <workItem from="1582972882676" duration="726000" />
+      <workItem from="1583250057281" duration="674000" />
+      <workItem from="1583429989555" duration="1842000" />
     </task>
     <task id="LOCAL-00007" summary="Trainer register table added">
       <created>1578473405372</created>
@@ -526,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582912349111</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="updated gitignore file">
+      <created>1582912610202</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1582912610202</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView">
@@ -569,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="__init__ method set for all the classes" />
     <MESSAGE value="set profile image as required and some more things" />
     <MESSAGE value="added gymaale icon in the title bar" />
     <MESSAGE value="changed the icon in top near the name" />
@@ -594,7 +607,8 @@
     <MESSAGE value="updated password for mail" />
     <MESSAGE value="some changes" />
     <MESSAGE value="removed copyright from bottom of the pages." />
-    <option name="LAST_COMMIT_MESSAGE" value="removed copyright from bottom of the pages." />
+    <MESSAGE value="updated gitignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated gitignore file" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -602,10 +616,14 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="665" y="344" width="580" height="392" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1029@0.27.1920.1029" timestamp="1582912292536" />
-    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2" timestamp="1582912348661">
+    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2" timestamp="1582912609952">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1582912348661" />
+    <state x="533" y="137" width="844" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1582912609952" />
+    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1582973775420">
+      <screen x="0" y="27" width="1920" height="1029" />
+    </state>
+    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl/0.27.1920.1029@0.27.1920.1029" timestamp="1582973775420" />
     <state x="738" y="251" width="433" height="577" key="RollbackChangesDialog" timestamp="1582190691464">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -618,9 +636,9 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="555" y="277" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1582912351690" />
-    <state x="620" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1582636203180">
+    <state x="620" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1583429991552">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="620" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1582636203180" />
+    <state x="620" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1583429991552" />
   </component>
 </project>
