@@ -1,21 +1,278 @@
-<!--In this file we have to make the user select the time period for which he want to join the gym-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SportFIT template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="/static/styles/bootstrap-4.1.2/bootstrap.min.css">
+    <link href="/static/plugins/font-awesome-4.7.0/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+          href="/static/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css"
+          href="/static/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css"
+          href="/static/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="/static/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/services.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles/services_responsive.css">
+    <link rel="icon" href=
+            "/static/images/logo.jpeg"
+          type="image/x-icon"><style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+    .flex-box-containeer-2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .flex-box-containeer-2 img {
+            margin: 10px;
+            max-width: 10%;
+            max-height: 10%;
+            box-shadow: 0px 10px 20px black;
+        }
+
+    </style>
+
 </head>
 <body>
-<form method="post">
-    <label>Choose</label>
-    <input type="radio" name="any" value="day" required>Days<br>
-    <input type="radio" name="any" value="month">Month/s<br>
-    <label>Input time period.</label>
-    <input type="text" placeholder="Enter your city" name="city" class="form-control"
-           id="city" autocomplete="off" required>
-    <button type="submit">Post</button>
-    <a href=""> Confirm booking</a>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img
+        src="/static/images/WhatsApp%20Image%202019-11-20%20at%209.42.21%20AM.jpeg"></button>
+<div class="super_container">
 
+    <!-- Header -->
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+                        <a href="/main">
+                            <div class="logo d-flex flex-row align-items-center justify-content-start"><img
+                                    src="/static/images/logo2.jpeg" alt="">
+                                <div>GYMA<span>ale</span></div>
+                            </div>
+                        </a>
+                        <nav class="main_nav">
+                            <ul class="d-flex flex-row align-items-center justify-content-start">
+                                <li><a href="/main">Home</a></li>
+                                <li><a href="/about">About us</a></li>
+                                <li><a href="/services">Services</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </nav>
+                        <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <div>9999999999</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hamburger -->
+
+    <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
+        <div class="hamburger">
+            <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
+                <span>menu</span>
+                <div class="hamburger_container">
+                    <div class="menu_hamburger">
+                        <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                        <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
+                        <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu -->
+
+    <div class="menu trans_800">
+        <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+            <ul>
+                <li><a href="/main">Home</a></li>
+                <li><a href="/about">About us</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+        <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            <span>9999999999</span>
+        </div>
+    </div>
+
+    <!-- Home -->
+
+    <div class="home">
+        <div class="background_image" style="background-image:url(/static/images/services.jpg)"></div>
+        <div class="overlay"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Services -->
+
+    <div class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container">
+                        <div class="section_subtitle"><div><h2>Choose time duration</h2></div>
+</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <form method="post">
+    <label>* Choose</label><br>
+    <input type="radio" name="any" value="day" required>Days<br>
+    <input type="radio" name="any" value="month">Month/s<br><br>
+    <label>* Input time period.</label>
+    <input type="text" placeholder="Enter your city" name="city" class="form-control"
+           id="city" autocomplete="off" required><br>
+    <button type="submit" class="btn btn-dark">Confirm booking</button>
 </form>
+
+
+        </div>
+    </div>
+
+
+
+    <!-- Extra -->
+
+    <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+        <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="extra_title">More Gyms</div>
+                        <div class="extra_text">
+                            <p>Will be added.</p>
+                        </div>
+                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="footer_container">
+                        <div class="footer_content">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <div class="logo d-flex flex-row align-items-center justify-content-center">
+                                        <img
+                                                src="/static/images/dot.png" alt="">
+                                        <div>GYMA<span>ale</span></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <nav class="footer_nav">
+                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                    <li><a href="/main">Home</a></li>
+                                    <li><a href="/about">About us</a></li>
+                                    <li><a href="/services">Services</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact">Contact</a></li><li><a href="/faqs">FAQs</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script src="/static/styles/bootstrap-4.1.2/popper.js"></script>
+<script src="/static/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="/static/plugins/greensock/TweenMax.min.js"></script>
+<script src="/static/plugins/greensock/TimelineMax.min.js"></script>
+<script src="/static/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="/static/plugins/greensock/animation.gsap.min.js"></script>
+<script src="/static/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="/static/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="/static/plugins/easing/easing.js"></script>
+<script src="/static/plugins/progressbar/progressbar.min.js"></script>
+<script src="/static/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="/static/plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="/static/plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="/static/js/services.js"></script>
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
 </body>
 </html>

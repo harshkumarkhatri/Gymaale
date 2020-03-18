@@ -131,18 +131,18 @@
                                             <h2>{{s_code}}</h2><br>
                                     <p>Show this to the gym owner.</p><br>
                                     <h4>Gym Details:</h4><br>
-                                    Gym name: {{gym_qur.gym_name}}<br>
-                                    Address: {{gym_qur.address_1}},{{gym_qur.address_2}}<br>
-                                    {{gym_qur.city}},{{gym_qur.state}},{{gym_qur.postal_code}}<br>
-                                    Contact No.: {{gym_qur.contact_number}}<br>
+                                    Gym name: {{data['gym_name']}}<br>
+                                    Address: {{data['address_1']}},{{data['address_2']}}<br>
+                                    {{data['city']}},{{data['state']}},{{data['postal_code']}}<br>
+                                    Contact No.: {{data['contact']}}<br>
                                     Timing:<br>
-                                    Morning: {{gym_qur.m_open}}am-{{gym_qur.m_close}}am<br>
-                                    Evening: {{gym_qur.e_open}}pm-{{gym_qur.e_close}}pm<br>
+                                    Morning: {{data['m_open']}}am-{{data['m_close']}}am<br>
+                                    Evening: {{data['e_open']}}pm-{{data['e_close']}}pm<br>
                                     </span></p>
                                     <p class="description center"
                                        style="font-family:'Muli','Arial Narrow',Arial;Margin:0;text-align:center;max-width:320px;color:#a1a8ad;line-height:24px;font-size:15px;Margin-bottom:10px;margin-left: auto; margin-right: auto;">
                                         Have some query?<br>
-                                        Try searching your query in our <a href="{{ url_for('faqs',_external=True) }}">
+                                        Try searching your query in our <a href="{{ data['faq_url'] }}">
                                         FAQ's section</a>.
                                     </p>
 

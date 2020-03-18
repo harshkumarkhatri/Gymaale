@@ -195,16 +195,15 @@
                 <br>
                 <h4><u>Images:</u></h4>
                 <div class="flex-box-containeer-2">
-                    <img src="data:;base64,{{ img_1 }}"><br>
-                    <img src="data:;base64,{{ img_2 }}"><br>
-                    <img src="data:;base64,{{ img_3 }}"><br>
-                    <img src="data:;base64,{{ img_4 }}"><br>
-                    <img src="data:;base64,{{ img_5 }}">
+                    <img src="{{ img_1 }}"><br>
+                    <img src="{{ img_2 }}"><br>
+                    <img src="{{ img_3 }}"><br>
+                    <img src="{{ img_4 }}"><br>
+                    <img src="{{ img_5 }}">
                 </div>
                 <br>
                 {{ owner_name }}
                 <h3><a href="{{ url_for('transaction_select_time',owner_name=g_names.owner_ref) }}">Choose time duration.</a> </h3>
-                <h3><a href="{{ url_for('transaction',trans=  200,ref_type='owner',ref_id=g_names.owner_ref) }}">Book Gym</a></h3>
 
 
                 <!--Razor pay api-->
@@ -212,25 +211,7 @@
 
 
             </pre>
-                <div class="razorpay-embed-btn" data-url="https://rzp.io/l/eKpsqUv" data-text="Pay Now"
-                     data-color="#528FF0" data-size="large">
-                    <script>
-                        (function () {
-                            var d = document;
-                            var x = !d.getElementById('razorpay-embed-btn-js')
-                            if (x) {
-                                var s = d.createElement('script');
-                                s.defer = !0;
-                                s.id = 'razorpay-embed-btn-js';
-                                s.src = 'https://cdn.razorpay.com/static/embed_btn/bundle.js';
-                                d.body.appendChild(s);
-                            } else {
-                                var rzp = window['__rzp__'];
-                                rzp && rzp.init && rzp.init()
-                            }
-                        })();
-                    </script>
-                </div>
+
 
 
             </div>

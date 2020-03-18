@@ -168,7 +168,7 @@
             </div>
             <div class="services_row">
                 <h3><i class="fa fa-user-circle-o"></i> {{ t_names.first_name }} {{ t_names.last_name }}</h3>
-                <h3 ><i class="fa fa-home"></i> <h4>{{ t_names.city }},{{ t_names.state }}</h4></h3>
+                <h3 ><i class="fa fa-home"></i> {{ t_names.city }},{{ t_names.state }}</h3>
                 <h3><i class="fa fa-envelope-o"></i> <a href="mailto:{{ t_names.c_mail }}">{{ t_names.c_mail }}</a> </h3>
                 <h3><i class="fa fa-phone"></i><a href="tel:{{ t_names.c_mob }}">{{ t_names.c_mob }}</a> </h3>
                 <h3 title="Experience"><i class="fa fa-clock-o"></i>Training from {{ t_names.t_time }} </h3>
@@ -190,12 +190,12 @@
                 {% if trainer_img %}
                 <h4><u>Images:</u></h4>
                 <div class="flex-box-containeer-2">
-                <img src="data:;base64,{{ imag_1 }}"><br>
-                <img src="data:;base64,{{ imag_2 }}"><br>
-                <img src="data:;base64,{{ imag_3 }}"><br>
-                <img src="data:;base64,{{ imag_4 }}"><br>
-                <img src="data:;base64,{{ imag_5 }}">
-                </div>
+                <img src="{{imag_1}}"><br>
+                <img src="{{ imag_2 }}"><br>
+                <img src="{{ imag_3 }}"><br>
+                <img src="{{ imag_4 }}"><br>
+                <img src="{{ imag_5 }}">
+                </div><br>
                 <a href="{{ url_for('transaction',trans=t_names.charges,ref_type='trainer',ref_id=t_names.ref_id) }}">Book Trainer</a>
                 {% endif %}
 

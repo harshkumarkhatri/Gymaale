@@ -205,11 +205,11 @@
     <h5>Morning: {{ i.m_open }}:00 am - {{ i.m_close }}:00 am</h5>
     <h5>Eveneing: {{ i.e_open }}:00 pm - {{ i.e_close }}:00 pm</h5>
     <div class="flex-box-containeer-2">
-    <img src="data:;base64, {{ image_1 }}"/>
-    <img src="data:;base64, {{ image_2 }}"/>
-    <img src="data:;base64, {{ image_3 }}"/>
-    <img src="data:;base64, {{ image_4 }}"/>
-    <img src="data:;base64, {{ image_5 }}"/>
+    <img src="{{ image_1 }}"/>
+    <img src="{{ image_2 }}"/>
+    <img src="{{ image_3 }}"/>
+    <img src="{{ image_4 }}"/>
+    <img src="{{ image_5 }}"/>
     </div>
     {% if count==0 %}
     {% else %}

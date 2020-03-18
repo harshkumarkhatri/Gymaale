@@ -25,9 +25,26 @@ from base64 import b64encode
 import webbrowser
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from cloudinary.uploader import upload
+from cloudinary.utils import cloudinary_url
+
+from celery import Celery
+import redis
+
+cloudinary.config(
+  cloud_name = "harshkumarkhatri",
+  api_key = "189777582685733",
+  api_secret = "_66utVOprVTnRO3-ORv4LJHXtkg"
+)
+
 #import socket
 #socket.getaddrinfo('170.16.4.100', 3128)
 
+allowed_extensions={'jpg','jpeg','png'}
 
 from dateutil import parser
 
@@ -37,8 +54,7 @@ app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'gymaale.buisness@gmail.com'
-app.config['MAIL_PASSWORD'] = 'harsh96722@'
-mail = Mail(app)
+app.config['MAIL_PASSWORD'] = 'Harsh96722'
 
 db = SQLAlchemy(app)
 app.secret_key = '1234'
@@ -51,6 +67,15 @@ pub_key = 'pk_test_j5M62wU5aump7Ige6RRL6bG300GBcA0F6i'
 secret_key = 'sk_test_ZDdijuYIjxaiLE15uvr0CE7v00E9LxRqoN'
 admin = Admin(app)
 ADMINS = ['mailharshkhatri@gmail.com']
+
+app.config.from_object("config")
+app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
+app.config['CELERY_RESULT_BACKEND'] = 'redis://localhost:6379/0'
+client = Celery(app.name, broker='redis://localhost:6379/0')
+client.conf.update(app.config)
+host_name='http://localhost:5000'
+
+mail = Mail(app)
 
 
 class user(db.Model, UserMixin, AnonymousUserMixin):
@@ -388,50 +413,50 @@ class gym_detail(db.Model):
 class gym_image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ref_id = db.Column(db.Integer)
-    image1 = db.Column(db.LargeBinary)
-    image2 = db.Column(db.LargeBinary)
-    image3 = db.Column(db.LargeBinary)
-    image4 = db.Column(db.LargeBinary)
-    image5 = db.Column(db.LargeBinary)
+    image_1_link=db.Column(db.String(5000))
+    image_2_link=db.Column(db.String(5000))
+    image_3_link=db.Column(db.String(5000))
+    image_4_link=db.Column(db.String(5000))
+    image_5_link=db.Column(db.String(5000))
 
-    def __init__(self, ref_id, image1, image2, image3, image4, image5):
+    def __init__(self, ref_id, image_1_link,image_2_link,image_3_link,image_4_link,image_5_link):
         if ref_id:
             self.ref_id = ref_id
         else:
             self.ref_id = None
-        if image1:
-            self.image1 = image1
+        if image_1_link:
+            self.image_1_link = image_1_link
         else:
-            self.image1 = None
-        if image2:
-            self.image2 = image2
+            self.image_1_link = None
+        if image_2_link:
+            self.image_2_link = image_2_link
         else:
-            self.image2 = None
-        if image3:
-            self.image3 = image3
+            self.image_2_link = None
+        if image_3_link:
+            self.image_3_link = image_3_link
         else:
-            self.image3 = None
-        if image4:
-            self.image4 = image4
+            self.image_3_link = None
+        if image_4_link:
+            self.image_4_link = image_4_link
         else:
-            self.image4 = None
-        if image5:
-            self.image5 = image5
+            self.image_4_link = None
+        if image_5_link:
+            self.image_5_link = image_5_link
         else:
-            self.image5 = None
+            self.image_5_link = None
 
 
 class trainer_image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ref_id = db.Column(db.Integer)
     owner_ref_id = db.Column(db.Integer)
-    image1 = db.Column(db.LargeBinary)
-    image2 = db.Column(db.LargeBinary)
-    image3 = db.Column(db.LargeBinary)
-    image4 = db.Column(db.LargeBinary)
-    image5 = db.Column(db.LargeBinary)
+    image_1_link=db.Column(db.String(5000))
+    image_2_link=db.Column(db.String(5000))
+    image_3_link=db.Column(db.String(5000))
+    image_4_link=db.Column(db.String(5000))
+    image_5_link=db.Column(db.String(5000))
 
-    def __init__(self, ref_id, owner_ref_id, image1, image2, image3, image4, image5):
+    def __init__(self, ref_id, owner_ref_id, image_1_link, image_2_link, image_3_link, image_4_link, image_5_link):
         if ref_id:
             self.ref_id = ref_id
         else:
@@ -440,26 +465,26 @@ class trainer_image(db.Model):
             self.owner_ref_id = owner_ref_id
         else:
             self.owner_ref_id = None
-        if image1:
-            self.image1 = image1
+        if image_1_link:
+            self.image_1_link = image_1_link
         else:
-            self.image1 = None
-        if image2:
-            self.image2 = image2
+            self.image_1_link = None
+        if image_2_link:
+            self.image_2_link = image_2_link
         else:
-            self.image2 = None
-        if image3:
-            self.image3 = image3
+            self.image_2_link = None
+        if image_3_link:
+            self.image_3_link = image_3_link
         else:
-            self.image3 = None
-        if image4:
-            self.image4 = image4
+            self.image_3_link = None
+        if image_4_link:
+            self.image_4_link = image_4_link
         else:
-            self.image4 = None
-        if image5:
-            self.image5 = image5
+            self.image_4_link = None
+        if image_5_link:
+            self.image_5_link = image_5_link
         else:
-            self.image5 = None
+            self.image_5_link = None
 
 
 class hours(db.Model):
@@ -498,9 +523,9 @@ class image(db.Model):
     user_id = db.Column(db.Integer)
     ibt = db.Column(db.String(99))
     file_name = db.Column(db.String(500))
-    data = db.Column(db.LargeBinary)
+    image_link=db.Column(db.String(5000))
 
-    def __init__(self, user_id, ibt, file_name, data):
+    def __init__(self, user_id, ibt, file_name, image_link):
         if user_id:
             self.user_id = user_id
         else:
@@ -513,10 +538,10 @@ class image(db.Model):
             self.file_name = file_name
         else:
             self.file_name = None
-        if data:
-            self.data = data
+        if image_link:
+            self.image_link = image_link
         else:
-            self.data = None
+            self.image_link = None
 
 
 class trainerregister(db.Model):
@@ -681,19 +706,21 @@ def load_user(user_id):
 def index():
     return render_template("major.html")
 
+@client.task
+def send_reset_email(data):
+    token = data['token']
+    link=data['link']
+    with app.app_context():
+        msg = Message('Password Reset Request', sender='gymaale.buisness@gmail.com', recipients=[data['email']])
+        msg.html = render_template("email_message_for_reset.html",link=link,faq=data['faq_link'], token=token, _external=True)
+        mail.send(msg)
 
-def send_reset_email(z):
-    token = z.get_reset_token()
-    msg = Message('Password Reset Request', sender='gymaale.buisness@gmail.com', recipients=[z.email])
-    msg.html = render_template("email_message_for_reset.html", z=z, token=token, _external=True)
-    mail.send(msg)
-
-
-def send_confirmation_email(z):
-    token = z.get_confirmation_token()
-    msg = Message('Email Confirmation', sender='gymaale.buisness@gmail.com', recipients=[z.email])
-    msg.html = render_template("email_message.html", z=z, token=token, _external=True)
-    mail.send(msg)
+@client.task
+def send_confirmation_email(data):
+    with app.app_context():
+        msg = Message('Email Confirmation', sender='gymaale.buisness@gmail.com', recipients=[data['email']])
+        msg.html = render_template("email_message.html",faq=data['faq_link'],sec_code=data['sec_code'],  token=data['token'],link=data['link'], _external=True)
+        mail.send(msg)
 
 
 @app.route('/forgot_request', methods=["GET", "POST"])
@@ -702,7 +729,15 @@ def forgot_request():
         cmail = request.form['cmail']
         z = user.query.filter_by(email=cmail).first()
         if z is not None:
-            send_reset_email(z)
+            data={}
+            data['email']=z.email
+            token=z.get_reset_token()
+            data['token']=token
+            data['link']=f'{host_name}/reset_password/'+token
+            data['faq_link']=f'{host_name}/faqs'
+            print(data['link'])
+            print(token)
+            send_reset_email.delay(data)
             flash("EMAIL SENT")
             return redirect(url_for('login'))
             # return "success"
@@ -735,15 +770,20 @@ def reset_password(token):
         db.session.add(nu)
         db.session.commit()
 """
-        send_password_reset_successful(value2)
+        data={}
+        data['email']=value2
+        data['faq_link']=f'{host_name}/faqs'
+        send_password_reset_successful.delay(data)
         return redirect(url_for('login'))
     return render_template("reset_password.html")
 
 
-def send_password_reset_successful(value2):
-    msg = Message('Password reset successful', sender='gymaale.business@gmail.com', recipients=[value2])
-    msg.html = render_template("email_password_reset_successful.html", _external=True)
-    mail.send(msg)
+@client.task
+def send_password_reset_successful(data):
+    with app.app_context():
+        msg = Message('Password reset successful', sender='gymaale.business@gmail.com', recipients=[data['email']])
+        msg.html = render_template("email_password_reset_successful.html",faq=data['faq_link'], _external=True)
+        mail.send(msg)
 
 
 @app.route('/main', methods=["GET", "POST"])
@@ -849,8 +889,14 @@ def register():
             db.session.add(addingToWallet)
             db.session.commit()
             z = user.query.filter_by(email=mail).first()
+            data={}
+            data['email']=z.email
+            data['token']=z.get_reset_token()
+            data['link']=f'{host_name}/registerr/'+data['token']+'/'+z.username
+            data['sec_code']=z.sec_code
+            data['faq_link']=f'{host_name}/faqs'
             if z is not None:
-                send_confirmation_email(z)
+                send_confirmation_email.delay(data)
             return redirect(url_for('waiting'))
         else:
             flash('Passwords do not match.')
@@ -871,23 +917,33 @@ def admin_register():
             return redirect(url_for('admin_register')), flash('You are already registered')
         m = 'gymaale.buisness@gmail.com'
         if m is not None:
-            send_admin_email(m, uname, passw, email, sec_code)
+            data={}
+            data['mail']=m
+            data['uname']=uname
+            data['passw']=passw
+            data['email']=email
+            data['sec_code']=sec_code
+            data['url']=f'{host_name}/admin_registerr_something_secret'
+            send_admin_email.delay(data)
             return redirect(url_for('default')), flash('Your data has been submitted.\n'
                                                        'You will recieve an email when it has been verified.\n'
                                                        'Verification generally takes 24 hours.\n')
     return render_template("admin_register.html", value=mm)
 
 
-def send_admin_email(m, uname, passw, email, sec_code):
+@client.task
+def send_admin_email(data):
+    with app.app_context():
     # print(m,uname,passw,email,sec_code)
-    msg = Message('Admin Verification', sender='gymaale.buisness@gmail.com', recipients=[m])
-    msg.body = f'''To verify the user as admin visit the following link:
-{url_for('admin_registerr_something_secret', _external=True)}
+        msg = Message('Admin Verification', sender='gymaale.buisness@gmail.com', recipients=[data['mail']])
+        msg.body = f'''To verify the user as admin visit the following link:
+{data['url']}
 
-Details of the requester:
-name=''' + uname + '\npassword=' + passw + '\nemail=' + email + '\nsecurity code=' + sec_code
+    
+    Details of the requester:
+    name=''' + data['uname'] + '\npassword=' + data['passw'] + '\nemail=' + data['email'] + '\nsecurity code=' + data['sec_code']
 
-    mail.send(msg)
+        mail.send(msg)
 
 
 @app.route('/admin_registerr_something_secret', methods=['GET', 'POST'])
@@ -901,19 +957,24 @@ def admin_registerr_something_secret():
         mm = admindata(username=uname, password=passw, email=email, security_code=sec_code)
         db.session.add(mm)
         db.session.commit()
-        send_user_email(mm)
+        data={}
+        data['email']=mm.email
+        data['url']=f'{host_name}/admin'
+        send_user_email.delay(data)
         return redirect(url_for('default')), flash('The user has been added as an admin.')
     return render_template("user_as_admin.html")
 
 
-def send_user_email(mm):
-    msg = Message('Admin Account Verification', sender='gymaale.buisness@gmail.com', recipients=[mm.email])
-    msg.body = f'''Your admin account has been successfully verified.
-    You can view the admin section by clicking the link below
-    {url_for('admin__', _external=True)}
-
-            '''
-    mail.send(msg)
+@client.task
+def send_user_email(data):
+    with app.app_context():
+        msg = Message('Admin Account Verification', sender='gymaale.buisness@gmail.com', recipients=[data['email']])
+        msg.body = f'''Your admin account has been successfully verified.
+        You can view the admin section by clicking the link below
+        {data['url']}
+    
+                '''
+        mail.send(msg)
 
 
 @app.route('/admin')
@@ -966,7 +1027,8 @@ def account():
         zz = user_data2.query.filter_by(user_id=z.id).first()
         # print(zz)
         xyz = image.query.filter_by(user_id=z.id).first()
-        imag = base64.b64encode(xyz.data).decode('ascii')
+        image_url=xyz.image_link
+        #imag = base64.b64encode(xyz.data).decode('ascii')
     wallet_qur = wallet_all.query.filter_by(ref_id=z.id).first()
     print(wallet_qur.ammount)
     if zz == None:
@@ -994,7 +1056,7 @@ def account():
         db.session.add(adding)
         db.session.commit()
     return render_template("account.html", value=m, value2=z.email, value3=value3, value4=value4,
-                           value5=value5, value6=value6, value7=value7, value8=value8,wallet_ammount=wallet_qur.ammount, value9=value9, imag=imag)
+                           value5=value5, value6=value6, value7=value7, value8=value8,wallet_ammount=wallet_qur.ammount, value9=value9, image_url=image_url)
 
 
 @app.route('/change_password', methods=["GET", "POST"])
@@ -1134,11 +1196,12 @@ def delete_account():
 def my_page():
     return webbrowser.open_new_tab('http://gmail.com')"""
 
-
-def send_user_account_creation_email(mm):
-    msg = Message('Account Created', sender='gymaale.business@gmail.com', recipients=[mm.email])
-    msg.html = render_template("email_user_account_creation_congratulating.html", mm=mm)
-    mail.send(msg)
+@client.task
+def send_user_account_creation_email(data):
+    with app.app_context():
+        msg = Message('Account Created', sender='gymaale.business@gmail.com', recipients=[data['email']])
+        msg.html = render_template("email_user_account_creation_congratulating.html",faq=data['faq_link'])
+        mail.send(msg)
 
 
 @app.route('/registerr/<token>/<username>', methods=['GET', 'POST'])
@@ -1155,7 +1218,10 @@ def confirm_email(token, username):
             if mm.sec_code == int(sec):
                 mm.verification = "Yes"
                 db.session.commit()
-                send_user_account_creation_email(mm)
+                data={}
+                data['email']=mm.email
+                data['faq_link']=f'{host_name}/faqs'
+                send_user_account_creation_email.delay(data)
             else:
                 return redirect(url_for('confirm_email')), flash("Incorrect Code")
             return redirect(url_for('login')), flash("Account has been verified. Now you can login.")
@@ -1175,10 +1241,8 @@ def change_image():
         value2 = zz.username
     file = request.files['inputfile']
     #   print(file.filename)
-    zz = file.filename
-    if not "." in zz:
-        return redirect(url_for('mj')), flash("Please choose an image")
-    else:
+    zz = file.filename.rsplit(".",1)[1].lower()
+    if zz in allowed_extensions:
         qur = image.query.filter_by(user_id=value1, ibt=value2).first()
         qur.data = file.read()
         db.session.commit()
@@ -1187,6 +1251,8 @@ def change_image():
         db.session.add(newfile)
         db.session.commit()"""
         return redirect(url_for('account_settings')), flash("Profile changed successfully.")
+    else:
+        return redirect(url_for('change_image')),flash("Invalid extension of uploaded image")
 
 
 @app.route('/jj', methods=["GET", "POST"])
@@ -1220,14 +1286,25 @@ def add_image():
     # if va:
     #    return redirect(url_for('user_data'))
     # else:
+    upload_result = None
+    thumbnail_url1 = None
+    thumbnail_url2 = None
     file = request.files['inputfile']
-    print(file)
-    newfile = image(file_name=file.filename, ibt=value2, user_id=value1, data=file.read())
-    db.session.add(newfile)
-    db.session.commit()
-    # image=request.files["image"]
-    # return redirect(url_for('user_data'))
-    return redirect(url_for('user_data'))
+    extension=file.filename.rsplit(".",1)[1].lower()
+    if extension in allowed_extensions:
+        if file:
+            upload_result = cloudinary.uploader.upload(file,folder="profile_pictures",width=200,height=100)
+            print(upload_result['url'])
+        print(file)
+        newfile = image(file_name=file.filename, ibt=value2, user_id=value1,image_link=upload_result['url'])
+        db.session.add(newfile)
+        db.session.commit()
+        # image=request.files["image"]
+        # return redirect(url_for('user_data'))
+        return redirect(url_for('user_data'))
+    else:
+        flash("Invalid image extension")
+        return redirect(url_for('jj'))
 
 
 @app.route("/show")
@@ -1511,17 +1588,19 @@ def gym_details():
                                  m_open=m_open, m_close=m_close, e_open=e_open, e_close=e_close, cb=cb)
                 db.session.add(xxx)
                 db.session.commit()
-                send_gym_creation_congratulating(xyz, 'first')
+                data={}
+                data['email']=xyz.email
+                data['txt']='first'
+                send_gym_creation_congratulating.delay(data)
             return redirect(url_for('gym_images'))
     return render_template("gym_registeration/gym_details.html")
 
-
-def send_gym_creation_congratulating(xyz, mmm):
-    print(xyz)
-    print(mmm)
-    msg = Message('Gym Registeration', sender='gymaale.buisness@gmail.com', recipients=[xyz.email])
-    msg.html = render_template("email_gym_creation_congratulating.html", _external=True, mmm=mmm)
-    mail.send(msg)
+@client.task
+def send_gym_creation_congratulating(data):
+    with app.app_context():
+        msg = Message('Gym Registeration', sender='gymaale.buisness@gmail.com', recipients=[data['email']])
+        msg.html = render_template("email_gym_creation_congratulating.html", _external=True, mmm=data['txt'])
+        mail.send(msg)
 
 
 @app.route('/gym_images')
@@ -1535,21 +1614,36 @@ def upload():
     if g.owner:
         xyz = ownerregister.query.filter_by(username=g.owner).first()
     ref = xyz.id
+    upload_result1 = None
+    upload_result2 = None
+    upload_result3 = None
+    upload_result4 = None
+    upload_result5 = None
+    folder_name='gym_images/'+xyz.username+'_'+str(xyz.id)
     file1 = request.files['inputfile1']
     file2 = request.files['inputfile2']
     file3 = request.files['inputfile3']
     file4 = request.files['inputfile4']
     file5 = request.files['inputfile5']
-    #  print(file1.filename)
-    # print(file2.filename)
-    # print(file3.filename)
-    # print(file4.filename)
-    # print(file5.filename)
-    mm = gym_image(ref_id=ref, image1=file1.read(), image2=file2.read(), image3=file3.read(),
-                   image4=file4.read(), image5=file5.read())
-    db.session.add(mm)
-    db.session.commit()
-    return redirect(url_for('owner_account'))
+    f1_extension=file1.filename.rsplit(".",1)[1].lower()
+    f2_extension=file2.filename.rsplit(".",1)[1].lower()
+    f3_extension=file3.filename.rsplit(".",1)[1].lower()
+    f4_extension=file4.filename.rsplit(".",1)[1].lower()
+    f5_extension=file5.filename.rsplit(".",1)[1].lower()
+    if f1_extension and f2_extension and f3_extension and f4_extension and f5_extension in allowed_extensions:
+        upload_result1=cloudinary.uploader.upload(file1,folder=folder_name,width=200,height=100)
+        upload_result2=cloudinary.uploader.upload(file2,folder=folder_name,width=200,height=100)
+        upload_result3=cloudinary.uploader.upload(file3,folder=folder_name,width=200,height=100)
+        upload_result4=cloudinary.uploader.upload(file4,folder=folder_name,width=200,height=100)
+        upload_result5=cloudinary.uploader.upload(file5,folder=folder_name,width=200,height=100)
+        mm = gym_image(ref_id=ref, image_1_link=upload_result1['url'],image_2_link=upload_result2['url'],
+                       image_3_link=upload_result3['url'],image_4_link=upload_result4['url'],image_5_link=upload_result5['url'])
+        db.session.add(mm)
+        db.session.commit()
+        return redirect(url_for('owner_account'))
+    else:
+        flash("Please upload files with .jpg or .jpeg or .png")
+        return redirect(url_for('gym_images'))
 
 
 @app.route('/gym_registeration/add_another_gym', methods=["GET", "POST"])
@@ -1577,6 +1671,7 @@ def add_another_gym():
             e_open = request.form['e_open']
             e_close = request.form['e_close']
             desc = request.form['desc']
+            cb=request.form['cb']
             ref_id = xyz.id
             zz = gym_detail.query.filter_by(address_1=add).first()
             if zz:
@@ -1585,7 +1680,7 @@ def add_another_gym():
                 xxx = gym_detail(gym_name=fname, address_1=add, address_2=add2, contact_number=mob,
                                  state=state, city=city, postal_code=p_code, monthly_fees=m_fees, yearly_fees=y_fees,
                                  trainers_available=trainers, features=feat, estlb=estab, desc=desc, owner_ref=ref_id,
-                                 m_open=m_open, m_close=m_close, e_open=e_open, e_close=e_close)
+                                 m_open=m_open, m_close=m_close, e_open=e_open,cb=cb, e_close=e_close)
                 db.session.add(xxx)
                 db.session.commit()
                 mmm = gym_detail.query.filter_by(owner_ref=ref_id).all()
@@ -1631,12 +1726,11 @@ def owner_account():
         mmm = gym_detail.query.filter_by(owner_ref=zz.id).all()
         xy = trainer_detail.query.filter_by(owner_ref_id=zz.id).first()
         qur = gym_image.query.filter_by(ref_id=zz.id).first()
-        image_1 = base64.b64encode(qur.image1).decode('ascii')
-        image_2 = base64.b64encode(qur.image2).decode('ascii')
-        image_3 = base64.b64encode(qur.image3).decode('ascii')
-        image_4 = base64.b64encode(qur.image4).decode('ascii')
-        image_5 = base64.b64encode(qur.image5).decode('ascii')
-        print(xy)
+        image_1 =qur.image_1_link
+        image_2 =qur.image_2_link
+        image_3 =qur.image_3_link
+        image_4 =qur.image_4_link
+        image_5 =qur.image_5_link
         for i in mmm:
             print(i)
 
@@ -1675,7 +1769,7 @@ def owner_account():
         adding = dmail(email=imail, owner_id=iid)
         db.session.add(adding)
         db.session.commit()
-    return render_template("gym_registeration/owner_Account.html", username=username, email=email,
+    return render_template("gym_registeration/owner_account.html", username=username, email=email,
                            f_name=f_name, l_name=l_name, address=address, mobile=mobile, mnn=mnn,
                            u_train=u_train, xy=xy, image_1=image_1, image_2=image_2, image_3=image_3,
                            image_4=image_4, image_5=image_5,wallet_ammount=ammount_to_be_displayed)
@@ -1706,11 +1800,11 @@ def trainer_account_2():
         print(zz)
         print(mm.charges)
         print(dd)
-        image_1 = base64.b64encode(dd.image1).decode('ascii')
-        image_2 = base64.b64encode(dd.image2).decode('ascii')
-        image_3 = base64.b64encode(dd.image3).decode('ascii')
-        image_4 = base64.b64encode(dd.image4).decode('ascii')
-        image_5 = base64.b64encode(dd.image5).decode('ascii')
+        image_1 = dd.image_1_link
+        image_2 = dd.image_2_link
+        image_3 = dd.image_3_link
+        image_4 = dd.image_4_link
+        image_5 = dd.image_5_link
         decide = 'owner'
         print('executing this')
         print(decide)
@@ -1855,11 +1949,11 @@ def gym_detailss(gym_id):
     image_details_now = gym_image.query.filter_by(ref_id=gym_details.owner_ref).first()
     owner_qur=ownerregister.query.filter_by(id=gym_details.owner_ref).first()
     print(owner_qur)
-    img_1 = base64.b64encode(image_details_now.image1).decode('ascii')
-    img_2 = base64.b64encode(image_details_now.image2).decode('ascii')
-    img_3 = base64.b64encode(image_details_now.image3).decode('ascii')
-    img_4 = base64.b64encode(image_details_now.image4).decode('ascii')
-    img_5 = base64.b64encode(image_details_now.image5).decode('ascii')
+    img_1 = image_details_now.image_1_link
+    img_2 = image_details_now.image_2_link
+    img_3 = image_details_now.image_3_link
+    img_4 = image_details_now.image_4_link
+    img_5 = image_details_now.image_5_link
     owner_name='demo'
 
     return render_template("Various_gyms/gym_details.html", title=gym_details.gym_name, g_names=gym_details,
@@ -1987,18 +2081,28 @@ def trainer_details():
         db.session.commit()
         qur = trainer_detail.query.filter_by(first_name=fname, last_name=lname, p_mob=p_mob).first()
         print(qur)
-        send_trainer_details_email(qur)
+        data={}
+        data['first_name']=qur.first_name
+        data['last_name']=qur.last_name
+        data['add']=qur.add
+        data['p_mob']=qur.p_mob
+        data['ref_id']=qur.ref_id
+        data['owner_ref_id']=qur.owner_ref_id
+        data['faq_url']=f'{host_name}/faqs'
+        data['confirm']=f'{host_name}/confirming_trainer_details/harsh'
+        send_trainer_details_email.delay(data)
         return redirect(url_for('trainer_images')), flash(
                 'Your details have been submitted and will be visible to users once verified. Genenrally the verification may take upto 24 hours.')
     return render_template("trainer_registeration/trainer_details.html")
 
 #sending email to admin to confirm the details of the trainer.
-def send_trainer_details_email(qur):
-    print(qur.first_name)
-    recp = 'gymaale.buisness@gmail.com'
-    msg = Message('CONFIRM THE TRAINER', sender='gymaale.buisness@gmail.com', recipients=[recp])
-    msg.html = render_template("email_trainer_details_confirmation.html", qur=qur, _externaml=True)
-    mail.send(msg)
+@client.task
+def send_trainer_details_email(data):
+    with app.app_context():
+        recp = 'gymaale.buisness@gmail.com'
+        msg = Message('CONFIRM THE TRAINER', sender='gymaale.buisness@gmail.com', recipients=[recp])
+        msg.html = render_template("email_trainer_details_confirmation.html", data=data, _externaml=True)
+        mail.send(msg)
 
 #by this we can confirm the details of the trainer which are sent to us and can mark it as verified.
 @app.route('/confirming_trainer_details/harsh', methods=["GET", "POST"])
@@ -2022,14 +2126,19 @@ def confirming_trainer_details():
             db.session.commit()
             xyz = ownerregister.query.filter_by(id=ref_id).first()
             print(xyz)
-            send_trainer_confirmation_mail(xyz)
+            data={}
+            data['faq_url']=f'{host_name}/faqs'
+            data['email']=xyz.email
+            send_trainer_confirmation_mail.delay(data)
     return render_template("confirm_trainer_details.html")
 
 #sending a conformation email to the trainer.
-def send_trainer_confirmation_mail(xyz):
-    msg = Message('Account Verified', sender='gymaale.buisness@gmail.com', recipients=[xyz.email])
-    msg.html = render_template("email_trainer_account_verified.html", _external=True)
-    mail.send(msg)
+@client.task
+def send_trainer_confirmation_mail(data):
+    with app.app_context():
+        msg = Message('Account Verified', sender='gymaale.buisness@gmail.com', recipients=[data['email']])
+        msg.html = render_template("email_trainer_account_verified.html",data=data, _external=True)
+        mail.send(msg)
 
 #page displayed for accepting trainer images.
 @app.route('/trainer_register/trainer_details/trainer_images', methods=["GET", "POST"])
@@ -2051,15 +2160,42 @@ def uploadt():
         owner_ref_id = zz.id
         print(owner_ref_id)
         ref_id = 'NULL'
+    upload_result1 = None
+    upload_result2 = None
+    upload_result3 = None
+    upload_result4 = None
+    upload_result5 = None
+    thumbnail_url1 = None
+    thumbnail_url2 = None
+    if owner_ref_id=='NULL':
+        folder_name='trainer_images/trainer/'+zz.username+'_'+str(ref_id)
+    elif ref_id=='NULL':
+        folder_name='trainer_images/owner/'+zz.username+'_'+owner_ref_id
     file1 = request.files['inputfile1']
     file2 = request.files['inputfile2']
     file3 = request.files['inputfile3']
     file4 = request.files['inputfile4']
     file5 = request.files['inputfile5']
-    new = trainer_image(ref_id=ref_id, image1=file1.read(), image2=file2.read(), image3=file3.read(),
-                        image4=file4.read(), image5=file5.read(), owner_ref_id=owner_ref_id)
-    db.session.add(new)
-    db.session.commit()
+    f1_extension = file1.filename.rsplit(".", 1)[1].lower()
+    f2_extension = file2.filename.rsplit(".", 1)[1].lower()
+    f3_extension = file3.filename.rsplit(".", 1)[1].lower()
+    f4_extension = file4.filename.rsplit(".", 1)[1].lower()
+    f5_extension = file5.filename.rsplit(".", 1)[1].lower()
+    if f1_extension and f2_extension and f3_extension and f4_extension and f5_extension in allowed_extensions:
+        if file1 and file2 and file3 and file4 and file5:
+            upload_result1=cloudinary.uploader.upload(file1,folder=folder_name,width=200,height=100)
+            upload_result2=cloudinary.uploader.upload(file2,folder=folder_name,width=200,height=100)
+            upload_result3=cloudinary.uploader.upload(file3,folder=folder_name,width=200,height=100)
+            upload_result4=cloudinary.uploader.upload(file4,folder=folder_name,width=200,height=100)
+            upload_result5=cloudinary.uploader.upload(file5,folder=folder_name,width=200,height=100)
+            new = trainer_image(ref_id=ref_id, image_1_link=upload_result1['url'],image_2_link=upload_result2['url'],
+                                image_3_link=upload_result3['url'],image_4_link=upload_result4['url'],image_5_link=upload_result5['url']
+                                ,owner_ref_id=owner_ref_id)
+            db.session.add(new)
+            db.session.commit()
+    else:
+        flash("Please upload files with .jpg or .jpeg or .png")
+        return redirect(url_for('trainer_images'))
     if g.owner:
         return redirect(url_for('trainer_account_2'))
     else:
@@ -2079,11 +2215,11 @@ def trainer_account():
     if nn == None:
         return redirect(url_for('trainer_images'))
     else:
-        image_1 = base64.b64encode(nn.image1).decode('ascii')
-        image_2 = base64.b64encode(nn.image2).decode('ascii')
-        image_3 = base64.b64encode(nn.image3).decode('ascii')
-        image_4 = base64.b64encode(nn.image4).decode('ascii')
-        image_5 = base64.b64encode(nn.image5).decode('ascii')
+        image_1_link=nn.image_1_link
+        image_2_link=nn.image_2_link
+        image_3_link=nn.image_3_link
+        image_4_link=nn.image_4_link
+        image_5_link=nn.image_5_link
         print(mm.first_name)
         decide = 'trainer'
         print(decide)
@@ -2095,8 +2231,8 @@ def trainer_account():
         adding = dmail(email=imail, owner_id=iid)
         db.session.add(adding)
         db.session.commit()
-    return render_template("trainer_registeration/trainer_account.html", zz=zz, mm=mm, image_1=image_1,
-                           image_2=image_2, image_3=image_3, image_4=image_4, image_5=image_5, decide=decide,trainer_account_balance=trainer_wallet_qur.ammount)
+    return render_template("trainer_registeration/trainer_account.html", zz=zz, mm=mm, image_1_link=image_1_link,
+                           image_2_link=image_2_link, image_3_link=image_3_link, image_4_link=image_4_link, image_5_link=image_5_link, decide=decide,trainer_account_balance=trainer_wallet_qur.ammount)
 
 #comtains the about page.
 @app.route('/about', methods=["GET", "POST"])
@@ -2174,11 +2310,11 @@ def trainer_detailss(trainer_id):
         owner_ref_id=trainer_qur.owner_ref_id).first()
     print(trainer_img)
     if trainer_img:
-        imag_1 = base64.b64encode(trainer_img.image1).decode('ascii')
-        imag_2 = base64.b64encode(trainer_img.image2).decode('ascii')
-        imag_3 = base64.b64encode(trainer_img.image3).decode('ascii')
-        imag_4 = base64.b64encode(trainer_img.image4).decode('ascii')
-        imag_5 = base64.b64encode(trainer_img.image5).decode('ascii')
+        imag_1 = trainer_img.image_1_link
+        imag_2 = trainer_img.image_2_link
+        imag_3 = trainer_img.image_3_link
+        imag_4 = trainer_img.image_4_link
+        imag_5 = trainer_img.image_5_link
     else:
         imag_1 = None
         imag_2 = None
@@ -2369,17 +2505,23 @@ def publishing_blog_post():
                 email_qur = dmail.query.all()
                 for e_mail in email_qur:
                     zz = e_mail.email
-                    send_blog_added(zz, title)
+                    data={}
+                    data['mail']=zz
+                    data['title']=title
+                    data['faq_url']=f'{host_name}/faqs'
+                    send_blog_added.delay(data)
             else:
                 print('not submitted')
             return render_template('publishing_blog_post.html')
 
 
 # it sends the mail to the newletter subscribers about a new blog being published.
-def send_blog_added(zz, title):
-    msg = Message('New Blog Added', sender='gymaale.business@gmail.com', recipients=[zz])
-    msg.html = render_template("email_blog_added.html", title=title, _external=True)
-    mail.send(msg)
+@client.task
+def send_blog_added(data):
+    with app.app_context():
+        msg = Message('New Blog Added', sender='gymaale.business@gmail.com', recipients=[data['mail']])
+        msg.html = render_template("email_blog_added.html", title=data['title'],data=data, _external=True)
+        mail.send(msg)
 
 @app.route('/account/wallet')
 def wallet():
@@ -2411,29 +2553,33 @@ def wallet_add():
             loop.ammount=ammount
             db.session.commit()
             print(ammount)
-            send_ammount_added_to_wallet_email(startAmmount,userEmail)
+            data = {}
+            data['email'] = userEmail
+            data['startAmmount'] = startAmmount
+            data['faq_url'] = f'{host_name}/faqs'
+            send_ammount_added_to_wallet_email.delay(data)
         else:
             ref_id_from_above=ref_id
             adding=wallet_all(ref_id=ref_id_from_above,ref_type=ref_type,ammount=startAmmount)
             db.session.add(adding)
             db.session.commit()
-
-            send_ammount_added_to_wallet_email(startAmmount,userEmail)
+            data={}
+            data['email']=userEmail
+            data['startAmmount']=startAmmount
+            data['faq_url']=f'{host_name}/faqs'
+            send_ammount_added_to_wallet_email.delay(data)
         return redirect(url_for('account')),flash("Ammount added")
     return render_template('walletAdd.html')
 
-def send_ammount_added_to_wallet_email(startAmmount,userEmail):
-    print(startAmmount)
-    print(userEmail)
-    msg=Message('Ammount added',sender='gymaale.business@gmail.com',recipients=[userEmail])
-    msg.html=render_template('email_conformation_ammount_added_to_wallet.html',ammount=startAmmount,_external=True)
-    mail.send(msg)
+@client.task
+def send_ammount_added_to_wallet_email(data):
+    with app.app_context():
+        msg=Message('Ammount added',sender='gymaale.business@gmail.com',recipients=[data['email']])
+        msg.html=render_template('email_conformation_ammount_added_to_wallet.html',data=data,ammount=data['startAmmount'],_external=True)
+        mail.send(msg)
 
 @app.route('/transaction/<trans>/<ref_type>/<ref_id>',methods=["GET","POST"])
 def transaction(trans,ref_id,ref_type):
-    print(ref_id)
-    print(ref_type)
-    print(trans)
     if request.method=="POST":
         if ref_type=='trainer':
             trainer_qur=trainerregister.query.filter_by(id=ref_id).first()
@@ -2454,14 +2600,32 @@ def transaction(trans,ref_id,ref_type):
                     user_Email=zz.email
                     getting_trainer_details=trainer_detail.query.filter_by(ref_id=trainer_qur.id).first()
                     print(getting_trainer_details.first_name)
+                    data={}
+                    data['email']=user_Email
+                    data['trans']=trans
+                    data['first_name']=getting_trainer_details.first_name
+                    data['last_name']=getting_trainer_details.last_name
+                    data['c_mail']=getting_trainer_details.c_mail
+                    data['c_mob']=getting_trainer_details.c_mob
+                    data['state']=getting_trainer_details.state
+                    data['faq_url']=f'{host_name}/faqs'
                     #sending a mail to user about trainer booking.
-                    send_user_email_about_trainer_booking(user_Email,getting_trainer_details,trans)
+                    send_user_email_about_trainer_booking.delay(data)
                     trainer_email=trainer_qur.email
                     trainer_wallet_qur.ammount = trainer_wallet_qur.ammount + int(trans)
                     print(trainer_wallet_qur)
                     db.session.commit()
+                    data={}
+                    data['trans']=trans
+                    data['email']=trainer_email
+                    data['username']=zz.username
+                    data['first_name']=xyz.first_name
+                    data['last_name']=xyz.last_name
+                    data['email_2']=zz.email
+                    data['interest']=xyz.interest
+                    data['faq_url']=f'{host_name}/faqs'
                     # Sending a mail to trainer about ammount being added and user details
-                    send_trainer_ammount(zz, xyz, trans, trainer_email)
+                    send_trainer_ammount.delay(data)
                     return redirect(url_for('account')),flash("Your ammount has been submitted to the trainer. You will recieve a mail from the trainer with in 8 hours")
                 else:
                     flash("You dont have funds in your wallet")
@@ -2475,16 +2639,20 @@ def transaction(trans,ref_id,ref_type):
     return render_template('transaction.html',trans=trans)
 
 #this function is used to send a mail to the user about the trainer being booked by the user along with trainer details
-def send_user_email_about_trainer_booking(user_Email,getting_trainer_details,trans):
-    msg=Message('Trainer Booked',sender='gymaale.business@gmail.com',recipients=[user_Email])
-    msg.html=render_template("email_user_deduction_and_trainer_details.html",trans=trans,t_details=getting_trainer_details,_external=True)
-    mail.send(msg)
+@client.task
+def send_user_email_about_trainer_booking(data):
+    with app.app_context():
+        msg=Message('Trainer Booked',sender='gymaale.business@gmail.com',recipients=[data['email']])
+        msg.html=render_template("email_user_deduction_and_trainer_details.html",trans=data['trans'],data=data,_external=True)
+        mail.send(msg)
 
 #this function is used t send a mail to the trainer about the user who has booked along with the details.
-def send_trainer_ammount(zz,xyz,trans,trainer_email):
-    msg=Message('User Booking Confirmed',sender='gymaale.business@gmail.com',recipients=[trainer_email])
-    msg.html=render_template("email_send_trainer_ammount_and_user_details.html",zz=zz,xyz=xyz,trans=trans,_external=True)
-    mail.send(msg)
+@client.task
+def send_trainer_ammount(data):
+    with app.app_context():
+        msg=Message('User Booking Confirmed',sender='gymaale.business@gmail.com',recipients=[data['email']])
+        msg.html=render_template("email_send_trainer_ammount_and_user_details.html",data=data,trans=data['trans'],_external=True)
+        mail.send(msg)
 
 @app.route('/transaction/select_time/<owner_name>',methods=["GET","POST"])
 def transaction_select_time(owner_name):
@@ -2516,8 +2684,32 @@ def transaction_select_time(owner_name):
             db.session.commit()
             mm=random.randrange(000000,999999)
             s_code=mm
-            send_user_mail_gym_booked(s_code,total_cost,gym_qur,zz,time_period)
-            send_gym_owner_mail_user_booked_gym(s_code,total_cost,user_qur,time_period)
+            data={}
+            data['s_code']=s_code
+            data['total_cost']=total_cost
+            data['email']=zz.email
+            data['time_period']=time_period
+            data['faq_url']=f'{host_name}/faqs'
+            data['gym_name']=gym_qur.gym_name
+            data['address_1']=gym_qur.address_1
+            data['address_2']=gym_qur.address_2
+            data['city']=gym_qur.city
+            data['state']=gym_qur.state
+            data['postal_code']=gym_qur.postal_code
+            data['contact']=gym_qur.contact_number
+            data['m_open']=gym_qur.m_open
+            data['m_close']=gym_qur.m_close
+            data['e_open']=gym_qur.e_open
+            data['e_close']=gym_qur.e_close
+            send_user_mail_gym_booked.delay(data)
+            data={}
+            data['s_code']=s_code
+            data['total_cost']=total_cost
+            data['time_period']=time_period
+            data['username']=user_qur.username
+            data['email']=user_qur.email
+            data['faq_url']=f'{host_name}/faqs'
+            send_gym_owner_mail_user_booked_gym.delay(data)
             print("success")
             print(user_wallet_qur.ammount)
             print(owner_wallet_qur.ammount)
@@ -2526,15 +2718,20 @@ def transaction_select_time(owner_name):
             flash("You don't have enough funds in your account.")
     return render_template("gym_time_selection.html")
 
-def send_user_mail_gym_booked(s_code,total_cost,gym_qur,zz,time_period):
-    msg=Message('Gym Booked',sender='gymaale.business@gmail.com',recipients=[zz.email])
-    msg.html=render_template("email_user_gym_booked.html",time_period=time_period,s_code=s_code,total_cost=total_cost,gym_qur=gym_qur,_external=True)
-    mail.send(msg)
+@client.task
+def send_user_mail_gym_booked(data):
+    with app.app_context():
+        msg=Message('Gym Booked',sender='gymaale.business@gmail.com',recipients=[data['email']])
+        msg.html=render_template("email_user_gym_booked.html",time_period=data['time_period'],s_code=data['s_code'],total_cost=data['total_cost'],data=data,_external=True)
+        mail.send(msg)
 
-def send_gym_owner_mail_user_booked_gym(s_code,total_cost,user_qur,time_period):
-    msg=Message('User Booked Gym',sender='gymaale.business@gmail.com',recipients=[user_qur.email])
-    msg.html=render_template("email_gym_owner_mail_user_booked_gym.html",time_period=time_period,user_qur=user_qur,s_code=s_code,total_cost=total_cost,_external=True)
-    mail.send(msg)
+
+@client.task
+def send_gym_owner_mail_user_booked_gym(data):
+    with app.app_context():
+        msg=Message('User Booked Gym',sender='gymaale.business@gmail.com',recipients=[data['email']])
+        msg.html=render_template("email_gym_owner_mail_user_booked_gym.html",time_period=data['time_period'],data=data,s_code=data['s_code'],total_cost=data['total_cost'],_external=True)
+        mail.send(msg)
 
 '''
 @app.route('/trainer_registeration/trainer_account/wallet')
@@ -2616,62 +2813,6 @@ def rohit_khatri():
 def akshat_mathur():
     return render_template("trainers/am.html")
 
-
-"""These routes are for the various gyms which are available in our app."""
-
-"""
-@app.route('/d3_fitness')
-@login_required
-def d3_fitness():
-    return render_template("various_gyms/3d_fitness.html", pub_key=pub_key)
-
-
-@app.route('/champion_gym')
-@login_required
-def champion_gym():
-    return render_template("various_gyms/champion_gym.html")
-
-
-@app.route('/fitness_care')
-@login_required
-def fitness_care():
-    return render_template("various_gyms/fitness_care.html")
-
-
-@app.route('/fitness_club')
-@login_required
-def fitness_club():
-    return render_template("various_gyms/fitness_club.html")
-
-
-@app.route('/fitness_square')
-@login_required
-def fitness_square():
-    return render_template("various_gyms/fitness_square.html")
-
-
-@app.route('/gold')
-@login_required
-def gold():
-    return render_template("various_gyms/gold.html")
-
-
-@app.route('/joggers_park')
-@login_required
-def joggers_park():
-    return render_template("various_gyms/joggers_park.html")
-
-
-@app.route('/reboot_fitness')
-@login_required
-def reboot_fitness():
-    return render_template("various_gyms/reboot_fitness.html")
-
-
-@app.route('/world_fitness')
-@login_required
-def world_fitness():
-    return render_template("various_gyms/world_fitness.html")"""
 
 """These routes are for different supplements in bcaa which are provided with us."""
 
@@ -2776,25 +2917,6 @@ def wg_myprotien():
 @login_required
 def wg_xtreme():
     return render_template("supple/wg/xtreme.html")
-
-
-"""@app.route('/pay', methods=['POST'])
-def pay():
-    customer = stripe.Customer.create(email=request.form['stripeEmail'], source=request.form['stripeToken'])
-    charge = stripe.Charge.create(
-        customer=customer.id,
-        amount=19900,
-        currency='inr',
-        description='Successful Transaction'
-    )
-    return redirect(url_for('d3_fitness'))
-
-
-@app.route('/forgot_password')
-@login_required
-def forgot_password():
-    return render_template("forgot_request.html")
-"""
 
 
 @app.route('/services', methods=["GET", "POST"])

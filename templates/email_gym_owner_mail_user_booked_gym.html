@@ -125,19 +125,19 @@
 
                                     <p class="description center"
                                        style="font-family:'Muli','Arial Narrow',Arial;Margin:0;text-align:center;max-width:320px;color:#a1a8ad;line-height:24px;font-size:15px;Margin-bottom:10px;margin-left: auto; margin-right: auto;">
-                                        <span style="color: rgb(161, 168, 173); font-family: Muli, &quot;Arial Narrow&quot;, Arial; font-size: 15px; text-align: center; background-color: rgb(255, 255, 255);">Congrats, {{user_qur.username}} booked your gym for {{ time_period }} days.<br>
+                                        <span style="color: rgb(161, 168, 173); font-family: Muli, &quot;Arial Narrow&quot;, Arial; font-size: 15px; text-align: center; background-color: rgb(255, 255, 255);">Congrats, {{data['username']}} booked your gym for {{ time_period }} days.<br>
                                             Ammount recieved Rs.{{ total_cost }}.<br>
                                             Security code:<br>
                                             <h2>{{s_code}}</h2><br>
                                     <p>It will be used for authentication of the user.</p><br>
                                     <h5>User Details</h5><br>
-                                    Username: {{user_qur.username}}<br>
-                                    E-mail: {{user_qur.email}}
+                                    Username: {{data['username']}}<br>
+                                    E-mail: {{data['email']}}
                                     </span></p>
                                     <p class="description center"
                                        style="font-family:'Muli','Arial Narrow',Arial;Margin:0;text-align:center;max-width:320px;color:#a1a8ad;line-height:24px;font-size:15px;Margin-bottom:10px;margin-left: auto; margin-right: auto;">
                                         Have some query?<br>
-                                        Try searching your query in our <a href="{{ url_for('faqs',_external=True) }}">
+                                        Try searching your query in our <a href="{{ data['faq_url'] }}">
                                         FAQ's section</a>.
                                     </p>
 
