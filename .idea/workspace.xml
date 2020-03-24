@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/add_github_mail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +187,12 @@
       <workItem from="1584419335315" duration="11794000" />
       <workItem from="1584500696366" duration="2536000" />
       <workItem from="1584503254569" duration="2525000" />
-      <workItem from="1584515226590" duration="7467000" />
+      <workItem from="1584515226590" duration="8431000" />
+      <workItem from="1584627706373" duration="1261000" />
+      <workItem from="1584629429677" duration="759000" />
+      <workItem from="1584630330265" duration="157000" />
+      <workItem from="1584932237596" duration="3031000" />
+      <workItem from="1585021427429" duration="4625000" />
     </task>
     <task id="LOCAL-00001" summary="user image is displayed in block yet to edit and owner account displays owner info and gym info">
       <created>1578205801055</created>
@@ -522,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584530803383</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Limited the extensions of image uploaded and made mails faster with celery.">
+      <created>1584531446734</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1584531446734</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView">
@@ -594,14 +609,18 @@
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1584530801091">
+    <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584628361186">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1584530801091" />
-    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1584414883760">
+    <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584628361186" />
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585026120343">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl/0.27.1920.1029@0.27.1920.1029" timestamp="1584414883760" />
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585026120343" />
+    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1584628969765">
+      <screen x="0" y="27" width="1920" height="1029" />
+    </state>
+    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl/0.27.1920.1029@0.27.1920.1029" timestamp="1584628969765" />
     <state x="182" y="113" width="1536" height="854" key="MergeDialog" timestamp="1584531352755">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -610,25 +629,33 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="665" y="256" width="580" height="567" key="MultipleFileMergeDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584531354881" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584530814287">
+    <state x="232" y="253" width="486" height="577" key="RollbackChangesDialog" timestamp="1584932328030">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1584530814287" />
+    <state x="232" y="253" width="486" height="577" key="RollbackChangesDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584932328030" />
+    <state x="449" y="174" width="1022" height="731" key="SettingsEditor" timestamp="1584628509494">
+      <screen x="0" y="27" width="1920" height="1029" />
+    </state>
+    <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1584628509494" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584531448981">
+      <screen x="0" y="27" width="1920" height="1029" />
+    </state>
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1584531448981" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.27.1920.1029@0.27.1920.1029" timestamp="1584006355686" />
-    <state x="672" y="177" width="566" height="725" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1584344024126">
+    <state x="672" y="177" width="566" height="725" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1585024643719">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="672" y="177" width="566" height="725" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584344024126" />
+    <state x="672" y="177" width="566" height="725" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585024643719" />
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1584348962561">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584348962561" />
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1584515228382">
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1584630350846">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584515228382" />
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584630350846" />
   </component>
 </project>

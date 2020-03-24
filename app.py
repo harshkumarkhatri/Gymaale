@@ -35,6 +35,8 @@ from cloudinary.utils import cloudinary_url
 from celery import Celery
 import redis
 
+from flask_dance.contrib.github import make_github_blueprint,github
+
 cloudinary.config(
   cloud_name = "harshkumarkhatri",
   api_key = "189777582685733",
@@ -77,6 +79,8 @@ host_name='http://localhost:5000'
 
 mail = Mail(app)
 
+github_blueprint=make_github_blueprint(client_id='0e8ce40fec92a01494ad',client_secret='de00d9669d3c8bc3a231f61141c7d6b2c926f5e1')
+app.register_blueprint(github_blueprint,url_prefix='/github_login')
 
 class user(db.Model, UserMixin, AnonymousUserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -642,6 +646,67 @@ class wallet_all(db.Model):
     ammount=db.Column(db.Integer)
 
 
+class github_user(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    username=db.Column(db.String(100))
+    email=db.Column(db.String(100))
+    image_link=db.Column(db.String(5000))
+    first_name=db.Column(db.String(40))
+    last_name=db.Column(db.String(40))
+    address=db.Column(db.String(200))
+    age=db.Column(db.Integer)
+    interest=db.Column(db.String(70))
+    already_gymming=db.Column(db.String(40))
+    time=db.Column(db.String(40))
+    update=db.Column(db.String(30))
+
+    def __init__(self,username,email,image_link,first_name,last_name,address,age,interest
+                 ,already_gymming,time,update):
+        if username:
+            self.username=username
+        else:
+            self.username=None
+        if email:
+            self.email=email
+        else:
+            self.email=None
+        if image_link:
+            self.image_link=image_link
+        else:
+            self.image_link=None
+        if first_name:
+            self.first_name=first_name
+        else:
+            self.first_name=None
+        if last_name:
+            self.last_name=last_name
+        else:
+            self.last_name=None
+        if address:
+            self.address=address
+        else:
+            self.address=None
+        if age:
+            self.age=age
+        else:
+            self.age=None
+        if interest:
+            self.interest=interest
+        else:
+            self.interest=None
+        if already_gymming:
+            self.already_gymming=already_gymming
+        else:
+            self.already_gymming=None
+        if time:
+            self.time=time
+        else:
+            self.time=None
+        if update:
+            self.update=update
+        else:
+            self.update=None
+
 
 
 """class blog(db.Model):
@@ -705,6 +770,35 @@ def load_user(user_id):
 @app.route("/")
 def index():
     return render_template("major.html")
+
+@app.route('/oauth_log')
+def oauth_log():
+    return '<a id="github-button" class="btn btn-block btn-social btn-github"><i class="fa fa-github"></i> Sign in with Github</a>' \
+           '<h1><a href=http://localhost:5000/github>Login with github</a><h1>'
+
+@app.route('/github')
+def github_login():
+    session.pop('logged_in',None)
+    if not github.authorized:
+        return redirect(url_for('github.login'))
+
+    account_info = github.get('/user')
+
+    if account_info.ok:
+        account_info_json = account_info.json()
+        print(account_info_json['email'])
+        session['logged_in']=account_info_json['login']
+        return redirect(url_for('add_email')) ,flash('your user name is '+account_info_json['login'])
+
+    return '<h1>Request failed</h1>'
+
+@app.route('/add_email')
+def add_email():
+    if request.method=="POST":
+        mail=request.form['mail']
+        pass
+    return render_template()
+
 
 @client.task
 def send_reset_email(data):
