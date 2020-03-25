@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/add_github_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/know.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/know.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,14 +199,7 @@
       <workItem from="1584932237596" duration="3031000" />
       <workItem from="1585021427429" duration="4713000" />
       <workItem from="1585046332088" duration="115000" />
-      <workItem from="1585110814721" duration="4389000" />
-    </task>
-    <task id="LOCAL-00002" summary="Worked on few more features of the owner section like account settings and more.">
-      <created>1578217165376</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1578217165376</updated>
+      <workItem from="1585110814721" duration="4725000" />
     </task>
     <task id="LOCAL-00003" summary="Form to update the owner and gym details working">
       <created>1578301891757</created>
@@ -547,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585026123740</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Github login working correctly till the main page.Query making problem due to two different tables.Data models need to be rebuild.">
+      <created>1585115426690</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1585115426691</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView">
@@ -590,7 +587,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="demo commit" />
     <MESSAGE value="Worked on resending verification mail and timer to display resend button" />
     <MESSAGE value="Email after verification of user account working" />
     <MESSAGE value="blog post layout(full screen) corrected" />
@@ -615,7 +611,8 @@
     <MESSAGE value="Email working user-&gt;user &amp; trainer-&gt;user" />
     <MESSAGE value="Limited the extensions of image uploaded and made mails faster with celery." />
     <MESSAGE value="github login working in secret page. Table made for github_user.Data to be taken and added in the table, routes to be made." />
-    <option name="LAST_COMMIT_MESSAGE" value="github login working in secret page. Table made for github_user.Data to be taken and added in the table, routes to be made." />
+    <MESSAGE value="Github login working correctly till the main page.Query making problem due to two different tables.Data models need to be rebuild." />
+    <option name="LAST_COMMIT_MESSAGE" value="Github login working correctly till the main page.Query making problem due to two different tables.Data models need to be rebuild." />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -647,10 +644,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1584628509494" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585026126192">
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585115430340">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585026126192" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585115430340" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>

@@ -1151,7 +1151,7 @@ def send_user_email(data):
 
 @app.route('/admin')
 def admin__():
-    return redirect("http://localhost:5000/admin", code=302)
+    return redirect(f"{host_name}/admin", code=302)
 
 
 """@app.route('/confirm_admin',methods=["GET","POST"])
