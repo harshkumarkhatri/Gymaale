@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/add_github_mail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add_github_details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/know.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/know.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,13 @@
         <item name="database [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="database [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="github_user: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -192,14 +200,9 @@
       <workItem from="1584629429677" duration="759000" />
       <workItem from="1584630330265" duration="157000" />
       <workItem from="1584932237596" duration="3031000" />
-      <workItem from="1585021427429" duration="4625000" />
-    </task>
-    <task id="LOCAL-00001" summary="user image is displayed in block yet to edit and owner account displays owner info and gym info">
-      <created>1578205801055</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1578205801055</updated>
+      <workItem from="1585021427429" duration="4713000" />
+      <workItem from="1585046332088" duration="115000" />
+      <workItem from="1585110814721" duration="4389000" />
     </task>
     <task id="LOCAL-00002" summary="Worked on few more features of the owner section like account settings and more.">
       <created>1578217165376</created>
@@ -537,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584531446734</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="github login working in secret page. Table made for github_user.Data to be taken and added in the table, routes to be made.">
+      <created>1585026123739</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1585026123740</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView">
@@ -580,7 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Terms and conditions added to user/trainer/owner. Data needs to be added in it." />
     <MESSAGE value="demo commit" />
     <MESSAGE value="Worked on resending verification mail and timer to display resend button" />
     <MESSAGE value="Email after verification of user account working" />
@@ -605,7 +614,8 @@
     <MESSAGE value="Sending a mail to user about ammount being deducted from the account and going to trainer" />
     <MESSAGE value="Email working user-&gt;user &amp; trainer-&gt;user" />
     <MESSAGE value="Limited the extensions of image uploaded and made mails faster with celery." />
-    <option name="LAST_COMMIT_MESSAGE" value="Limited the extensions of image uploaded and made mails faster with celery." />
+    <MESSAGE value="github login working in secret page. Table made for github_user.Data to be taken and added in the table, routes to be made." />
+    <option name="LAST_COMMIT_MESSAGE" value="github login working in secret page. Table made for github_user.Data to be taken and added in the table, routes to be made." />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -613,10 +623,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584628361186" />
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585026120343">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585115422272">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585026120343" />
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585115422272" />
     <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1584628969765">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -637,25 +647,29 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1584628509494" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1584531448981">
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585026126192">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1584531448981" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585026126192" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.27.1920.1029@0.27.1920.1029" timestamp="1584006355686" />
-    <state x="672" y="177" width="566" height="725" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1585024643719">
+    <state x="672" y="177" width="566" height="725" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1585111663544">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="672" y="177" width="566" height="725" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585024643719" />
+    <state x="672" y="177" width="566" height="725" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585111663544" />
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1584348962561">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584348962561" />
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1584630350846">
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585110816166">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584630350846" />
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585110816166" />
+    <state x="623" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1585111769370">
+      <screen x="0" y="27" width="1920" height="1029" />
+    </state>
+    <state x="623" y="250" width="672" height="678" key="search.everywhere.popup/0.27.1920.1029@0.27.1920.1029" timestamp="1585111769370" />
   </component>
 </project>

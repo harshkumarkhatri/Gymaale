@@ -649,6 +649,7 @@ class wallet_all(db.Model):
 class github_user(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username=db.Column(db.String(100))
+    password=db.Column(db.String(40))
     email=db.Column(db.String(100))
     image_link=db.Column(db.String(5000))
     first_name=db.Column(db.String(40))
@@ -660,12 +661,16 @@ class github_user(db.Model):
     time=db.Column(db.String(40))
     update=db.Column(db.String(30))
 
-    def __init__(self,username,email,image_link,first_name,last_name,address,age,interest
+    def __init__(self,username,password,email,image_link,first_name,last_name,address,age,interest
                  ,already_gymming,time,update):
         if username:
             self.username=username
         else:
             self.username=None
+        if password:
+            self.password=password
+        else:
+            self.password=None
         if email:
             self.email=email
         else:
@@ -788,16 +793,87 @@ def github_login():
         account_info_json = account_info.json()
         print(account_info_json['email'])
         session['logged_in']=account_info_json['login']
-        return redirect(url_for('add_email')) ,flash('your user name is '+account_info_json['login'])
+        print(account_info_json['id'])
+        qur=github_user.query.filter_by(username=account_info_json['login']).first()
+        if account_info_json['login']==qur.username:
+            return redirect(url_for('add_email'))
+        else:
+            email='NULL'
+            image_link='NULL'
+            first_name='NULL'
+            last_name='NULL'
+            address='NULL'
+            age=0
+            interest='NULL'
+            already_gymming='NULL'
+            time='NULL'
+            update='NULL'
+            adding=github_user(username=account_info_json['login'],password=account_info_json['id'],email=email,
+                               image_link=image_link,update=update,first_name=first_name,last_name=last_name,
+                               address=address,age=age,interest=interest,already_gymming=already_gymming,time=time)
+            db.session.add(adding)
+            db.session.commit()
+            return redirect(url_for('add_email')) ,flash('your user name is '+account_info_json['login'])
 
     return '<h1>Request failed</h1>'
 
-@app.route('/add_email')
+@app.route('/add_email',methods=['GET','POST'])
 def add_email():
-    if request.method=="POST":
-        mail=request.form['mail']
-        pass
-    return render_template()
+    m=g.user
+    qur1 = github_user.query.filter_by(username=m).first()
+    print(m)
+    if qur1.email!='NULL':
+        return redirect(url_for('add_details'))
+    else:
+        if request.method=="POST":
+            mail=request.form['mail']
+            qur=github_user.query.filter_by(username=m).first()
+            qur.email=mail
+            db.session.commit()
+            return redirect(url_for('add_details'))
+
+    return render_template('add_github_mail.html')
+
+
+@app.route('/add_details',methods=['GET','POST'])
+def add_details():
+    m=g.user
+    print(m)
+    qur1=github_user.query.filter_by(username=m).first()
+    if qur1.image_link!='NULL' and qur1.first_name!='NULL':
+        return redirect(url_for('main'))
+    else:
+        qur=github_user.query.filter_by(username=m).first()
+        if request.method=='POST':
+            first_name=request.form['first_name']
+            last_name=request.form['last_name']
+            address=request.form['address']
+            age=request.form['gender']
+            interest=request.form['interest']
+            already_gymming=request.form['ag']
+            time=request.form['time']
+            update=request.form['up']
+            file=request.files['file']
+            zz=file.filename.rsplit(".",1)[1].lower()
+            if zz in allowed_extensions:
+                if file:
+                    upload_result = cloudinary.uploader.upload(file, folder="profile_pictures", width=200, height=100)
+                    print(upload_result['url'])
+                    print(file)
+                    qur.first_name=first_name
+                    qur.last_name=last_name
+                    qur.address=address
+                    qur.age=age
+                    qur.interest=interest
+                    qur.already_gymming=already_gymming
+                    qur.time=time
+                    qur.update=update
+                    db.session.commit()
+                    return redirect(url_for('main'))
+            else:
+                flash("Invalid extension of the image or some other error")
+                return redirect(url_for('add_details'))
+    return render_template('add_github_details.html')
 
 
 @client.task
@@ -883,6 +959,7 @@ def send_password_reset_successful(data):
 @app.route('/main', methods=["GET", "POST"])
 @login_required
 def main():
+
     b_posts = blog2.query.all()
     # for b_post in b_posts:
     # for b_post in b_posts:
@@ -891,6 +968,7 @@ def main():
     # value3=b_post.b_txt
     # print(value)
     if g.user:
+        print(g.user)
         zz = user.query.filter_by(username=g.user).first()
         value1 = zz.id
     if request.method == "POST":
