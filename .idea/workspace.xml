@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/una.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +43,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="database [2]" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="github_user: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -51,6 +50,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -72,7 +72,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/files from windows./dowloadablwe/ex-rekognition/exercise-rekognition/FlaskApp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -199,14 +199,10 @@
       <workItem from="1584932237596" duration="3031000" />
       <workItem from="1585021427429" duration="4713000" />
       <workItem from="1585046332088" duration="115000" />
-      <workItem from="1585110814721" duration="4725000" />
-    </task>
-    <task id="LOCAL-00003" summary="Form to update the owner and gym details working">
-      <created>1578301891757</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1578301891758</updated>
+      <workItem from="1585110814721" duration="5222000" />
+      <workItem from="1585134760602" duration="16000" />
+      <workItem from="1585152789941" duration="612000" />
+      <workItem from="1585196102171" duration="17164000" />
     </task>
     <task id="LOCAL-00004" summary="Verification of email after registeration is working.">
       <created>1578313732542</created>
@@ -544,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585115426691</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Github login working correctly till the main page.Query making problem due to two different tables.Data models need to be rebuild.">
+      <created>1585115593375</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1585115593375</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView">
@@ -620,14 +623,14 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584628361186" />
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585115422272">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585224883743">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585115422272" />
-    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1584628969765">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585224883743" />
+    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1585196133507">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl/0.27.1920.1029@0.27.1920.1029" timestamp="1584628969765" />
+    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl/0.27.1920.1029@0.27.1920.1029" timestamp="1585196133507" />
     <state x="182" y="113" width="1536" height="854" key="MergeDialog" timestamp="1584531352755">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -640,14 +643,14 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="232" y="253" width="486" height="577" key="RollbackChangesDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584932328030" />
-    <state x="449" y="174" width="1022" height="731" key="SettingsEditor" timestamp="1584628509494">
+    <state x="449" y="174" width="1022" height="731" key="SettingsEditor" timestamp="1585207165492">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1584628509494" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585115430340">
+    <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1585207165492" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585115595200">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585115430340" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585115595200" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -660,10 +663,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584348962561" />
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585110816166">
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585196119187">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585110816166" />
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585196119187" />
     <state x="623" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1585111769370">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
