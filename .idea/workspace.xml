@@ -5,10 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/email_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email_message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/major.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/major.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,14 +199,7 @@
       <workItem from="1585152789941" duration="612000" />
       <workItem from="1585196102171" duration="20290000" />
       <workItem from="1585234125162" duration="32000" />
-      <workItem from="1585280477292" duration="3301000" />
-    </task>
-    <task id="LOCAL-00006" summary="Various gyms,gym details with images and pagination.">
-      <created>1578464770038</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1578464770038</updated>
+      <workItem from="1585280477292" duration="5363000" />
     </task>
     <task id="LOCAL-00007" summary="Trainer register table added">
       <created>1578473405372</created>
@@ -548,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585280577332</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Few things changed after dep">
+      <created>1585293265154</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1585293265154</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +578,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Email after verification of user account working" />
     <MESSAGE value="blog post layout(full screen) corrected" />
     <MESSAGE value="__init__ method set for all the classes" />
     <MESSAGE value="set profile image as required and some more things" />
@@ -607,7 +602,8 @@
     <MESSAGE value="github login working in secret page. Table made for github_user.Data to be taken and added in the table, routes to be made." />
     <MESSAGE value="Github login working correctly till the main page.Query making problem due to two different tables.Data models need to be rebuild." />
     <MESSAGE value="Reformating,added s3 upload and rekognition,github put on hold,removed celery and redis,version to be deployed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformating,added s3 upload and rekognition,github put on hold,removed celery and redis,version to be deployed." />
+    <MESSAGE value="Few things changed after dep" />
+    <option name="LAST_COMMIT_MESSAGE" value="Few things changed after dep" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -615,10 +611,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584628361186" />
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585280577087">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585293263569">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585280577087" />
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585293263569" />
     <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1585196133507">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -639,10 +635,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1585207165492" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585280579818">
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585293267584">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585280579818" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585293267584" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>

@@ -1,3 +1,6 @@
+#latest commit
+
+
 from flask import Flask,  render_template,  flash, redirect, url_for, session,  request, g
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import update
@@ -69,7 +72,7 @@ host_name='http://localhost:5000'
 
 import boto3
 import util
-bucket_name=os.environ['PHOTOS_BUCKET']
+bucket_name='bucketforawsreko'
 
 
 mail = Mail(app)
@@ -1304,10 +1307,13 @@ def send_user_account_creation_email(data):
 
 @app.route('/registerr/<token>/<username>', methods=['GET', 'POST'])
 def confirm_email(token, username):
-    z = user.verify_reset_token(token)
+    print(token)
     print(username)
+    z = user.verify_reset_token(token)
+    print(z)
     if z is None:
-        return redirect(url_for('login')),flash("Invalid or Expired Token")
+        user.query.filter_by(username=username).delete()
+        return redirect(url_for('register')),flash("Invalid or Expired Token,register again")
     else:
         mm = user.query.filter_by(username=username).first()
         if request.method == "POST":
