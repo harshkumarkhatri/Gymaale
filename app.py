@@ -1307,8 +1307,7 @@ def confirm_email(token, username):
     z = user.verify_reset_token(token)
     print(username)
     if z is None:
-        flash("Invalid or Expired Token")
-        return redirect(url_for(''))
+        return redirect(url_for('login')),flash("Invalid or Expired Token")
     else:
         mm = user.query.filter_by(username=username).first()
         if request.method == "POST":
@@ -1320,9 +1319,9 @@ def confirm_email(token, username):
                 data['email']=mm.email
                 data['faq_link']=f'{host_name}/faqs'
                 send_user_account_creation_email(data)
+                return redirect(url_for('login')), flash("Account has been verified. Now you can login.")
             else:
                 return redirect(url_for('confirm_email')), flash("Incorrect Code")
-            return redirect(url_for('login')), flash("Account has been verified. Now you can login.")
         return render_template("verification.html")
 
 
@@ -1434,6 +1433,8 @@ def add_image():
                 db.session.add(newfile)
                 db.session.commit()
                 return redirect(url_for('user_data'))
+    else:
+        return redirect(url_for('jj')),flash("File with unsupported extension is uploaded.")
 
 
 @app.route('/blog', methods=["GET", "POST"])
