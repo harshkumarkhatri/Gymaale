@@ -29,8 +29,7 @@ import cloudinary.api
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 
-from celery import Celery
-import redis
+
 
 from flask_dance.contrib.github import make_github_blueprint,github
 

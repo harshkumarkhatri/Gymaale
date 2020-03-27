@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/una.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,14 +197,9 @@
       <workItem from="1585110814721" duration="5222000" />
       <workItem from="1585134760602" duration="16000" />
       <workItem from="1585152789941" duration="612000" />
-      <workItem from="1585196102171" duration="17164000" />
-    </task>
-    <task id="LOCAL-00004" summary="Verification of email after registeration is working.">
-      <created>1578313732542</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1578313732542</updated>
+      <workItem from="1585196102171" duration="20290000" />
+      <workItem from="1585234125162" duration="32000" />
+      <workItem from="1585280477292" duration="91000" />
     </task>
     <task id="LOCAL-00005" summary="Worked on email message which is sent for registeration and owner password hashing and responsive images.">
       <created>1578394628941</created>
@@ -547,17 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1585115593375</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Reformating,added s3 upload and rekognition,github put on hold,removed celery and redis,version to be deployed.">
+      <created>1585224920454</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1585224920455</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -590,7 +578,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Worked on resending verification mail and timer to display resend button" />
     <MESSAGE value="Email after verification of user account working" />
     <MESSAGE value="blog post layout(full screen) corrected" />
     <MESSAGE value="__init__ method set for all the classes" />
@@ -615,7 +602,8 @@
     <MESSAGE value="Limited the extensions of image uploaded and made mails faster with celery." />
     <MESSAGE value="github login working in secret page. Table made for github_user.Data to be taken and added in the table, routes to be made." />
     <MESSAGE value="Github login working correctly till the main page.Query making problem due to two different tables.Data models need to be rebuild." />
-    <option name="LAST_COMMIT_MESSAGE" value="Github login working correctly till the main page.Query making problem due to two different tables.Data models need to be rebuild." />
+    <MESSAGE value="Reformating,added s3 upload and rekognition,github put on hold,removed celery and redis,version to be deployed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformating,added s3 upload and rekognition,github put on hold,removed celery and redis,version to be deployed." />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -623,10 +611,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584628361186" />
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585224883743">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585224918864">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585224883743" />
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585224918864" />
     <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1585196133507">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -647,10 +635,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1585207165492" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585115595200">
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585224923427">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585115595200" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585224923427" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -663,10 +651,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584348962561" />
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585196119187">
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585234150747">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585196119187" />
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585234150747" />
     <state x="623" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1585111769370">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
