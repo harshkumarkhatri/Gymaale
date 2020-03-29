@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Services</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="SportFIT template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/animate.css') }}">
+    <link href="{{ url_for('static', filename='plugins/colorbox/colorbox.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/services_responsive.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .col-md-3
+        {
+            display: inline-block;
+            margin-left:-4px;
+        }
+        .carousel-indicators .active {
+            background-color: blue;
+        }
+        .col-md-3 img{
+            width: 170px;
+            height: 200px;
+        }
+        body .carousel-indicator li{
+            background-color: red;
+
+        }
+        body .carousel-indicators{
+            bottom: -50px;
+        }
+        body .carousel-control-prev-icon,
+        body .carousel-control-next-icon{
+            background-color: blue;
+        }
+        .carousel-control-prev,
+        .carousel-control-next{
+            top: auto;
+            bottom: auto;
+            padding-top: 222px;
+        }
+        body .no-padding{
+            padding-left: 0,
+            padding-right: 0;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img
+        src="/static/images/WhatsApp%20Image%202019-11-20%20at%209.42.21%20AM.jpeg"></button>
+<div class="super_container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="mx-1"></div> <div class="logo d-flex flex-row align-items-center justify-content-start"><img
+            src="/static/images/dot.png" alt="">
+        <div>GYMA<span>ale</span></div>
+    </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li><li class="nav-item">
+                <a class="nav-link" href="/services">Services</a>
+            </li><li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li><li class="nav-item">
+                <a class="nav-link" href="/logout"></a>
+            </li>
+
+
+            </ul>
+            <form method="get" action="/shop/search/" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="harsh khatri">
+                Cart (<span id="cart">0</span>)
+            </button>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Home -->
+
+    <div class="home">
+        <div class="background_image" style="background-image:url(/static/images/services.jpg)"></div>
+        <div class="overlay"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content">
+                            <div class="home_title">Supplements</div>
+                            <div class="home_subtitle">Gym, Diet, Trainer & many more.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container">
+            <div class="col my-4">
+                <h2>Step 1 - My Awesome Cart Express Checkout - Review Your Cart Items</h2>
+                <div class="my-4">
+                    <ul class="list-group" id="items">
+                    </ul>
+
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mt-3">
+                            <li class="breadcrumb-item active" aria-current="page">Your Cart Total Is <b>Rs. <span id="totalPrice"></span></b>. Enter your details below & place your order. Thanks for using My Awesome Cart!</li>
+                        </ol>
+                    </nav>
+
+
+
+
+                </div>
+            </div>
+            <div class="col my-4">
+                <h2>Step 2 - Enter Address & Other Details:</h2>
+                <form method="post" action="/services/shop/supplements/checkout">
+                    <input type="hidden" name="itemsJson" id="itemsJson">
+                    <input type="hidden" name="amount" id="amount">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputname">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="address1" name="address1" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Address line 2</label>
+                        <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="city" name="city">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <input type="text" class="form-control" id="state" name="state"  placeholder="Enter State">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="zip_code" name="zip_code">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputZip">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <!-- Extra -->
+
+        <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                            <div class="extra_title">More BCAA</div>
+                            <div class="extra_text">
+                                <p>Will be added soon.</p>
+                            </div>
+                            <div class="button extra_button"><a href="#">Comming Soon</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="footer_container">
+                            <div class="footer_content">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <div class="logo d-flex flex-row align-items-center justify-content-center"><img
+                                                src="/static/images/dot.png" alt="">
+                                            <div>GYMA<span>ale</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <nav class="footer_nav">
+                                    <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                        <li><a href="/main">Home</a></li>
+                                        <li><a href="/about">About us</a></li>
+                                        <li><a href="/services">Services</a></li>
+                                        <li><a href="/blog">Blog</a></li>
+                                        <li><a href="/contact">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="newsletter_container">
+                                    <form action="#" id="newsletter_form" class="newsletter_form">
+                                        <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                                               required="required">
+                                        <button class="newsletter_button">go</button>
+                                    </form>
+                                </div>
+                                <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                    All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                        aria-hidden="true"></i> by <a
+                                        href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </div>
+                            </div>
+                            <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</div>
+
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/TimelineMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/services.js') }}"></script>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script>
+        if (localStorage.getItem('cart') == null) {
+            var cart = {};
+        } else {
+            cart = JSON.parse(localStorage.getItem('cart'));
+        }
+        console.log(cart);
+        var sum = 0;
+        var totalPrice = 0;
+        if ($.isEmptyObject(cart)) {
+            //if object is empty
+            mystr = `<p>Your cart is empty, please add some items to your cart before checking out!</p>`
+            $('#items').append(mystr);
+        } else {
+            for (item in cart) {
+                let name = cart[item][1];
+                let qty = cart[item][0];
+                let itemPrice = cart[item][2];
+                sum = sum + qty;
+                totalPrice = totalPrice + qty* itemPrice;
+                mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${name}
+                    <span class="badge badge-primary badge-pill">${qty}</span>
+                </li>`
+                $('#items').append(mystr);
+            }
+        }
+        document.getElementById('cart').innerHTML = sum;
+        document.getElementById('totalPrice').innerHTML = totalPrice;
+        $('#itemsJson').val(JSON.stringify(cart));
+        {% if thank %}
+        alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
+        localStorage.clear();
+        document.location = "/shop";
+        {% endif %}
+        $('#amount').val($('#totalPrice').html())
+    </script>
+</body>
+</html>
+
+
+

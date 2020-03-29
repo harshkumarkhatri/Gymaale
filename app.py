@@ -1,4 +1,4 @@
-#latest commit
+#latest commit 23/03/2020
 
 
 from flask import Flask,  render_template,  flash, redirect, url_for, session,  request, g
@@ -9,7 +9,7 @@ from flask_login import LoginManager, UserMixin,  \
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_bcrypt import Bcrypt
-from datetime import timedelta, datetime
+from datetime import timedelta, date,datetime
 from werkzeug.utils import secure_filename
 import random
 import os
@@ -76,6 +76,8 @@ bucket_name='bucketforawsreko'
 
 
 mail = Mail(app)
+
+merchant_key = "s5EFgJpP!NbFRfx4"
 
 github_blueprint=make_github_blueprint(client_id='0e8ce40fec92a01494ad',client_secret='de00d9669d3c8bc3a231f61141c7d6b2c926f5e1')
 app.register_blueprint(github_blueprint,url_prefix='/github_login')
@@ -701,6 +703,102 @@ class github_user(db.Model):
         else:
             self.update=None
 
+class Products(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    product_name=db.Column(db.String(40))
+    category=db.Column(db.String(40))
+    price=db.Column(db.Integer,default=0)
+    desc=db.Column(db.String(500))
+    pub_date=db.Column(db.DATE)
+    image_url=db.Column(db.String(500))
+
+    def __init__(self,product_name,category,price,desc,pub_date,image_url):
+        if self.product_name:
+            self.product_name=product_name
+        else:
+            self.product_name=None
+        if category:
+            self.category=category
+        else:
+            self.category=None
+        if price:
+            self.price=price
+        else:
+            self.price=None
+        if desc:
+            self.desc=desc
+        else:
+            self.desc=None
+        if pub_date:
+            self.pub_date=date.today()
+        else:
+            self.pub_date=date.today()
+        if image_url:
+            self.image_url=image_url
+        else:
+            self.image_url=None
+
+
+class Orders(db.Model):
+    order_id=db.Column(db.Integer,primary_key=True)
+    items_json=db.Column(db.String(5000))
+    amount=db.Column(db.Integer,default=0)
+    name=db.Column(db.String(90))
+    email=db.Column(db.String(111))
+    address=db.Column(db.String(200))
+    city=db.Column(db.String(100))
+    state=db.Column(db.String(100))
+    zip_code=db.Column(db.String(30))
+    phone=db.Column(db.String(100),default="")
+
+    def __init__(self,items_json,amount,name,email,address,city,state,zip_code,phone):
+        if items_json:
+            self.items_json=items_json
+        else:
+            self.items_json=None
+        if amount:
+            self.amount=amount
+        else:
+            self.amouont=None
+        if name:
+            self.name=name
+        else:
+            self.name=None
+        if email:
+            self.email=email
+        else:
+            self.email=None
+        if address:
+            self.address=address
+        else:
+            self.address=None
+        if city:
+            self.city=city
+        else:
+            self.city=None
+        if state:
+            self.state=state
+        else:
+            self.state=None
+        if zip_code:
+            self.zip_code=zip_code
+        else:
+            self.zip_code=None
+        if phone:
+            self.phone=phone
+        else:
+            self.phone=None
+
+
+class orderUpdate(db.Model):
+    update_id=db.Column(db.Integer,primary_key=True)
+    order_id=db.Column(db.Integer)
+    update_desc=db.Column(db.String(5000))
+    timestamp=db.Column(db.DATETIME, default=datetime.utcnow())
+
+    def __str__(self):
+        return self.update_desc[0:7] + "..."
+
 
 
 """class blog(db.Model):
@@ -950,10 +1048,19 @@ def main():
     if request.method == "POST":
         imail = request.form["imail"]
         iid = value1
-        adding = dmail(email=imail, owner_id=iid)
-        db.session.add(adding)
-        db.session.commit()
-        return redirect(url_for('main')), flash("You have been subscribed.")
+        zz = dmail.query.filter_by(email=imail).first()
+        print(zz.email)
+        print(zz.owner_id)
+
+        if zz.email==imail:
+            zz.owner_id=iid
+            db.session.commit()
+            return redirect(url_for('main')), flash("You have been subscribed.")
+        else:
+            adding = dmail(email=imail, owner_id=iid)
+            db.session.add(adding)
+            db.session.commit()
+            return redirect(url_for('main')), flash("You have been subscribed")
     return render_template("index.html", b_posts=b_posts)
 
 
@@ -977,6 +1084,15 @@ def user_data():
             at = request.form["ag"]
             exp = request.form["ex"]
             upd = request.form["up"]
+            print(upd)
+            if upd=='Yes':
+                owner_id=0
+                email=zz.email
+                adding_in_dmail=dmail(email=email,owner_id=owner_id)
+                db.session.add(adding_in_dmail)
+                db.session.commit()
+            else:
+                pass
             todo = user_data2(first_name=fir_name, last_name=la_name, address=addr, age=umar, interest=pref,
                               already_gymming=at, time=exp, update=upd, user_id=iid)
             db.session.add(todo)
@@ -1121,13 +1237,12 @@ def login():
         login = user.query.filter_by(username=dname).first()
         if login:
             if check_password_hash(login.password, passw):
-                if login is not None:
-                    session['logged_in'] = uname
-                    if login.verification == "Yes":
-                        return redirect(url_for("jj"))
-                    else:
-                        return redirect(url_for('login')), flash(
-                            "you are not verified check gmail for verification link")
+                session['logged_in'] = uname
+                if login.verification == "Yes":
+                    return redirect(url_for("jj"))
+                else:
+                    return redirect(url_for('login')), flash(
+                        "you are not verified check gmail for verification link")
         else:
             flash(f'Invalid Username or Password.')
     return render_template("login.html", username=user)
@@ -2891,6 +3006,105 @@ def send_gym_owner_mail_user_booked_gym(data):
         msg.html=render_template("email_gym_owner_mail_user_booked_gym.html",time_period=data['time_period'],data=data,s_code=data['s_code'],total_cost=data['total_cost'],_external=True)
         mail.send(msg)
 
+from math import ceil
+
+@app.route('/services/shop/supplements')
+def shop_supplements():
+    print(g.user)
+    allProds=[]
+    products=Products.query.all()
+    print(products)
+    cats=[]
+    for i in range(len(products)):
+        if products[i].category in cats:
+            pass
+        else:
+            cats.append(products[i].category)
+    for cat in cats:
+        prod=Products.query.filter_by(category=cat).all()
+        n=(len(prod))
+        nSlides=n//4+ceil((n/4)-(n//4))
+        print(nSlides)
+        allProds.append([prod,range(1,nSlides),nSlides])
+        print(allProds)
+    params={'allProds':allProds}
+    print(params)
+    print(cats)
+
+    return render_template('supple/supplement_landing.html',params=params)
+
+from Checksum import generate_checksum,verify_checksum
+from io import BytesIO
+#from paytm import Checksum
+
+
+@app.route('/services/shop/supplements/checkout', methods=['GET','POST'])
+def shop_supplements_checkout():
+    if request.method=="POST":
+        items_json=request.form['itemsJson']
+        print(items_json)
+        name=request.form['name']
+        print(name)
+        amount=request.form['amount']
+        email=request.form['email']
+        print(amount)
+        print(email)
+        address=request.form['address1']+ " " + request.form['address2']
+        print(address)
+        city=request.form['city']
+        print(city)
+        state=request.form['state']
+        print(state)
+        zip_code=request.form['zip_code']
+        print(zip_code)
+        phone=request.form['phone']
+        print(phone)
+        order=Orders(items_json=items_json,name=name,email=email,address=address,city=city,
+                     state=state,zip_code=zip_code,phone=phone,amount=amount)
+        db.session.add(order)
+        db.session.commit()
+        update=orderUpdate(order_id=order.order_id,update_desc='The order has been placed')
+        db.session.add(update)
+        db.session.commit()
+        thank=True
+        id=order.order_id
+        #
+        #
+        #MERCHANT_KEYY=bytes(MERCHANT_KEY,'utf-8')
+        #print(MERCHANT_KEYY)
+        param_dict={
+            'MID': 'xWmblH35395467167516',
+            'ORDER_ID': str(order.order_id),
+            'TXN_AMOUNT': str(amount),
+            'CUST_ID': str(email),
+            'INDUSTRY_TYPE_ID': 'Retail',
+            'WEBSITE': 'WEBSTAGING',
+            'CHANNEL_ID': 'WEB',
+            'CALLBACK_URL': 'http://localhost:5000/services/shop/handlerequest',
+        }
+        print(param_dict)
+        param_dict['CHECKSUMHASH']=generate_checksum(param_dict,merchant_key)
+        return render_template('supple/paytm.html',params_dict=param_dict)
+    return render_template('supple/checkout.html')
+
+@app.route('/services/shop/handlerequest',methods=['GET','POST'])
+def handlerequest():
+    form=request.form
+    response_dict={}
+    for i in form.keys():
+        response_dict[i]=form[i]
+        if i=='CHECKSUMHASH':
+            checksum=form[i]
+    verify = verify_checksum(response_dict, merchant_key, checksum)
+    if verify:
+        if response_dict['RESPCODE'] == '01':
+            print('order successful')
+        else:
+            print('order was not successful because' + response_dict['RESPMSG'])
+    return render_template('supple/paymentstatus.html', response=response_dict)
+
+
+
 '''
 @app.route('/trainer_registeration/trainer_account/wallet')
 def wallet():
@@ -3159,6 +3373,9 @@ admin.add_view(MyModelView(trainerregister, db.session))
 admin.add_view(MyModelView(trainer_detail, db.session))
 admin.add_view(MyModelView(trainer_image, db.session))
 admin.add_view(MyModelView(wallet_all,db.session))
+admin.add_view(MyModelView(Products,db.session))
+admin.add_view(MyModelView(Orders,db.session))
+admin.add_view(MyModelView(orderUpdate,db.session))
 
 if __name__ == "__main__":
     db.create_all()

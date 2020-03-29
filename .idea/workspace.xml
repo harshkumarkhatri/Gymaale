@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
+    <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="Few things changed after dep2">
+      <change afterPath="$PROJECT_DIR$/Checksum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/supple/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/supple/paymentstatus.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/supple/paytm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/supple/supplement_landing.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/FAQs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/FAQs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/know.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/know.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/waiting.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/waiting.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +58,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,12 +76,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/files from windows./dowloadablwe/ex-rekognition/exercise-rekognition/FlaskApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../flask_paytm_checkout" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -199,14 +214,12 @@
       <workItem from="1585152789941" duration="612000" />
       <workItem from="1585196102171" duration="20290000" />
       <workItem from="1585234125162" duration="32000" />
-      <workItem from="1585280477292" duration="5363000" />
-    </task>
-    <task id="LOCAL-00007" summary="Trainer register table added">
-      <created>1578473405372</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1578473405372</updated>
+      <workItem from="1585280477292" duration="6398000" />
+      <workItem from="1585307402859" duration="3734000" />
+      <workItem from="1585391563449" duration="9265000" />
+      <workItem from="1585407812631" duration="1212000" />
+      <workItem from="1585456126034" duration="10231000" />
+      <workItem from="1585482187323" duration="6017000" />
     </task>
     <task id="LOCAL-00008" summary="Trianer account and owner-trainer account displaying correctly and some more issues corrected.">
       <created>1578637044408</created>
@@ -544,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585293265154</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Few things changed after dep2">
+      <created>1585295499169</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1585295499169</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +598,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="blog post layout(full screen) corrected" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="__init__ method set for all the classes" />
     <MESSAGE value="set profile image as required and some more things" />
     <MESSAGE value="added gymaale icon in the title bar" />
@@ -603,7 +623,8 @@
     <MESSAGE value="Github login working correctly till the main page.Query making problem due to two different tables.Data models need to be rebuild." />
     <MESSAGE value="Reformating,added s3 upload and rekognition,github put on hold,removed celery and redis,version to be deployed." />
     <MESSAGE value="Few things changed after dep" />
-    <option name="LAST_COMMIT_MESSAGE" value="Few things changed after dep" />
+    <MESSAGE value="Few things changed after dep2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Few things changed after dep2" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -611,14 +632,14 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584628361186" />
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585293263569">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585488252285">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585293263569" />
-    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1585196133507">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585488252285" />
+    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1585481498646">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl/0.27.1920.1029@0.27.1920.1029" timestamp="1585196133507" />
+    <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl/0.27.1920.1029@0.27.1920.1029" timestamp="1585481498646" />
     <state x="182" y="113" width="1536" height="854" key="MergeDialog" timestamp="1584531352755">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -635,10 +656,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1585207165492" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585293267584">
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585295502130">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585293267584" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585295502130" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -651,10 +672,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584348962561" />
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585234150747">
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585456130228">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585234150747" />
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585456130228" />
     <state x="623" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1585111769370">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
