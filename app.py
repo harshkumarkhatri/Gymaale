@@ -860,7 +860,7 @@ def index():
 @app.route('/oauth_log')
 def oauth_log():
     return '<a id="github-button" class="btn btn-block btn-social btn-github"><i class="fa fa-github"></i> Sign in with Github</a>' \
-           '<h1><a href=http://localhost:5000/github>Login with github</a><h1>'
+           "<h1><a href=f'{host_name}/github'>Login with github</a><h1>"
 
 @app.route('/github')
 def github_login():
@@ -3102,6 +3102,58 @@ def handlerequest():
         else:
             print('order was not successful because' + response_dict['RESPMSG'])
     return render_template('supple/paymentstatus.html', response=response_dict)
+
+import json
+
+@app.route('/services/shop/tracker',methods=["GET","POST"])
+def supple_tracker():
+    if request.method=='POST':
+        orderId=request.form['orderId']
+        print(orderId)
+        email=request.form['email']
+        print(email)
+        order = Orders.query.filter_by(order_id=orderId, email=email).first()
+        print(order)
+        #print(order.order_id)
+        #print(order.items_json)
+        if order:
+            print('inside')
+            update=orderUpdate.query.filter_by(order_id=orderId).all()
+            print(update)
+            print(update[0].update_desc)
+            updates=[]
+            for item in update:
+                updates.append({'text':item.update_desc,'time':item.timestamp})
+                print(updates)
+                print(updates[0]['text'])
+                print(len(updates))
+                for item in (updates):
+                    print(item['text'])
+                response=json.dumps({"status":"success","updates":updates,"itemsJson":order.items_json},default=str)
+                print(response)
+            return render_template('supple/tracker.html',response=response,updates=updates)
+        else:
+            return ('{"status":"noitem"}')
+
+    return render_template('supple/tracker.html')
+
+'''
+        try:
+            order=Orders.query.filter_by(order_id=orderId,email=email).first()
+            print(order)
+            if len(order)>0:
+                print("inside")
+                update=orderUpdate.query.filter_by(order_id=orderId).first()
+                print(update)
+                updates=[]
+                for item in update:
+                    updates.append({'text':item.update_desc,'time':item.timestamp})
+                    response=json.dump({"status":"success","updates":updates,'itemsJson':order[0].items_json},default=str)
+                    return response
+            else:
+                return ("{'status':'noitem'}")
+        except Exception as e:
+            return ({'status':'error'})'''
 
 
 

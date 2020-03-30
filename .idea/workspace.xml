@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/supple/tracker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checksum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Checksum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supple/paymentstatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/paymentstatus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supple/supplement_landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/supplement_landing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +38,13 @@
         <item name="database [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="database [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="order_update: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -210,14 +214,8 @@
       <workItem from="1585407812631" duration="1212000" />
       <workItem from="1585456126034" duration="10231000" />
       <workItem from="1585482187323" duration="6117000" />
-      <workItem from="1585540736986" duration="3600000" />
-    </task>
-    <task id="LOCAL-00009" summary="images uploaded by owner can be viewed in owner account">
-      <created>1578643950681</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1578643950681</updated>
+      <workItem from="1585540736986" duration="4242000" />
+      <workItem from="1585548923460" duration="6603000" />
     </task>
     <task id="LOCAL-00010" summary="Gymaale got its logo">
       <created>1578657402693</created>
@@ -555,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585488256849</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Editted few more things">
+      <created>1585544983849</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1585544983850</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="set profile image as required and some more things" />
     <MESSAGE value="added gymaale icon in the title bar" />
     <MESSAGE value="changed the icon in top near the name" />
     <MESSAGE value="Connected all newsletter with table" />
@@ -615,7 +619,8 @@
     <MESSAGE value="Few things changed after dep" />
     <MESSAGE value="Few things changed after dep2" />
     <MESSAGE value="added paytm api for payment-test mode, editted few more things which were necessary" />
-    <option name="LAST_COMMIT_MESSAGE" value="added paytm api for payment-test mode, editted few more things which were necessary" />
+    <MESSAGE value="Editted few more things" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editted few more things" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -623,10 +628,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584628361186" />
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585488252285">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585544981843">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585488252285" />
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585544981843" />
     <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1585481498646">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -647,10 +652,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1585207165492" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585488285077">
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585544986831">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585488285077" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585544986831" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -663,10 +668,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584348962561" />
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585540749970">
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585548924228">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585540749970" />
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585548924228" />
     <state x="623" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1585111769370">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
