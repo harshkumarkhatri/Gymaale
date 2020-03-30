@@ -3080,7 +3080,7 @@ def shop_supplements_checkout():
             'INDUSTRY_TYPE_ID': 'Retail',
             'WEBSITE': 'WEBSTAGING',
             'CHANNEL_ID': 'WEB',
-            'CALLBACK_URL': 'http://localhost:5000/services/shop/handlerequest',
+            'CALLBACK_URL': f'{host_name}/services/shop/handlerequest',
         }
         print(param_dict)
         param_dict['CHECKSUMHASH']=generate_checksum(param_dict,merchant_key)

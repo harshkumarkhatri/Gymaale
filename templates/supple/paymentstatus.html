@@ -26,38 +26,38 @@
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
         .col-md-3
-{
-display: inline-block;
-margin-left:-4px;
-}
-.carousel-indicators .active {
-background-color: blue;
-}
-.col-md-3 img{
-width: 170px;
-height: 200px;
-}
-body .carousel-indicator li{
-background-color: red;
+        {
+            display: inline-block;
+            margin-left:-4px;
+        }
+        .carousel-indicators .active {
+            background-color: blue;
+        }
+        .col-md-3 img{
+            width: 170px;
+            height: 200px;
+        }
+        body .carousel-indicator li{
+            background-color: red;
 
-}
-body .carousel-indicators{
-bottom: -50px;
-}
-body .carousel-control-prev-icon,
-body .carousel-control-next-icon{
-background-color: blue;
-}
-.carousel-control-prev,
-.carousel-control-next{
-top: auto;
-bottom: auto;
-padding-top: 222px;
-}
-body .no-padding{
-padding-left: 0,
-padding-right: 0;
-}
+        }
+        body .carousel-indicators{
+            bottom: -50px;
+        }
+        body .carousel-control-prev-icon,
+        body .carousel-control-next-icon{
+            background-color: blue;
+        }
+        .carousel-control-prev,
+        .carousel-control-next{
+            top: auto;
+            bottom: auto;
+            padding-top: 222px;
+        }
+        body .no-padding{
+            padding-left: 0,
+            padding-right: 0;
+        }
     </style>
     <style>
         body {
@@ -90,103 +90,25 @@ padding-right: 0;
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img
         src="/static/images/WhatsApp%20Image%202019-11-20%20at%209.42.21%20AM.jpeg"></button>
 <div class="super_container">
-
-    <!-- Header -->
-<!--
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
-                        <a href="/main">
-                            <div class="logo d-flex flex-row align-items-center justify-content-start"><img
-                                    src="/static/images/dot.png" alt="">
-                                <div>GYMA<span>ale</span></div>
-                            </div>
-                        </a>
-                        <nav class="main_nav">
-                            <ul class="d-flex flex-row align-items-center justify-content-start">
-                                <li><a href="/main">Home</a></li>
-                                <li><a href="/about">About us</a></li>
-                                <li class="active"><a href="/services">Services</a></li>
-                                <li><a href="/contact">Contact</a></li>
-                                <li><a href="/logout">Logout</a></li>
-                            </ul>
-                        </nav>
-                        <div class="phone d-flex flex-row align-items-center justify-content-start ml-auto">
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            <div>9999999999</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    -->
-
-    <!-- Hamburger -->
-<!--
-    <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
-        <div class="hamburger">
-            <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
-                <span>menu</span>
-                <div class="hamburger_container">
-                    <div class="menu_hamburger">
-                        <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-                        <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
-                        <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
--->
-    <!-- Menu -->
-<!--
-    <div class="menu trans_800">
-        <div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-            <ul>
-                <li><a href="/main">Home</a></li>
-                <li><a href="/about">About us</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
-        </div>
-        <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            <span>9999999999</span>
-        </div>
-    </div>
-<pre>
-
-
-
-
-
-
-
-</pre>
--->
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="mx-1"></div> <div class="logo d-flex flex-row align-items-center justify-content-start"><img
-                                    src="/static/images/dot.png" alt="">
-                                <div>GYMA<span>ale</span></div>
-                            </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <div class="mx-1"></div>
+        <div class="logo d-flex flex-row align-items-center justify-content-start"><img
+                src="/static/images/dot.png" alt="">
+            <div>GYMA<span>ale</span></div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/main">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About Us</a>
-            </li><li class="nav-item">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li><li class="nav-item">
                 <a class="nav-link" href="/services">Services</a>
             </li><li class="nav-item">
                 <a class="nav-link" href="/contact">Contact</a>
@@ -195,16 +117,16 @@ padding-right: 0;
             </li>
 
 
-        </ul>
-        <form method="get" action="/shop/search/" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="harsh khatri">
-  Cart (<span id="cart">0</span>)
-</button>
-    </div>
-</nav>
+            </ul>
+            <form method="get" action="/shop/search/" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="harsh khatri">
+                Cart (<span id="cart">0</span>)
+            </button>
+        </div>
+    </nav>
 
 
 
@@ -228,141 +150,141 @@ padding-right: 0;
         </div>
     </div>
     <div class="container">
-<div class="container">
-    <!--{{response}}-->
-    <div class="col my-4">
+        <div class="container">
+            <!--{{response}}-->
+            <div class="col my-4">
 
-        <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
-        {% if response.RESPCODE == '01' %}
-        ORDER SUCCESS
-        {% else %}
-        ORDER FAILURE
-        {% endif%}
+                <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
+                {% if response.RESPCODE == '01' %}
+                ORDER SUCCESS
+                {% else %}
+                ORDER FAILURE
+                {% endif%}
 
+            </div>
+
+        </div>
     </div>
 
-</div>
+        <!-- Extra -->
 
-    <!-- Extra -->
-
-    <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
-        <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="extra_title">More BCAA</div>
-                        <div class="extra_text">
-                            <p>Will be added soon.</p>
+        <div class="extra d-flex flex-column align-items-center justify-content-center text-center">
+            <div class="background_image" style="background-image:url(/static/images/extra_wide.jpg)"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
+                            <div class="extra_title">More BCAA</div>
+                            <div class="extra_text">
+                                <p>Will be added soon.</p>
+                            </div>
+                            <div class="button extra_button"><a href="#">Comming Soon</a></div>
                         </div>
-                        <div class="button extra_button"><a href="#">Comming Soon</a></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
+        <!-- Footer -->
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="footer_container">
-                        <div class="footer_content">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <div class="logo d-flex flex-row align-items-center justify-content-center"><img
-                                            src="/static/images/dot.png" alt="">
-                                        <div>GYMA<span>ale</span></div>
-                                    </div>
-                                </a>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <div class="footer_container">
+                            <div class="footer_content">
+                                <div class="footer_logo">
+                                    <a href="#">
+                                        <div class="logo d-flex flex-row align-items-center justify-content-center"><img
+                                                src="/static/images/dot.png" alt="">
+                                            <div>GYMA<span>ale</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <nav class="footer_nav">
+                                    <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
+                                        <li><a href="/main">Home</a></li>
+                                        <li><a href="/about">About us</a></li>
+                                        <li><a href="/services">Services</a></li>
+                                        <li><a href="/blog">Blog</a></li>
+                                        <li><a href="/contact">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="newsletter_container">
+                                    <form action="#" id="newsletter_form" class="newsletter_form">
+                                        <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                                               required="required">
+                                        <button class="newsletter_button">go</button>
+                                    </form>
+                                </div>
+                                <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                    All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                                        aria-hidden="true"></i> by <a
+                                        href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </div>
                             </div>
-                            <nav class="footer_nav">
-                                <ul class="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-center">
-                                    <li><a href="/main">Home</a></li>
-                                    <li><a href="/about">About us</a></li>
-                                    <li><a href="/services">Services</a></li>
-                                    <li><a href="/blog">Blog</a></li>
-                                    <li><a href="/contact">Contact</a></li>
-                                </ul>
-                            </nav>
-                            <div class="newsletter_container">
-                                <form action="#" id="newsletter_form" class="newsletter_form">
-                                    <input type="text" class="newsletter_input" placeholder="Enter your email here"
-                                           required="required">
-                                    <button class="newsletter_button">go</button>
-                                </form>
-                            </div>
-                            <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                                All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                                                                    aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </div>
+                            <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
                         </div>
-                        <div class="footer_image text-center"><img src="/static/images/footer.png" alt=""></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-</div>
-</div>
+        </footer>
 
-<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
-<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/popper.js') }}"></script>
-<script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/greensock/TweenMax.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/greensock/TimelineMax.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
-<script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
-<script src="{{ url_for('static', filename='js/services.js') }}"></script>
-<script>
-    //Get the button
-    var mybutton = document.getElementById("myBtn");
 
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-        scrollFunction()
-    };
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/TweenMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/TimelineMax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/animation.gsap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/easing/easing.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/progressbar/progressbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/parallax-js-master/parallax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/colorbox/jquery.colorbox-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/services.js') }}"></script>
     <script>
-    localStorage.clear()
-</script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+    <script>
+        localStorage.clear()
+    </script>
 </body>
 </html>
 

@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="Few things changed after dep2">
-      <change afterPath="$PROJECT_DIR$/Checksum.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/supple/checkout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/supple/paymentstatus.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/supple/paytm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/supple/supplement_landing.html" afterDir="false" />
+    <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Checksum.py" beforeDir="false" afterPath="$PROJECT_DIR$/Checksum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/FAQs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/FAQs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/know.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/know.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/waiting.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/waiting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supple/paymentstatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/paymentstatus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supple/supplement_landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/supplement_landing.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,14 +209,8 @@
       <workItem from="1585391563449" duration="9265000" />
       <workItem from="1585407812631" duration="1212000" />
       <workItem from="1585456126034" duration="10231000" />
-      <workItem from="1585482187323" duration="6017000" />
-    </task>
-    <task id="LOCAL-00008" summary="Trianer account and owner-trainer account displaying correctly and some more issues corrected.">
-      <created>1578637044408</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1578637044408</updated>
+      <workItem from="1585482187323" duration="6117000" />
+      <workItem from="1585540736986" duration="3600000" />
     </task>
     <task id="LOCAL-00009" summary="images uploaded by owner can be viewed in owner account">
       <created>1578643950681</created>
@@ -564,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585295499169</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="added paytm api for payment-test mode, editted few more things which were necessary">
+      <created>1585488256847</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1585488256849</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,7 +590,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="__init__ method set for all the classes" />
     <MESSAGE value="set profile image as required and some more things" />
     <MESSAGE value="added gymaale icon in the title bar" />
     <MESSAGE value="changed the icon in top near the name" />
@@ -624,7 +614,8 @@
     <MESSAGE value="Reformating,added s3 upload and rekognition,github put on hold,removed celery and redis,version to be deployed." />
     <MESSAGE value="Few things changed after dep" />
     <MESSAGE value="Few things changed after dep2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Few things changed after dep2" />
+    <MESSAGE value="added paytm api for payment-test mode, editted few more things which were necessary" />
+    <option name="LAST_COMMIT_MESSAGE" value="added paytm api for payment-test mode, editted few more things which were necessary" />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -656,10 +647,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1585207165492" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585295502130">
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585488285077">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585295502130" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585488285077" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -672,10 +663,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="100" y="123" width="1720" height="833" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584348962561" />
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585456130228">
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1585540749970">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585456130228" />
+    <state x="615" y="369" key="com.intellij.ide.util.TipDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1585540749970" />
     <state x="623" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1585111769370">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>

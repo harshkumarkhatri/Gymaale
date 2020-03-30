@@ -10,7 +10,6 @@ BLOCK_SIZE = 16
 
 
 def generate_checksum(param_dict, merchant_key, salt=None):
-    print("Code is here 1")
     params_string = __get_param_string__(param_dict)
     salt = salt if salt else __id_generator__(4)
     final_string = '%s|%s' % (params_string, salt)
@@ -98,49 +97,26 @@ __unpad__ = lambda s: s[0:-ord(s[-1])]
 
 def __encode__(to_encode, iv, key):
     # Pad
-    print("Coe is here 2")
     to_encode = __pad__(to_encode)
-    print(to_encode)
     # Encrypt
-    print("Code 3")
-    print(key)
-    print(iv)
     key=key.encode("utf-8")
     iv=iv.encode("utf-8")
-    print(key)
-    print(iv)
     c = AES.new(key, AES.MODE_CBC, iv)
-    print(c)
-    print("code 4")
-    print(to_encode)
     to_encode=to_encode.encode('utf-8')
-    print(to_encode)
     to_encode = c.encrypt(to_encode)
     # Encode
-    print("code 5")
     to_encode = base64.b64encode(to_encode)
-    print("code here 6")
     return to_encode.decode("UTF-8")
 
 
 def __decode__(to_decode, iv, key):
     # Decode
-    print('C1')
-    print(to_decode)
     to_decode=to_decode.encode("utf-8")
-    print(to_decode)
-    print('c2')
     to_decode = base64.b64decode(to_decode)
     # Decrypt
-    print('c3')
-    print(key)
-    print(iv)
     key=key.encode('utf-8')
     iv=iv.encode('utf-8')
-    print(key)
-    print(iv)
     c = AES.new(key, AES.MODE_CBC, iv)
-    print('c4')
     to_decode = c.decrypt(to_decode)
     if type(to_decode) == bytes:
         # convert bytes array to str.
