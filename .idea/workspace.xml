@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/supple/tracker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/supple/tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/tracker.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,14 +214,8 @@
       <workItem from="1585456126034" duration="10231000" />
       <workItem from="1585482187323" duration="6117000" />
       <workItem from="1585540736986" duration="4242000" />
-      <workItem from="1585548923460" duration="6603000" />
-    </task>
-    <task id="LOCAL-00010" summary="Gymaale got its logo">
-      <created>1578657402693</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1578657402693</updated>
+      <workItem from="1585548923460" duration="6677000" />
+      <workItem from="1585623183182" duration="5198000" />
     </task>
     <task id="LOCAL-00011" summary="Gymaale got its logo">
       <created>1578657462581</created>
@@ -560,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585544983850</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Added tracker but need to display the details and the timings correctly as they are not been displayed by js.">
+      <created>1585555577540</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1585555577541</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +595,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added gymaale icon in the title bar" />
     <MESSAGE value="changed the icon in top near the name" />
     <MESSAGE value="Connected all newsletter with table" />
     <MESSAGE value="removed a tag from the gymaale on top from trainer and owner pages" />
@@ -620,7 +619,8 @@
     <MESSAGE value="Few things changed after dep2" />
     <MESSAGE value="added paytm api for payment-test mode, editted few more things which were necessary" />
     <MESSAGE value="Editted few more things" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editted few more things" />
+    <MESSAGE value="Added tracker but need to display the details and the timings correctly as they are not been displayed by js." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tracker but need to display the details and the timings correctly as they are not been displayed by js." />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -628,10 +628,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="418" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584628361186" />
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585544981843">
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2" timestamp="1585555575869">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585544981843" />
+    <state x="523" y="135" width="864" height="810" key="CommitChangelistDialog2/0.27.1920.1029@0.27.1920.1029" timestamp="1585555575869" />
     <state x="743" y="297" width="424" height="485" key="FileChooserDialogImpl" timestamp="1585481498646">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
@@ -652,10 +652,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1585207165492" />
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585544986831">
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585555580191">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585544986831" />
+    <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2/0.27.1920.1029@0.27.1920.1029" timestamp="1585555580191" />
     <state x="818" y="436" width="363" height="235" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1584006355686">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>

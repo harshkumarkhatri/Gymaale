@@ -1,4 +1,4 @@
-#latest commit 23/03/2020
+#latest commit 31/03/2020
 
 
 from flask import Flask,  render_template,  flash, redirect, url_for, session,  request, g
@@ -32,6 +32,13 @@ import cloudinary.api
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 
+import json
+
+from math import ceil
+
+from Checksum import generate_checksum,verify_checksum
+from io import BytesIO
+#from paytm import Checksum
 
 
 from flask_dance.contrib.github import make_github_blueprint,github
@@ -3006,7 +3013,7 @@ def send_gym_owner_mail_user_booked_gym(data):
         msg.html=render_template("email_gym_owner_mail_user_booked_gym.html",time_period=data['time_period'],data=data,s_code=data['s_code'],total_cost=data['total_cost'],_external=True)
         mail.send(msg)
 
-from math import ceil
+
 
 @app.route('/services/shop/supplements')
 def shop_supplements():
@@ -3033,9 +3040,7 @@ def shop_supplements():
 
     return render_template('supple/supplement_landing.html',params=params)
 
-from Checksum import generate_checksum,verify_checksum
-from io import BytesIO
-#from paytm import Checksum
+
 
 
 @app.route('/services/shop/supplements/checkout', methods=['GET','POST'])
@@ -3103,57 +3108,27 @@ def handlerequest():
             print('order was not successful because' + response_dict['RESPMSG'])
     return render_template('supple/paymentstatus.html', response=response_dict)
 
-import json
+
 
 @app.route('/services/shop/tracker',methods=["GET","POST"])
 def supple_tracker():
     if request.method=='POST':
         orderId=request.form['orderId']
-        print(orderId)
         email=request.form['email']
-        print(email)
         order = Orders.query.filter_by(order_id=orderId, email=email).first()
-        print(order)
-        #print(order.order_id)
-        #print(order.items_json)
         if order:
-            print('inside')
             update=orderUpdate.query.filter_by(order_id=orderId).all()
-            print(update)
-            print(update[0].update_desc)
             updates=[]
-            for item in update:
-                updates.append({'text':item.update_desc,'time':item.timestamp})
-                print(updates)
-                print(updates[0]['text'])
-                print(len(updates))
-                for item in (updates):
-                    print(item['text'])
+            for i in range(len(update)):
+                updates.append({'text':update[i].update_desc,'time':update[i].timestamp})
                 response=json.dumps({"status":"success","updates":updates,"itemsJson":order.items_json},default=str)
-                print(response)
-            return render_template('supple/tracker.html',response=response,updates=updates)
+            return response
         else:
             return ('{"status":"noitem"}')
 
     return render_template('supple/tracker.html')
 
-'''
-        try:
-            order=Orders.query.filter_by(order_id=orderId,email=email).first()
-            print(order)
-            if len(order)>0:
-                print("inside")
-                update=orderUpdate.query.filter_by(order_id=orderId).first()
-                print(update)
-                updates=[]
-                for item in update:
-                    updates.append({'text':item.update_desc,'time':item.timestamp})
-                    response=json.dump({"status":"success","updates":updates,'itemsJson':order[0].items_json},default=str)
-                    return response
-            else:
-                return ("{'status':'noitem'}")
-        except Exception as e:
-            return ({'status':'error'})'''
+
 
 
 
