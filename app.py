@@ -3015,7 +3015,7 @@ def send_gym_owner_mail_user_booked_gym(data):
 
 
 
-@app.route('/services/shop/supplements')
+@app.route('/services/shop/supplements',methods=["GET","POST"])
 def shop_supplements():
     print(g.user)
     allProds=[]
@@ -3128,8 +3128,44 @@ def supple_tracker():
 
     return render_template('supple/tracker.html')
 
+@app.route('/services/shop/search',methods=["GET","POST"])
+def supple_search():
+    if request.method=="POST":
+        query=request.form['search']
+        print(query)
+        allProds=[]
+        catprods=Products.query.all()
+        print(catprods)
+        cats = {item.category for item in catprods}
+        print(cats)
+        for cat in cats:
+            prodtemp = Products.query.filter_by(category=cat).all()
+            print(cat)
+            print(prodtemp)
+            prod = [item for item in prodtemp if searchMatch(query, item)]
+            print(prod)
+            n = len(prod)
+            print(n)
+            nSlides = n // 4 + ceil((n / 4) - (n // 4))
+            print(nSlides)
+            if len(prod) != 0:
+                allProds.append([prod, range(1, nSlides), nSlides])
+        params = {'allProds': allProds, 'msg': ""}
+        if len(allProds) == 0 or len(query) < 4:
+            params = {'msg': "Please make sure to enter relevant search query"}
+        print(params)
+
+        return render_template('/supple/search.html',params=params)
 
 
+def searchMatch(query,item):
+    #return true if only the query matches the items
+    if query in item.desc.lower() or query in item.product_name.lower() or query in item.category.lower():
+        print("True")
+        return True
+    else:
+        print("False")
+        return False
 
 
 '''

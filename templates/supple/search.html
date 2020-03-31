@@ -85,6 +85,41 @@
             background-color: #555;
         }
     </style>
+    <style>
+        .col-md-3
+        {
+            display: inline-block;
+            margin-left:-4px;
+        }
+        .carousel-indicators .active {
+            background-color: blue;
+        }
+        .col-md-3 img{
+            width: 170px;
+            height: 200px;
+        }
+        body .carousel-indicator li{
+            background-color: red;
+
+        }
+        body .carousel-indicators{
+            bottom: -50px;
+        }
+        body .carousel-control-prev-icon,
+        body .carousel-control-next-icon{
+            background-color: blue;
+        }
+        .carousel-control-prev,
+        .carousel-control-next{
+            top: auto;
+            bottom: auto;
+            padding-top: 222px;
+        }
+        body .no-padding{
+            padding-left: 0,
+            padding-right: 0;
+        }
+    </style>
 </head>
 <body>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><img
@@ -196,11 +231,10 @@
 
 
             </ul>
-            <form method="post" action="{{url_for('supple_search')}}" class="form-inline my-2 my-lg-0">
+            <form method="get" action="/services/shop/search/" class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-
             <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="harsh khatri">
                 Cart (<span id="cart">0</span>)
             </button>
@@ -229,7 +263,8 @@
         </div>
     </div>
     <div class="container">
-        {% for product,range,nSlides in params['allProds'] %}
+        <!--Slideshow starts here -->
+        {% for product, range, nSlides in params['allProds'] %}
         <h5 class="my-4">Flash Sale On {{product.0.category}} - Recommended Items</h5>
         <div class="row">
             <div id="demo{{loop.counter}}" class="col carousel slide my-3" data-ride="carousel">
@@ -239,30 +274,28 @@
                     <li data-target="#demo{{loop.parentloop.counter}}" data-slide-to="{{i}}"></li>
                     {% endfor %}
                 </ul>
-                <div class="conatiner carousel-inner no-padding">
+                <div class="container carousel-inner no-padding">
                     <div class="carousel-item active">
                         {% for i in product %}
                         <div class="col-xs-3 col-sm-3 col-md-3">
                             <div class="card align-items-center" style="width: 18rem;">
-                                <img src="{{i.image_url}}" class="card-img-top" alt="...">
+                                <img src='{{i.image_url}}' class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title" id="namepr{{i.id}}">{{i.product_name}}</h5>
-                                    <p class="card-text">{{i.desc[0:60]}}...</p>
+                                    <p class="card-text">{{i.desc[0:53]}}...</p>
                                     <p>Price: <span id="pricepr{{i.id}}">{{i.price}}</span></p>
                                     <span id="divpr{{i.id}}" class="divpr">
-                                        <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
-                                    </span>
+                                    <button id="pr{{i.id}}" class="btn btn-primary cart">Add To Cart</button>
+                                </span>
+
                                 </div>
                             </div>
                         </div>
-
-                        <!--Here we can use the if loop-->
 
                         {% endfor %}
                     </div>
                 </div>
             </div>
-
             <!-- left and right controls for the slide -->
             <a class="carousel-control-prev" href="#demo{{loop.counter}}" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
@@ -284,6 +317,7 @@
                 <div class="col-md-6 offset-md-3">
                     <div class="extra_content d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="extra_title">More BCAA</div>
+                        <div class="extra_title">{{params}}</div>
                         <div class="extra_text">
                             <p>Will be added soon.</p>
                         </div>
@@ -319,6 +353,13 @@
                                     <li><a href="/contact">Contact</a></li>
                                 </ul>
                             </nav>
+                            <div class="newsletter_container">
+                                <form action="#" id="newsletter_form" class="newsletter_form">
+                                    <input type="text" class="newsletter_input" placeholder="Enter your email here"
+                                           required="required">
+                                    <button class="newsletter_button">go</button>
+                                </form>
+                            </div>
                             <div class="copyright d-flex flex-row align-items-start justify-content-sm-end justify-content-center">
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;<script>document.write(new Date().getFullYear());</script>
@@ -374,7 +415,12 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
+
 <script>
+    {% if msg|length != 0 %}
+    alert('{{msg}}');
+    window.location.href='/'
+    {% endif %}
     // Find out the cart items from localStorage
     if (localStorage.getItem('cart') == null) {
         var cart = {};
@@ -455,6 +501,17 @@
         updateCart(cart);
     });
 </script>
+
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 </body>
 </html>
 
