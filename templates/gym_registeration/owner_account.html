@@ -22,31 +22,31 @@
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
           type="image/x-icon"><style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
 
-        #myBtn {
-            display: none;
-            position: fixed;
-            bottom: 15px;
-            left: 20px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: red;
-            color: white;
-            cursor: pointer;
-            padding: 2px;
-            border-radius: 4px;
-        }
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 15px;
+        left: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 2px;
+        border-radius: 4px;
+    }
 
-        #myBtn:hover {
-            background-color: #555;
-        }
-    </style>
+    #myBtn:hover {
+        background-color: #555;
+    }
+</style>
     <style>
         .avatar {
             vertical-align: middle;
@@ -190,7 +190,7 @@
         {% else %}
         {{ i.address_2 }}
         {% endif %}<br>
-    {{ i.city }}-{{ i.postal_code }}<br>{{ i.state }}</h5>
+        {{ i.city }}-{{ i.postal_code }}<br>{{ i.state }}</h5>
     <h5>Contact Number: {{ i.contact_number }}</h5>
     <h5>Monthly fees: {{ i.monthly_fees }}</h5>
     <h5>Yearly fees: {{ i.yearly_fees }}</h5>
@@ -205,32 +205,31 @@
     <h5>Morning: {{ i.m_open }}:00 am - {{ i.m_close }}:00 am</h5>
     <h5>Eveneing: {{ i.e_open }}:00 pm - {{ i.e_close }}:00 pm</h5>
     <div class="flex-box-containeer-2">
-    <img src="{{ image_1 }}"/>
-    <img src="{{ image_2 }}"/>
-    <img src="{{ image_3 }}"/>
-    <img src="{{ image_4 }}"/>
-    <img src="{{ image_5 }}"/>
+        <img src="{{ image_1 }}"/>
+        <img src="{{ image_2 }}"/>
+        <img src="{{ image_3 }}"/>
+        <img src="{{ image_4 }}"/>
+        <img src="{{ image_5 }}"/>
     </div>
-    {% if count==0 %}
-    {% else %}
-    <h5><u>Another GYM Details</u></h5>
-    {% endif %}
     {% endfor %}
 
 
-    <a href="/gym_registeration/add_another_gym">* <u>Add Other Gym</u></a><br>
+    <!--<a href="/gym_registeration/add_another_gym">* <u>Add Other Gym</u></a><br>-->
+    <br>
+    <div class="my-2"></div>
     <a href="/gym_registeration/owner_account/account_settings">* <u>Account Settings</u></a><br>
+    <br><div class="my-2"></div>
 
     {% if get_flashed_messages() %}
-                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
-                            {% for message in get_flashed_messages() %}
-                            {{ message }}
-                            {% endfor %}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {% endif %}
+    <div class="alert alert-dark alert-dismissible fade show" role="alert">
+        {% for message in get_flashed_messages() %}
+        {{ message }}
+        {% endfor %}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
     {% if do %}
     <img src="{{ do }}" alt="User Image">
     {% endif %}
