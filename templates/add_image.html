@@ -22,31 +22,31 @@
     <link rel="icon" href=
             "{{ url_for('static',filename='images/logo.jpeg') }}"
           type="image/x-icon"><style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
 
-        #myBtn {
-            display: none;
-            position: fixed;
-            bottom: 15px;
-            left: 20px;
-            z-index: 99;
-            font-size: 18px;
-            border: none;
-            outline: none;
-            background-color: red;
-            color: white;
-            cursor: pointer;
-            padding: 2px;
-            border-radius: 4px;
-        }
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 15px;
+        left: 20px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 1px;
+        border-radius: 0px;
+    }
 
-        #myBtn:hover {
-            background-color: #555;
-        }
-    </style>
+    #myBtn:hover {
+        background-color: #555;
+    }
+</style>
     <style>
         .avatar {
             vertical-align: middle;
@@ -87,7 +87,7 @@
 
 
 
-</pre>
+    </pre>
 
 
     <div class="container">
@@ -107,8 +107,8 @@
 
                 </form>
                 {% for message in get_flashed_messages() %}
-        {{ message }}
-        {% endfor %}
+                {{ message }}
+                {% endfor %}
 
             </div>
         </div>

@@ -2812,9 +2812,6 @@ def send_blog_added(data):
         msg.html = render_template("email_blog_added.html", title=data['title'],data=data, _external=True)
         mail.send(msg)
 
-@app.route('/account/wallet')
-def wallet():
-    return render_template('wallet.html')
 
 @app.route('/account/wallet/add',methods=["GET","POST"])
 def wallet_add():

@@ -34,11 +34,11 @@
 
 </pre>
 <h2 align="center"><u>Forgot Password</u></h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <form method="POST">
-                    <div class="form-group">
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <form method="POST">
+                <div class="form-group">
                     <label for="email">Email : </label>
                     <input type="email" name="cmail" class="form-control" placeholder="Enter E-mail" id="cmail"
                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -47,22 +47,22 @@
                 </div>
 
 
-                    {% if get_flashed_messages() %}
-                        <div class="alert alert-dark alert-dismissible fade show" role="alert">
-                            {% for message in get_flashed_messages() %}
-                            {{ message }}
-                            {% endfor %}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {% endif %}<br>
-                    <button type="submit" class="btn form-control btn-default"><u>Request Password Reset</u></button>
-                    <br><br>
-                </form>
-            </div>
+                {% if get_flashed_messages() %}
+                <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                    {% for message in get_flashed_messages() %}
+                    {{ message }}
+                    {% endfor %}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}<br>
+                <button type="submit" class="btn form-control btn-default"><u>Request Password Reset</u></button>
+                <br><br>
+            </form>
         </div>
     </div>
+</div>
 
 <div class="super_container">
 
@@ -87,22 +87,7 @@
         </div>
     </header>
 
-    <!-- Hamburger
 
-    <div class="hamburger_bar trans_400 d-flex flex-row align-items-center justify-content-start">
-        <div class="hamburger">
-            <div class="menu_toggle d-flex flex-row align-items-center justify-content-start">
-                <span>menu</span>
-                <div class="hamburger_container">
-                    <div class="menu_hamburger">
-                        <div class="line_1 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-                        <div class="line_2 hamburger_lines" style="visibility: inherit; opacity: 1;"></div>
-                        <div class="line_3 hamburger_lines" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
 
     <!-- Footer -->
 
