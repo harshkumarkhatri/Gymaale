@@ -1,0 +1,308 @@
+change logos for the tabs of various ggyms
+
+change logos of the schedules.
+
+add logos to supplemets/categories in each category
+
+list of trainers which could be added with contact info.
+
+list of gyms with address and contact numbers.
+
+update the about page jo team ka data hai, attractive offers k andar offer page ka dalna hai jo us p redirect karega.
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+DONE_____confirm account while registering with mail.
+
+DONE_____ check all the validators which are already used and are to be used in the webapp.
+
+DONE_____ as we save the password for any of the website which on visiting that website automatically load the saved password and username so user has no need to enter it again do like that.
+
+DONE_____ index page p no excuses for workout anymore wale text ko wapas set karna hai vo dikh glt rha hai aur uske baad ka bhi.
+
+DONE_____ ek line hogi floating wali jis mai offers wgrh ka deh rakha hoga ya floating bubble hoga jis maio offers wgrh k bare mai information deh rakhi hogi.
+
+DONE_____forgot password/reset password.email system for changing password.
+
+DONE_____ STORED IN GIT WAS LOOKING BAD.  replace show password icon box with the eye which on click will give the password.
+
+DONE_____ as like we are taking the data from the newsletter mail, take the data from the way like age and things like that just after login page and make it sure that if a person has given data once does not comes up with the data entery screen again and again.
+
+DONE_____ if user deletes his account then his data stored in each of the table should be deleted.
+
+DONE_____ take user data other than just username and password like age interest and provide it with a skip option it will be loaded as soon as a new user logs in it will be displayed and user can skip it currently which will again be loaded (if unfilled) again on new login.
+
+DONE_____ newsletter or offerletter subscription. jo last mai mail ko lee ka deh rakha hai na us k andar kr dena yeh
+
+DONE_____ ek page hoga image add karne ka jisme user register login k wqt image add karega aur ek page vo hoga jisme user image change kar skta hai jisme uski current image bhi display hogi.
+
+DONE_____ Blog ka kuch esa kardena jo miguel k blog ka hai na jis k through apan login kar k blog dal skte hai directly database k through warna ese toh boht kachra ho jayega baar baar nya blog upload karne k baad puri site ko update karna padega.
+
+DONE_____ login kar rahe hai toh password hashing mai dikkat aa rhi hai jis ki wjh sai new user login nhi kar pa rahe hai. Working correctly.
+
+DONE_____ currently working on the admin section where user can be registered as an admin after harsh confirms that email address which is recieved and enter that details in user_As_admin.html form and confirms it. After the confirmation user acts as an admin.
+
+DONE_____ abhi image file upload k upar kaam kr rha tha isme esa karna hai ki pehle toh dekh lena ki file upload kese hogi and database mai store ho jake file ise baad jb yeh dng sai kaam karne lag jaye toh u karna ki register->add image->fir login...
+add image mai skip for now ka option daal dena jo ki current session k liye nhi mangega image
+again login karte hi vo image k liye fir sai bolega ki add image(is sai jo purane users hai unki bhi image aa jayegi database mai)
+
+DONE_____ Custom error messages.
+
+DONE_____ owner sections(owner_register,owner_login,OWner_details,gym_details,gym_images) adding successful
+
+DONE_____ each table is connected to another table via a seperate column which will have the ids of the owner.
+
+Done_____ login page working correctly just set landing location.
+
+DONE_____ add another option in owner details having "do you have any other gym" if it is yes then it will let owner to add another gym if no a message saying "yoh have selected "NO" to any other gym in owner_details section so you cannot add another gym".
+
+DONE_____ add validations in the adding of owner details and gym_details and in login that is details already filled then direct to the owner_account page and option in it to to add anothe gym.
+
+DONE_____ in the owner account page display the details of the owner and the details of the gyms which he has added via referencing to the owner_id in the tables.
+
+DONE_____ Image is being displayed in the correct manner.
+
+DONE_____ if the owner has selcted yes to "do you train" then show another option of adding trainer profile to gymaale.
+
+DONE_____ owner account settings.
+
+DONE_____ Page/form which contains the prefilled information from the tables and user can edit that info and submit that info to get it updated in the database.
+
+DONE_____ change address_2 to required in each form it is present.
+
+DONE_____ Email verification is working. Anew user creating his or her account wont be able to login if he has not verified his email address
+
+DONE_____ in all the forms which are being used all the fields have been made required so that to avoid null or none errors.
+
+DONE_____ OWNER SECTION:-Connect this section also with password hashing 
+
+DONE_____ update karne ka solution mil gya hai jo mene change owner details mai use kar rakha hai toh usme sai dekh k usko baki jgh p theek karna hai jha p bhi mene delete ka kar rakha hai update ki jgh.
+
+DONE_____ Images which are being displayed are not responsive for example a image in account section i.e. when the page will be loaded on mobile screen image should come on the top of text rather   than overlapping the text.
+
+DONE_____ Display the gyms which are added in the user section with pagination so that user can looks from the variety of gyms which are provided.
+
+DONE_____ Display the gym and some information of owned by in the gyms section. firstly the section will contain only the names and further on clicking the name full details loaded
+
+DONE_____ Owner_Account:-
+* Display the images also which are uploaded while registering a gym.
+
+DONE_____ trainer account accepting data in db correctly but not displaying.
+
+DONE_____ owneraccount/gym_registeration displplay and entering data is working fine.
+
+DONE_____ also make a section in required tables which has the 'owner' or just 'trainer' in them to make it clear that is it only the trainer account or gym/owner+trainer account.
+    _____ done this my making another column owner_ref_id
+
+DONE_____ when a owner has add a trainer profile in his account the data which he enters is goining in the trainer db but in displaying it in account page it is not displaying
+    _____ This is done by making another page trainer_account_2 for the owner who are trainers also. Table is same for both just seperate coloumns for both ref_id and owner_ref_id.
+
+DONE_____ Trainer:-
+* Start working on the trainer account i.e. creating tables, form and pages to get info of the trainers.
+
+DONE_____ Owner_Account:-
+* Display the images also which are uploaded while registering a gym.
+
+DONE_____ while taking trainer details ask for city state and postal code also
+
+DONE_____ diaplay trainer table in the user account and apply sorting to it
+
+DONE_____ Sorting function working in certified_trainers page
+
+DONE_____ Make the pagination to appear in the next line in all the page where it is appering in the same line.
+
+DONE_____ arrange the images in the carousal format like that of the index page.
+    _____ This is done by making the images display inside a flexbox and the width and height are made responsive according to the display six
+
+DONE_____ Work on the mails sent and make each mail as html one.(Reset and conformation working fine and with html)
+          The email being sent to the user is in html format so make it look much more attractive.Currently it is simple text and a link.
+
+DONE_____ Trainer enters the details which are stored in the db with "verified=NULL" and a mail is sent to the admin with the ref id and a link. Admin clicks on that link and enters the ref 	  id in the form and hits enter the account is then verified with a mail being sent to the trainer stating "account verified" and the account will then be displayed to the users.
+
+DONE_____ The users will be displayed only those trainer accounts which have been verified.
+
+DONE_____ The verified thing which is done for trainer account also needs to be done for the trainer account made by owner account.
+
+DONE_____ Apply the links to travel from trainer page to owner page for owner account and vice versa once the trainer account has been added.
+
+DONE_____ add the email sending sysytem to the gym registeration page if one gym is registered "Congrats on registering your first gym", if two gyms then "Congrats on getting your second           gym registered" i.e. connect it with count counting the no. of recoreds of particular value in the table.if an owner registers his or her gym then also one mail to confirm the the registeration and other saying thanks for joining. and same will work for the trainer.
+
+DONE_____ In the mail which we are sending at last there are icons above them write connect with us on the handles given below.
+
+DONE_____ Images which are displayed along with the gym details need to arranged in a appropriate manner like the carousal in index page.(user section--Displayed in flexbox)
+
+DONE_____ In the various gym page and cretified trainers the paginantion numbers are to be given in the next line
+
+DONE_____ Connecting this section to email in which the data which all will be entered by the trainer in the forms will be first send to me and then i will update that data in the table and rather doing this a better alternamtive could be this thatan extra column to be made in the trainer register coloumn containg "verified" if i have verified the details by enternig the username in the new form and displaying the details to the user of the trainers which are actually verified by me.
+
+DONE_____ Designing and layouting/navigation of all the pages being used in trainer and owner part of the site.
+
+DONE_____ Adding a terms and condition page to all the three section.(it will also has a form saying found your being deleted without any cause fill the form to complain)
+
+DONE_____ A part of gymaale will work like if you register then you get email and after the conformation you get an email saying thank you for joining gymaale. 
+
+DONE_____ A new page displayed just after filling the registeration form saying an email has been sent to you on the email id you have provided and click on it to verify it and if email not           recieved yet then another button to request for another token(email).
+    _____ When the user has not recieved  the email after registeration then make a page which will ask the user to fill the email again to get the registeration email agian
+
+DONE_____ blog text appears on half of the screen only
+
+DONE_____ set the arguments in the table to be null if any value is not provided.
+
+DONE_____ Provide a default image to the user image if the image is made to skip for nw and the image can be changed in the user account further.
+    _____ (solved by removing skip fo now as a defult image was not being able to be generated.)
+
+DONE_____ Prebuilt chatbot flask web app in google for web app.(Used tawk.io in gymaale for chatbot)
+
+DONE_____ make a seperate section for the owner where the owners of the gym can register their gyms with us so that they can get their gyms to be displayed.(Trainer registeration not to be provided. ADMIN WILL VERIFY THE GYM ENTRY TO BE ADDED AND ONCE VERIFIED IT WILL BE ADDED TO THE TABLE)(Currently to accept more gyms admin wont provide the access to the gyms rather admin could terminate the gym and the account if anything suspicious founb to which the person could appeal.)
+
+DONE_____ make a seperate section where the trainers could register them with gymaale in which they will be eligible for the part where they can provide training to the users.(GYM registeration not to be provided.ADMIN WILL VERIFY THE ENTRY TO ADDED TO BE VALID AND THAT WILL BE DISPLAYED ONLY ONCE THE ADMIN VERIFIES IT.)
+IF NEW ENTRY IS SUBMITTED THEN FLASH A MESSAGE "VERIFICATION MAY TAKE UPTO 24 HOURS. YOU WILL BE INFORMED VIA MAIL OR PHONE NUMBER ONCE YOUR ENTRY IS ADDED TO GYMAALE"
+
+DONE_____ Gym owners registering and Trainers registering will have their particular section  of the account page where they will have just the accout section and the account settings.
+
+DONE_____ owner accont * in this also make the section of the page where we have the extra column in which "verified" will be written and if the verified not there then the gym wont be           displayed to user.
+            (Currently not doing this as we need the gyms to register at first and once we have lot of gyms then we can do this)
+    _____ * Connect  this section with mail address and mail verification will only let the owner to add his details or any of the gym details to the tables
+            (Not doing this because we have to get more gyms in the begining. Once we have got a large number of gyms then we can do that.)
+            (Currently we have a reigth to delete the account or gym as mentioned in the t&c page.)
+
+DONE_____ change the icon for gymaale at the heading and in statusbar in every page.
+
+DONE_____ connect each newsletter email section with the dmail table
+
+DONE_____ owner account aur trainer account k sare pages mai sai gymaale icon upar mai sai <a> tag hta dena
+
+DONE_____ when forgot password used then after the resetting of password a mail to be sent saying your account has been recovered successfully.
+
+DONE_____ ek FAQ ka page bna na jis mai yeh smja rakha ho ki sare features kis trh sai kaam karte hai and add that to mail also.
+
+DONE_____ resize the back to top button
+
+DONE_____ join now ki jgh join gym today ka optoion daal dena jis ko click karne k baad jo [page open hoga vo different gyms ka hoga jisme sai user choose kar skta hai].
+
+DONE_____ make sure that the pages wich dont have direct access to the main page do not have the link in the gymaale image at the top.
+
+DONE_____`Once we click on the email which is sent to us with the code  after registeration, the page which opens also displays email sent.
+
+DONE_____ Make a thing like whenever we writee and publish a new blog on gymaale all the email registered with GYMaale get a mail saying a new post published
+
+DONE_____ See if we can make different things configured in tawk.io chat screen.
+
+DONE_____ In user section of the web app Apply a section which will be there to accept suggestions from the user and credits will be given to the users in the blog section.
+
+DONE_____ Some images in the account page are not being displayed correctly.
+
+DONE_____ Check flask messages to be displayed on each and every point.
+
+DONE_____ after money being aded to the wallet redirect to the respective pages rather than default.
+
+DONE_____ redirection of the trainer logout to login and popping of the g.trainer.
+
+DONE_____ ammount needs to be shown in the trainer account.
+
+DONE_____ send mails to the parties among which transaction is occuring.
+
+DONE_____ Apply the alert from js in all the forms.
+
+DONE_____ Menu bar is showing in login page.
+
+DONE_____ Deploy the web app.
+
+DONE_____ jb apn trainer k liye pay krte hai jha fixed ammount aata hai wha p kar dena "monthly charges"
+
+DONE_____ connected the images part to cloudinary uploads storing their links in the database
+
+DONE_____ resizing all the images before applying them to the cloudinary
+
+DONE_____ limiting the uploads of file to only image types and no other file to be uploaded.
+
+DONE_____ ek kaam esa karna hai ki jb apn login kar rahe hai toh jo dmail wali table hai usme jo user login kar rha hai uski email toh aaye hi saath hi agar koi user icha sai usme email dale toh vo bhi store ho jaye saath mai agar ek email 2 baar aa jaye toh usko remove kar lai.
+
+DONE_____ mailing the security code to the gym owner as it is hard to remember.(not dping this becuase we dont have the mail address for the owwner till then.)
+
+DONE_____ FAQ page created enter data in it.
+
+DONE_____ ek tracker bnana hai jis sai ki product ko track kr skai.
+
+DONE_____ still issue is there that if a owner has two gyms then he sees same images for two gyms. sol can be passing the query in the template and then displaying images from there.(solving this by displaying one owner can have only one gym and not letting add multiple gym display.)
+
+DONE_____ Ek jo dikkat aayegi vo yeh ha ki transaction_select_time main apn nai yeh nhi pass kiya hai ki agar multiple gyms hai toh konsa gym ka transaction hoga un mai sai.
+
+DONE_____ terms and condition also containd that the user/owner/trainer will be automatically subscribed to our newsletter once he submits details to the website.
+
+DONE_____ When the owner registers another gym then the images which he uploads for that gym are not diaplyed rather images of the first gym are displayed. (This is because in the owner account function rather then passing image as variable we are hard coding the images.)(this is solved by not allowing any of the owner to register more than one gyms)
+
+DONE_____ In the mail which we are sending with html that is not holding images as the images are not on server so a broken image is sent.(done this by adding cloudinary link to the image)
+
+DONE_____ In th begining if we provide skip for now feature in image then we want the image to be default image. But the default image is not been set as the image which we are obtaining from the users and that is store if we use a default then that cant be accepted as a file from request.(skip wlaa feature hi hta diya hai)
+
+DONE_____ In this section currently changing of the details is not allowed so a message is displayed below the submit button.
+  If the user wants to change the details then he has to go to the contact section and ask for a changeby sending a mail so make a section related to this.
+  
+DONE_____ have only one gym details then also it is showing that another gym details in account page.(done this by removing the add another gym wala link)
+
+DONE_____ change gym details mai jo values pehle aani cahiye thi vo nhi aa rhi hai(ho rha hai ab sb shi)
+
+DONE_____ finally trying to integrate the transaction part with paytm.(integrated with the supplementation page)
+
+DONE_____ editting upar jane wala button in all pages.
+
+DONE_____ See if we could make something like the chat application for the user to communicate wiht the trainer.(not needed because if we have rpovided a chat portal for them to communicate then there may be a chance that the trainer gets a lot of message and these could result in ignoring message from client.)
+
+DONE_____ check the links which will be redirecting from one page to another mainly the gymaale heading and the top tabs.(checked many of them are just working fine)
+
+Done_____ limiting the gym owner to not have account in trainer
+
+MUCH MORE FEATURES:-
+** in user table also make a column of memberships in which user can apply for memberships in which they can access certain different features of the website which are not available to the masses.
+
+Thingd to be worked on:
+* We can integrate auth from twitter facebook,google and github to apply the login from these all sites in our gymaale.(idea dropped currently due to data incosistency issue)
+* Also we can used a prebuilt login i.e. from harshkhatri.auth0.com to get it and combine it in our gymaale.(idea dropped currently due to data inconsistency issue)
+
+
+Things i am not doing:-
+* if possible then jo products ko display krwane mai css error aa rhi hai us ko dekhna hai(vo scroll nhi ho rha hai aur 4 products hote hi product neeche aa jata hai 4 sai jyada hote hi vo error deh deta hai)
+* OTP system currently charges money
+* Apply different forms of sorting( Sorting can be done via these ways:-newest first(sort by id desc),oldest first(sort by id asc), age(sort by age asc or desc),training mode(online,offile or both),diet_suport(yes/no),training_support(yes/no)---------Firstly do by id new and old only. ).
+* For the sorting function take an image which on click will display the radiobuttons and on that submit the things will be sorted.
+* Change username ka karna hai (tried it and it worked also but rather than updating the username in the pre existing row of the data i created a row with new username and rest of the data to be same which cause the change in the primary id of the account and thus disturbing all the features of the webapp.)
+In change user name i also tried to update the username by direct updating and then commiting the final result but that also didnt worked(on logging in the the page kept on refreshing again and again.
+* make a feedback floating icon which opens up on clicking and with the help of that user can provide thir feedback. REFERENCE:-https://subscription.packtpub.com/book/web_development/9781783983360/5/ch05lvl1sec36/accessing-the-current-user
+* Terms and condtions page added. Just add the correct conditions in it seeing the terms of different pages.
+* Also if possible to add the notification bell icon which will contain the notifications i.e. the things which we are pushing from our database then it would be good.(This could be done using firebase so see it once.)
+* adding a dark theme to the website
+* Making the money transaction way between the gyms and users or trainers and users where the user can pay to any of  the one and the money will be deducted from the users account and that will be added to the the account whom he has paid the money.Users can add money with different methods ranging frm card,wallets,net banking etc.or thy could directly pay to the person from their accounts which they have.See how will the main moto of providing qr to the people who pay to the gym for registeration for one day will be carried out.this could also be achived by providing user with the mail and a secret code and the gym owner has to verify the code which could be done by the email sent to him or the table of the users registered for their gym to them in the account section.Work on the transactons so that the user can perform transactions in his or her account. Currently use this as demo transaction which do not involve use of money and that all transactions will be stored in the transaction table we will make and another page transaction will show us the list of all the transactions user is performing.(done this with the demo payment and i have to it for the real payment with paytm accounts.)
+
+
+
+ERRORS:
+added login with github but the problem which is arising is that many pages in gymaale have query in it related to user table and it is somewhat difficult to add github_user table queries in its place as it would be difficult to specify which query needs to run. So we have make the data model again seeing the facts that the duplication of username(github wale ka hai toh koi aur nhi lai skta usai ya kisi aur ka hai toh github wala use use nhi kr skta.Mail address ko main use kar skte hai ki log mail address ko hi username ki trh use kare).Rather than multiple tables for data login creds and image a single could be there which would save space and also make queries much more efficient.
+
+***********************AT LAST MAKE A MOBILE APP FOR THIS***************************
+
+
+necessary before project:-
+* add more photos to the carousal screen 
+* account page mai profile photo ka bhi dekhna hai ki photo upload aur edit ki ja sake.aur kuch add kiya ja skta ho account page mai toh vo bhi daal dena.(This could be done by using python pillow library in our program or by using cloudinary edit codes.)
+* FAQ mai styling bigdi hui hai.
+* cart k css mai dikkat hai
+* cart ka payment bhi abhi demo p chl rha hai
+* cart mai kuch bhi book hota hai toh user ko mail nhi jata booking confirmed ka
+* payment ka pura kyoki abhi sb demo p chl rha hai
+
+Important links:-
+    for user: 
+        login:- /login
+        register:- /register
+        *reset features will be provided within the app itself.
+
+    for trainers
+        login:- /trainer_register/login
+        register:- /trainer_register/register
+        *rest all features related to them will be provided after login
+
+    for gym owners
+        login:- /gym_registeration/login
+        register:- /gym_registeration/register
+
+    for blog writer this is currently the admin only and blogs can be written from admin panel itself

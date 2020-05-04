@@ -2,83 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dcaf7f1-25c5-4152-8496-73fabbaa338d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/FAQs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/FAQs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/3d_fitness.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/champion_gym.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/fitness_care.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/fitness_club.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/fitness_square.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/gold.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Various_gyms/gym_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/joggers_park.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/reboot_fitness.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Various_gyms/world_fitness.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account_settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account_settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_github_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_github_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blog_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blog_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bmi.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bmi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/certified_trainers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/certified_trainers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/change_uname.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_uname.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/confirm_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/confirm_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/faltu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/faltu2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forgot_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forgot_request.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_accessories.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_accessories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/add_other_gym.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_gym_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/change_owner_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/gym_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/gym_images.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/owner_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_registeration/trainer_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/gym_time_selection.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gym_time_selection.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/healthy.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/healthy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/know.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/know.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/logout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/offers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registerr.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registerr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reset_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schedules.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/schedules.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/services.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supple.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supple/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supple/paymentstatus.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/paymentstatus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supple/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supple/supplement_landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/supplement_landing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/supple/tracker.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/supple/tracker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/terms_and_conditions.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/terms_and_conditions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/landingpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/landingpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_account2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_images.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainer_registeration/trainer_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/trainer_registeration/trainer_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainers/am.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainers/rk.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainers/ssr.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainers/ya.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainers/ys.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/trainers/zk.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/transaction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user_as_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_as_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/various_gym.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/various_gym.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/verification.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/verification.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +58,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -151,7 +76,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -289,6 +214,8 @@
       <workItem from="1585843970478" duration="567000" />
       <workItem from="1585880905389" duration="30000" />
       <workItem from="1585998237918" duration="2838000" />
+      <workItem from="1587313532693" duration="808000" />
+      <workItem from="1587357190887" duration="11000" />
     </task>
     <task id="LOCAL-00014" summary="pagination-nextline and images on various account in flexbox">
       <created>1578983286245</created>
@@ -637,16 +564,14 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -665,6 +590,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -721,10 +647,10 @@
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
     <state x="232" y="253" width="486" height="577" key="RollbackChangesDialog/0.27.1920.1029@0.27.1920.1029" timestamp="1584932328030" />
-    <state x="449" y="174" width="1022" height="731" key="SettingsEditor" timestamp="1585207165492">
+    <state x="449" y="174" width="1022" height="731" key="SettingsEditor" timestamp="1587313610285">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
-    <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1585207165492" />
+    <state x="449" y="174" width="1022" height="731" key="SettingsEditor/0.27.1920.1029@0.27.1920.1029" timestamp="1587313610285" />
     <state x="555" y="275" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1585713893862">
       <screen x="0" y="27" width="1920" height="1029" />
     </state>
