@@ -1,6 +1,6 @@
 #latest commit 31/03/2020
 
-
+from credentials import *
 from flask import Flask,  render_template,  flash, redirect, url_for, session,  request, g
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import update
@@ -44,9 +44,9 @@ from io import BytesIO
 from flask_dance.contrib.github import make_github_blueprint,github
 
 cloudinary.config(
-  cloud_name = "harshkumarkhatri",
-  api_key = "189777582685733",
-  api_secret = "_66utVOprVTnRO3-ORv4LJHXtkg"
+  cloud_name = credentials.cloud_name,
+  api_key = credentials.api_key,
+  api_secret = credentials.api_secret
 )
 
 
@@ -55,38 +55,38 @@ allowed_extensions={'jpg','jpeg','png'}
 from dateutil import parser
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['SQLALCHEMY_DATABASE_URI'] = credentials.SQLALCHEMY_DATABASE_URI
+app.config['MAIL_SERVER'] = credentials.mail_server
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'gymaale.buisness@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Harsh96722'
+app.config['MAIL_USERNAME'] = credentials.mail_username
+app.config['MAIL_PASSWORD'] = credentials.mail_password
 
 db = SQLAlchemy(app)
-app.secret_key = '1234'
+app.secret_key = credentials.debug_key
 bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
 
-pub_key = 'pk_test_j5M62wU5aump7Ige6RRL6bG300GBcA0F6i'
-secret_key = 'sk_test_ZDdijuYIjxaiLE15uvr0CE7v00E9LxRqoN'
+pub_key = credentials.pub_key
+secret_key = credentials.secret_key
 admin = Admin(app)
-ADMINS = ['mailharshkhatri@gmail.com']
+ADMINS = [credentials.admin]
 
 app.config.from_object("config")
 host_name='http://localhost:5000'
 
 import boto3
 import util
-bucket_name='bucketforawsreko'
+bucket_name=credentials.bucket_name
 
 
 mail = Mail(app)
 
-merchant_key = "s5EFgJpP!NbFRfx4"
+merchant_key = credentials.merchant_key
 
-github_blueprint=make_github_blueprint(client_id='0e8ce40fec92a01494ad',client_secret='de00d9669d3c8bc3a231f61141c7d6b2c926f5e1')
+github_blueprint=make_github_blueprint(client_id=credentials.client_id,client_secret=credentials.client_secret)
 app.register_blueprint(github_blueprint,url_prefix='/github_login')
 
 class user(db.Model, UserMixin, AnonymousUserMixin):
