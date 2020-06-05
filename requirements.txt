@@ -46,7 +46,7 @@ entrypoints==0.3
 enum34==1.1.6
 et-xmlfile==1.0.1
 fabric==2.5.0
-Flask==0.12.5
+flask>=1.0.0
 Flask-Admin==1.5.5
 Flask-Bcrypt==0.7.1
 Flask-Dance==3.0.0
@@ -65,7 +65,7 @@ gspread==3.3.0
 Hackersh==0.2.0
 halberd==0.2.4
 html5lib==1.0.1
-httplib2==0.14.0
+httplib2>=0.18.0
 hyperlink==19.0.0
 idna==2.6
 imageio==2.4.1
