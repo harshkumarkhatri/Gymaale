@@ -36,7 +36,7 @@ cycler==0.10.0
 dbus-python==1.2.16
 decorator==4.3.0
 distorm3==3.4.1
-Django==1.11.28
+django>=1.11.29
 dnspython==1.16.0
 docutils==0.15.2
 easygui==0.96
