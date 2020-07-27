@@ -1452,6 +1452,30 @@ def confirm_email(token, username):
                 return redirect(url_for('confirm_email')), flash("Incorrect Code")
         return render_template("verification.html")
 
+@app.route("/change_username",methods=["POST"])
+@login_required
+def username_modify():
+    data = request.get_json()
+    current= data["current_username"]
+    new_name = data["new_username"]
+
+    current_user = g.user
+
+    if current_user == current:
+        user_data = user.query.filter_by(username=cuname).first()
+
+        user_data.username = new_name
+        db.session.commit()
+
+        return render_template("account.html")
+    else:
+        flash("Please provide correct Username")
+
+
+    return render_template("change_uname.html")
+
+
+
 
 @app.route('/mj')
 def mj():
